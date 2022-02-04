@@ -134,6 +134,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "country_code_picker",
+      "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/country_code_picker-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "crypto",
       "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
       "packageUri": "lib/",
@@ -458,6 +464,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "modal_bottom_sheet",
+      "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/modal_bottom_sheet-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "nested",
       "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
       "packageUri": "lib/",
@@ -728,6 +740,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "universal_platform",
+      "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/universal_platform-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/uuid-3.0.5",
       "packageUri": "lib/",
@@ -854,7 +872,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-02-04T09:20:39.110497Z",
+  "generated": "2022-02-04T11:05:51.817473Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-285.0.dev"
 }

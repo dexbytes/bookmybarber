@@ -32,6 +32,9 @@ class AppString {
   String addPhoto = 'addPhoto';
 
   String remove = 'remove';
+  String correctPhone = 'Phone number length must be 10 characters long.';
+  String phoneNumber = 'Please enter phone number';
+
 
   String pleaseEnterPassword = 'pleaseEnterPassword';
   String pleaseEnterCurrentPassword = 'pleaseEnterCurrentPassword';
@@ -203,6 +206,7 @@ class AppString {
   String importContact = "importContact";
   String skip = "skip";
   String nextBtn = "nextBtn";
+
 }
 
 AppString appString = AppString();

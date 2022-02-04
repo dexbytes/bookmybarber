@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
+import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/pages/welcome_screen.dart';
@@ -270,7 +271,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return MobileNumberScreen();
   }
 
   //Redirect to another screen if already loggedIn

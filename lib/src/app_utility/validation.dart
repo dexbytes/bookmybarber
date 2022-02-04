@@ -147,6 +147,16 @@ class Validation {
     return false;
   }
 
+  /* =======================validate phone number field===========*/
+  bool validatePhoneNumber(String pass) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = new RegExp(pattern);
+    if (regExp.hasMatch(pass)) {
+      return true;
+    }
+    return false;
+  }
+
   /*========================validate username field=============*/
   bool validateUserName(String pass) {
     // String pattern = r"^[a-zA-Z0-9]";

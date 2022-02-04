@@ -28,6 +28,7 @@ class IconApps {
   String backArrow2 = 'assets/images/back_arrow2.png';
   String lock = 'assets/images/lock_icon.png';
   String passwordIcon = 'assets/images/password_icon.png';
+  String closeIcon = 'assets/images/Close_icon.png';
 
 
   iconImage(
