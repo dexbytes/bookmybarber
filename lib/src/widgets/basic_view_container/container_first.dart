@@ -8,6 +8,7 @@ class ContainerFirst extends StatelessWidget {
   final Color? statusBarColor;
   final Widget containChild;
   final bool isFixedDeviceHeight; // if it true than
+  final bool reverse; // if it true than
   final bool isSingleChildScrollViewNeed; // if it true than
   final Widget? appBar; // if it true than
   final double
@@ -26,6 +27,7 @@ class ContainerFirst extends StatelessWidget {
     this.appBar,
     this.appBarHeight = 0,
     this.isSingleChildScrollViewNeed = true,
+    this.reverse = false,
   }) : super(key: key);
 
   @override
@@ -59,6 +61,7 @@ class ContainerFirst extends StatelessWidget {
       return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
           return SingleChildScrollView(
+            reverse: reverse,
             physics: scrollPhysics,
             child: ConstrainedBox(
               constraints: BoxConstraints(

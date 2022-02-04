@@ -25,6 +25,10 @@ class IconApps {
   String signInBackgroundImage = 'assets/images/sign_in_image.png';
   String personIcon = 'assets/images/person_icon.png';
   String personIcon2 = 'assets/images/person2.png';
+  String backArrow2 = 'assets/images/back_arrow2.png';
+  String lock = 'assets/images/lock_icon.png';
+  String passwordIcon = 'assets/images/password_icon.png';
+
 
   iconImage(
       {required String imageUrl,

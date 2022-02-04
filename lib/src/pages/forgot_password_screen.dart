@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
 
 
@@ -59,30 +60,38 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     }
 
     _welcomeTextView() {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text("Forgot Password",
-            style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w700,
-                color: AppColors().textHeadingColor1
+      return Container(
+        margin: EdgeInsets.only(
+          top: 15,
+          left: 25,
+          right: 25,
+          bottom: MediaQuery.of(context).size.height/ 10
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Forgot Password",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors().textHeadingColor1
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text("Please enter your email address. You will receive a code to create a new password via email.",
-            style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w500,
-                color: AppColors().textNormalColor6.withOpacity(0.8)
+            SizedBox(
+              height: 20,
             ),
-            textAlign: TextAlign.start,
-          )
-        ],
+            Text("Please enter your email address. You will receive a code to create a new password\nvia email.",
+              style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors().textNormalColor6.withOpacity(0.8)
+              ),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
       );
     }
 
@@ -91,7 +100,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       return Container(
         padding: EdgeInsets.only(
             left: 25,right: 20,
-            top: 25
+            top: 25,
+            bottom: 20
         ),
         width: MediaQuery.of(context).size.width,
         child: CommonTextFieldWithError(
@@ -106,15 +116,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           autoFocus: true,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff384054),
-          focusedBorderColor: Color(0xff384054),
+          enabledBorderColor: Color(0xff323446),
+          focusedBorderColor: Color(0xff323446),
           textInputAction: TextInputAction.next,
-          backgroundColor: Color(0xff384054),
+          backgroundColor: Color(0xff323446),
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
-          hintText: "Email",
+          hintText: "Your email address",
           hintStyle: TextStyle(
-            fontSize: 17,
+            fontSize: 15.5,
             fontWeight: FontWeight.w500,
             color: Color(0xff828588),
           ),
@@ -128,7 +138,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: IconButton(
               onPressed:(){},
               icon: iconApps.iconImage(imageUrl: iconApps.personIcon2,imageColor:Color(0xff828588),iconSize: Size(22, 22)),
-
             ),
           ),
           contentPadding: EdgeInsets.only(left: 25),
@@ -153,82 +162,119 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
             color: Color(0xff212327),),
-          backCallback:(){},
+          backCallback:(){
+            alertDialog(context);
+          },
           isBottomMarginRequired: false,
         ),
       );
     }
 
-    forgotText(){
-      return Container(
-          margin: EdgeInsets.only(left: 28,right: 28,top: 30),
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: (){},
-              child: Text("Forgot your password\?",
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color:AppColors().buttonTextColor
-                ),
-              ),
-            ),
-          )
-      );
-    }
 
-
-
-    Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/2.8,
-      child: Container(
-        padding: EdgeInsets.only(top: 35),
-        width: size.width,
-        height: size.height,
-        decoration: BoxDecoration(
-          color: Color(0xff212327),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25),
-            topRight: Radius.circular(25),
-          ),
+    return ContainerFirst(
+      reverse: false,
+      contextCurrentView: context,
+      bottomBarSafeAreaColor: Color(0xff212327),
+      statusBarColor: Color(0xff212327),
+      // scrollPadding: EdgeInsets.only(bottom: 0),
+      /* statusBarColor: Colors.amber,
+          bottomBarSafeAreaColor: Colors.amber,*/
+      isSingleChildScrollViewNeed: true,
+      isFixedDeviceHeight: true,
+      appBarHeight: 62,
+      appBar: Container(
+        color: Color(0xff212327),
+        child: appBarWithBackArrow(
+            isTitleVisible: false,
+            isTrailingIconVisible: false,
+            leadingIconColor:Color(0xFFCCA76A),
+            onPress: (){
+              Navigator.pop(context);
+            }
         ),
+      ),
+      containChild: Container(
+        color:  Color(0xff212327),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _welcomeTextView(),
-            SizedBox(height: 18),
+            SizedBox(height: 8,),
             _emailField(),
-            bottomButton(),
-            forgotText(),
-            SizedBox(height: 28,),
+            bottomButton()
           ],
         ),
       ),
     );
 
+  }
 
+  void alertDialog(BuildContext context) {
 
+       showDialog(
+          context: context,
+          builder: (context){
+           return Dialog(
+             insetPadding: EdgeInsets.symmetric(horizontal: 20),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                padding: EdgeInsets.only(
+                    top: 35,
+                    left: 20,
+                    right: 20
+                    ),
+                height: MediaQuery.of(context).size.height/2.3,
+                width: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                  color: Color(0xff384054),
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Column(
+                  children: [
+                    iconApps.iconImage(
+                      imageUrl: iconApps.passwordIcon,
+                    ),
+                    SizedBox(height: 25,),
+                    Text("Code has been send to reset a new password",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors().textHeadingColor1
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 20,),
+                    Text("You'll shortly receive an email with a code\n to setup a new password",
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors().textNormalColor6.withOpacity(0.8)
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 48,),
+                    CommonButton(
+                      buttonHeight: 50,
+                      buttonName: "Done",
+                      buttonColor:Color(0xFFCCA76A),
+                      textStyle: TextStyle(fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff212327),),
+                      backCallback:(){
+                        Navigator.pop(context);
+                      },
+                      isBottomMarginRequired: false,
+                    ),
+                  ],
+                ),
+              ),
+            );
 
-    return ContainerMenuPage(
-      contextCurrentView: context,
-      // scrollPadding: EdgeInsets.only(bottom: 81),
-      /* statusBarColor: Colors.amber,
-        bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: false,
-      isFixedDeviceHeight: true,
-      appBarHeight: -1,
-      appBar: Container(),
-      containChild:Container(
-        height: size.height,
-        width: size.height,
-        child: Stack(
-          children: [
-            bottomCardView
-          ],
-        ),
-      ),
+          });
 
-    );
   }
 }
 
