@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/Projects/flutter/base/base_flutter_app/build/video_player/intermediates/res/merged/debug/values-sl/values-sl.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-sl/values-sl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/Projects/flutter/base/base_flutter_app/build/video_player/intermediates/incremental/mergeDebugResources/merged.dir/values-sl/values-sl.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-sl/values-sl.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
