@@ -184,7 +184,6 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                   showCountryOnly: false,
                   showFlag: true,
                   flagWidth: 21,
-                  // flagDecoration: DecorationFl,
                   showFlagDialog: true,
                   showOnlyCountryWhenClosed: false,
                   dialogBackgroundColor: Color(0xff212327),

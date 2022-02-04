@@ -34,6 +34,8 @@ class AppString {
   String remove = 'remove';
   String correctPhone = 'Phone number length must be 10 characters long.';
   String phoneNumber = 'Please enter phone number';
+  String pleaseEnterOTP = 'Please enter OTP';
+  String pleaseEnterCorrectOTP = 'Please enter correct OTP';
 
 
   String pleaseEnterPassword = 'pleaseEnterPassword';

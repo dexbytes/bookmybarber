@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AlreadyHaveAccountRow extends StatelessWidget {
   final String leftText;
   final String rightText;
+  final String subtitleText;
   final TextStyle leftTextStyle;
   final TextStyle rightTextStyle;
   final String? imageIcon;
@@ -11,7 +12,10 @@ class AlreadyHaveAccountRow extends StatelessWidget {
   final FontWeight fontWeight;
   final EdgeInsetsGeometry? margin;
   final signInCallBack;
+  final subtitleTextCallBack;
   final EdgeInsetsGeometry? padding;
+  final bool isSubtitleTextVisible;
+  final bool isRightTextVisible;
 
   const AlreadyHaveAccountRow(
       {Key? key,
@@ -26,6 +30,10 @@ class AlreadyHaveAccountRow extends StatelessWidget {
         this.margin,
         this.padding,
         this.signInCallBack,
+        this.subtitleText = "Resend a new code",
+        this.isSubtitleTextVisible = false,
+        this.subtitleTextCallBack,
+        this.isRightTextVisible = true,
       })
       : super(key: key);
   @override
@@ -37,19 +45,42 @@ class AlreadyHaveAccountRow extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(leftText,
-            style: leftTextStyle
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(leftText,
+                style: leftTextStyle
+                ),
+                SizedBox(height:isSubtitleTextVisible? 6: 0,),
+                Visibility(
+                  visible: isSubtitleTextVisible,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: (){
+                        this.subtitleTextCallBack?.call();
+                      },
+                      child: Text(subtitleText,
+                          style: rightTextStyle
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(width: 5,),
             Material(
               color: Colors.transparent,
-              child: InkWell(
-                onTap: (){
-                  this.signInCallBack?.call();
-                  print("click on sign in");
-                },
-                child: Text(rightText,
-                  style:rightTextStyle
+              child: Visibility(
+                visible: isRightTextVisible,
+                child: InkWell(
+                  onTap: (){
+                    this.signInCallBack?.call();
+                    print("click on sign in");
+                  },
+                  child: Text(rightText,
+                    style:rightTextStyle
+                  ),
                 ),
               ),
             )
