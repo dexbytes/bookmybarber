@@ -1,7 +1,9 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:flutter/material.dart';
 
@@ -303,7 +305,13 @@ class _SignInScreenState extends State<SignInScreen> {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: (){},
+          onTap: (){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: ForgotPasswordScreen()),
+            );
+          },
           child: Text("Forgot your password\?",
             style: TextStyle(
               fontSize: 15,
