@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
+import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:flutter/material.dart';
 
@@ -330,6 +331,13 @@ class _SignInScreenState extends State<SignInScreen> {
         leftText: "Don't have an account\?",
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
         rightText: "Sign Up",
+        signInCallBack: (){
+          Navigator.push(
+            context,
+            SlideRightRoute(
+                widget: MobileNumberScreen()),
+          );
+        },
       ),
     );
 

@@ -109,10 +109,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
 
     verificationCode() {
-      Color fieldBackgroundColor = inputController.text.isNotEmpty ? Color(0xFFCCA76A) :Color(0xFF5D3F30).withOpacity(0.1) /*Color(0xFF5D3F30).withOpacity(0.1)*/;
+      Color fieldBackgroundColor = Color(0xFFCCA76A);
       Color activeBorderColor = Color(0xFF5D3F30).withOpacity(0.1);
       Color activeBackgroundColor = Color(0xFFCCA76A);
       Color borderColor = Color(0xFF5D3F30).withOpacity(0.1);
+      Color disableBackgroundColor = Color(0xFF384054);
+
       return Container(
         // color: Colors.red,
           margin: EdgeInsets.only(bottom: 0, top: 0),
@@ -125,6 +127,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             responsive: false,
             fieldHeight: 50.0,
             fieldWidth: 50.0,
+            disableBackgroundColor:disableBackgroundColor ,
             borderWidth: 1.0,
             activeBorderColor: activeBorderColor,
             activeBackgroundColor: activeBackgroundColor,

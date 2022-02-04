@@ -8,6 +8,8 @@ import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 
+import 'otp_verification_screen.dart';
+
 class MobileNumberScreen extends StatefulWidget {
   @override
   _MobileNumberScreenState createState() => _MobileNumberScreenState();
@@ -236,11 +238,11 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               setState(() {
                 errorMessages['phone'] = '';
               });
-              // Navigator.push(
-              //   context,
-              //   SlideRightRoute(
-              //       widget: OtpVerificationScreen()),
-              // );
+              Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: OtpVerificationScreen()),
+              );
             }else{
               setState(() {
                 if(phoneNumber.toString().trim() == "" )

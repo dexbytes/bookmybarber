@@ -37,6 +37,8 @@ class PinCodeFields extends StatefulWidget {
 
   /// Background color of the active/ highlighted field.
   final Color activeBackgroundColor;
+  final Color disableBackgroundColor;
+
 
   /// Focus node for the fields.
   final FocusNode? focusNode;
@@ -114,6 +116,7 @@ class PinCodeFields extends StatefulWidget {
     this.activeBorderColor = Colors.blue,
     this.fieldBackgroundColor = Colors.grey,
     this.activeBackgroundColor = Colors.white,
+
     this.focusNode,
 
     /// Text fields are enabled by default.
@@ -161,6 +164,7 @@ class PinCodeFields extends StatefulWidget {
     this.switchOutAnimationCurve = Curves.easeOut,
     this.onChange,
     required this.onComplete,
+    this.disableBackgroundColor = Colors.black87,
   });
 
   @override
@@ -278,7 +282,7 @@ class _PinCodeFieldsState extends State<PinCodeFields> {
   }
 
   /// Setting the background color of the active text field using _selectedIndex.
-  Color _getBackgroundColorFromIndex(int index) {
+  Color _getBackgroundColorFromIndex(int index,bool isFilled) {
     if (!widget.enabled) {
       return widget.fieldBackgroundColor ;
     }
@@ -289,7 +293,7 @@ class _PinCodeFieldsState extends State<PinCodeFields> {
     } else if (_selectedIndex > index) {
       return widget.fieldBackgroundColor ;
     }
-    return widget.fieldBackgroundColor ;
+    return isFilled ? widget.disableBackgroundColor: widget.fieldBackgroundColor ;
   }
 
   /// Generating border of the field by using enum FieldBorderStyle.
@@ -432,7 +436,7 @@ class _PinCodeFieldsState extends State<PinCodeFields> {
               width: widget.fieldWidth,
               height: widget.fieldHeight,
               decoration: BoxDecoration(
-                color: _getBackgroundColorFromIndex(index),
+                color: _getBackgroundColorFromIndex(index,_inputList![index] != null),
                 borderRadius: widget.borderRadius,
                 border: _generateBorder(index),
               ),
@@ -464,7 +468,7 @@ class _PinCodeFieldsState extends State<PinCodeFields> {
               duration: widget.animationDuration,
               height: widget.fieldHeight,
               decoration: BoxDecoration(
-                color: _getBackgroundColorFromIndex(index),
+                color: _getBackgroundColorFromIndex(index,_inputList![index] != null),
                 borderRadius: widget.borderRadius,
                 border: _generateBorder(index),
               ),
