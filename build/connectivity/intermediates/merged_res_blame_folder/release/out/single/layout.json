@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/custom_dialog.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/notification_action.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/connectivity/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/layout/notification_action_tombstone.xml"
+    }
+]

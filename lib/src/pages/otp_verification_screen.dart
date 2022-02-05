@@ -129,6 +129,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             fieldWidth: 50.0,
             disableBackgroundColor:disableBackgroundColor ,
             borderWidth: 1.0,
+            padding: EdgeInsets.only(top: 1),
             activeBorderColor: activeBorderColor,
             activeBackgroundColor: activeBackgroundColor,
             borderRadius: BorderRadius.circular(50.0),

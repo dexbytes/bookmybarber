@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/pages/otp_verification_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
+import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/pages/welcome_screen.dart';
 import 'package:base_flutter_app/src/widgets/connet_to_social_card.dart';
@@ -272,7 +273,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return MobileNumberScreen();
+    return SignUpScreen();
   }
 
   //Redirect to another screen if already loggedIn

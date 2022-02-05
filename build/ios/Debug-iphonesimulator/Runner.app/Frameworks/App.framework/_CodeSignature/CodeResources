@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		nJ7pY3BOGFKUxMOwy4kaILbwFYQ=
+		4iAKWZyrt+BKX6ua8kYjckmIlHU=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -55,6 +55,10 @@
 		<key>flutter_assets/assets/fonts/Roboto-Regular.ttf</key>
 		<data>
 		CWySRbahktFAOoKEjhBKZfV4qOw=
+		</data>
+		<key>flutter_assets/assets/images/Close_icon.png</key>
+		<data>
+		qg7kS0sVaJP71df8dycGwsYJxeE=
 		</data>
 		<key>flutter_assets/assets/images/active.svg</key>
 		<data>
@@ -186,7 +190,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		Y4vMJd6Acq0E8WowwTHTGofuJXI=
+		NHI7Iuu/SfuhkdPTtke5P2AK3Ag=
 		</data>
 		<key>flutter_assets/packages/country_code_picker/flags/ad.png</key>
 		<data>
@@ -1595,11 +1599,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nJ7pY3BOGFKUxMOwy4kaILbwFYQ=
+			4iAKWZyrt+BKX6ua8kYjckmIlHU=
 			</data>
 			<key>hash2</key>
 			<data>
-			/2pW26rHptNikEgwKLXgMfmlDNUXmWFK07TcOt9s+3c=
+			jKS+9rGZU/HOw5Mu+RZrNEICnnyanF3m0DPCLRRAxgk=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -1721,6 +1725,17 @@
 			<key>hash2</key>
 			<data>
 			AXwL6aqm0DWXN+H6dirTBMDgEHkn+v9abB9BXH9SRO0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/Close_icon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qg7kS0sVaJP71df8dycGwsYJxeE=
+			</data>
+			<key>hash2</key>
+			<data>
+			s0VRH9aGAh+YVerSCSn3rjnnqC3KwXV02/qs42I5Zx0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/active.svg</key>
@@ -2079,11 +2094,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y4vMJd6Acq0E8WowwTHTGofuJXI=
+			NHI7Iuu/SfuhkdPTtke5P2AK3Ag=
 			</data>
 			<key>hash2</key>
 			<data>
-			l6wRyaDyaALUjVyeSQzbAVqV/4VBLHw3ryJ77P/DmGE=
+			3B5gUHLyxmntUO0JrJHTzKgfHfP3thqGsoLdtorZtwg=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/country_code_picker/flags/ad.png</key>

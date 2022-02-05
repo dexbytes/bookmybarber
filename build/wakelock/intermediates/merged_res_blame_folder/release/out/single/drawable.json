@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/wakelock/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/wakelock/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/wakelock/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/wakelock/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/drawable/notification_bg_low.xml"
+    }
+]

@@ -1,0 +1,116 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/firebase_messaging/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/dd1f2653eb3600845dc0007aef8fbaf5/jetified-firebase-messaging-23.0.0/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "211",
+                        "endColumns": "77",
+                        "endOffsets": "288"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "302",
+                        "endColumns": "81",
+                        "endOffsets": "379"
+                    }
+                },
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/e2b971e2dc6e91b0d48da7ff39228b63/jetified-play-services-basement-17.0.0/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "196",
+                        "endOffsets": "447"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "196",
+                        "endOffsets": "297"
+                    }
+                },
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-en-rGB/values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "384",
+                        "endColumns": "100",
+                        "endOffsets": "480"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/firebase_messaging/intermediates/res/merged/release/values-en-rGB/values-en-rGB.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/dd1f2653eb3600845dc0007aef8fbaf5/jetified-firebase-messaging-23.0.0/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "211",
+                        "endColumns": "77",
+                        "endOffsets": "288"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "302",
+                        "endColumns": "81",
+                        "endOffsets": "379"
+                    }
+                },
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/e2b971e2dc6e91b0d48da7ff39228b63/jetified-play-services-basement-17.0.0/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "196",
+                        "endOffsets": "447"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "196",
+                        "endOffsets": "297"
+                    }
+                },
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-en-rGB/values-en-rGB.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "384",
+                        "endColumns": "100",
+                        "endOffsets": "480"
+                    }
+                }
+            ]
+        }
+    ]
+}

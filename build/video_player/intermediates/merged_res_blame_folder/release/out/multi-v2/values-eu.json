@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/video_player/intermediates/res/merged/release/values-eu/values-eu.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/video_player/intermediates/incremental/mergeReleaseResources/merged.dir/values-eu/values-eu.xml",
+            "map": [
+                {
+                    "source": "/Users/dexbytes/.gradle/caches/transforms-2/files-2.1/797602825434b72c4491e2a7aed18134/core-1.6.0/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
