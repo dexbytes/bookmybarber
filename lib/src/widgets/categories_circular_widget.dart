@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CategoriesCircularWidget extends StatelessWidget {
   final onClickCardCallBack;
+  final bool isListTwoVisible;
+
   CategoriesCircularWidget({Key? key,
-    this.onClickCardCallBack
+    this.onClickCardCallBack,
+    this.isListTwoVisible = false
   }) : super(key: key);
 
 
@@ -44,13 +47,47 @@ class CategoriesCircularWidget extends StatelessWidget {
 
   ];
 
+  List<CategoriesList> categories2 = [
+    CategoriesList(
+      title: 'Haircut',
+      subtitle: '126 Places',
+      icon: 'assets/images/comb_icon.png',
+      colors: Color(0xffFD6C57),
+    ),
+    CategoriesList(
+      title: 'Coloring',
+      subtitle: '50 Places',
+      icon: 'assets/images/dye_icon.png',
+      colors: Color(0xff3885FF),
+    ),
+    CategoriesList(
+      title: 'Makeup',
+      subtitle: '60 Places',
+      icon: 'assets/images/make_style_icon.png',
+      colors: Color(0xffFE457C),
+    ),
+    CategoriesList(
+      title: 'Hairdryer',
+      subtitle: '85 Places',
+      icon: 'assets/images/dryer_icon.png',
+      colors: Color(0xff615DD9),
+    ),
+    CategoriesList(
+      title: 'Spa',
+      subtitle: '24 Places',
+      icon: 'assets/images/beard_icon.png',
+      colors: Color(0xffFE9654),
+    ),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
       padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
       physics: ClampingScrollPhysics(),
-      itemCount: categories.length ,
+      itemCount: isListTwoVisible ? categories2.length : categories.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return Material(
@@ -72,7 +109,7 @@ class CategoriesCircularWidget extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80)
                   ),
-                  color: categories[index].colors,
+                  color: isListTwoVisible ? categories2[index].colors :categories[index].colors,
                   child: Container(
                     padding: EdgeInsets.zero,
                       margin: EdgeInsets.zero,
@@ -85,7 +122,7 @@ class CategoriesCircularWidget extends StatelessWidget {
                       child:Align(
                         alignment: Alignment.center,
                         child:iconApps.iconImage(
-                            imageUrl: categories[index].icon,
+                            imageUrl: isListTwoVisible ? categories2[index].icon : categories[index].icon,
                           imageColor: Colors.white,
                           iconSize: Size(38, 38)
 
@@ -94,9 +131,9 @@ class CategoriesCircularWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                Text(categories[index].title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.white)),
+                Text( isListTwoVisible ? categories2[index].title : categories[index].title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.white)),
                 SizedBox(height: 2),
-                Text(categories[index].subtitle,style: TextStyle(fontSize: 11.5,fontWeight: FontWeight.w400,color: Color(0xff828588))),
+                Text(isListTwoVisible ? categories2[index].subtitle : categories[index].subtitle,style: TextStyle(fontSize: 11.5,fontWeight: FontWeight.w400,color: Color(0xff828588))),
               ],
             ),
           ),

@@ -57,7 +57,7 @@ PreferredSizeWidget appBarWithCurve(
         inputHeight: 45,
         errorLeftRightMargin: 0,
         errorMsgHeight: 20,
-        autoFocus: true,
+        autoFocus: false,
         capitalization: CapitalizationText.sentences,
         cursorColor: Colors.grey,
         enabledBorderColor: Color(0xff323446),
@@ -70,7 +70,9 @@ PreferredSizeWidget appBarWithCurve(
           padding: EdgeInsets.only(right: 8.5),
           child: IconButton(
             onPressed:(){},
-            icon: iconApps.iconImage(imageUrl: iconApps.micIcon,imageColor:Color(0xff828588),iconSize: Size(20, 20)),
+            icon: iconApps.iconImage(
+                imageUrl: iconApps.micIcon,imageColor:Colors.white,
+                iconSize: Size(20, 20)),
           ),
         ),
         inputFieldPrefixIcon: IconButton(
@@ -84,7 +86,7 @@ PreferredSizeWidget appBarWithCurve(
           color: Color(0xff828588),
         ),
         textStyle: TextStyle(
-          fontSize: 16,
+          fontSize: 15,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
