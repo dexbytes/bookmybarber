@@ -1,10 +1,15 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
+import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/date_picker.dart';
+import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
+import 'package:base_flutter_app/src/widgets/terms_and_condition_row.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -69,16 +74,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   String phoneNumber = '';
 
+  final items = ["Afghanistan","Algeria","Argentina","Armenia","Australia","Austria",
+    "Baden","Bangladesh","Barbados","Bavaria*","Belgium","Brazil","Bulgaria","Burma",
+    "Cabo Verde","Cambodia","Canada","Central African Republic","China","Colombia","Costa Rica","Czechoslovakia",
+     "Democratic Republic of the Congo","Denmark","Djibouti","Dominican Republic",
+    "Egypt","El Salvador","Eritrea","Estonia","Eswatini","Ethiopia",
+    "Fiji","Finland","France",
+    "Gabon","Georgia","Germany","Ghana","Greece","Guinea","Guyana",
+    "Haiti","Hanover*","Hawaii*","Holy See","Honduras","Hungary",
+    "Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy",
+    "Jamaica","Japan","Jordan",
+    "Kazakhstan","Kenya","Korea","Kuwait",
+    "Laos","Lebanon","Liberia","Lithuania","Luxembourg",
+    "Madagascar","Malaysia","Maldives","Mexico","Morocco",
+    "Namibia","Nepal","New Zealand","Nicaragua","Nigeria","Norway"
+    "Oldenburg*","Oman","Orange Free State*",
+    "Pakistan","Panama",'Panama',"Philippines","Poland","Portugal"
+  ];
+
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
 
     _welcomeTextView() {
       return Container(
         margin: EdgeInsets.only(
-            top: 15,
+            top: 5,
             left: 25,
             right: 25,
-            bottom: 20
+            bottom: 15
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -225,7 +249,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _userNameField() {
       return Container(
         padding: EdgeInsets.only(
-            left: 22,right: 22,top: 5
+            left: 22,right: 22,top: 10
         ),
         width: MediaQuery.of(context).size.width,
         child: CommonTextFieldWithError(
@@ -234,7 +258,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           errorMessages: errorMessages['user_name']?.toString()??'',
           controllerT: controllers['user_name'],
           borderRadius: 50,
-          inputHeight: 48,
+          inputHeight: 46,
           errorLeftRightMargin: 0,
           errorMsgHeight: 20,
           autoFocus: true,
@@ -281,7 +305,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       return Container(
         padding: EdgeInsets.only(
             left: 20,right: 20,
-            top: 0
         ),
         width: MediaQuery.of(context).size.width,
         child: CommonTextFieldWithError(
@@ -290,7 +313,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           errorMessages: errorMessages['email']?.toString()??'',
           controllerT: controllers['email'],
           borderRadius: 50,
-          inputHeight: 48,
+          inputHeight: 46,
           errorLeftRightMargin: 0,
           errorMsgHeight: 20,
           autoFocus: true,
@@ -302,7 +325,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           backgroundColor: Color(0xff323446),
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
-          hintText: "Email",
+          hintText: "Email address",
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -362,8 +385,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               errorMessages: errorMessages['password']?.toString()??'',
               controllerT: controllers['password'],
               borderRadius: 50,
-              inputHeight: 48,
-              errorMsgHeight: 20,
+              inputHeight: 46,
+              errorMsgHeight: 24,
               autoFocus: true,
               errorLeftRightMargin: 0,
               capitalization: CapitalizationText.sentences,
@@ -412,14 +435,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
       );
     }
 
-
     //Phone field
     _phoneField() {
       return Container(
         margin: EdgeInsets.only(
             left: 20,right: 20,
-            top: 0,
-            bottom: 0
         ),
         child: CommonTextFieldWithError(
           focusNode: focusNodes['phone'],
@@ -428,9 +448,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           errorMessages:  errorMessages['phone']!= null ?errorMessages['phone'].toString():'',
           controllerT: controllers['phone'],
           borderRadius: 50,
-          inputHeight: 48,
+          inputHeight: 45,
           autoFocus: true,
-          errorMsgHeight: 22,
+          errorMsgHeight: 20,
           errorLeftRightMargin: 0,
           enabledBorderColor: Color(0xff323446),
           focusedBorderColor: Color(0xff323446),
@@ -529,10 +549,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     bottomButton(){
       return Container(
-        margin: EdgeInsets.only(left: 20,right: 20,bottom: 20),
+        margin: EdgeInsets.only(left: 35,right: 35,bottom: 5),
         child: CommonButton(
-          buttonName: "Continue",
-          buttonHeight: 50,
+          buttonName: "Sign Up",
+          buttonHeight: 48,
           buttonColor:Color(0xFFCCA76A),
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -573,18 +593,41 @@ class _SignUpScreenState extends State<SignUpScreen> {
         leftText: "Already have an account\?",
         rightText: "Sign In",
         signInCallBack: (){
-          // Navigator.push(
-          //   context,
-          //   SlideRightRoute(
-          //       widget: MobileNumberScreen()),
-          // );
+          Navigator.push(
+            context,
+            SlideRightRoute(
+                widget: MobileNumberScreen()),
+          );
         },
       ),
     );
 
+    Widget selectGenderFiled = DropDownDataPicker();
+    Widget locationFiled = DropDownDataPicker(
+      hint:"Location" ,
+      itemList: items.map(buildMenuItem).toList(),
+    );
+
+
+    Widget checkBox =Container(
+      margin: EdgeInsets.only(left: 24,right: 15,bottom: 30,top: 5),
+    child: CustomCheckBox(
+      isChecked: isChecked,
+      onChange: (value) {
+        isChecked = value;
+        print(isChecked);
+      },
+      backgroundColor:Color(0xFFCCA76A),
+      borderColor: Colors.grey,
+      icon: Icons.done,
+      size: 20,
+      iconSize: 14,
+    ));
+
     return ContainerFirst(
       reverse: false,
       contextCurrentView: context,
+      appBackgroundColor:Color(0xff212327),
       bottomBarSafeAreaColor: Color(0xff212327),
       statusBarColor: Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
@@ -615,7 +658,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             _emailField(),
             _phoneField(),
             DatePickerWidget(),
+            selectGenderFiled,
+             locationFiled,
             _passwordField(),
+            checkBox,
 
             bottomButton(),
             signInText
@@ -625,4 +671,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
 
   }
+
+
+  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+      value:item,
+      child: Text(
+        item,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        ),
+      )
+  );
 }

@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
+import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:flutter/material.dart';
 
@@ -335,7 +336,7 @@ class _SignInScreenState extends State<SignInScreen> {
           Navigator.push(
             context,
             SlideRightRoute(
-                widget: MobileNumberScreen()),
+                widget: SignUpScreen()),
           );
         },
       ),

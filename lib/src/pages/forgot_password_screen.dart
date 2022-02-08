@@ -62,7 +62,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     _welcomeTextView() {
       return Container(
         margin: EdgeInsets.only(
-          top: 15,
+          top: 5,
           left: 25,
           right: 25,
           bottom: MediaQuery.of(context).size.height/ 10
@@ -172,6 +172,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
 
     return ContainerFirst(
+     appBackgroundColor:  Color(0xff212327),
       reverse: false,
       contextCurrentView: context,
       bottomBarSafeAreaColor: Color(0xff212327),

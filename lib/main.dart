@@ -8,6 +8,7 @@ import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/pages/welcome_screen.dart';
 import 'package:base_flutter_app/src/widgets/connet_to_social_card.dart';
+import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:base_flutter_app/src/widgets/slider_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -273,7 +274,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return SignUpScreen();
+    return TutorialScreen();
   }
 
   //Redirect to another screen if already loggedIn

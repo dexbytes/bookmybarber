@@ -52,7 +52,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
     _welcomeTextView() {
       return Container(
         margin: EdgeInsets.only(
-            top: 15,
+            top: 5,
             left: 25,
             right: 25,
             bottom: MediaQuery.of(context).size.height/ 11
@@ -272,6 +272,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
       contextCurrentView: context,
       bottomBarSafeAreaColor: Color(0xff212327),
       statusBarColor: Color(0xff212327),
+      appBackgroundColor:  Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/

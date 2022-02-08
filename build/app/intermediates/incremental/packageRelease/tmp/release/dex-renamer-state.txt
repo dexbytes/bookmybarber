@@ -1,4 +1,0 @@
-#Fri Feb 04 20:29:06 IST 2022
-base.0=/Volumes/Macintosh HD - Data/Projects/Book_Barber/bookmybarber/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
