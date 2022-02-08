@@ -450,6 +450,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_rating_bar">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_rating_bar-4.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_svg">
           <value>
             <list>
@@ -1075,6 +1082,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications_linux-0.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications_platform_interface-5.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_math_fork-0.5.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_rating_bar-4.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.23.0+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_swipe_button-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.8/lib" />

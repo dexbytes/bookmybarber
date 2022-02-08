@@ -29,6 +29,10 @@ class IconApps {
   String lock = 'assets/images/lock_icon.png';
   String passwordIcon = 'assets/images/password_icon.png';
   String closeIcon = 'assets/images/Close_icon.png';
+  String lineIcon = 'assets/images/line_icon.png';
+  String filterIcon = 'assets/images/fliter_icon.png';
+  String bellIcon = 'assets/images/bell_icon.png';
+  String micIcon = 'assets/images/mic_icon.png';
 
 
   iconImage(

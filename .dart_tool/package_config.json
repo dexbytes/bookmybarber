@@ -386,6 +386,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_rating_bar",
+      "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/flutter_rating_bar-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.23.0+1",
       "packageUri": "lib/",
@@ -872,7 +878,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-02-05T11:11:30.350511Z",
+  "generated": "2022-02-08T06:51:30.847141Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-285.0.dev"
 }
