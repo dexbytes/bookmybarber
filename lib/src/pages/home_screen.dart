@@ -144,12 +144,11 @@ class _HomeScreenState extends State<HomeScreen>
             left: 18, right: 0,
             top: 15 ),
         height: 185,
-        child: HomeCardWidget(isSecondDataVisible: true,)
+        child: HomeCardWidget(
+          isBookRowVisible: true,
+          isSecondDataVisible: true,)
 
     );
-
-
-
 
 
 
@@ -253,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen>
                             SizedBox(height: 30,),
                             SeeAllTextRow(leftTitle: "Barber Specialist",),
                             barberSpecialist,
-                            SizedBox(height: 10,),
+                            SizedBox(height: 5,),
                             SeeAllTextRow(leftTitle: "Popular salon nearby",),
                             homeCard2,
                           ],

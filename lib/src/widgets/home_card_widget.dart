@@ -11,6 +11,7 @@ class HomeCardWidget extends StatelessWidget {
   final TextStyle titleTextStyle;
   final TextStyle subtitleTextStyle;
   final bool isSecondDataVisible;
+  final bool isBookRowVisible;
 
   HomeCardWidget({
     this.color = Colors.deepOrangeAccent,
@@ -18,6 +19,7 @@ class HomeCardWidget extends StatelessWidget {
     this.titleTextStyle = const TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black,height: 0.5),
     this.subtitleTextStyle = const TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,height: 0.3),
     this.isSecondDataVisible = false,
+    this.isBookRowVisible = false,
   });
 
 
@@ -56,7 +58,7 @@ class HomeCardWidget extends StatelessWidget {
                         child: CachedNetworkImage(
                           imageUrl: isSecondDataVisible ? home2[index].imageUrl :home[index].imageUrl,
                           fit: BoxFit.cover,
-                            height:MediaQuery.of(context).size.height/7,
+                            height: isBookRowVisible ? MediaQuery.of(context).size.height/8 :MediaQuery.of(context).size.height/7,
                             width:MediaQuery.of(context).size.height /2,
                         )
 
@@ -105,6 +107,26 @@ class HomeCardWidget extends StatelessWidget {
                           ],
                         ),
                       ),
+                      isBookRowVisible ?
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                        Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.orangeAccent,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(12),
+                                bottomRight: Radius.circular(10))
+                          ),
+                          child: Text("Book",
+                            style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),),
+                          height: 25,
+                          width: 70,
+                        )
+                      ],):Container()
                     ],
                   ),
                 ),
