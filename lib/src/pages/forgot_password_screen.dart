@@ -227,7 +227,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     left: 16,
                     right: 16
                     ),
-                height: MediaQuery.of(context).size.height/2.3,
+                height: MediaQuery.of(context).size.height/2.2,
                 width: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                   color: Color(0xff384054),

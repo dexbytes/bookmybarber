@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen>
                 pinned: true,
                 floating: false,
                 expandedHeight: MediaQuery.of(context).size.height /3.4,
-                collapsedHeight: MediaQuery.of(context).size.height/7,
+                collapsedHeight: MediaQuery.of(context).size.height/6.7,
                 flexibleSpace: FlexibleSpaceBar(
                   expandedTitleScale: 1,
                   title: _userNameField(),
