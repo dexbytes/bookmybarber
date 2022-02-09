@@ -20,15 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Runner" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Runner" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/appbar/custom_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/appbar/custom_appbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/categories_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/categories_circular_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/home_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/home_card_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -101,22 +93,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1032" height="369" key="GridCell.Tab.0.bottom" timestamp="1644386143398">
+    <state width="1032" height="2" key="GridCell.Tab.0.bottom" timestamp="1644388905048">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1032" height="369" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644386143398" />
-    <state width="1032" height="369" key="GridCell.Tab.0.center" timestamp="1644386143398">
+    <state width="1032" height="2" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644388905048" />
+    <state width="1032" height="2" key="GridCell.Tab.0.center" timestamp="1644388905047">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1032" height="369" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644386143398" />
-    <state width="1032" height="369" key="GridCell.Tab.0.left" timestamp="1644386143398">
+    <state width="1032" height="2" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644388905047" />
+    <state width="1032" height="2" key="GridCell.Tab.0.left" timestamp="1644388905047">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1032" height="369" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644386143398" />
-    <state width="1032" height="369" key="GridCell.Tab.0.right" timestamp="1644386143398">
+    <state width="1032" height="2" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644388905047" />
+    <state width="1032" height="2" key="GridCell.Tab.0.right" timestamp="1644388905047">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1032" height="369" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644386143398" />
+    <state width="1032" height="2" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644388905047" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
