@@ -63,7 +63,7 @@ class CategoriesCircularWidget extends StatelessWidget {
     CategoriesList(
       title: 'Makeup',
       subtitle: '60 Places',
-      icon: 'assets/images/make_style_icon.png',
+      icon: 'assets/images/make_icon.png',
       colors: Color(0xffFE457C),
     ),
     CategoriesList(
@@ -75,7 +75,7 @@ class CategoriesCircularWidget extends StatelessWidget {
     CategoriesList(
       title: 'Spa',
       subtitle: '24 Places',
-      icon: 'assets/images/beard_icon.png',
+      icon: 'assets/images/beard-icon.png',
       colors: Color(0xffFE9654),
     ),
 

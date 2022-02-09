@@ -1,32 +1,26 @@
+import 'package:base_flutter_app/src/model/home_card_model.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 
+// ignore: must_be_immutable
 class HomeCardWidget extends StatelessWidget {
   final Color color;
   final Function(dynamic)? onCardClickCallBack;
   final TextStyle titleTextStyle;
   final TextStyle subtitleTextStyle;
+  final bool isSecondDataVisible;
 
   HomeCardWidget({
     this.color = Colors.deepOrangeAccent,
     this.onCardClickCallBack,
-    this.titleTextStyle = const TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.black),
-    this.subtitleTextStyle = const TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey),
+    this.titleTextStyle = const TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.black,height: 0.5),
+    this.subtitleTextStyle = const TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,height: 0.3),
+    this.isSecondDataVisible = false,
   });
 
-  List<HomeCardList> home = [
-    HomeCardList(
-      title: "RedBox Barber",
-      subtitle: "288 McClure Court, Arkansas",
-      icon: "assets/images/card_image.png",
-    ),
-    HomeCardList(
-      title: "Looks UniSex Salon",
-      subtitle: "288 McClure Court, Arkansas",
-      icon: "assets/images/card_image_2.png",
-    ),
 
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +28,7 @@ class HomeCardWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.only(right: 15,),
         physics: ClampingScrollPhysics(),
-        itemCount: home.length ,
+        itemCount: isSecondDataVisible ? home2.length :home.length ,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           return Container(
@@ -59,11 +53,18 @@ class HomeCardWidget extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image(image:AssetImage(home[index].icon),
+                        child: CachedNetworkImage(
+                          imageUrl: isSecondDataVisible ? home2[index].imageUrl :home[index].imageUrl,
                           fit: BoxFit.cover,
-                          height:MediaQuery.of(context).size.height/7,
-                          width:MediaQuery.of(context).size.height /2,
-                        ),
+                            height:MediaQuery.of(context).size.height/7,
+                            width:MediaQuery.of(context).size.height /2,
+                        )
+
+                        // Image(image:AssetImage(home[index].imageUrl),
+                        //   fit: BoxFit.cover,
+                        //   height:MediaQuery.of(context).size.height/7,
+                        //   width:MediaQuery.of(context).size.height /2,
+                        // ),
                         /* Ink.image(image:AssetImage("assets/images/card_image.png",),
                     fit: BoxFit.cover,
                     height:MediaQuery.of(context).size.height/6,
@@ -74,7 +75,7 @@ class HomeCardWidget extends StatelessWidget {
                       SizedBox(height: 10,),
 
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 12),
+                        margin: EdgeInsets.symmetric(horizontal: 8),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,18 +83,25 @@ class HomeCardWidget extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(home[index].title,
-                                style: titleTextStyle,
+                                Expanded(
+                                  child: Html(data: isSecondDataVisible ?home2[index].title :home[index].title,
+                                    style: {'html' : Style.fromTextStyle(
+                                      titleTextStyle
+                                    )},
+
+                                  ),
                                 ),
                                 StarRatingBar(
                                   removeViewCount: true,
                                 )
                               ],
                             ),
-                            SizedBox(height: 5,),
-                            Text(home[index].subtitle,
-                              style: subtitleTextStyle,
-                            )
+                            Html(data:isSecondDataVisible ?home2[index].subtitle :home[index].subtitle,
+                              style: {'html' : Style.fromTextStyle(
+                               subtitleTextStyle
+                              )},
+
+                            ),
                           ],
                         ),
                       ),
@@ -110,17 +118,5 @@ class HomeCardWidget extends StatelessWidget {
       ),
       );
   }
-}
-
-class HomeCardList {
-  final String title;
-  final String subtitle;
-  final String icon;
-
-  HomeCardList( {
-    required this.title,
-    required this.icon,
-    required this.subtitle,
-  });
 }
 

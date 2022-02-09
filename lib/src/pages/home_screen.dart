@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen>
 
     Widget barberSpecialist = Container(
         margin: EdgeInsets.only(
-            right: 0, left: 10),
+            right: 0, left: 10,top: 20),
         height: 130,
         child: BarberSpecialistCircularWidget()
     );
@@ -52,6 +52,14 @@ class _HomeScreenState extends State<HomeScreen>
             top: 15 ),
         height: 185,
         child: HomeCardWidget()
+
+    );
+    Widget homeCard2 = Container(
+        margin: EdgeInsets.only(
+            left: 18, right: 0,
+            top: 15 ),
+        height: 185,
+        child: HomeCardWidget(isSecondDataVisible: true,)
 
     );
 
@@ -101,9 +109,9 @@ class _HomeScreenState extends State<HomeScreen>
                       SizedBox(height: 30,),
                       SeeAllTextRow(leftTitle: "Barber Specialist",),
                       barberSpecialist,
-                      SizedBox(height: 15,),
+                      SizedBox(height: 10,),
                       SeeAllTextRow(leftTitle: "Popular salon nearby",),
-                      homeCard,
+                      homeCard2,
                     ],
                   ),
                 ),

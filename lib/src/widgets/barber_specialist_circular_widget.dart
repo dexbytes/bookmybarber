@@ -17,23 +17,28 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   List<CategoriesList> categories = [
     CategoriesList(
       title: 'Mike West',
-      icon: 'assets/images/barber_image.png',
+      imageUrl: "https://i.pinimg.com/750x/62/fc/86/62fc86d9be2cbe991550f2d387253705.jpg"
+      // imageUrl: 'assets/images/barber_image.png',
     ),
     CategoriesList(
       title: 'Thomas',
-      icon: 'assets/images/barber_image_2.png',
+      imageUrl: "https://i.pinimg.com/originals/f4/44/f9/f444f9001d9c16da404a13d1bb4b766c.jpg"
+      // icon: 'assets/images/barber_image_2.png',
     ),
     CategoriesList(
       title: 'Kevin Doyle',
-      icon: 'assets/images/barber_image_3.png',
+      imageUrl: "http://images6.fanpop.com/image/photos/41600000/Elizabeth-Olsen-actresses-41613079-300-375.jpg"
+      // imageUrl: 'assets/images/barber_image_3.png',
     ),
     CategoriesList(
       title: 'Victor Black',
-      icon: 'assets/images/barber_image_4.png',
+      imageUrl: "https://i.pinimg.com/474x/14/d3/55/14d3552e3cad3c26e72ca6ab9d4ebc5b.jpg"
+      // imageUrl: 'assets/images/barber_image_4.png',
     ),
     CategoriesList(
       title: 'Edward',
-      icon: 'assets/images/barber_image_5.png',
+      imageUrl: "https://i.pinimg.com/originals/e5/31/f1/e531f1ff3ac8a2503a0951f5c547715d.png"
+      // icon: 'assets/images/barber_image_5.png',
     ),
 
   ];
@@ -84,9 +89,16 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: Colors.transparent,
                             ),
-                            child: Image(image: AssetImage(categories[index].icon,),
-                            fit: BoxFit.cover,
-                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: CachedNetworkImage(
+                                imageUrl: categories[index].imageUrl,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                            // Image(image: AssetImage(categories[index].imageUrl,),
+                            // fit: BoxFit.cover,
+                            // ),
                           )
                           // Align(
                           //   alignment: Alignment.center,
@@ -139,11 +151,11 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
 
 class CategoriesList {
   final String title;
-  final String icon;
+  final String imageUrl;
 
   CategoriesList( {
     required this.title,
-    required this.icon,
+    required this.imageUrl,
   });
 }
 

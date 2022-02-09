@@ -1,4 +1,5 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -110,7 +111,10 @@ PreferredSizeWidget appBarWithCurve(
           padding: EdgeInsets.only(top: 60),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image:AssetImage('assets/images/home_screen_image.png',),
+              image:
+              // NetworkImage("https://dm.henkel-dam.com/is/image/henkel/woman-getting-a-new-hairstyle-at-the-salon-wcms-us-v2"),
+
+              AssetImage('assets/images/home_screen_image.png',),
               fit: BoxFit.cover
             )
           ),
