@@ -79,7 +79,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
             // shape: BoxShape.circle,
             image: DecorationImage(
               image: AssetImage(tutorialModelList[index].imageUrl),
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
         ),

@@ -9,6 +9,8 @@ import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
+
 class SignInScreen extends StatefulWidget {
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -295,7 +297,13 @@ class _SignInScreenState extends State<SignInScreen> {
         textStyle: TextStyle(fontSize: 18,
           fontWeight: FontWeight.w600,
           color: Color(0xff212327),),
-        backCallback:(){},
+        backCallback:(){
+          Navigator.push(
+            context,
+            SlideRightRoute(
+                widget: HomeScreen()),
+          );
+        },
         isBottomMarginRequired: false,
       ),
     );
@@ -357,21 +365,47 @@ class _SignInScreenState extends State<SignInScreen> {
             topRight: Radius.circular(25),
           ),
         ),
-        child: Column(
-          children: [
-            _welcomeTextView(),
-            SizedBox(height: 18),
-            _emailField(),
-            _passwordField(),
-            bottomButton(),
-            forgotText(),
-            SizedBox(height: 28,),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: signUpText
-            )
-          ],
-        ),
+        child: ContainerMenuPage(
+          contextCurrentView: context,
+          scrollPadding: EdgeInsets.only(bottom: 70),
+          /* statusBarColor: Colors.amber,
+          bottomBarSafeAreaColor: Colors.amber,*/
+          isSingleChildScrollViewNeed: true,
+          isFixedDeviceHeight: true,
+          appBarHeight: -1,
+          appBar: Container(),
+          containChild: Column(
+            children: [
+              _welcomeTextView(),
+              SizedBox(height: 18),
+              _emailField(),
+              _passwordField(),
+              bottomButton(),
+              forgotText(),
+              SizedBox(height: 28,),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: signUpText
+              )
+            ],
+          ),
+        )
+
+        // Column(
+        //   children: [
+        //     _welcomeTextView(),
+        //     SizedBox(height: 18),
+        //     _emailField(),
+        //     _passwordField(),
+        //     bottomButton(),
+        //     forgotText(),
+        //     SizedBox(height: 28,),
+        //     Align(
+        //       alignment: Alignment.bottomCenter,
+        //       child: signUpText
+        //     )
+        //   ],
+        // ),
       ),
     );
 
@@ -383,7 +417,7 @@ class _SignInScreenState extends State<SignInScreen> {
       // scrollPadding: EdgeInsets.only(bottom: 81),
       /* statusBarColor: Colors.amber,
         bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: false,
+      isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
       appBarHeight: -1,
       appBar: Container(),

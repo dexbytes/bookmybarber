@@ -224,8 +224,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Container(
                 padding: EdgeInsets.only(
                     top: 35,
-                    left: 20,
-                    right: 20
+                    left: 16,
+                    right: 16
                     ),
                 height: MediaQuery.of(context).size.height/2.3,
                 width: MediaQuery.of(context).size.height,
@@ -256,7 +256,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 48,),
+                    SizedBox(height: 45,),
                     CommonButton(
                       buttonHeight: 50,
                       buttonName: "Done",

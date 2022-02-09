@@ -610,7 +610,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
     Widget checkBox =Container(
-      margin: EdgeInsets.only(left: 24,right: 15,bottom: 30,top: 5),
+      margin: EdgeInsets.only(left: 20,right: 11,bottom: 30,top: 5),
     child: CustomCheckBox(
       isChecked: isChecked,
       onChange: (value) {
@@ -661,7 +661,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             selectGenderFiled,
              locationFiled,
             _passwordField(),
-            checkBox,
+             checkBox,
 
             bottomButton(),
             signInText
