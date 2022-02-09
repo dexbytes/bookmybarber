@@ -85,7 +85,7 @@ class CategoriesCircularWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+      padding: EdgeInsets.only(left: 20,right: 15),
       physics: ClampingScrollPhysics(),
       itemCount: isListTwoVisible ? categories2.length : categories.length ,
       shrinkWrap: true,

@@ -47,7 +47,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+      padding: EdgeInsets.only(left: 18),
       physics: ClampingScrollPhysics(),
       itemCount:categories.length ,
       shrinkWrap: true,

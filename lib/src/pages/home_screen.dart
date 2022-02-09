@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
+import 'package:base_flutter_app/src/widgets/categories_text_list_widget.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
@@ -109,40 +110,39 @@ class _HomeScreenState extends State<HomeScreen>
     }
 
     Widget categories = Container(
-        margin: EdgeInsets.only(
-            right: 0, left: 20),
         height: 150,
         child: CategoriesCircularWidget()
     );
 
     Widget barberSpecialist = Container(
-        margin: EdgeInsets.only(
-            right: 0, left: 10,top: 20),
+        margin: EdgeInsets.only(top: 20),
         height: 130,
         child: BarberSpecialistCircularWidget()
     );
 
     Widget services = Container(
-        margin: EdgeInsets.only(
-            right: 0, left: 20),
+
         height: 150,
         child: CategoriesCircularWidget(
           isListTwoVisible: true,
         )
     );
 
-    Widget homeCard = Container(
+    Widget categoriesTextList = Container(
         margin: EdgeInsets.only(
-            left: 18, right: 0,
-            top: 15 ),
+            right: 0, left: 0),
+        height: 30,
+        child: CategoriesTextWidget()
+    );
+
+    Widget homeCard = Container(
+        margin: EdgeInsets.only(top: 15 ),
         height: 185,
         child: HomeCardWidget()
 
     );
     Widget homeCard2 = Container(
-        margin: EdgeInsets.only(
-            left: 18, right: 0,
-            top: 15 ),
+        margin: EdgeInsets.only(top: 15 ),
         height: 185,
         child: HomeCardWidget(
           isBookRowVisible: true,
@@ -250,9 +250,9 @@ class _HomeScreenState extends State<HomeScreen>
                             SeeAllTextRow(leftTitle: "Popular salon nearby",),
                             homeCard,
                             SizedBox(height: 30,),
-                            SeeAllTextRow(leftTitle: "Barber Specialist",),
+                            categoriesTextList,
+                            // SeeAllTextRow(leftTitle: "Barber Specialist",),
                             barberSpecialist,
-                            SizedBox(height: 5,),
                             SeeAllTextRow(leftTitle: "Popular salon nearby",),
                             homeCard2,
                           ],

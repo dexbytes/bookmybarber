@@ -28,7 +28,7 @@ class HomeCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.only(right: 15,),
+        padding: EdgeInsets.only(right: 15,left: 20),
         physics: ClampingScrollPhysics(),
         itemCount: isSecondDataVisible ? home2.length :home.length ,
         shrinkWrap: true,
