@@ -15,7 +15,7 @@ class HomeCardWidget extends StatelessWidget {
   HomeCardWidget({
     this.color = Colors.deepOrangeAccent,
     this.onCardClickCallBack,
-    this.titleTextStyle = const TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.black,height: 0.5),
+    this.titleTextStyle = const TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black,height: 0.5),
     this.subtitleTextStyle = const TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,height: 0.3),
     this.isSecondDataVisible = false,
   });

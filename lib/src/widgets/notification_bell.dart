@@ -54,59 +54,62 @@ class NotificationBal extends StatelessWidget {
       color: iconDataColor,
     ))
         : Container(
-      child: iconApps.iconImage(imageUrl: iconApps.bellIcon,iconSize: Size(24, 24)),
+      child: iconApps.iconImage(imageUrl: iconApps.bellIcon,iconSize: Size(26, 26)),
     );
 
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding:  EdgeInsets.all(8.0),
-        child: Container(
-          width: rightIconSizeTemp,
-          padding: const EdgeInsets.symmetric(horizontal: 0),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                child: menuIcon,
-              ),
-              // Column(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: <Widget>[menuIcon],
-              // ),
-              notificationCount > 0
-                  ? Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 0),
-                  child: Container(
-                    //padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: boxShapeCircleColor != null
-                            ? boxShapeCircleColor
-                            : /*Colors.red*/ appColors.iconColor),
-                    alignment: Alignment.center,
-                    child: Container(
-                        margin: EdgeInsets.all(4),
-                        child: Center(
-                          child: Text(
-                              '${notificationCount <= 99 ? notificationCount : "99+"}',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: countTextSize != null
-                                      ? countTextSize
-                                      : 12,
-                                  color: Colors
-                                      .white /*,backgroundColor: Colors.red*/
-                              )),
-                        )),
-                  ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        child: Padding(
+          padding:  EdgeInsets.all(8.0),
+          child: Container(
+            width: rightIconSizeTemp,
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  child: menuIcon,
                 ),
-              )
-                  : Container()
-            ],
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: <Widget>[menuIcon],
+                // ),
+                notificationCount > 0
+                    ? Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 0),
+                    child: Container(
+                      //padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: boxShapeCircleColor != null
+                              ? boxShapeCircleColor
+                              : /*Colors.red*/ appColors.iconColor),
+                      alignment: Alignment.center,
+                      child: Container(
+                          margin: EdgeInsets.all(4),
+                          child: Center(
+                            child: Text(
+                                '${notificationCount <= 99 ? notificationCount : "99+"}',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: countTextSize != null
+                                        ? countTextSize
+                                        : 12,
+                                    color: Colors
+                                        .white /*,backgroundColor: Colors.red*/
+                                )),
+                          )),
+                    ),
+                  ),
+                )
+                    : Container()
+              ],
+            ),
           ),
         ),
       ),
