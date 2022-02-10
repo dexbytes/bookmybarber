@@ -15,23 +15,28 @@ class DetailScreenStarRow extends StatelessWidget {
   DetailScreenStarRow({
     this.onButtonClickCallBack,
     this.buttonText = "OPEN",
-    this.buttonTextStyle = const TextStyle(color:  Color(0xff00B2AE),fontSize: 12,fontWeight: FontWeight.w500),
-    this.buttonHeight  = 25,
+    this.buttonTextStyle = const TextStyle(color:  Color(0xff00B2AE),fontSize: 13,fontWeight: FontWeight.w600),
+    this.buttonHeight  = 22,
     this.buttonWidth = 50,
     this.buttonBorderWidth = 1,
     this.buttonColor = const Color(0xff00B2AE),
-    this.buttonBorderRadius = 5,
+    this.buttonBorderRadius = 3,
 
   });
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisSize: MainAxisSize.max,
       children: [
         StarRatingBar(
           iconCount: 5,
-          iconSize: 22,
+          iconSize: 24,
           removeItemRating: true,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          itemReviewCount: 125,
+
         ),
         Container(
           alignment: Alignment.center,

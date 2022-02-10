@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_page.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
@@ -268,7 +269,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return BarberSpecialistCircularWidget(isSubtitleVisible: true,isSecondDataVisible: true,);
+    return SalonDetailScreen();
   }
 
   //Redirect to another screen if already loggedIn

@@ -5,6 +5,7 @@ class SeeAllTextRow extends StatelessWidget {
   final String rightTitle;
   final TextStyle leftTitleTextStyle;
   final TextStyle rightTitleTextStyle;
+  final bool isRightTextVisible;
   final EdgeInsets margin;
   final EdgeInsets padding;
   final MainAxisAlignment mainAxisAlignment;
@@ -26,6 +27,7 @@ class SeeAllTextRow extends StatelessWidget {
     this.rightTextCallBack,
     this.padding = const EdgeInsets.only(top: 0,bottom: 0),
     this.height = 24,
+    this.isRightTextVisible = true,
 
 
   }) : super(key: key);
@@ -45,13 +47,16 @@ class SeeAllTextRow extends StatelessWidget {
                 print("Categories");
               },
               child: Text(leftTitle,style: leftTitleTextStyle,)),
-          GestureDetector(
-              onTap: (){
-                this.rightTextCallBack?.call();
-                print("sell All");
+          Visibility(
+            visible: isRightTextVisible,
+            child: GestureDetector(
+                onTap: (){
+                  this.rightTextCallBack?.call();
+                  print("sell All");
 
-              },
-              child: Text(rightTitle,style: rightTitleTextStyle,)),
+                },
+                child: Text(rightTitle,style: rightTitleTextStyle,)),
+          ),
         ],
       ),
     );

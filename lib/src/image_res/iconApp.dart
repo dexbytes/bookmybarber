@@ -33,6 +33,7 @@ class IconApps {
   String filterIcon = 'assets/images/fliter_icon.png';
   String bellIcon = 'assets/images/bell_icon.png';
   String micIcon = 'assets/images/mic_icon.png';
+  String detailAppbarIcon = 'assets/images/detail_appbar_icon.png';
 
 
   iconImage(

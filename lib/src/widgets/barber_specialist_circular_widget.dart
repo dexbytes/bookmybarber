@@ -11,14 +11,16 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   final bool isSecondDataVisible;
   final TextStyle titleTextStyle;
   final TextStyle subtitleTextStyle;
+  final EdgeInsetsGeometry padding;
 
   BarberSpecialistCircularWidget({Key? key,
     this.onClickCardCallBack,
     this.isFeatureVisible = true,
-    this.titleTextStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color:  Colors.white,),
-    this.subtitleTextStyle = const TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Color(0xffCBAD90)),
+    this.titleTextStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color:  Color(0xff828588)),
+    this.subtitleTextStyle = const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w400, color: Color(0xffCBAD90)),
     this.isSubtitleVisible = false,
     this.isSecondDataVisible = false,
+    this.padding = const EdgeInsets.only(left: 10),
   }) : super(key: key);
 
 
@@ -28,7 +30,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(left: 18),
+      padding:padding,
       physics: ClampingScrollPhysics(),
       itemCount: isSecondDataVisible ?barber2.length :barber.length ,
       shrinkWrap: true,
@@ -131,7 +133,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                       child: Text("FEATURED",
                         style: TextStyle(fontSize: 9,fontWeight: FontWeight.w500),
                       ),
-                    ):Container(),
+                    ):Container(height: 0,width: 0,),
                   ),
                 )
               ],
@@ -141,7 +143,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
       }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,         //for most popular item list count : 2  & for BrandCardView count :4
         mainAxisSpacing: 5,       //for most popular item list mainSpacing : 5  & for BrandCardView mainSpacing : 10
-        mainAxisExtent: isSubtitleVisible ? 100 :85
+        mainAxisExtent: isSubtitleVisible ? 96 :85
     ),
     );
 

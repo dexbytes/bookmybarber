@@ -8,13 +8,14 @@ class StarRatingBar extends StatelessWidget {
   final double iconSize;
   final Color color;
   final Function(dynamic)? onStarClickCallBack;
-  final int itemViewCount;
+  final int itemReviewCount;
   final TextStyle itemRatingTextStyle;
   final TextStyle itemViewCountTextStyle;
   final bool removeItemRating;
   final bool removeViewCount;
   final bool updateOnDrag;
   final bool ignoreGestures;
+  final CrossAxisAlignment crossAxisAlignment;
 
   StarRatingBar({
     this.iconCount = 1,
@@ -23,17 +24,19 @@ class StarRatingBar extends StatelessWidget {
     this.iconSize = 17,
     this.color = const Color(0xffE4B343),
     this.onStarClickCallBack,
-    this.itemViewCount = 0,
+    this.itemReviewCount = 0,
     this.itemRatingTextStyle = const TextStyle(color: Colors.grey,fontSize: 13.5,fontWeight: FontWeight.w500,),
     this.itemViewCountTextStyle = const TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w400,),
     this.removeItemRating = false,
     this.removeViewCount = false,
     this.updateOnDrag = false,
     this.ignoreGestures = true,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
   });
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: crossAxisAlignment,
       children: [
         RatingBar.builder(
           glow: false,
@@ -57,13 +60,13 @@ class StarRatingBar extends StatelessWidget {
         ),
         SizedBox(width: 4),
         Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: crossAxisAlignment,
           children: [
             removeItemRating ?Container():
             Text("$initialRating",style: itemRatingTextStyle,),
             SizedBox(width: 3),
             removeViewCount ?Container():
-            Text("($itemViewCount Reviews)",style: itemViewCountTextStyle,),
+            Text("($itemReviewCount Reviews)",style: itemViewCountTextStyle,),
           ],
         ),
 
