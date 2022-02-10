@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/star_rating_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/star_rating_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +53,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
   </component>
@@ -94,22 +97,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1034" height="263" key="GridCell.Tab.0.bottom" timestamp="1644410428565">
+    <state width="1034" height="353" key="GridCell.Tab.0.bottom" timestamp="1644480000662">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="263" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644410428565" />
-    <state width="1034" height="263" key="GridCell.Tab.0.center" timestamp="1644410428564">
+    <state width="1034" height="353" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644480000662" />
+    <state width="1034" height="353" key="GridCell.Tab.0.center" timestamp="1644480000662">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="263" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644410428564" />
-    <state width="1034" height="263" key="GridCell.Tab.0.left" timestamp="1644410428564">
+    <state width="1034" height="353" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644480000662" />
+    <state width="1034" height="353" key="GridCell.Tab.0.left" timestamp="1644480000661">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="263" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644410428564" />
-    <state width="1034" height="263" key="GridCell.Tab.0.right" timestamp="1644410428565">
+    <state width="1034" height="353" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644480000661" />
+    <state width="1034" height="353" key="GridCell.Tab.0.right" timestamp="1644480000662">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="263" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644410428565" />
+    <state width="1034" height="353" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644480000662" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
       <screen x="0" y="25" width="1366" height="670" />
     </state>

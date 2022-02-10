@@ -3,6 +3,8 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
+import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
+import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -266,7 +268,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return BarberSpecialistCircularWidget(isSubtitleVisible: true,isSecondDataVisible: true,);
   }
 
   //Redirect to another screen if already loggedIn
