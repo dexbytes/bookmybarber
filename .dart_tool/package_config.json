@@ -596,6 +596,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "readmore",
+      "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/readmore-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "rxdart",
       "rootUri": "file:///Users/dexbytes/.pub-cache/hosted/pub.dartlang.org/rxdart-0.27.3",
       "packageUri": "lib/",
@@ -878,7 +884,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-02-09T10:21:32.820722Z",
+  "generated": "2022-02-10T13:19:09.695253Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-285.0.dev"
 }

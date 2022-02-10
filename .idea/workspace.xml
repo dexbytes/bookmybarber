@@ -26,14 +26,18 @@
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/see_all_text_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/see_all_text_row.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/star_rating_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/star_rating_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_menu_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_menu_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,22 +110,22 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1034" height="409" key="GridCell.Tab.0.bottom" timestamp="1644488526838">
+    <state width="1034" height="409" key="GridCell.Tab.0.bottom" timestamp="1644501958418">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="409" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644488526838" />
-    <state width="1034" height="409" key="GridCell.Tab.0.center" timestamp="1644488526837">
+    <state width="1034" height="409" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644501958418" />
+    <state width="1034" height="409" key="GridCell.Tab.0.center" timestamp="1644501958417">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="409" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644488526837" />
-    <state width="1034" height="409" key="GridCell.Tab.0.left" timestamp="1644488526837">
+    <state width="1034" height="409" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644501958417" />
+    <state width="1034" height="409" key="GridCell.Tab.0.left" timestamp="1644501958415">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="409" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644488526837" />
-    <state width="1034" height="409" key="GridCell.Tab.0.right" timestamp="1644488526837">
+    <state width="1034" height="409" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644501958415" />
+    <state width="1034" height="409" key="GridCell.Tab.0.right" timestamp="1644501958418">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
-    <state width="1034" height="409" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644488526837" />
+    <state width="1034" height="409" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644501958418" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
