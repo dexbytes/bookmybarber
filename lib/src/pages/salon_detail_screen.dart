@@ -97,14 +97,14 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
     Widget starRow = Container(
         margin: EdgeInsets.only(
-            right: 20, left: 20,bottom: 20),
+            right: 14, left: 14,bottom: 10),
         height: 30,
         child: DetailScreenStarRow(),
     );
 
     Widget heading = Container(
-        margin: EdgeInsets.only(bottom: 50,left: 5),
-        height: 30,
+        margin: EdgeInsets.only(bottom: 0,left: 0),
+        height: 55,
         child:DetailHeadingWidget(mainAxisAlignment: MainAxisAlignment.end,)
 
     );
@@ -118,7 +118,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
       blendMode: BlendMode.darken,
       child: Container(
         child: CachedNetworkImage(
-          imageUrl: "https://dm.henkel-dam.com/is/image/henkel/woman-getting-a-new-hairstyle-at-the-salon-wcms-us-v2",
+          imageUrl: "https://us.123rf.com/450wm/gstockstudio/gstockstudio1601/gstockstudio160100134/51259655-making-haircut-look-perfect-young-bearded-man-getting-haircut-by-hairdresser-while-sitting-in-chair-.jpg?ver=6",
           fit:  BoxFit.cover,),
       ),
     );
@@ -186,8 +186,8 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 backgroundColor: Color(0xff212327),
                                 pinned: true,
                                 floating: true,
-                                expandedHeight: MediaQuery.of(context).size.height /3.1,
-                                collapsedHeight: 60,
+                                expandedHeight: MediaQuery.of(context).size.height /3.3,
+                                collapsedHeight: MediaQuery.of(context).size.height /6,
                                 flexibleSpace: FlexibleSpaceBar(
                                   expandedTitleScale: 1,
                                   background:Stack(
@@ -196,10 +196,22 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                       Container(
                                         child:backgroundImage
                                       ),
-                                      starRow,
-                                      heading
+                                      // starRow,
+                                      // heading
                                     ],
                                   ),
+                                  title:Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      heading,
+                                      starRow,
+
+                                    ],
+                                  ) ,
+                                  titlePadding: EdgeInsets.zero
+
 
                                   // child: Image( image:AssetImage('assets/images/home_screen_image.png',),fit: BoxFit.cover,)),
                                 ),

@@ -15,12 +15,12 @@ class DetailScreenStarRow extends StatelessWidget {
   DetailScreenStarRow({
     this.onButtonClickCallBack,
     this.buttonText = "OPEN",
-    this.buttonTextStyle = const TextStyle(color:  Color(0xff00B2AE),fontSize: 13,fontWeight: FontWeight.w600),
-    this.buttonHeight  = 22,
+    this.buttonTextStyle = const TextStyle(color:  Color(0xff00B2AE),fontSize: 12.5,fontWeight: FontWeight.w600),
+    this.buttonHeight  = 20,
     this.buttonWidth = 50,
     this.buttonBorderWidth = 1,
     this.buttonColor = const Color(0xff00B2AE),
-    this.buttonBorderRadius = 3,
+    this.buttonBorderRadius = 4,
 
   });
   @override
@@ -32,22 +32,30 @@ class DetailScreenStarRow extends StatelessWidget {
       children: [
         StarRatingBar(
           iconCount: 5,
-          iconSize: 24,
+          iconSize: 20,
           removeItemRating: true,
           crossAxisAlignment: CrossAxisAlignment.end,
           itemReviewCount: 125,
-
+          initialRating: 3,
         ),
-        Container(
-          alignment: Alignment.center,
-          height: buttonHeight,
-          width: buttonWidth,
-          decoration: BoxDecoration(
-            border: Border.all(width: buttonBorderWidth,color:buttonColor),
-            borderRadius: BorderRadius.circular(buttonBorderRadius)
+        Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () {
+              this.onButtonClickCallBack?.call(0);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              height: buttonHeight,
+              width: buttonWidth,
+              decoration: BoxDecoration(
+                border: Border.all(width: buttonBorderWidth,color:buttonColor),
+                borderRadius: BorderRadius.circular(buttonBorderRadius)
+              ),
+              child: Text(buttonText,
+                style: buttonTextStyle),
+            ),
           ),
-          child: Text(buttonText,
-            style: buttonTextStyle),
         )
 
       ],

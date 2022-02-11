@@ -1,4 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
+import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
@@ -41,42 +43,27 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
     Widget openHours = Container(
       padding: EdgeInsets.only(left: 20,right: 15),
-       height: 110,
-       child: Column(
+       height: 70,
+       child:Column(
          children: [
-           Row(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.end,
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 mainAxisSize: MainAxisSize.max,
-                 children: [
-                   Padding(
-                     padding: EdgeInsets.only(bottom: 0.0),
-                     child: Text("\•",style:TextStyle(fontSize: 25,color: Colors.green),),
-                   ),
-                   SizedBox(width: 5,),
-                   Text("Monday - Friday",style: TextStyle(fontSize: 15,color: Colors.white70),),
+           DetailHourView(),
+           DetailHourView(
+             days: "Saturday - Sunday",
+             time: "9:00 AM - 1:00PM",
+             padding:EdgeInsets.only(right: 20),
 
-                 ],
-               ),
-               SizedBox(width: 10,),
-               Expanded(
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   mainAxisSize: MainAxisSize.max,
-                   children: [
-                     Text("8:30AM - 9:30PM",style: TextStyle(fontSize: 15.5,color: Colors.white70),),
-                   ],
-                 ),
-               )
+           ),
 
-             ],
-           )
          ],
-       ));
+       )
+    );
+
+
+
+    Widget address = Container(
+      margin: EdgeInsets.only(left: 10,right: 15),
+       height: 100,
+       child: DetailAddressView());
 
 
 
@@ -110,7 +97,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               isRightTextVisible: false,
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
             ),
-            openHours
+            openHours,
+            address
           ],
         )
     );
