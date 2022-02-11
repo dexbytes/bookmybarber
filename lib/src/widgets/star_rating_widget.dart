@@ -7,6 +7,7 @@ class StarRatingBar extends StatelessWidget {
   final double initialRating;
   final double iconSize;
   final Color color;
+  final Color unratedColor;
   final Function(dynamic)? onStarClickCallBack;
   final int itemReviewCount;
   final TextStyle itemRatingTextStyle;
@@ -23,6 +24,7 @@ class StarRatingBar extends StatelessWidget {
     this.initialRating = 4,
     this.iconSize = 17,
     this.color = const Color(0xffE4B343),
+    this.unratedColor = Colors.white,
     this.onStarClickCallBack,
     this.itemReviewCount = 0,
     this.itemRatingTextStyle = const TextStyle(color: Colors.grey,fontSize: 13.5,fontWeight: FontWeight.w500,),
