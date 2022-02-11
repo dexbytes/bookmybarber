@@ -19,18 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_screen_heading_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_screen_heading_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" afterDir="false" />
-    </list>
+    <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
