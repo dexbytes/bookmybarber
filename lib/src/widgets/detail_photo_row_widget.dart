@@ -29,7 +29,7 @@ class DetailPhotoView extends StatelessWidget {
       itemCount:photo.length,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
-        return InkWell(
+        return GestureDetector(
           onTap: (){
             this.cardCallBack?.call();
           },
