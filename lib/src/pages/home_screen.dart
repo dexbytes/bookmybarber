@@ -1,6 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
@@ -10,7 +11,6 @@ import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -27,24 +27,15 @@ class _HomeScreenState extends State<HomeScreen>
   TextEditingController inputController = new TextEditingController();
 
   Map<String, TextEditingController> controllers = {
-    'phone': new TextEditingController(),
-    'user_name': new TextEditingController(),
-    'email': new TextEditingController(),
-    'password': new TextEditingController(),
+    'search': new TextEditingController(),
   };
 
   Map<String, FocusNode> focusNodes = {
-    'phone': new FocusNode(),
-    'user_name': new FocusNode(),
-    'email': new FocusNode(),
-    'password': new FocusNode(),
+    'search': new FocusNode(),
   };
 
   Map<String, String> errorMessages = {
-    'phone': "",
-    'user_name': "",
-    'email': "",
-    'password': "",
+    'search': "",
   };
 
 
@@ -57,10 +48,10 @@ class _HomeScreenState extends State<HomeScreen>
             left: 14,right: 14,top: 0,
         ),
         child: CommonTextFieldWithError(
-          focusNode: focusNodes['user_name'],
+          focusNode: focusNodes['search'],
           isShowBottomErrorMsg: true,
-          errorMessages: errorMessages['user_name']?.toString()??'',
-          controllerT: controllers['user_name'],
+          errorMessages: errorMessages['search']?.toString()??'',
+          controllerT: controllers['search'],
           borderRadius: 15,
           inputHeight: 45,
           errorLeftRightMargin: 0,
@@ -103,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
           },
           onEndEditing: (value) {
             // _checkName(value, 'user_name');
-            FocusScope.of(context).requestFocus(focusNodes['user_name']);
+            FocusScope.of(context).requestFocus(focusNodes['search']);
           },
         ),
       );
@@ -138,9 +129,18 @@ class _HomeScreenState extends State<HomeScreen>
     Widget homeCard = Container(
         margin: EdgeInsets.only(top: 15 ),
         height: 185,
-        child: HomeCardWidget()
+        child: HomeCardWidget(
+          onCardClickCallBack: (){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: SalonDetailScreen()),
+            );
+          },
+        )
 
     );
+
     Widget homeCard2 = Container(
         margin: EdgeInsets.only(top: 15 ),
         height: 185,

@@ -193,7 +193,9 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                               SliverAppBar(
                                 elevation: 0,
                                 leading: IconButton(
-                                  onPressed: (){},
+                                  onPressed: (){
+                                    Navigator.pop(context);
+                                  },
                                   icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
                                       iconSize: Size(30, 30),
                                       imageColor: Colors.white),

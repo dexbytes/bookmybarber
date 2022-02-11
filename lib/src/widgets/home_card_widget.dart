@@ -7,7 +7,7 @@ import 'package:flutter_html/flutter_html.dart';
 // ignore: must_be_immutable
 class HomeCardWidget extends StatelessWidget {
   final Color color;
-  final Function(dynamic)? onCardClickCallBack;
+  final onCardClickCallBack;
   final TextStyle titleTextStyle;
   final TextStyle subtitleTextStyle;
   final bool isSecondDataVisible;
@@ -47,7 +47,9 @@ class HomeCardWidget extends StatelessWidget {
                 margin: EdgeInsets.zero,
                 color: Colors.white,
                 child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    this.onCardClickCallBack?.call();
+                  },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
