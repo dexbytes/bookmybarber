@@ -9,6 +9,7 @@ import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 
@@ -67,6 +68,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                 Tab(text: "Review",),
               ],
               labelColor:Color(0xffE4B343),
+              isScrollable: false,
               unselectedLabelColor: Color(0xff828588),
               labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
               unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
