@@ -1,6 +1,7 @@
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
 import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
+import 'package:base_flutter_app/src/widgets/detail_photo_row_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
@@ -66,6 +67,12 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
        child: DetailAddressView());
 
 
+    Widget image = Container(
+      margin: EdgeInsets.only(left: 14),
+       height: 80,
+       child: DetailPhotoView());
+
+
 
     return ContainerMenuPage(
       // bottomBarSafeAreaColor: Colors.transparent,
@@ -98,7 +105,14 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
             ),
             openHours,
-            address
+            address,
+
+            SeeAllTextRow(
+              margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
+              leftTitle: "Photos",
+              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+            ),
+            image
           ],
         )
     );

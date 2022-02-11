@@ -52,7 +52,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             length: 4,
             initialIndex: 0,
             child: Container(
-              height: 400,
+              height: 550,
               child: TabBarView(
                 controller: _tabController,
                 children: [

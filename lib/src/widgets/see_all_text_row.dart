@@ -49,7 +49,7 @@ class SeeAllTextRow extends StatelessWidget {
               child: Text(leftTitle,style: leftTitleTextStyle,)),
           Visibility(
             visible: isRightTextVisible,
-            child: GestureDetector(
+            child: InkWell(
                 onTap: (){
                   this.rightTextCallBack?.call();
                   print("sell All");
