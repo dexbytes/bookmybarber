@@ -150,6 +150,7 @@ class ContainerFirst extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor:Color(0xff212327),
       body: SafeArea(
         bottom: false,
         top: false,

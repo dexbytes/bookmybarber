@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_services_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_heading_widget.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
@@ -79,13 +80,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             length: 4,
             initialIndex: selectedTab,
             child: Container(
-              height: MediaQuery.of(context).size.height + 335,
+              height: MediaQuery.of(context).size.height + 333,
               child: TabBarView(
                 controller: tabController,
                 children: [
                   // DescriptionPage(),
                   SalonDetailAboutScreen(),
-                  Center(child: Text("Tab2")),
+                  SalonDetailSevicesScreen(),
                   SalonGalleryViewScreen(),
                   SalonDetailReviewScreen()
                 ],
@@ -249,7 +250,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 delegate: SliverChildBuilderDelegate(
                                       (context, index) {
                                     return Container(
-                                      margin: EdgeInsets.only(bottom: 90),
+                                      margin: EdgeInsets.only(bottom: 25),
                                       color: Color(0xff212327),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
