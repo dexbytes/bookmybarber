@@ -26,7 +26,7 @@ class DetailPhotoView extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       padding: EdgeInsets.only(left: 0,),
       physics: ClampingScrollPhysics(),
-      itemCount:photo.length,
+      itemCount: 5,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(

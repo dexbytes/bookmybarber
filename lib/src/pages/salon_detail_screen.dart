@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_heading_widget.dart';
@@ -9,7 +10,6 @@ import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 
@@ -47,8 +47,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
   @override
   Widget build(BuildContext context) {
 
-  TabController _tabController = TabController(length: 4, vsync: this);
-  // final int initialIndex = 3;
 
     Widget tabBar = Column(
         children:[
@@ -81,14 +79,14 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             length: 4,
             initialIndex: selectedTab,
             child: Container(
-              height: 800,
+              height: MediaQuery.of(context).size.height + 335,
               child: TabBarView(
                 controller: tabController,
                 children: [
                   // DescriptionPage(),
                   SalonDetailAboutScreen(),
                   Center(child: Text("Tab2")),
-                  Center(child: Text("Tab2")),
+                  SalonGalleryViewScreen(),
                   SalonDetailReviewScreen()
                 ],
               ),
