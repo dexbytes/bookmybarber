@@ -36,7 +36,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
     Widget review = Container(
         padding: EdgeInsets.only(left: 10,),
-        height: 900,
+        height: MediaQuery.of(context).size.height +180,
         child: ReviewListView(
           onTap: (){
             setState(() {
