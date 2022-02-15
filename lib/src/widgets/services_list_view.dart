@@ -1,14 +1,15 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class ServicesListView extends StatelessWidget {
   final onViewCardCallBack;
-  final bool isListTwoVisible;
+  bool isViewVisible;
 
   ServicesListView({Key? key,
     this.onViewCardCallBack,
-    this.isListTwoVisible = false
+    this.isViewVisible = false
   }) : super(key: key);
 
 
@@ -61,6 +62,7 @@ class ServicesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(left: 20,top:10,right: 15),
@@ -108,7 +110,7 @@ class ServicesListView extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 12.0),
+                    padding: EdgeInsets.only(top: 6.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -122,12 +124,18 @@ class ServicesListView extends StatelessWidget {
                               onTap: (){
                                 this.onViewCardCallBack?.call(0);
                               },
-                              child: Text("View",
-                                style:TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Color(0xFFCCA76A)),),
+                              child:
+                              // Expanded(child: DropDownDataPicker2())
+
+                              Padding(
+                                padding:  EdgeInsets.all(5.0),
+                                child: Text("View",
+                                  style:TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Color(0xFFCCA76A)),),
+                              ) ,
                             )
                           ],
                         ),
-                      SizedBox(height: 5,),
+                      SizedBox(height: 1,),
                       Text( categories[index].subtitle,
                      style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400,color: Color(0xff828588))),
                       ],
