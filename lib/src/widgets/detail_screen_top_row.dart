@@ -1,4 +1,5 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/share_bottom_sheet_view.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -49,6 +50,15 @@ class DetailScreenTopRowWidget extends StatelessWidget {
             onTap: (){
               print("$index",);
               this.onClickCardCallBack?.call(0);
+              index == 3 ?
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) => ShareBottomSheetScreen(),
+                  isScrollControlled: true,
+                  shape: RoundedRectangleBorder(
+                      borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(20))
+                  )):Container();
 
             },
             child:Column(

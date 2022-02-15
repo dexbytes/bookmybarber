@@ -65,7 +65,7 @@ class BottomSheetOnlyCardView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 0.0),
+                padding: EdgeInsets.only(top: 15.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
