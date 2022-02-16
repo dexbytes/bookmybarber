@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
+import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_services_screen.dart';
@@ -11,6 +12,7 @@ import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
+import 'package:base_flutter_app/src/widgets/package_detail_services_list.dart';
 import 'package:base_flutter_app/src/widgets/services_list_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -275,7 +277,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return PackageDetailServicesScreen();
   }
 
   //Redirect to another screen if already loggedIn

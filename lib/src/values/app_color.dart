@@ -78,6 +78,7 @@ class AppColors {
 
   //*Application Main containers BG color ***********************************
   Color appBgColor = const Color(0xFF000000);
+  Color appBgColor2 = const Color(0xff212327);
 
   Color appTopBgColor = const Color(0xFFFFFFFF);
   Color appCenterBgColor = const Color(0xFFFFFFFF);
@@ -133,6 +134,7 @@ class AppColors {
   Color textNormalColor5 = const Color(0xFF27AE60);
   Color textNormalColor6 = const Color(0xFFF2F2F2);
   Color textNormalColor7 = const Color(0xFF34C759);
+  Color textNormalColor8 = const Color(0xff828588);
 
   Color textSubHeadingColor = const Color(0xFF000000);
   Color textHeadingColor = const Color(0xFF2c3134);
