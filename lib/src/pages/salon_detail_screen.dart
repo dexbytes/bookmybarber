@@ -1,3 +1,4 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
@@ -13,9 +14,12 @@ import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import 'barber_profile_screen.dart';
+
 
 class SalonDetailScreen extends StatefulWidget {
-  const SalonDetailScreen({Key? key,})
+  final int selectedTab;
+  const SalonDetailScreen({Key? key, this.selectedTab = 0,})
       : super(key: key);
   @override
 
@@ -24,17 +28,19 @@ class SalonDetailScreen extends StatefulWidget {
 
 class _SalonDetailScreenState extends State<SalonDetailScreen>
     with TickerProviderStateMixin {
+  int selectedTab;
+  _SalonDetailScreenState({this.selectedTab = 1});
   TabController? tabController;
-  int selectedTab = 0;
+  // int selectedTab = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     tabController =
-    new TabController(initialIndex: selectedTab, length: 4, vsync: this);
+    new TabController(initialIndex: widget.selectedTab, length: 4, vsync: this);
     super.initState();
     tabController =
-    new TabController(initialIndex: selectedTab, length: 4, vsync: this);
+    new TabController(initialIndex: widget.selectedTab, length: 4, vsync: this);
 
   }
 
@@ -78,7 +84,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           ),
           DefaultTabController(
             length: 4,
-            initialIndex: selectedTab,
+            initialIndex: widget.selectedTab,
             child: Container(
               height: MediaQuery.of(context).size.height + 333,
               child: TabBarView(
@@ -86,6 +92,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                 children: [
                   // DescriptionPage(),
                   SalonDetailAboutScreen(),
+
                   SalonDetailSevicesScreen(),
                   SalonGalleryViewScreen(),
                   SalonDetailReviewScreen()
@@ -116,6 +123,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                   isSecondDataVisible: true,
                   isFeatureVisible: false,
                   titleTextStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500, color:Colors.white),
+                  onClickCardCallBack: (){
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                          widget: BarberProfileScreen()),
+                    );
+                  },
                 )),
           ],
         )
@@ -154,7 +168,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     bottomButton(){
       return Container(
         margin: EdgeInsets.only(left: 25,right: 25,bottom: 2),
-        child:selectedTab <= 0 ?CommonButton(
+        child:widget.selectedTab <= 0 ?CommonButton(
           buttonHeight: 45,
           buttonName: "Book now",
           buttonColor:AppColors().buttonColor,

@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/services_list_view.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +84,13 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
                 controller: tabController,
                 children: [
                   ServicesListView(),
-                  PackageCardWidget(),
+                  PackageCardWidget(onCardClickCallBack: (){
+                    Navigator.push(
+                      context,
+                      SlideRightRoute(
+                          widget: PackageDetailServicesScreen()),
+                    );
+                  },),
                   Center(child: Text("Tab2")),
 
                 ],

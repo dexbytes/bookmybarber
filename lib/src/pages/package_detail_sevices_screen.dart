@@ -47,7 +47,9 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
               child:Material(
                 color: Colors.transparent,
                 child: IconButton(
-                 onPressed: (){},
+                 onPressed: (){
+                   Navigator.pop(context);
+                 },
                  icon:   iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
                  ),
               )),

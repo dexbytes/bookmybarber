@@ -188,7 +188,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                           SliverAppBar(
                             elevation: 0,
                             leading: IconButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.pop(context);
+                              },
                               icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor:Colors.white,iconSize: Size(26, 26)),
                             ),
                             leadingWidth: 60,

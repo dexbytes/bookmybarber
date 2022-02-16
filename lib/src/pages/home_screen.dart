@@ -1,6 +1,7 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
@@ -108,7 +109,14 @@ class _HomeScreenState extends State<HomeScreen>
     Widget barberSpecialist = Container(
         margin: EdgeInsets.only(top: 20),
         height: 130,
-        child: BarberSpecialistCircularWidget()
+        child: BarberSpecialistCircularWidget(
+          onClickCardCallBack:(){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: BarberProfileScreen()),
+            );
+          } ,)
     );
 
     Widget services = Container(

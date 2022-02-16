@@ -9,7 +9,9 @@ import 'package:readmore/readmore.dart';
 
 class SalonDetailAboutScreen extends StatefulWidget {
   final bool isBarberInfoShow;
-  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false,}) : super(key: key);
+  final onPhotoClickCallBack;
+
+  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false, this.onPhotoClickCallBack,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
@@ -120,6 +122,9 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
               leftTitle: "Photos",
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+              rightTextCallBack:() {
+                this.widget.onPhotoClickCallBack.call();
+              }
             ),
             image,
           ],
