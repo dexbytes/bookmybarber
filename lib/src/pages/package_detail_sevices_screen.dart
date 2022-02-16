@@ -155,7 +155,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
           ),
           child: ContainerMenuPage(
             contextCurrentView: context,
-            scrollPadding: EdgeInsets.only(bottom: 70),
+            scrollPadding: EdgeInsets.only(bottom: 60),
             /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
             isSingleChildScrollViewNeed: true,
@@ -184,7 +184,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
       // scrollPadding: EdgeInsets.only(bottom: 81),
       /* statusBarColor: Colors.amber,
         bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: true,
+      isSingleChildScrollViewNeed: false,
       isFixedDeviceHeight: true,
       appBarHeight: -1,
       appBar: Container(),
