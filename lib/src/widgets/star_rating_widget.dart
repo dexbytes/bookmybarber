@@ -17,6 +17,8 @@ class StarRatingBar extends StatelessWidget {
   final bool updateOnDrag;
   final bool ignoreGestures;
   final CrossAxisAlignment crossAxisAlignment;
+  final MainAxisAlignment mainAxisAlignment;
+  final EdgeInsetsGeometry padding;
 
   StarRatingBar({
     this.iconCount = 1,
@@ -34,16 +36,20 @@ class StarRatingBar extends StatelessWidget {
     this.updateOnDrag = false,
     this.ignoreGestures = true,
     this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.padding = const EdgeInsets.all(0),
   });
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: [
         RatingBar.builder(
           glow: false,
           unratedColor: Colors.white,
           initialRating: initialRating,
+          itemPadding:padding,
           minRating: minRating,
           direction: Axis.horizontal,
           allowHalfRating: true,

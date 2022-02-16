@@ -108,7 +108,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
           PriceTextRow(
             rightTitle1: "\$${widget.price}",
           ),
-          SizedBox(height: 5,),
+          SizedBox(height: 15),
           PackageServicesList(),
         ],
       )
@@ -166,7 +166,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _welcomeTextView(),
-                SizedBox(height: 25),
+                SizedBox(height: 30),
                 services,
                 SizedBox(height: 20),
                 bottomButton(),

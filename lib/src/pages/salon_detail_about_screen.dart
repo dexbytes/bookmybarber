@@ -1,4 +1,5 @@
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/widgets/barber_profile_company_info_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
 import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
 import 'package:base_flutter_app/src/widgets/detail_photo_row_widget.dart';
@@ -7,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 class SalonDetailAboutScreen extends StatefulWidget {
-  const SalonDetailAboutScreen({Key? key,}) : super(key: key);
+  final bool isBarberInfoShow;
+  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
@@ -74,6 +76,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
 
 
+
     return ContainerMenuPage(
       // bottomBarSafeAreaColor: Colors.transparent,
         contextCurrentView: context,
@@ -91,14 +94,20 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SeeAllTextRow(
-              margin: EdgeInsets.only(left: 20,top: 25,bottom: 10),
-              leftTitle: "About",
-              isRightTextVisible: false,
-              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,
+
+            widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
+              children: [
+                SeeAllTextRow(
+                  margin: EdgeInsets.only(left: 20,top: 25,bottom: 10),
+                  leftTitle: "About",
+                  isRightTextVisible: false,
+                  leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,
+                ),
+                readMoreText,
+              ],
             ),
-            readMoreText,
-            SeeAllTextRow(
+
+             SeeAllTextRow(
               margin: EdgeInsets.only(left: 20,bottom: 10),
               leftTitle: "Opening Hour",
               isRightTextVisible: false,
@@ -112,7 +121,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               leftTitle: "Photos",
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
             ),
-            image
+            image,
           ],
         )
     );
