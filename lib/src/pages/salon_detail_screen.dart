@@ -15,6 +15,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'barber_profile_screen.dart';
+import 'book_appointment_screen.dart';
 
 
 class SalonDetailScreen extends StatefulWidget {
@@ -174,7 +175,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
             color: Color(0xff212327),),
-          backCallback:(){},
+          backCallback:(){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: BookAppointmentScreen()),
+            );
+          },
           isBottomMarginRequired: false,
         ):Container(),
       );

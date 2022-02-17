@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 class BookAppointmentScreen extends StatefulWidget {
   final double price;
 
-  const BookAppointmentScreen({Key? key, this.price = 45.00}) : super(key: key);
+  const BookAppointmentScreen({Key? key, this.price = 00.00}) : super(key: key);
 
   @override
   _BookAppointmentScreenState createState() => _BookAppointmentScreenState();

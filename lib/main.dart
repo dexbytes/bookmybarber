@@ -280,7 +280,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return BookAppointmentScreen();
+    return HomeScreen();
   }
 
   //Redirect to another screen if already loggedIn
