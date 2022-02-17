@@ -52,7 +52,7 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-011',
-    imageUrl:"https://i.pinimg.com/550x/40/78/7d/40787dedd5f01ea4f011d41f09345514.jpg",
+    imageUrl:"https://i.pinimg.com/736x/db/01/76/db0176af12234f246077b2954aaa475e.jpg",
   ),
   PhotosRawData(
     id: 'id-012',
@@ -72,7 +72,7 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-016',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCG74w4HbduZqZB9qcy3OCw-f19OLz1uQ_vfo398JJWrpeshpPumtk3NekbvQEE77HqWk&usqp=CAU",
+    imageUrl:"https://static.toiimg.com/thumb/msid-86001368,imgsize-45826,width-400,height-300,resizemode-75/86001368.jpg",
   ),
   PhotosRawData(
     id: 'id-017',
