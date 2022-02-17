@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
+import 'package:base_flutter_app/src/widgets/slider_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -18,6 +20,20 @@ class SalonGalleryViewScreen extends StatelessWidget {
         child: InkWell(
           onTap: (){
             print(photo[index].id,);
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: SliderScreen(
+                   urlImages:photo,
+                   initialPage:index,
+                   isDotVisible: true,
+                   activeDotColor: Color(0xffE4B343),
+                   dotHeight: 8,
+                   dotWidth: 8,
+                   topMargin: MediaQuery.of(context).size.height /7.5,
+
+                  )),
+            );
           },
           child:ClipRRect(
             borderRadius: BorderRadius.circular(12.0),

@@ -44,11 +44,11 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-009',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBruDuvLSHiEnqocR9f8l2JQUcNG67MkKngkQvik8MW3Pm_dPCvEit5g6rT-t4OBQg59U&usqp=CAU",
+    imageUrl:"https://media.istockphoto.com/photos/woman-sitting-at-beauty-salon-making-hairdo-picture-id1002144830?k=20&m=1002144830&s=612x612&w=0&h=FqnHDeGB69xiEGLIHnjkxPPuc1DB8vRat05q53sal9Q=",
   ),
   PhotosRawData(
     id: 'id-010',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ri3VtzUlNCTUreZhkk8qzcSNQjzOhMQG_lsvt7gbh_PTQMtDc57Olb9NfsiX2MJLcFc&usqp=CAU",
+    imageUrl:"https://www.wearegurgaon.com/wp-content/uploads/2020/03/blowdry-levante-salon-gurgaon.jpg",
   ),
   PhotosRawData(
     id: 'id-011',
@@ -56,7 +56,7 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-012',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZF7baLhciwCnib6TsLF-8G4zprp71vsHoEifYhW6tosuiCA9CeWrkca6UQeODwc9v8g&usqp=CAU",
+    imageUrl:"https://pbs.twimg.com/media/E7hqYwJUcAM6qB6?format=jpg&name=large",
   ),
   PhotosRawData(
     id: 'id-013',
@@ -64,11 +64,11 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-014',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDxA9VWRVKuAUlcjwz4FNpj3_Y041iLOvJuaSgqngUtWfct1VsOJwB-ozPBactzMEu98U&usqp=CAU",
+    imageUrl:"https://crayon.pk/wp-content/uploads/2018/06/Crew-Cut.jpg",
   ),
   PhotosRawData(
     id: 'id-015',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi7VCa8wOURz0gUW1T8kDpaf0sl9-lebmFA--QayeGUmP2nVS7xQuOc4Xeqdc3p75J27Y&usqp=CAU",
+    imageUrl:"https://c.neh.tw/thumb/f/720/5334278315442176.jpg",
   ),
   PhotosRawData(
     id: 'id-016',
@@ -84,7 +84,7 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-019',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQuOET3_nzXgNbQrZJqSSQke62fxIXi6AKCA&usqp=CAU",
+    imageUrl:"https://i.pinimg.com/originals/16/03/aa/1603aaaf57b5b422d3ffa39f62305d23.jpg",
   ),
   PhotosRawData(
     id: 'id-020',
@@ -92,7 +92,7 @@ final List<PhotosRawData> photo = [
   ),
   PhotosRawData(
     id: 'id-022',
-    imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBsu5O_cZdD8QB-vKQgyrYk9Fsj8cUHBJOF6pyv7URN53TMUdYH54ZJs28VdDtz7N14I&usqp=CAU",
+    imageUrl:"https://images.herzindagi.info/image/2020/Jul/Alia-Bhatts-Glam-Hairstyles.jpg",
   ),
   PhotosRawData(
     id: 'id-023',

@@ -29,7 +29,7 @@ class SalonDetailScreen extends StatefulWidget {
 class _SalonDetailScreenState extends State<SalonDetailScreen>
     with TickerProviderStateMixin {
   int selectedTab;
-  _SalonDetailScreenState({this.selectedTab = 1});
+  _SalonDetailScreenState({this.selectedTab = 0});
   TabController? tabController;
   // int selectedTab = 0;
 
@@ -92,7 +92,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                 children: [
                   // DescriptionPage(),
                   SalonDetailAboutScreen(),
-
                   SalonDetailSevicesScreen(),
                   SalonGalleryViewScreen(),
                   SalonDetailReviewScreen()
@@ -167,9 +166,9 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
     bottomButton(){
       return Container(
-        margin: EdgeInsets.only(left: 25,right: 25,bottom: 2),
+        margin: EdgeInsets.only(left: 25,right: 25,bottom: 0),
         child:selectedTab <= 0 ?CommonButton(
-          buttonHeight: 45,
+          buttonHeight: 52,
           buttonName: "Book now",
           buttonColor:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
