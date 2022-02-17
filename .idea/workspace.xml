@@ -20,15 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,26 +111,26 @@
       <screen x="0" y="25" width="1366" height="670" />
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
-    <state width="1018" height="281" key="GridCell.Tab.0.bottom" timestamp="1645018185951">
+    <state width="1018" height="281" key="GridCell.Tab.0.bottom" timestamp="1645074404673">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1018" height="281" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645018185951" />
-    <state width="1018" height="281" key="GridCell.Tab.0.center" timestamp="1645018185951">
+    <state width="1018" height="281" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
+    <state width="1018" height="281" key="GridCell.Tab.0.center" timestamp="1645074404673">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="281" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645018185951" />
-    <state width="1018" height="281" key="GridCell.Tab.0.left" timestamp="1645018185951">
+    <state width="1018" height="281" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
+    <state width="1018" height="281" key="GridCell.Tab.0.left" timestamp="1645074404672">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1018" height="281" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645018185951" />
-    <state width="1018" height="281" key="GridCell.Tab.0.right" timestamp="1645018185951">
+    <state width="1018" height="281" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645074404672" />
+    <state width="1018" height="281" key="GridCell.Tab.0.right" timestamp="1645074404673">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="281" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645018185951" />
+    <state width="1018" height="281" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
@@ -134,5 +140,16 @@
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
     <state x="521" y="116" width="615" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1645018397655" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart</url>
+          <line>107</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

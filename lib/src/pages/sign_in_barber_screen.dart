@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -110,15 +111,20 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _topView() {
       return Container(
-        padding: EdgeInsets.all(30),
-        alignment: Alignment.topCenter,
-        height: MediaQuery.of(context).size.height/2.5,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('assets/images/sign_in_image.png'),
-          ),
-        ),
+          alignment: Alignment.topCenter,
+          child: ShaderMask(
+            shaderCallback: (bound) =>LinearGradient(
+              colors: [Colors.black38.withOpacity(0.1),Colors.black87.withOpacity(0.1)],
+              begin:Alignment.topRight,
+              end: Alignment.bottomRight,
+            ).createShader(bound),
+            blendMode: BlendMode.darken,
+            child:CachedNetworkImage(
+              height: MediaQuery.of(context).size.height /2.6,
+              imageUrl: "https://media1.popsugar-assets.com/files/thumbor/objfVkqK2u27teSwF05B732vpHg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2021/04/09/609/n/29590734/tmp_hzooXG_c3a3612a3e8fdf28_GettyImages-1235174298.jpg",
+              fit:BoxFit.cover,
+            ),
+          )
       );
     }
 
@@ -417,7 +423,7 @@ class _SignInScreenState extends State<SignInScreen> {
       // scrollPadding: EdgeInsets.only(bottom: 81),
       /* statusBarColor: Colors.amber,
         bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: true,
+      isSingleChildScrollViewNeed: false,
       isFixedDeviceHeight: true,
       appBarHeight: -1,
       appBar: Container(),

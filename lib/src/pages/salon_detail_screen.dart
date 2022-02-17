@@ -37,10 +37,10 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
   void initState() {
     // TODO: implement initState
     tabController =
-    new TabController(initialIndex: widget.selectedTab, length: 4, vsync: this);
+    new TabController(initialIndex: selectedTab, length: 4, vsync: this);
     super.initState();
     tabController =
-    new TabController(initialIndex: widget.selectedTab, length: 4, vsync: this);
+    new TabController(initialIndex: selectedTab, length: 4, vsync: this);
 
   }
 
@@ -84,7 +84,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           ),
           DefaultTabController(
             length: 4,
-            initialIndex: widget.selectedTab,
+            initialIndex: selectedTab,
             child: Container(
               height: MediaQuery.of(context).size.height + 333,
               child: TabBarView(
@@ -168,7 +168,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     bottomButton(){
       return Container(
         margin: EdgeInsets.only(left: 25,right: 25,bottom: 2),
-        child:widget.selectedTab <= 0 ?CommonButton(
+        child:selectedTab <= 0 ?CommonButton(
           buttonHeight: 45,
           buttonName: "Book now",
           buttonColor:AppColors().buttonColor,
