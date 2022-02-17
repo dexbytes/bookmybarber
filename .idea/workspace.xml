@@ -20,12 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/model/photo_raw_data_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/photo_raw_data_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets/slider_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/slider_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,26 +105,26 @@
       <screen x="0" y="25" width="1366" height="670" />
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
-    <state width="1018" height="281" key="GridCell.Tab.0.bottom" timestamp="1645074404673">
+    <state width="1018" height="192" key="GridCell.Tab.0.bottom" timestamp="1645089718986">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1018" height="281" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
-    <state width="1018" height="281" key="GridCell.Tab.0.center" timestamp="1645074404673">
+    <state width="1018" height="192" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645089718986" />
+    <state width="1018" height="192" key="GridCell.Tab.0.center" timestamp="1645089718985">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="281" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
-    <state width="1018" height="281" key="GridCell.Tab.0.left" timestamp="1645074404672">
+    <state width="1018" height="192" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645089718985" />
+    <state width="1018" height="192" key="GridCell.Tab.0.left" timestamp="1645089718985">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1018" height="281" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645074404672" />
-    <state width="1018" height="281" key="GridCell.Tab.0.right" timestamp="1645074404673">
+    <state width="1018" height="192" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645089718985" />
+    <state width="1018" height="192" key="GridCell.Tab.0.right" timestamp="1645089718986">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="281" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645074404673" />
+    <state width="1018" height="192" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645089718986" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
@@ -139,6 +142,11 @@
           <url>file://$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart</url>
           <line>107</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/widgets/slider_screen.dart</url>
+          <line>240</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

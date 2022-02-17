@@ -30,7 +30,6 @@ class SalonGalleryViewScreen extends StatelessWidget {
                    activeDotColor: Color(0xffE4B343),
                    dotHeight: 8,
                    dotWidth: 8,
-                   topMargin: MediaQuery.of(context).size.height /7.5,
 
                   )),
             );
