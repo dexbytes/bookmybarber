@@ -12,6 +12,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   final TextStyle titleTextStyle;
   final TextStyle subtitleTextStyle;
   final EdgeInsetsGeometry padding;
+  final Color borderColor;
 
   BarberSpecialistCircularWidget({Key? key,
     this.onClickCardCallBack,
@@ -21,9 +22,8 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
     this.isSubtitleVisible = false,
     this.isSecondDataVisible = false,
     this.padding = const EdgeInsets.only(left: 10),
+    this.borderColor = const Color(0xffCBAD90),
   }) : super(key: key);
-
-
 
 
   @override
@@ -40,8 +40,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
           child: InkWell(
             onTap: (){
               print("$index",);
-              this.onClickCardCallBack?.call();
-
+              this.onClickCardCallBack?.call(index);
             },
             child:Stack(
               children: [
@@ -62,7 +61,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                           height: 68,
                           width: 68,
                           decoration: BoxDecoration(
-                            border: Border.all(width: 2,color:  Color(0xffCCA76A)),
+                            border: Border.all(width: 2,color: borderColor),
                             shape: BoxShape.circle,
                             color: Colors.transparent,
                           ),
@@ -143,7 +142,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
       }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,         //for most popular item list count : 2  & for BrandCardView count :4
         mainAxisSpacing: 5,       //for most popular item list mainSpacing : 5  & for BrandCardView mainSpacing : 10
-        mainAxisExtent: isSubtitleVisible ? 96 :85
+        mainAxisExtent: isSubtitleVisible ? 96 :90
     ),
     );
 
