@@ -45,38 +45,38 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 ),
               )
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 45,left: 10),
-            child: Align(
-                alignment: Alignment.topLeft,
-                child:Material(
-                  color: Colors.transparent,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: (){
-                          Navigator.pop(context);
-                        },
-                        icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Book Appointment",
-                            style:TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w800,
-                                color: AppColors().textNormalColor6
-                            ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.only(top: 45,left: 10),
+          //   child: Align(
+          //       alignment: Alignment.topLeft,
+          //       child:Material(
+          //         color: Colors.transparent,
+          //         child: Row(
+          //           children: [
+          //             IconButton(
+          //               onPressed: (){
+          //                 Navigator.pop(context);
+          //               },
+          //               icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+          //             ),
+          //             Expanded(
+          //               child: Row(
+          //                 mainAxisAlignment: MainAxisAlignment.center,
+          //                 children: [
+          //                   Text("Book Appointment",
+          //                   style:TextStyle(
+          //                       fontSize: 22,
+          //                       fontWeight: FontWeight.w800,
+          //                       color: AppColors().textNormalColor6
+          //                   ),
+          //                   ),
+          //                 ],
+          //               ),
+          //             )
+          //           ],
+          //         ),
+          //       )),
+          // ),
         ],
       );
     }
@@ -140,21 +140,32 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       );
     }
 
-    Widget services = Container(
-        height: MediaQuery.of(context).size.height /1.7,
-        child:Column(
-          children: [
-            PriceTextRow(
-              rightTitle1: "\$${widget.price}",
-              rightTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Color(0xFF00B2AE)),
-              leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),
-              leftTitle:"Choose your service",
-            ),
-            SizedBox(height: 15),
-            selectValue == 0 ? BookAppointmentRowViewWidget(isFemaleListVisible: false,): BookAppointmentRowViewWidget(isFemaleListVisible: true,)
-          ],
-        )
-    );
+    Widget _services() {
+      return Column(
+        children: [
+          PriceTextRow(
+            rightTitle1: "\$${widget.price}",
+            rightTitleTextStyle: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF00B2AE)),
+            leftTitleTextStyle: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Colors.white),
+            leftTitle: "Choose your service",
+          ),
+          SizedBox(height: 15),
+          selectValue == 0
+              ? BookAppointmentRowViewWidget(
+            isFemaleListVisible: false,
+          )
+              : BookAppointmentRowViewWidget(
+            isFemaleListVisible: true,
+          )
+        ],
+      );
+    }
 
     bottomButton(){
       return Container(
@@ -182,7 +193,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
 
     Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/3.9,
+      top: MediaQuery.of(context).size.height/6.4,
       child: Container(
           padding: EdgeInsets.only(top: 25),
           width: size.width,
@@ -194,51 +205,111 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               topRight: Radius.circular(25),
             ),
           ),
-          child: ContainerMenuPage(
-            contextCurrentView: context,
-            scrollPadding: EdgeInsets.only(bottom: 100),
-            /* statusBarColor: Colors.amber,
-          bottomBarSafeAreaColor: Colors.amber,*/
-            isSingleChildScrollViewNeed: true,
-            isFixedDeviceHeight: true,
-            appBarHeight: -1,
-            appBar: Container(),
-            containChild: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _welcomeTextView(),
-                SizedBox(height: 20),
-                services,
-                bottomButton(),
-              ],
-            ),
-          )
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _welcomeTextView(),
+              SizedBox(height: 20),
+              _services(),
+              // bottomButton(),
+            ],
+          ),
+
+          // ContainerMenuPage(
+          //   contextCurrentView: context,
+          //   scrollPadding: EdgeInsets.only(bottom: 0),
+          //   /* statusBarColor: Colors.amber,
+          // bottomBarSafeAreaColor: Colors.amber,*/
+          //   isSingleChildScrollViewNeed: false,
+          //   isFixedDeviceHeight: true,
+          //   appBarHeight: -1,
+          //   appBar: Container(),
+          //   containChild: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       _welcomeTextView(),
+          //       SizedBox(height: 20),
+          //       services,
+          //       // bottomButton(),
+          //     ],
+          //   ),
+          // )
       ),
     );
 
 
 
 
-    return ContainerMenuPage(
-      contextCurrentView: context,
-      // scrollPadding: EdgeInsets.only(bottom: 81),
-      /* statusBarColor: Colors.amber,
-        bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: true,
-      isFixedDeviceHeight: true,
-      appBarHeight: -1,
-      appBar: Container(),
-      containChild:Container(
-        height: size.height,
-        width: size.height,
+    return Scaffold(
+      backgroundColor: AppColors().appBgColor2,
+      body: SafeArea(
+        top: false,
+        bottom: true,
+        right: false,
+        left: false,
         child: Stack(
           children: [
-            _topView(),
-            bottomCardView,
+            Align(
+              alignment: Alignment.topCenter,
+              child:_topView(),
+            ),
+            ContainerMenuPage(
+              backgroundColor: Colors.transparent,
+              contextCurrentView: context,
+              scrollPadding: EdgeInsets.only(bottom: 0),
+              /* statusBarColor: Colors.amber,
+                bottomBarSafeAreaColor: Colors.amber,*/
+              isSingleChildScrollViewNeed: true,
+              isFixedDeviceHeight: true,
+              appBarHeight: 100,
+              appBar: Container(
+                color: Colors.transparent,
+                padding: EdgeInsets.only(top: 28),
+                child: Material(
+                  color: Colors.transparent,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                        icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+                      ),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Book Appointment",
+                              style:TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w800,
+                                  color: AppColors().textNormalColor6
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              containChild:Container(
+                height: size.height/1.16 ,
+                child: Stack(
+                  children: [
+                    bottomCardView,
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child:bottomButton(),
+            ),
           ],
         ),
       ),
-
     );
   }
 }

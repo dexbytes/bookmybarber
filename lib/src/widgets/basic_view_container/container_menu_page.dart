@@ -7,6 +7,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class ContainerMenuPage extends StatelessWidget {
   final Widget containChild;
+  final Color? backgroundColor;
   final EdgeInsetsGeometry scrollPadding;
   final bool isFixedDeviceHeight; // if it true than
   final bool isSingleChildScrollViewNeed; // if it true than
@@ -25,6 +26,7 @@ class ContainerMenuPage extends StatelessWidget {
     this.scrollPadding: const EdgeInsets.all(0),
     this.appBarHeight = -1,
     this.isSingleChildScrollViewNeed = true,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -81,7 +83,7 @@ class ContainerMenuPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor:Color(0xff212327),
+      backgroundColor: backgroundColor ?? Color(0xff212327),
       body: SafeArea(
         bottom: true,
         top: false,
