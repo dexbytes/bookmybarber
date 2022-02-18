@@ -30,7 +30,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
               alignment: Alignment.topCenter,
               child: ShaderMask(
                 shaderCallback: (bound) =>LinearGradient(
-                  colors: [Colors.black38.withOpacity(0.2),Colors.black87.withOpacity(0.1)],
+                  colors: [Colors.black38.withOpacity(0.4),Colors.black87.withOpacity(0.1)],
                   begin:Alignment.topRight,
                   end: Alignment.bottomRight,
                 ).createShader(bound),
@@ -49,11 +49,30 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                 alignment: Alignment.topLeft,
                 child:Material(
                   color: Colors.transparent,
-                  child: IconButton(
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                    icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                        icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+                      ),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Book Appointment",
+                              style:TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w800,
+                                  color: AppColors().textNormalColor6
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 )),
           ),

@@ -142,7 +142,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
             length: 3,
             initialIndex: selectedTab,
             child: Container(
-              height: MediaQuery.of(context).size.height - 80,
+              height: MediaQuery.of(context).size.height /1.45,
               child: TabBarView(
                 controller: tabController,
                 children: [
@@ -224,7 +224,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight: MediaQuery.of(context).size.height /2.47,
+                            expandedHeight: MediaQuery.of(context).size.height /2.8,  //2.47,
                             collapsedHeight: MediaQuery.of(context).size.height/11.5,
                             flexibleSpace: FlexibleSpaceBar(
                               expandedTitleScale: 1,

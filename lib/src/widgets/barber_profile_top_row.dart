@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -52,8 +54,12 @@ class BarberProfileTopRowWidget extends StatelessWidget {
           child: InkWell(
             onTap: (){
               print("$index",);
-              this.onClickCardCallBack?.call(0);
-
+              this.onClickCardCallBack?.call();
+             index == 3 ?Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: BookAppointmentScreen()),
+              ):Container();
             },
             child:Column(
               mainAxisSize: MainAxisSize.max,

@@ -40,7 +40,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
           child: InkWell(
             onTap: (){
               print("$index",);
-              this.onClickCardCallBack?.call(index);
+              this.onClickCardCallBack?.call();
             },
             child:Stack(
               children: [

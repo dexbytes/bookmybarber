@@ -1,6 +1,8 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_row_view.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -178,11 +180,11 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
             fontWeight: FontWeight.w600,
             color: Color(0xff212327),),
           backCallback:(){
-            // Navigator.push(
-            //   context,
-            //   SlideRightRoute(
-            //       widget: HomeScreen()),
-            // );
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: BookAppointmentTimeScreen()),
+            );
           },
           isBottomMarginRequired: false,
         ),
