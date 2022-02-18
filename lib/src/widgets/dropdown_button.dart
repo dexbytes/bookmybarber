@@ -1,6 +1,8 @@
-import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:flutter/material.dart';
 
+
+
+//for TextField
 class DropDownDataPicker extends StatefulWidget {
   final List<DropdownMenuItem<String>>? itemList;
   final String? hint;
@@ -82,6 +84,8 @@ DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
 }
 
 
+
+// For Female
 class DropDownDataPicker2 extends StatefulWidget {
   final List<DropdownMenuItem<String>>? itemList;
   final String? hint;
@@ -146,7 +150,7 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
                   ),
                   isDense: false,
                   value: valueChoose2,
-                  items: widget.itemList?? items2.map(buildMenuItem).toList(),
+                  items: widget.itemList,
                   onChanged: (value) => setState(() {
                     this.valueChoose2 = value;
                   })
@@ -157,27 +161,11 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
       );
 
   }
-
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
-      value:item,
-      child: Padding(
-        padding: EdgeInsets.only(left: 10.0),
-        child: Text(
-          item,
-          style: TextStyle(
-            fontSize: 15.5,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-          ),
-        ),
-      )
-  );
-
 }
 
 
 
-
+// For Male
 class DropDownDataPicker3 extends StatefulWidget {
   final List<DropdownMenuItem<String>>? itemList;
   final String? hint;
@@ -242,7 +230,7 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
                 ),
                 isDense: false,
                 value: valueChoose2,
-                items: widget.itemList?? items2.map(buildMenuItem).toList(),
+                items: widget.itemList,
                 onChanged: (value) => setState(() {
                   this.valueChoose2 = value;
                 })
@@ -253,21 +241,5 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
     );
 
   }
-
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
-      value:item,
-      child: Padding(
-        padding: EdgeInsets.only(left: 10.0),
-        child: Text(
-          item,
-          style: TextStyle(
-            fontSize: 15.5,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-          ),
-        ),
-      )
-  );
-
 }
 

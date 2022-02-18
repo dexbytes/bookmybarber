@@ -2,6 +2,8 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/pages/welcome_screen.dart';
+import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -48,17 +50,20 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
   final tutorialModelList = [
     TutorialModel(
-      imageUrl:  'assets/images/tutorial_image.png',
+      imageUrl: "https://www.datocms-assets.com/6783/1625800465-gettyimages-687244776.jpg?fit=max&fm=jpg&w=1000",
+      // 'assets/images/tutorial_image.png',
       title: 'Find and Book Services',
       description: 'Find and book Barber, Beauty,Salon & Spa\n services anywhere, anytime',
     ),
     TutorialModel(
-      imageUrl:  'assets/images/tutorial_image_2.png',
+      imageUrl:"http://static1.squarespace.com/static/5771909f46c3c46bb03baca6/577cf6858c60352def5c225f/5b6c6dd88985834a651f6c79/1533833188529/iStock_35379696_LARGE+-+Copy+%282%29.jpg?format=1500w",
+      // 'assets/images/tutorial_image_2.png',
       title: 'Select Your Product',
       description: 'Choose your desire product\n that you want to buy.',
     ),
     TutorialModel(
-      imageUrl:  'assets/images/tutorial_image.png',
+      imageUrl:"https://img.freepik.com/free-photo/professional-girl-hairdresser-makes-client-haircut-girl-is-sitting-mask-beauty-salon_343596-4439.jpg?size=626&ext=jpg",
+      // 'assets/images/tutorial_image.png',
       title: 'Style that fit your LifeStyle.',
       description: 'Choose our makeup special offer price\nPackage that fit your Lifestyle.',
     ),
@@ -73,14 +78,28 @@ class _TutorialScreenState extends State<TutorialScreen> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
+        // Container(
+        //   height: MediaQuery.of(context).size.height/1.9,
+        //   decoration: BoxDecoration(
+        //     // shape: BoxShape.circle,
+        //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(150)),
+        //     image: DecorationImage(
+        //       image:
+        //       NetworkImage(tutorialModelList[index].imageUrl),
+        //       // AssetImage(tutorialModelList[index].imageUrl),
+        //       fit: BoxFit.cover,
+        //     ),
+        //   ),
+        // ),
         Container(
-          height: MediaQuery.of(context).size.height/1.9,
-          decoration: BoxDecoration(
-            // shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage(tutorialModelList[index].imageUrl),
-              fit: BoxFit.fill,
-            ),
+          child: ClipPath(
+              clipper:CustomTutorialAppBar(),
+              child: CachedNetworkImage(
+                imageUrl: tutorialModelList[index].imageUrl,
+                fit:BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
+                height:MediaQuery.of(context).size.height /1.8,
+              )
           ),
         ),
         SizedBox(

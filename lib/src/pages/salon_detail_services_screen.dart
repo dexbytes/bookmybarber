@@ -23,10 +23,10 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
   void initState() {
     // TODO: implement initState
     tabController =
-    new TabController(initialIndex: selectedTab, length: 3, vsync: this);
+    new TabController(initialIndex: selectedTab, length: 2, vsync: this);
     super.initState();
     tabController =
-    new TabController(initialIndex: selectedTab, length: 3, vsync: this);
+    new TabController(initialIndex: selectedTab, length: 2, vsync: this);
 
   }
 
@@ -60,15 +60,14 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
               tabs: [
                 Tab(text: "Services",),
                 Tab(text: "Package & Offers",),
-                Tab(text: "Price Table",),
               ],
               labelColor: Color(0xff323446),
               isScrollable: false,
               unselectedLabelColor:Color(0xffCCA76A),
-              labelStyle: TextStyle(fontSize: 13.5,fontWeight: FontWeight.w600,color:Colors.black),
+              labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color:Colors.black),
               labelPadding: EdgeInsets.zero,
               padding: EdgeInsets.zero,
-              unselectedLabelStyle: TextStyle(fontSize: 13,fontWeight: FontWeight.w600,),
+              unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
               indicator:BoxDecoration(
                   color:Color(0xffCCA76A),
                   borderRadius: BorderRadius.circular(3),
@@ -76,7 +75,7 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
             ),
           ),
           DefaultTabController(
-            length: 3,
+            length: 2,
             initialIndex: selectedTab,
             child: Container(
               height: 1050,
@@ -91,8 +90,6 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
                           widget: PackageDetailServicesScreen()),
                     );
                   },),
-                  Center(child: Text("Tab2")),
-
                 ],
               ),
             ),

@@ -138,7 +138,7 @@ class HomeCardWidget extends StatelessWidget {
         }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1,         //for most popular item list count : 2  & for BrandCardView count :4
           mainAxisSpacing: 12,       //for most popular item list mainSpacing : 5  & for BrandCardView mainSpacing : 10
-          mainAxisExtent: MediaQuery.of(context).size.height/3.2
+          mainAxisExtent: MediaQuery.of(context).size.height/2.8
       ),
       );
   }

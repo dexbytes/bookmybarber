@@ -3,8 +3,8 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
-import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_top_row.dart';
+import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -224,8 +224,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight: MediaQuery.of(context).size.height /2.9,
-                            collapsedHeight: MediaQuery.of(context).size.height/14,
+                            expandedHeight: MediaQuery.of(context).size.height /2.47,
+                            collapsedHeight: MediaQuery.of(context).size.height/11.5,
                             flexibleSpace: FlexibleSpaceBar(
                               expandedTitleScale: 1,
                               background:Container(

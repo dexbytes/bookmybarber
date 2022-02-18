@@ -1,9 +1,9 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../common_text_field_with_error.dart';
+import '../custom_curve_maker_widget.dart';
 import '../notification_bell.dart';
 
 PreferredSizeWidget appBarWithCurve(
@@ -19,7 +19,6 @@ PreferredSizeWidget appBarWithCurve(
 
     }) {
 
-  TextEditingController inputController = new TextEditingController();
 
   Map<String, TextEditingController> controllers = {
     'phone': new TextEditingController(),
@@ -41,8 +40,6 @@ PreferredSizeWidget appBarWithCurve(
     'email': "",
     'password': "",
   };
-
-
 
   _userNameField() {
     return Container(
@@ -103,7 +100,6 @@ PreferredSizeWidget appBarWithCurve(
     );
   }
 
-
   return  PreferredSize(
       child: ClipPath(
         clipper: CustomAppBar(),
@@ -158,45 +154,3 @@ PreferredSizeWidget appBarWithCurve(
 }
 
 
-
-class CustomAppBar extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = new Path();
-
-    path.lineTo(0, 260) ;
-
-    path.quadraticBezierTo(size.width/5, size.height-1, size.width/2, size.height-2) ;
-
-    path.quadraticBezierTo(3/4 * size.width, size.height, size.width, size.height - 25) ;
-
-    path.lineTo(size.width, 0) ;
-    return path ;
-  }
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    return false;
-  }
-}
-
-class CustomProfileAppBar extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = new Path();
-
-    path.lineTo(0, 160) ;
-
-    path.quadraticBezierTo(size.width/5, size.height-1, size.width/2, size.height-2) ;
-
-    path.quadraticBezierTo(3/4 * size.width, size.height, size.width, size.height - 32) ;
-
-    path.lineTo(size.width, 0) ;
-    return path ;
-  }
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    return false;
-  }
-}

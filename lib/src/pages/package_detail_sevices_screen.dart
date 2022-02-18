@@ -34,7 +34,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
               ).createShader(bound),
               blendMode: BlendMode.darken,
               child:CachedNetworkImage(
-                height: MediaQuery.of(context).size.height /2.9,
+                width: MediaQuery.of(context).size.height,
                 imageUrl: "https://cdn0.weddingwire.com/vendor/383440/3_2/960/jpg/img-0166_51_1044383.jpeg",
                 fit:BoxFit.cover,
               ),

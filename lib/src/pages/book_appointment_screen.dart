@@ -36,7 +36,8 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 ).createShader(bound),
                 blendMode: BlendMode.darken,
                 child:CachedNetworkImage(
-                  height: MediaQuery.of(context).size.height /3.3,
+                  // height: MediaQuery.of(context).size.height /2.65,
+                  width: MediaQuery.of(context).size.width,
                   imageUrl:selectValue == 0 ?
                    "https://cdn6.dissolve.com/p/D2115_184_474/D2115_184_474_1200.jpg"
                   :"https://thumbs.dreamstime.com/b/professional-hairdresser-scissors-beautiful-female-customer-deciding-what-haircut-to-do-looking-phone-changing-140595940.jpg",
@@ -140,7 +141,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
     }
 
     Widget services = Container(
-        height: MediaQuery.of(context).size.height /2.1,
+        height: MediaQuery.of(context).size.height /1.7,
         child:Column(
           children: [
             PriceTextRow(
@@ -195,7 +196,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
           ),
           child: ContainerMenuPage(
             contextCurrentView: context,
-            scrollPadding: EdgeInsets.only(bottom: 60),
+            scrollPadding: EdgeInsets.only(bottom: 100),
             /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
             isSingleChildScrollViewNeed: true,
@@ -223,7 +224,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       // scrollPadding: EdgeInsets.only(bottom: 81),
       /* statusBarColor: Colors.amber,
         bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: false,
+      isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
       appBarHeight: -1,
       appBar: Container(),

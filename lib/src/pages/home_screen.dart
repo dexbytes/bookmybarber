@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_text_list_widget.dart';
+import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
@@ -209,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen>
                 flexibleSpace: FlexibleSpaceBar(
                   expandedTitleScale: 1,
                   title: _userNameField(),
-                  titlePadding: EdgeInsets.only(left: 16,right: 16,bottom: 8,),
+                  titlePadding: EdgeInsets.only(left: 16,right: 16,bottom: 0,),
                   background:Stack(
                     alignment: Alignment.center,
                     fit: StackFit.expand,
