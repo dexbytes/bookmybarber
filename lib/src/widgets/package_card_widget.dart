@@ -30,7 +30,7 @@ class PackageCardWidget extends StatelessWidget {
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(right: 10,left: 10,),
-      physics: NeverScrollableScrollPhysics(),
+      physics: ClampingScrollPhysics(),
       itemCount:package.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {

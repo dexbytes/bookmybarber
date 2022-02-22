@@ -20,6 +20,41 @@ class ServicesListView extends StatelessWidget {
       subtitle: '10 types',
       icon: 'assets/images/categories_style_icon.png',
       colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
+    ), ServicesRawDataList(
+      title: 'HairStyle',
+      subtitle: '10 types',
+      icon: 'assets/images/categories_style_icon.png',
+      colors: Color(0xffFD6C57),
     ),
     ServicesRawDataList(
       title: 'Shaving',
@@ -66,9 +101,9 @@ class ServicesListView extends StatelessWidget {
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(left: 20,top:0,right: 15),
-      physics: NeverScrollableScrollPhysics(),
+      physics: AlwaysScrollableScrollPhysics(),
       itemCount:categories.length ,
-      shrinkWrap: true,
+      shrinkWrap: false,
       itemBuilder: (BuildContext context, int index) {
         return Material(
           color: Colors.transparent,

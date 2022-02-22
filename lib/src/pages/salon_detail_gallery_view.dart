@@ -12,7 +12,7 @@ class SalonGalleryViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return StaggeredGridView.countBuilder(
       padding: EdgeInsets.only(top: 15),
-      physics: NeverScrollableScrollPhysics(),
+      physics: ClampingScrollPhysics(),
       crossAxisCount: 3,
       itemCount: photo.length,
       itemBuilder: (context, index) => Material(

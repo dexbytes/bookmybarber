@@ -58,8 +58,8 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                       child: Container(
                           padding: EdgeInsets.zero,
                           margin: EdgeInsets.zero,
-                          height: 68,
-                          width: 68,
+                          height: 62,
+                          width: 62,
                           decoration: BoxDecoration(
                             border: Border.all(width: 2,color: borderColor),
                             shape: BoxShape.circle,

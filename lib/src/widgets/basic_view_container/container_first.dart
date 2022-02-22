@@ -4,18 +4,19 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class ContainerFirst extends StatelessWidget {
   final Color appBackgroundColor;
-  final Color? backgroundColor;
   final Color? bottomBarSafeAreaColor;
   final Color? statusBarColor;
   final Widget containChild;
   final bool isFixedDeviceHeight; // if it true than
-  final bool reverse; // if it true than
   final bool isSingleChildScrollViewNeed; // if it true than
   final Widget? appBar; // if it true than
   final double
-      appBarHeight; // if it true than   custom height appBarHeight>0, no app bar appBarHeight < 0, Default system appBar height  appBarHeight == 0
+  appBarHeight; // if it true than   custom height appBarHeight>0, no app bar appBarHeight < 0, Default system appBar height  appBarHeight == 0
   final bool scrollingOnKeyboardOpen; // if it true than
   final BuildContext contextCurrentView; // if it true than
+  final bool isOverLayStatusBar; // if it true than
+  final bool isOverLayAppBar; // if it true than
+  final bool reverse;
   const ContainerFirst({
     Key? key,
     required this.contextCurrentView,
@@ -24,12 +25,13 @@ class ContainerFirst extends StatelessWidget {
     this.appBackgroundColor = Colors.white,
     this.statusBarColor,
     this.isFixedDeviceHeight = true,
+    this.isOverLayStatusBar = false,
+    this.isOverLayAppBar = false,
     this.scrollingOnKeyboardOpen = true,
     this.appBar,
     this.appBarHeight = 0,
     this.isSingleChildScrollViewNeed = true,
-    this.reverse = false,
-    this.backgroundColor,
+    this.reverse = true,
   }) : super(key: key);
 
   @override
@@ -49,21 +51,17 @@ class ContainerFirst extends StatelessWidget {
     Color? bottomBarSafeAreaColor = this.bottomBarSafeAreaColor;
 
     //Set status bar and bottom sef area color
-    if (statusBarColor == null) {
-      statusBarColor = appBackgroundColor;
-    }
-    if (bottomBarSafeAreaColor == null) {
-      bottomBarSafeAreaColor = appBackgroundColor;
-    }
+    statusBarColor ??= appBackgroundColor;
+    bottomBarSafeAreaColor ??= appBackgroundColor;
 
     // Main view return according to Scroll need condition
     Widget returnSubMainView(
         {ScrollPhysics scrollPhysics = const ClampingScrollPhysics(),
-        double remainingViewFullHeight = -1}) {
+          double remainingViewFullHeight = -1}) {
       return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints viewportConstraints) {
           return SingleChildScrollView(
-            reverse: reverse,
+
             physics: scrollPhysics,
             child: ConstrainedBox(
               constraints: BoxConstraints(
@@ -71,7 +69,7 @@ class ContainerFirst extends StatelessWidget {
                     ? remainingViewFullHeight
                     : viewportConstraints.minHeight,
               ),
-              child: IntrinsicHeight(child: containChild),
+              child: IntrinsicHeight(child: Container(color:appBackgroundColor,child: containChild)),
             ),
           );
         },
@@ -85,7 +83,7 @@ class ContainerFirst extends StatelessWidget {
           physics: ClampingScrollPhysics(),
           child: containChild,
         )*/
-            ;
+        ;
       } else if (!isSingleChildScrollViewNeed && !isFixedDeviceHeight) {
         return KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
           isKeyBoardOpen = isKeyboardVisible;
@@ -93,9 +91,9 @@ class ContainerFirst extends StatelessWidget {
           return returnSubMainView(
               scrollPhysics: scrollingOnKeyboardOpen
                   ? (isKeyBoardOpen
-                      ? ClampingScrollPhysics()
-                      : NeverScrollableScrollPhysics())
-                  : NeverScrollableScrollPhysics());
+                  ? const ClampingScrollPhysics()
+                  : const NeverScrollableScrollPhysics())
+                  :const  NeverScrollableScrollPhysics());
         }); /*SingleChildScrollView(
           physics: scrollingOnKeyboardOpen
               ? (isKeyBoardOpen
@@ -110,7 +108,7 @@ class ContainerFirst extends StatelessWidget {
             ],
           ),
         )*/
-        ;
+
       } else if (!isSingleChildScrollViewNeed && isFixedDeviceHeight) {
         return KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
           isKeyBoardOpen = isKeyboardVisible;
@@ -118,13 +116,13 @@ class ContainerFirst extends StatelessWidget {
           return returnSubMainView(
               scrollPhysics: scrollingOnKeyboardOpen
                   ? (isKeyBoardOpen
-                      ? ClampingScrollPhysics()
-                      : NeverScrollableScrollPhysics())
+                  ? ClampingScrollPhysics()
+                  : NeverScrollableScrollPhysics())
                   : NeverScrollableScrollPhysics(),
               remainingViewFullHeight: remainingViewFullHeight);
         })
 
-            /*ConstrainedBox(
+        /*ConstrainedBox(
           constraints: BoxConstraints(maxHeight: remainingViewFullHeight),
           child:
           SingleChildScrollView(
@@ -136,34 +134,56 @@ class ContainerFirst extends StatelessWidget {
             child: containChild,
           ),
         )*/
-            ;
+        ;
       } else {
         return returnSubMainView(
-                remainingViewFullHeight:
-                    remainingViewFullHeight) /*ConstrainedBox(
+            remainingViewFullHeight:
+            remainingViewFullHeight) /*ConstrainedBox(
           constraints: BoxConstraints(maxHeight: remainingViewFullHeight),
           child: SingleChildScrollView(
             physics: ClampingScrollPhysics(),
             child: containChild,
           ),
         )*/
-            ;
+        ;
       }
     }
 
     return Scaffold(
-      backgroundColor:backgroundColor ??Color(0xff212327),
+      backgroundColor: appBackgroundColor,
       body: SafeArea(
         bottom: false,
         top: false,
         // maintainBottomViewPadding: true,
-        child: Column(
+        child: isOverLayAppBar?Column(
           children: [
-            StatusBar(statusBarColor: statusBarColor),
-            AppBarView(
-                appBar: this.appBar, appBarHeight: calculateAppBarHeight()),
+            isOverLayStatusBar
+                ? Container(
+              height: 0,
+            )
+                : StatusBar(statusBarColor: statusBarColor),
+            isOverLayAppBar?Container():AppBarView(appBar: appBar, appBarHeight: calculateAppBarHeight()),
             Expanded(
-              child: ScrollConfiguration(
+              child: Stack(
+                children: [
+                  ScrollConfiguration(
+                      behavior: MyBehavior(), child: returnMainView()),
+                  !isOverLayAppBar?Container():AppBarView(appBar: appBar, appBarHeight: calculateAppBarHeight())
+                ],
+              ),
+            ),
+            BottomBarSafeArea(bottomBarSafeAreaColor: bottomBarSafeAreaColor),
+          ],
+        ):Column(
+          children: [
+            isOverLayStatusBar
+                ? Container(
+              height: 0,
+            )
+                : StatusBar(statusBarColor: statusBarColor),
+            AppBarView(appBar: appBar, appBarHeight: calculateAppBarHeight()),
+            Expanded(
+              child:ScrollConfiguration(
                   behavior: MyBehavior(), child: returnMainView()),
             ),
             BottomBarSafeArea(bottomBarSafeAreaColor: bottomBarSafeAreaColor),
@@ -178,10 +198,10 @@ class ContainerFirst extends StatelessWidget {
     double fullScreenSize = mediaQueryData.size.height;
     double remainingViewFullHeight = fullScreenSize;
 
-    double statusBarHeight = mediaQueryData.padding.top;
+    double statusBarHeight = this.isOverLayStatusBar?0:mediaQueryData.padding.top;
     double bottomBarSafeAreaHeight = mediaQueryData.padding.bottom;
 
-    double appBarHeight = calculateAppBarHeight();
+    double appBarHeight = this.isOverLayAppBar?0:calculateAppBarHeight();
 
     remainingViewFullHeight = fullScreenSize -
         (statusBarHeight + bottomBarSafeAreaHeight + appBarHeight);
@@ -216,18 +236,18 @@ class AppBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     double appBarHeight = this.appBarHeight;
     MediaQueryData mediaQueryData = MediaQuery.of(context);
-    return Container(
+    return Container(color: Colors.white,
       height: appBarHeight,
       child: PreferredSize(
           child: (appBar == null || appBarHeight == 0)
               ? Container(
-                  height: appBarHeight,
-                  color: Colors.blue,
-                  child: Text(
-                    "custom height appBarHeight>0, no app bar appBarHeight < 0, Default system appBar height  appBarHeight == 0",
-                    style: TextStyle(color: Colors.black, fontSize: 14),
-                  ),
-                )
+            height: appBarHeight,
+            color: Colors.blue,
+            child: const Text(
+              "custom height appBarHeight>0, no app bar appBarHeight < 0, Default system appBar height  appBarHeight == 0",
+              style: TextStyle(color: Colors.black, fontSize: 14),
+            ),
+          )
               : appBar!,
           preferredSize: Size(double.infinity, appBarHeight)),
     );

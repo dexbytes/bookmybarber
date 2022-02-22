@@ -71,7 +71,7 @@ class DetailScreenTopRowWidget extends StatelessWidget {
                       child:iconApps.iconImage(
                           imageUrl: rowData[index].icon,
                           imageColor: Color(0xffE4B343),
-                          iconSize: Size(40, 40)
+                          iconSize: Size(35, 35)
 
                       ),
                     )

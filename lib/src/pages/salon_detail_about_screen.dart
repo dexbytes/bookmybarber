@@ -83,11 +83,11 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       // bottomBarSafeAreaColor: Colors.transparent,
         contextCurrentView: context,
         // appBackgroundColor: Colors.white,
-        // scrollPadding: EdgeInsets.only(bottom: 81),
+        scrollPadding: EdgeInsets.only(bottom: 40),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: false,
-        isFixedDeviceHeight: true,
+        isSingleChildScrollViewNeed: true,
+        isFixedDeviceHeight: false,
         appBarHeight: -1,
         appBar: Container(
           height: -1,
@@ -127,6 +127,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               }
             ),
             image,
+            SizedBox(height: 0,)
           ],
         )
     );

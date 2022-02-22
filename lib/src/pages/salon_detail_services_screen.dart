@@ -74,23 +74,25 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
               ),
             ),
           ),
-          DefaultTabController(
-            length: 2,
-            initialIndex: selectedTab,
-            child: Container(
-              height: 1050,
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  ServicesListView(),
-                  PackageCardWidget(onCardClickCallBack: (){
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                          widget: PackageDetailServicesScreen()),
-                    );
-                  },),
-                ],
+          Expanded(
+            child: DefaultTabController(
+              length: 2,
+              initialIndex: selectedTab,
+              child: Container(
+                // height: 1050,
+                child: TabBarView(
+                  controller: tabController,
+                  children: [
+                    ServicesListView(),
+                    PackageCardWidget(onCardClickCallBack: (){
+                      Navigator.push(
+                        context,
+                        SlideRightRoute(
+                            widget: PackageDetailServicesScreen()),
+                      );
+                    },),
+                  ],
+                ),
               ),
             ),
           ),
@@ -111,11 +113,7 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
           ),
           containChild: Container(
             height: 1,
-            child: Stack(
-              children: [
-                tabBar
-              ],
-            ),
+            child: tabBar,
           )
       ),
 

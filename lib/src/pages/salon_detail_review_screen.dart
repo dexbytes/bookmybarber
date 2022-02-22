@@ -187,7 +187,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
         // scrollPadding: EdgeInsets.only(bottom: 81),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: false,
+        isSingleChildScrollViewNeed: true,
         isFixedDeviceHeight: true,
         appBarHeight: -1,
         appBar: Container(
