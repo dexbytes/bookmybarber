@@ -175,6 +175,33 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
             onTap: _onItemTapped,
           ),
         ),
+        // child: Scaffold(
+        //   backgroundColor: Colors.grey,
+        //   floatingActionButton:FloatingActionButton(onPressed: (){},
+        //     backgroundColor: Color(0xffE4B343),
+        //     child: iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon),
+        //   ),
+        //   bottomNavigationBar: BottomAppBar(
+        //     color: Colors.grey.withOpacity(1),
+        //     shape: CircularNotchedRectangle(),
+        //     child: BottomNavigationBar(
+        //       items: menuItem,
+        //       elevation: elevation,
+        //       type: bottomMenuType == 0
+        //           ? BottomNavigationBarType.fixed
+        //           : BottomNavigationBarType.fixed,
+        //       backgroundColor: Colors.transparent,
+        //       // fixedColor: backgroundColor,
+        //       currentIndex: selectedIndex,
+        //       selectedIconTheme: IconThemeData(color: activeIconColor),
+        //       selectedItemColor: activeIconColor,
+        //       unselectedItemColor: deActiveIconColor,
+        //       selectedLabelStyle: activeMenuTextStyle,
+        //       unselectedLabelStyle: deActiveMenuTextStyle,
+        //       onTap: _onItemTapped,
+        //     ),
+        //   ),
+        // ),
       ),
     ) /*Container(
       color: backgroundColor,
@@ -285,17 +312,17 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
        } else
         menuItem.add(BottomNavigationBarItem(
           activeIcon: Container(
-            margin: EdgeInsets.all(0),
+            margin: EdgeInsets.only(bottom: 5),
             padding: EdgeInsets.all(0),
-            height: 25,
+            height: 30,
             // color: Color.fromARGB(255, 18, 124, 157),
             child:  iconApps.iconImage(imageUrl: values["activeIcon"],
                 imageColor:Color(0xffE4B343)),
           ),
           icon: Container(
-              margin: EdgeInsets.all(0),
+              margin: EdgeInsets.only(bottom: 5),
               padding: EdgeInsets.all(0),
-              height: 25,
+              height: 30,
               //color: Color.fromARGB(255, 18, 124, 157),
               child: iconApps.iconImage(imageUrl: values["deActiveIcon"])),
 
@@ -352,7 +379,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(child: Center(child: Text("Screen3"),),);
+      return Container(color:Colors.white,child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
@@ -369,7 +396,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(child: Center(child: Text("Screen3"),),);
+      return Container(color:Colors.white,child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
@@ -399,22 +426,41 @@ class BNBCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = new Paint()
-      ..color = AppColors().appBgColor3
+      ..color = Color(0xff323446) //AppColors().appBgColor3
       ..style = PaintingStyle.fill;
 
     Path path = Path();
-    path.moveTo(0,10); // Start
-    path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.0, 0);
-    path.quadraticBezierTo(size.width * 0.35, 0, size.width * 0.40, 8);
-    path.arcToPoint(Offset(size.width * 0.61, 10), radius: Radius.circular(25.0), clockwise: false);
-    path.quadraticBezierTo(size.width * 0.65, 0, size.width * 0.80, 0);
-    path.quadraticBezierTo(size.width * 0.80, 0, size.width, 0);
+    path.moveTo(0, 0); // Start
+    path.quadraticBezierTo(size.width * 0.9, 5.7, size.width * 0.339, 2.1);
+    path.quadraticBezierTo(size.width * 0.395 ,10, size.width * 0.40, 15);
+    path.arcToPoint(Offset(size.width * 0.60, 16), radius: Radius.elliptical(44,44), clockwise: false);
+    path.quadraticBezierTo(size.width * 0.63, 0, size.width *0.71, 0);
+    path.quadraticBezierTo(size.width * 0.0, 0, size.width, 0);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
-    path.lineTo(0, 20);
-    canvas.drawShadow(path, Colors.black, 5, true);
+    path.lineTo(0, 0);
+    canvas.drawShadow(path, Colors.transparent, 5, true);
     canvas.drawPath(path, paint);
   }
+
+  // void paint(Canvas canvas, Size size) {
+  //   Paint paint = new Paint()
+  //     ..color = AppColors().appBgColor3
+  //     ..style = PaintingStyle.fill;
+  //
+  //   Path path = Path();
+  //   path.moveTo(0,10); // Start
+  //   path.quadraticBezierTo(size.width * 0.0, 0, size.width * 0.0, 0);
+  //   path.quadraticBezierTo(size.width * 0.40, 0, size.width * 0.39, 4);
+  //   path.arcToPoint(Offset(size.width * 0.61, 5), radius: Radius.circular(30.0), clockwise: false);
+  //   path.quadraticBezierTo(size.width * 0.60, 0, size.width * 0.80, 0);
+  //   path.quadraticBezierTo(size.width * 0.80, 0, size.width, 0);
+  //   path.lineTo(size.width, size.height);
+  //   path.lineTo(0, size.height);
+  //   path.lineTo(0, 20);
+  //   canvas.drawShadow(path, Colors.transparent, 5, true);
+  //   canvas.drawPath(path, paint);
+  // }
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {

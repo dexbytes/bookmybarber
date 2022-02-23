@@ -20,46 +20,107 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/bottom_menu_booking_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bottom_menu_chat_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bottom_menu_home_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bottom_menu_location_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/bottom_menu_profile_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bookmybarber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bookmybarber.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app_theme/config_theme.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app_theme/config_theme.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/google_map_custom.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/src/pages/main_map_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test/google_map_custom_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/kotlin/com/example/test_package/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/drawable-v21/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/values-night/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/test/widget_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/icons/Icon-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/icons/Icon-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/icons/Icon-maskable-192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/icons/Icon-maskable-512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/web/manifest.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/app_utility/app_navigator/app_navigator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/app_utility/app_navigator/app_navigator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/dashboard_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -94,7 +155,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -150,30 +211,31 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="556" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1645524264774" />
-    <state width="1020" height="468" key="GridCell.Tab.0.bottom" timestamp="1645599633501">
+    <state width="1004" height="280" key="GridCell.Tab.0.bottom" timestamp="1645614325086">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1020" height="468" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645599633501" />
-    <state width="1020" height="468" key="GridCell.Tab.0.center" timestamp="1645599633500">
+    <state width="1004" height="280" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645614325086" />
+    <state width="1004" height="280" key="GridCell.Tab.0.center" timestamp="1645614325085">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1020" height="468" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645599633500" />
-    <state width="1020" height="468" key="GridCell.Tab.0.left" timestamp="1645599633500">
+    <state width="1004" height="280" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645614325085" />
+    <state width="1004" height="280" key="GridCell.Tab.0.left" timestamp="1645614325085">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1020" height="468" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645599633500" />
-    <state width="1020" height="468" key="GridCell.Tab.0.right" timestamp="1645599633500">
+    <state width="1004" height="280" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645614325085" />
+    <state width="1004" height="280" key="GridCell.Tab.0.right" timestamp="1645614325086">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1020" height="468" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645599633500" />
-    <state x="326" y="25" key="SettingsEditor" timestamp="1643966426010">
-      <screen x="0" y="25" width="1366" height="670" />
+    <state width="1004" height="280" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645614325086" />
+    <state x="326" y="25" key="SettingsEditor" timestamp="1645604972814">
+      <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="326" y="25" key="SettingsEditor/0.25.1366.670@0.25.1366.670" timestamp="1643966426010" />
+    <state x="326" y="25" key="SettingsEditor/0.25.1366.683@0.25.1366.683" timestamp="1645604972814" />
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1645524399230">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
