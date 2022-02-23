@@ -379,7 +379,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(color:Colors.white,child: Center(child: Text("Screen3"),),);
+      return Container(child: Center(child: Text("Screen2"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
@@ -396,7 +396,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(color:Colors.white,child: Center(child: Text("Screen3"),),);
+      return Container(child: Center(child: Text("Screen2"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(child: Center(child: Text("Screen3"),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
