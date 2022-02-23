@@ -71,9 +71,12 @@ class LogOutEvent extends MainAppEvent {
 
 class HomeBottomNavigationBarTapedEvent extends MainAppEvent {
   final int tapedBottomBarIndex;
+  final String? statusBarColor;
   final String tapedBottomBarPageId;
   const HomeBottomNavigationBarTapedEvent(
-      {required this.tapedBottomBarIndex, required this.tapedBottomBarPageId});
+      {required this.tapedBottomBarIndex,
+        required this.tapedBottomBarPageId,
+        this.statusBarColor});
   @override
   String toString() => 'RemoveProduct { index: }';
 }

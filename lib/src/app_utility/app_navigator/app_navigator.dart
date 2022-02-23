@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
-import 'package:base_flutter_app/src/bloc/main_app_bloc/main_app_event.dart';
 import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_screen.dart';
 import 'package:base_flutter_app/src/pages/verification_code_screen.dart';
@@ -35,9 +34,9 @@ class AppNavigator {
       context,
       SlideRightRoute(
           widget: SignInPage(
-        userEmailId: userEmail,
-        canBackArrow: canBackArrow,
-      )),
+            userEmailId: userEmail,
+            canBackArrow: canBackArrow,
+          )),
     );
   }
 
@@ -48,8 +47,8 @@ class AppNavigator {
       context,
       SlideRightRoute(
           widget: VerificationCodePage(
-        userEmailId: userEmail,
-      )),
+            userEmailId: userEmail,
+          )),
     );
   }
 

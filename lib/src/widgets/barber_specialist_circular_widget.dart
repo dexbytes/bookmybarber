@@ -13,6 +13,8 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   final TextStyle subtitleTextStyle;
   final EdgeInsetsGeometry padding;
   final Color borderColor;
+  final double height;
+  final double width;
 
   BarberSpecialistCircularWidget({Key? key,
     this.onClickCardCallBack,
@@ -23,6 +25,8 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
     this.isSecondDataVisible = false,
     this.padding = const EdgeInsets.only(left: 10),
     this.borderColor = const Color(0xffCBAD90),
+    this.height = 68,
+    this.width = 68,
   }) : super(key: key);
 
 
@@ -58,8 +62,8 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                       child: Container(
                           padding: EdgeInsets.zero,
                           margin: EdgeInsets.zero,
-                          height: 62,
-                          width: 62,
+                          height: height,
+                          width: width,
                           decoration: BoxDecoration(
                             border: Border.all(width: 2,color: borderColor),
                             shape: BoxShape.circle,

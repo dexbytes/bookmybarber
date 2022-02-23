@@ -10,6 +10,9 @@ import 'package:base_flutter_app/src/pages/sign_in_screen.dart';
 class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
   MainAppBloc() : super(MainAppInitStat());
   static Map<String, dynamic> configTheme = Map<String, dynamic>();
+  static BuildContext? dashboardContext;
+  static get getDashboardContext => dashboardContext!;
+
   @override
   Stream<MainAppState> mapEventToState(MainAppEvent event) async* {
     if (event is UpdateLoggedInUserAuth) {
@@ -19,7 +22,8 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
     } else if (event is HomeBottomNavigationBarTapedEvent) {
       yield HomeBottomNavigationBarTapedState(
           tapedBottomBarIndex: event.tapedBottomBarIndex,
-          tapedBottomBarPageId: event.tapedBottomBarPageId);
+          tapedBottomBarPageId: event.tapedBottomBarPageId,
+          statusBarColor: event.statusBarColor);
     } else if (event is LogOutEvent) {
       loadingWidget.startLoadingPopUp(event.context);
       /*await sharedPreferencesFile.saveBool(isUserLoggedInC, false);
@@ -79,12 +83,11 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
             userProfileData: mUserProfileDetailModel);
       }
       LoadingWidget.endLoadingWidget(event.context);
-
       yield GetUserProfileDetailsApiState();*/
     }
   }
 
-  /* Future getProfileSetUpStep({ProfileSetUpScreens profileSetUpScreens}) async {
+/* Future getProfileSetUpStep({ProfileSetUpScreens profileSetUpScreens}) async {
     String profileStepDa =
         await sharedPreferencesFile.readStr(profileSetUpStepLocal);
     ProfileSetUpScreens profileSetUpScreensTemp = profileSetUpScreens;
@@ -135,7 +138,7 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
     }
   }*/
 
-  /*Future getUserProfileApi({String userId}) async {
+/*Future getUserProfileApi({String userId}) async {
     Map data = {"wbs_cmd": "profile.get&id=$userId"};
     var response = await apiRequest.getUserProfileApi(
       requestData: data,
@@ -152,7 +155,7 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
     }
   }*/
 
-  /* Future setProfileSetUpStepFromApi(
+/* Future setProfileSetUpStepFromApi(
       {UserProfileDetailModel userProfileData}) async {
     String profileStepDa =
         await sharedPreferencesFile.readStr(profileSetUpStepLocal);
@@ -186,7 +189,6 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
               "data": {"gender": "${userData.gender}"}
             });
       }
-
       // profileSetUpStep["${ProfileSetUpScreens.PARTY_QUESTIONS}"]
       if (userData.firstName != null && userData.firstName.isNotEmpty) {
         Map partyQuestion = {
@@ -195,12 +197,10 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
             "last_name": "${userData.lastName != null ? userData.lastName : ""}"
           }
         };
-
         ProfileSetUpSetUpdateState(
             profileSetUpScreens: ProfileSetUpScreens.PARTY_QUESTIONS,
             screenData: partyQuestion);
       }
-
       */ /*profileSetUpStep["${ProfileSetUpScreens.PARTY_QUESTIONS2}"] = {
         "data": {"known_from": "$knownFrom"}
       };*/ /*
@@ -211,7 +211,6 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
               "data": {"known_from": "$knownFrom"}
             });
       }
-
       if (userData.hasKids != null &&
           userData.hasKids &&
           userData.kids != null &&
@@ -235,7 +234,6 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
               "data": {"host_fun_fact": "$hostFunFact"}
             });
       }
-
       */ /*profileSetUpStep["${ProfileSetUpScreens.GROUP_GIFT}"] = {
         "data": {"group_gift": groupGift}
       };*/ /*
@@ -269,7 +267,6 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
         sharedPreferencesFile.saveBool(
             isIsTutorialSeenC, userData.isTutorialRead);
       }
-
       if (userData.fcmId != null && userData.fcmId.trim() != "") {
         // if (userData.profilePhoto.isNotEmpty) {
         sharedPreferencesFile.saveStr(fcmUidC, userData.fcmId).then((value) {
@@ -279,12 +276,9 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
               userData: userData);
         });
       }
-
       */ /*String profileSetUpStepStr = json.encode(profileSetUpStep);
       sharedPreferencesFile.saveStr(profileSetUpStepLocal, profileSetUpStepStr);*/ /*
-
       // return;
-
       //print("$profileSetUpStep");
       //ProfileSetUpScreens profileSetUpScreensTemp = profileSetUpScreens;
       //Return selected screen data
@@ -328,27 +322,24 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
     }
   }*/
 
-  //login api calling to check fcm details and update
+//login api calling to check fcm details and update
 /*  fcmLoginStatusApi(
       {String email, String password = "Moh@1234", Data userData}) async {
     try {
       sharedPreferencesFile.readStr(fcmUidC).then((uId) {
         AuthBase _auth = new Auth();
         FireBaseStore _fireBaseStore = new FireBaseStore();
-
         String fullName = userData != null
             ? "${userData.firstName != null ? userData.firstName : ""} " +
                 "${userData.lastName != null ? userData.lastName : ""}"
             : "";
         String image = userData != null ? "${userData.profilePhoto}" : null;
         fullName = fullName.trim();
-
         */ /*_auth
             .registerUsingEmailPassword(
                 name: fullName, email: email, password: "Moh@1234")
             .then((value) {
           */ /* */ /*james101@mailinator.com
-
 "uid" -> "MBcJ4WFKQVd5Wum1VWygMJVjE2C3"*/ /* */ /*
           print("$value");
         });*/ /*
@@ -417,7 +408,6 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
                       } catch (e) {
                         print(e);
                       }
-
                       try {
                         _fireBaseStore
                             .updatedUserProfileFireBase(
@@ -450,7 +440,7 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
     }
   }*/
 
-  /*Future<List<dynamic>> chatMediaUpload(
+/*Future<List<dynamic>> chatMediaUpload(
       {BuildContext context, Map requestData}) async {
     Map data = requestData;
     MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);

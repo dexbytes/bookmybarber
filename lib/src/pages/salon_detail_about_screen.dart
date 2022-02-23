@@ -9,9 +9,10 @@ import 'package:readmore/readmore.dart';
 
 class SalonDetailAboutScreen extends StatefulWidget {
   final bool isBarberInfoShow;
+  final bool isDataScroll;
   final onPhotoClickCallBack;
 
-  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false, this.onPhotoClickCallBack,}) : super(key: key);
+  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false, this.onPhotoClickCallBack, this.isDataScroll = true,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
@@ -86,7 +87,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
         scrollPadding: EdgeInsets.only(bottom: 40),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: true,
+        isSingleChildScrollViewNeed: widget.isDataScroll,
         isFixedDeviceHeight: false,
         appBarHeight: -1,
         appBar: Container(

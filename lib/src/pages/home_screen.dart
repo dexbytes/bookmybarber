@@ -1,3 +1,4 @@
+import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
@@ -113,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: BarberSpecialistCircularWidget(
           onClickCardCallBack:(){
             Navigator.push(
-              context,
+              MainAppBloc.getDashboardContext,
               SlideRightRoute(
                   widget: BarberProfileScreen()),
             );
@@ -141,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: HomeCardWidget(
           onCardClickCallBack: (){
             Navigator.push(
-              context,
+              MainAppBloc.getDashboardContext,
               SlideRightRoute(
                   widget: SalonDetailScreen()),
             );

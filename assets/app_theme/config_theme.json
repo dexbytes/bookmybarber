@@ -1,11 +1,11 @@
 {
   "homeBottomNavigationBar": {
     "backgroundColor": "0xFFFFFFFF",
-    "activeIconColor": "0xFF2196F3",
-    "deActiveIconColor": "0xFF607D8B",
+    "activeIconColor": "0xffE4B343",
+    "deActiveIconColor": "0xFFB8BCBF",
     "activeMenuTextStyle": {
       "fontSize": 12,
-      "color": "0xFF2196F3"
+      "color": "0xffE4B343"
     },
     "deActiveMenuTextStyle": {
       "fontSize": 12,
@@ -13,30 +13,45 @@
     },"elevation": 0.0,
     "bottomMenuType": 0,
     "menu_item": [
+
       {
-        "icon": "0xf53a",
+        "activeIcon": "assets/images/bottom_menu_active_home_icon.png",
+        "deActiveIcon": "assets/images/bottom_menu_home_icon.png",
         "label": "Home",
-        "backgroundColor": "0xFFFFEBEE",
-        "menuPageId": "menu1"
+        "backgroundColor": "0xFFDD2E37",
+        "menuPageId": "menu1",
+        "statusBarColors": "0xff212327"
       },
-      {"icon": "0xe11b",
-        "label": "Studio",
-        "backgroundColor": "0xFFFFEBEE",
-        "menuPageId": "menu2"
+      {
+        "activeIcon": "assets/images/bottom_menu_active_location_icon.png",
+        "deActiveIcon":"assets/images/bottom_menu_location_icon.png",
+        "label": "Near by",
+        "backgroundColor": "0xFFDD2E37",
+        "menuPageId": "menu2",
+        "statusBarColors": "0xff212327"
       },
-      {"icon": "0xe04b",
-        "label": "Category",
-        "backgroundColor": "0xFFFFEBEE",
-        "menuPageId": "menu3"
+      {
+        "activeIcon":"assets/images/bottom_menu_chat_icon.png",
+        "deActiveIcon":"assets/images/bottom_menu_chat_icon.png",
+        "label": "",
+        "backgroundColor": "0xFFDD2E37",
+        "menuPageId": "menu3",
+        "statusBarColors": "0xff212327"
       },
-      {"icon": "0xee4e",
+      {
+        "activeIcon": "assets/images/bottom_menu_active_booking_icon.png",
+        "deActiveIcon":"assets/images/bottom_menu_booking_icon.png",
+        "label": "Booking",
+        "backgroundColor": "0xFFDD2E37",
+        "menuPageId": "menu4",
+        "statusBarColors": "0xff212327"
+      },
+      {
+        "activeIcon": "assets/images/bottom_menu_active_profile_icon.png",
+        "deActiveIcon":"assets/images/bottom_menu_profile_icon.png",
         "label": "Profile",
-        "backgroundColor": "0xFFFFEBEE",
-        "menuPageId": "menu4"
-      },
-      {"icon": "0xe559",
-        "label": "Explore",
-        "backgroundColor": "0xFFFFEBEE",
+        "backgroundColor": "0xFFDD2E37",
+        "statusBarColors": "0xff212327",
         "menuPageId": "menu5"
 
       }
@@ -44,6 +59,10 @@
   },
 
   "setting": {
-    "homeBottomNavigationBarHeight": 56
+    "homeBottomNavigationBarHeight": 56,
+    "statusBarColors": "0xff212327",
+    "appBackgroundColors": ["0xFFFFFFFF"],
+    "isDisplaySideDrawer": false,
+    "isDisplayHomeSearch": false
   }
 }

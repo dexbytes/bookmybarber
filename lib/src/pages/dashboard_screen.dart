@@ -1,6 +1,6 @@
-import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
@@ -9,14 +9,44 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/bloc/sign_in_bloc/sign_in_bloc.dart';
 
 class DashBoardPage extends StatefulWidget {
+
   const DashBoardPage({Key? key}) : super(key: key);
   @override
   _DashBoardPage createState() => _DashBoardPage();
 }
 
+
 class _DashBoardPage extends State<DashBoardPage>
     with TickerProviderStateMixin {
   _DashBoardPage();
+
+  Color statusBarColors = Color(0xff212327);
+  // GlobalKey<ScaffoldState>? scaffoldKey;
+
+  GlobalKey<ScaffoldState> globalScaffoldKey = GlobalKey();
+  double bottomMenuHeight = 56;
+  //Current index
+  TabItemBottomNavigatorWithStack _currentTab =
+      TabItemBottomNavigatorWithStack.menu1;
+
+  //Get selected menu
+  Widget buildOffstageNavigator(TabItemBottomNavigatorWithStack tabItem,{item}) {
+    return Offstage(
+        offstage: _currentTab != tabItem,
+        child: AppNavigator(
+          navigatorKey: _navigatorKeys[tabItem]!,
+          tabItem: tabItem,item: item,));
+  }
+
+  //Add Menu navigation key according to added menu
+  Map<TabItemBottomNavigatorWithStack, GlobalKey<NavigatorState>>
+  _navigatorKeys = {
+    TabItemBottomNavigatorWithStack.menu1: GlobalKey<NavigatorState>(),
+    TabItemBottomNavigatorWithStack.menu2: GlobalKey<NavigatorState>(),
+    TabItemBottomNavigatorWithStack.menu3: GlobalKey<NavigatorState>(),
+    TabItemBottomNavigatorWithStack.menu4: GlobalKey<NavigatorState>(),
+    TabItemBottomNavigatorWithStack.menu5: GlobalKey<NavigatorState>(),
+  };
 
   @override
   void initState() {
@@ -33,223 +63,115 @@ class _DashBoardPage extends State<DashBoardPage>
     appDimens.appDimensFind(context: context);
     SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
     MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);
+
+    MainAppBloc.dashboardContext = context;
     //Appbar
     Widget _appBar = Container();
 
-    Map<String, dynamic> setting = MainAppBloc.configTheme["setting"];
-    List<dynamic> statusBarColors = setting.containsKey("statusBarColors")
-        ? setting["statusBarColors"]
-        : [];
+    Map<String, dynamic> setting =
+    MainAppBloc.configTheme.containsKey("setting")
+        ? MainAppBloc.configTheme["setting"]
+        : {};
+    /*statusBarColors = setting.containsKey("statusBarColors")
+        ? projectUtil.colorFromIntString(
+        stringColor: setting["statusBarColors"])
+        : Colors.grey;*/
+
+
+    //Selected bottom menu index
+    void _selectTab(TapedItemModel capedItemModel) {
+      TabItemBottomNavigatorWithStack tabItem = capedItemModel.tabItemBottomNavigatorWithStack;
+      try {
+        statusBarColors = Color(int.parse(capedItemModel.statusBarColor!));
+      } catch (e) {
+        print(e);
+      }
+      /* mainAppBloc.add(HomeBottomNavigationBarTapedEvent(
+          tapedBottomBarIndex: 0,
+          tapedBottomBarPageId: tabItem.name,
+          statusBarColor: capedItemModel.statusBarColor));*/
+
+      if (tabItem == _currentTab) {
+        // pop to first route
+        _navigatorKeys[tabItem]!
+            .currentState!
+            .popUntil((route) => route.isFirst);
+      } else {
+        setState(() => _currentTab = tabItem);
+      }
+
+      //print("Selected Menu index ${tabItem.name}");
+    }
+
     //Return main Ui view
     return WillPopScope(
       onWillPop: null, //_onBackPressed,
       child: BlocBuilder<MainAppBloc, MainAppState>(
-          // ignore: non_constant_identifier_names
+        // ignore: non_constant_identifier_names
           builder: (_, mainAppState) {
-        int selectedMenuIndex = 0;
-        if (mainAppState is HomeBottomNavigationBarTapedState) {
-          selectedMenuIndex = mainAppState.tapedBottomBarIndex;
-        }
-        return ContainerDashboard(
-            contextCurrentView: context,
-            statusBarColor: statusBarColors.length > selectedMenuIndex
-                ? projectUtil.colorFromIntString(
-                    stringColor: statusBarColors[selectedMenuIndex])
-                : Colors.amber,
-            bottomBarSafeAreaColor: Colors.amber,
-            appBarHeight: 0,
-            bottomMenuHeight: 56,
-            bottomMenuView: Container(
-              color: Colors.transparent,
-              child: Center(
-                child: BottomNavigationBarMaterial(
-                    /* showLabels: true,
-                    disableItemColor: Colors.green,
-                    enableItemColor: Colors.red,
-                    navigationBarItems: [
-                      BarItemsDetails(
-                          icon: iconApps.addIcon,
-                          iconSelected: iconApps.addIcon,
-                          menuName: "Menu"),
-                      BarItemsDetails(
-                          icon: iconApps.addIcon,
-                          iconSelected: iconApps.addIcon,
-                          menuName: "Menu"),
-                      BarItemsDetails(
-                          icon: iconApps.addIcon,
-                          iconSelected: iconApps.addIcon,
-                          menuName: "Menu")
-                    ],*/
-                    onItemTapped: (int selectedMenuIndex, String menuPageId) {
-                  mainAppBloc.add(HomeBottomNavigationBarTapedEvent(
-                      tapedBottomBarIndex: selectedMenuIndex,
-                      tapedBottomBarPageId: menuPageId));
-                  print("Selected Menu index $selectedMenuIndex");
-                }),
-              ),
-            ),
-            appBar: Container(
-              color: statusBarColors.length > selectedMenuIndex
+            int selectedMenuIndex = 0;
+            Color statusBarColorsLocal = statusBarColors;
+
+            if (mainAppState is HomeBottomNavigationBarTapedState) {
+              selectedMenuIndex = mainAppState.tapedBottomBarIndex;
+              statusBarColorsLocal = mainAppState.statusBarColor != null
                   ? projectUtil.colorFromIntString(
-                      stringColor: statusBarColors[selectedMenuIndex])
-                  : Colors.red,
-            ),
-            containChild: BlocBuilder<MainAppBloc, MainAppState>(
-                // ignore: non_constant_identifier_names
-                builder: (_, mainAppState) {
-              String selectedMenuPageId = "";
+                  stringColor: mainAppState.statusBarColor!)
+                  : statusBarColors;
+            }
 
-              if (mainAppState is HomeBottomNavigationBarTapedState) {
-                selectedMenuPageId = mainAppState.tapedBottomBarPageId;
-                selectedMenuIndex = mainAppState.tapedBottomBarIndex;
-              }
-              Widget menuPage = Container();
-              switch (selectedMenuPageId) {
-                case "menu1":
-                  {
-                    menuPage = HomeMenuScreen();
-                  }
-                  break;
-                case "menu2":
-                  {
-                    menuPage = Container(
-                      child: Center(child: Text("Menu 2")),
-                    );
-                  }
-                  break;
-                case "menu3":
-                  {
-                    menuPage = Container(
-                      child: Center(child: Text("Menu 3")),
-                    );
-                  }
-                  break;
-                case "menu4":
-                  {
-                    menuPage = Container(
-                      child: Center(child: Text("Menu 4")),
-                    );
-                  }
-                  break;
-                case "menu5":
-                  {
-                    menuPage = Container(
-                      child: Center(child: Text("Menu 5")),
-                    );
-                  }
-                  break;
-              }
-              return menuPage;
-            })
 
-            /*ContainerMenuPage(
-            scrollPadding: EdgeInsets.only(bottom: 90),
-            isSingleChildScrollViewNeed: true,
-            isFixedDeviceHeight: false,
-            containChild: Stack(
-              children: [
-                Column(
+            return ContainerDashboard(
+                // globalScaffoldKey: globalScaffoldKey ,
+                // appBackgroundColor: Colors.red,
+                contextCurrentView: context,
+                isOverLayStatusBar: true,
+                statusBarColor: statusBarColorsLocal,
+                bottomBarSafeAreaColor:AppColors().appBgColor2,
+                appBackgroundColor:AppColors().appBgColor3,
+                appBarHeight: -1,
+                bottomMenuHeight: 85,
+                bottomMenuView: Stack(
+                  alignment: Alignment.bottomCenter,
                   children: [
-                    Expanded(
-                        flex: 3,
-                        child: Container(
-                          color: Colors.orange,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Expanded(
-                                  child: Column(
-                                children: [
-                                  Container(
-                                    height: 100,
-                                    color: Colors.green,
-                                  ),
-                                ],
-                              )),
-                              // continueButton(),
-                              Expanded(
-                                  child: Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Container(
-                                  height: 100,
-                                  color: Colors.green,
-                                ),
-                              )),
-                            ],
-                          ),
-                        )),
-                    Expanded(
-                        child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        color: Colors.green,
-                        child: Container(
-                          height: 50,
-                          color: Colors.green,
-                        ),
+                    Container(
+                      child: BottomNavigatorWithStack(
+                        currentTab: _currentTab,
+                        onSelectTab: _selectTab,
                       ),
-                    )),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
                     ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 50,
-                      color: Colors.green,
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: FloatingActionButton(onPressed: (){},
+                        backgroundColor: Color(0xffE4B343),
+                        child: iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon),
+                      ),
                     )
                   ],
                 ),
-              ],
-            ),
-            contextCurrentView: context,
-          ),*/
-            );
-      }),
+                appBar: Container(
+                  color: statusBarColorsLocal,
+                ),
+                containChild: BlocBuilder<MainAppBloc, MainAppState>(
+                  // ignore: non_constant_identifier_names
+                    builder: (_, mainAppState) {
+                      String selectedMenuPageId = "";
+                      if (mainAppState is HomeBottomNavigationBarTapedState) {
+                        selectedMenuPageId = mainAppState.tapedBottomBarPageId;
+                        selectedMenuIndex = mainAppState.tapedBottomBarIndex;
+                      }
+                      return Stack(children: <Widget>[
+                        buildOffstageNavigator(TabItemBottomNavigatorWithStack.menu1,item: (){
+                          globalScaffoldKey.currentState?.openDrawer();
+                        }),
+                        buildOffstageNavigator(TabItemBottomNavigatorWithStack.menu2),
+                        buildOffstageNavigator(TabItemBottomNavigatorWithStack.menu3),
+                        buildOffstageNavigator(TabItemBottomNavigatorWithStack.menu4),
+                        buildOffstageNavigator(TabItemBottomNavigatorWithStack.menu5),
+                      ]);
+                    }));
+
+          }),
     );
   }
 }

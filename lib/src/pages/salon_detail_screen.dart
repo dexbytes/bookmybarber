@@ -587,6 +587,8 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                 margin:EdgeInsets.only(top: 10) ,
                 height: 111,
                 child:BarberSpecialistCircularWidget(
+                  height: 63,
+                  width: 63,
                   isSubtitleVisible: true,
                   isSecondDataVisible: true,
                   isFeatureVisible: false,

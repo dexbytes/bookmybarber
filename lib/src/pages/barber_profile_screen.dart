@@ -159,8 +159,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
 
 
     Widget topSection = Container(
-        height: 90,
+        height: 85,
         width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.only(top:MediaQuery.of(context).size.height /2.6),
         color: Color(0xff323446),
         child: BarberProfileTopRowWidget(),
     );
@@ -224,8 +225,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight: MediaQuery.of(context).size.height /2.8,  //2.47,
-                            collapsedHeight: MediaQuery.of(context).size.height/11.5,
+                            expandedHeight: MediaQuery.of(context).size.height /2.1,  //2.47,
+                            collapsedHeight: MediaQuery.of(context).size.height/8.5,
                             flexibleSpace: FlexibleSpaceBar(
                               expandedTitleScale: 1,
                               background:Container(
@@ -246,37 +247,125 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                           imageUrl: "https://northernvirginiamag.com/wp-content/uploads/2018/01/man-having-hair-cut-at-barber-shop.jpg",
                                             fit:BoxFit.cover,
                                             width: MediaQuery.of(context).size.width,
-                                            height:MediaQuery.of(context).size.height /4.5,
+                                            height:MediaQuery.of(context).size.height /4,
                                           )
                                       ),
                                     ),
                                     Align(
                                         alignment: Alignment.topCenter,
-                                        child:profileImageWithName
+                                        child: profileImageWithName,
+                                    ),
+                                    Align(
+                                        alignment: Alignment.topCenter,
+                                        child:    topSection,
                                     ),
                                   ],
                                 ),
                               ),
+                              title:   Container(
+                                padding: EdgeInsets.zero,
+                                margin: EdgeInsets.zero,
+                                color: Colors.transparent,
+                                child: TabBar(
+                                  onTap: (index){
+                                    setState(() {
+                                      selectedTab = index;
+                                    });
+                                  },
+                                  controller: tabController,
+                                  tabs: [
+                                    Tab(text: "Basic Info",),
+                                    Tab(text: "Portfolio",),
+                                    Tab(text: "Review",),
+                                  ],
+                                  labelColor:Color(0xffE4B343),
+                                  isScrollable: false,
+                                  unselectedLabelColor: Color(0xff828588),
+                                  labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
+                                  unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
+                                  labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
+                                  indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
+                                  indicatorColor: Color(0xffE4B343),
+                                  padding: EdgeInsets.zero,
+                                ),
+                              ),
+                              titlePadding: EdgeInsets.zero,
                             ),
                           ),
-                          SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                                  (context, index) {
-                                return Container(
-                                  margin: EdgeInsets.only(bottom: 90),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      topSection,
-                                      tabBar
-                                    ],
+                          SliverFillRemaining(
+                            child: Container(
+                              padding: EdgeInsets.zero,
+                              margin: EdgeInsets.only(bottom: 0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  // topSection,
+                                  // tabBar
+                                  Expanded(
+                                    child: DefaultTabController(
+                                      length: 3,
+                                      initialIndex: selectedTab,
+                                      child: Container(
+                                        padding: EdgeInsets.zero,
+                                        margin: EdgeInsets.zero,
+                                        height: MediaQuery.of(context).size.height,
+                                        child: TabBarView(
+                                          controller: tabController,
+                                          children: [
+                                            // DescriptionPage(),
+                                            SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: true,),
+                                            Center(child: Text("Tab2"),),
+                                            SalonDetailReviewScreen(isScrollable: true,)
+
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                );
-                              },
-                              childCount: 1,
-                            ),
-                          ),
+                                ],
+                              ),
+                            )
+                          )
+
+                          // SliverList(
+                          //   delegate: SliverChildBuilderDelegate(
+                          //         (context, index) {
+                          //       return Container(
+                          //         padding: EdgeInsets.zero,
+                          //         margin: EdgeInsets.only(bottom: 0),
+                          //         child: Column(
+                          //           mainAxisSize: MainAxisSize.min,
+                          //           mainAxisAlignment: MainAxisAlignment.start,
+                          //           children: [
+                          //             // topSection,
+                          //             // tabBar
+                          //             DefaultTabController(
+                          //               length: 3,
+                          //               initialIndex: selectedTab,
+                          //               child: Container(
+                          //                 padding: EdgeInsets.zero,
+                          //                 margin: EdgeInsets.zero,
+                          //                 height: MediaQuery.of(context).size.height /1.45,
+                          //                 child: TabBarView(
+                          //                   controller: tabController,
+                          //                   children: [
+                          //                     // DescriptionPage(),
+                          //                     SalonDetailAboutScreen(isBarberInfoShow: true,),
+                          //                     Center(child: Text("Tab2"),),
+                          //                     SalonDetailReviewScreen()
+                          //
+                          //                   ],
+                          //                 ),
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       );
+                          //     },
+                          //     childCount: 1,
+                          //   ),
+                          // ),
                         ]
                     ),
                   ),

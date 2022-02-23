@@ -14,6 +14,8 @@ class ContainerDashboard extends StatelessWidget {
   final double
       bottomMenuHeight; // if it true than   custom height appBarHeight>0, no app bar appBarHeight < 0, Default system appBar height  appBarHeight == 0
   final BuildContext contextCurrentView; // if it true than
+  final bool isOverLayStatusBar; // if it true than
+
   const ContainerDashboard(
       {Key? key,
       required this.contextCurrentView,
@@ -24,7 +26,11 @@ class ContainerDashboard extends StatelessWidget {
       this.statusBarColor,
       this.appBar,
       this.appBarHeight = 0,
-      this.bottomMenuHeight = 0})
+      this.bottomMenuHeight = 0,
+      this.isOverLayStatusBar = false
+
+
+      })
       : super(key: key);
 
   @override
@@ -62,14 +68,19 @@ class ContainerDashboard extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: appBackgroundColor,
+
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        bottom: false,
+        bottom: true,
         top: false,
         // maintainBottomViewPadding: true,
         child: Column(
           children: [
-            StatusBar(statusBarColor: statusBarColor),
+            isOverLayStatusBar
+                ? Container(
+              height: 0,
+            )
+                : StatusBar(statusBarColor: statusBarColor),
             AppBarViewDashboard(
                 appBar: this.appBar, appBarHeight: calculateAppBarHeight()),
             Expanded(
@@ -90,7 +101,7 @@ class ContainerDashboard extends StatelessWidget {
                 ],
               ),
             ),
-            BottomBarSafeArea(bottomBarSafeAreaColor: bottomBarSafeAreaColor),
+            BottomBarSafeArea(bottomBarSafeAreaColor:bottomBarSafeAreaColor),
           ],
         ),
       ),
@@ -102,7 +113,7 @@ class ContainerDashboard extends StatelessWidget {
     double fullScreenSize = mediaQueryData.size.height;
     double remainingViewFullHeight = fullScreenSize;
 
-    double statusBarHeight = mediaQueryData.padding.top;
+    double statusBarHeight = this.isOverLayStatusBar?0:mediaQueryData.padding.top;
     double bottomBarSafeAreaHeight = mediaQueryData.padding.bottom;
 
     double appBarHeight = calculateAppBarHeight();

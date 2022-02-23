@@ -7,7 +7,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class SalonDetailReviewScreen extends StatefulWidget {
-  const SalonDetailReviewScreen({Key? key,}) : super(key: key);
+  final bool isScrollable;
+  const SalonDetailReviewScreen({Key? key, this.isScrollable = true,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
@@ -187,7 +188,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
         // scrollPadding: EdgeInsets.only(bottom: 81),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: true,
+        isSingleChildScrollViewNeed: widget.isScrollable,
         isFixedDeviceHeight: true,
         appBarHeight: -1,
         appBar: Container(
