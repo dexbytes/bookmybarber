@@ -379,13 +379,13 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(child: Center(child: Text("Screen2"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen2",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
-      return Container(child: Center(child: Text("Screen3"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
-      return Container(child: Center(child: Text("Screen4"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
     } else {
-      return Container(child: Center(child: Text("Screen5"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen4",style: TextStyle(color: Colors.white),),),);
     }
   }
 
@@ -396,13 +396,13 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(child: Center(child: Text("Screen2"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen2",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
-      return Container(child: Center(child: Text("Screen3"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
-      return Container(child: Center(child: Text("Screen4"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
     } else {
-      return Container(child: Center(child: Text("Screen5"),),);
+      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen4",style: TextStyle(color: Colors.white),),),);
     }
   }
 
