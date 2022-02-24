@@ -35,6 +35,7 @@ class IconApps {
   String micIcon = 'assets/images/mic_icon.png';
   String detailAppbarIcon = 'assets/images/detail_appbar_icon.png';
   String bottomMenuChatIcon = 'assets/images/bottom_menu_chat_icon.png';
+  String settingIcon = 'assets/images/setting_icon.png';
 
 
   iconImage(

@@ -26,13 +26,14 @@
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/see_all_text_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/see_all_text_row.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/Salon_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/Salon_list_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +71,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/images" />
@@ -117,6 +118,10 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="158" y="25" width="1208" height="683" key="#Project_Structure/0.25.1366.683@0.25.1366.683" timestamp="1645524695878" />
+    <state x="294" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1645682993206">
+      <screen x="0" y="25" width="1366" height="683" />
+    </state>
+    <state x="294" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.683@0.25.1366.683" timestamp="1645682993206" />
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1644831152646">
       <screen x="0" y="25" width="1366" height="670" />
     </state>
@@ -125,26 +130,26 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="556" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1645524264774" />
-    <state width="1021" height="318" key="GridCell.Tab.0.bottom" timestamp="1645624223462">
+    <state width="1030" height="318" key="GridCell.Tab.0.bottom" timestamp="1645697515525">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1021" height="318" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645624223462" />
-    <state width="1021" height="318" key="GridCell.Tab.0.center" timestamp="1645624223461">
+    <state width="1030" height="318" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645697515525" />
+    <state width="1030" height="318" key="GridCell.Tab.0.center" timestamp="1645697515525">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1021" height="318" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645624223461" />
-    <state width="1021" height="318" key="GridCell.Tab.0.left" timestamp="1645624223461">
+    <state width="1030" height="318" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645697515525" />
+    <state width="1030" height="318" key="GridCell.Tab.0.left" timestamp="1645697515525">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1021" height="318" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645624223461" />
-    <state width="1021" height="318" key="GridCell.Tab.0.right" timestamp="1645624223462">
+    <state width="1030" height="318" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645697515525" />
+    <state width="1030" height="318" key="GridCell.Tab.0.right" timestamp="1645697515525">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1021" height="318" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645624223462" />
+    <state width="1030" height="318" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645697515525" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1645621329348">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -154,11 +159,11 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1366.683@0.25.1366.683" timestamp="1645524399230" />
-    <state x="521" y="116" width="615" height="500" key="find.popup" timestamp="1645620047111">
+    <state x="521" y="116" width="615" height="500" key="find.popup" timestamp="1645695863934">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
-    <state x="521" y="116" width="615" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1645620047111" />
+    <state x="521" y="116" width="615" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1645695863934" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
