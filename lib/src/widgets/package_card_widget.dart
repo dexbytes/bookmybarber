@@ -13,6 +13,7 @@ class PackageCardWidget extends StatelessWidget {
   final TextStyle subtitleTextStyle;
   final bool isSecondDataVisible;
   final bool isBookRowVisible;
+  final ScrollPhysics physics;
 
   PackageCardWidget({
     this.color = Colors.deepOrangeAccent,
@@ -21,6 +22,7 @@ class PackageCardWidget extends StatelessWidget {
     this.subtitleTextStyle = const TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,height: 0.2),
     this.isSecondDataVisible = false,
     this.isBookRowVisible = false,
+    this.physics = const ClampingScrollPhysics(),
   });
 
 
@@ -29,8 +31,8 @@ class PackageCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.vertical,
-      padding: EdgeInsets.only(right: 10,left: 10,),
-      physics: ClampingScrollPhysics(),
+      padding: EdgeInsets.only(right: 10,left: 10,bottom: 250),
+      physics: physics,
       itemCount:package.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {

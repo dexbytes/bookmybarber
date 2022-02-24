@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
+import 'package:base_flutter_app/src/pages/user_profile_screen.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -385,7 +386,7 @@ class AppNavigator extends StatelessWidget {
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
     } else {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen4",style: TextStyle(color: Colors.white),),),);
+      return UserProfileScreen();
     }
   }
 
@@ -402,7 +403,7 @@ class AppNavigator extends StatelessWidget {
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
     } else {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen4",style: TextStyle(color: Colors.white),),),);
+      return UserProfileScreen();
     }
   }
 

@@ -74,51 +74,29 @@ class _UserProfileScreenState extends State<UserProfileScreen>
     Widget profileList = Container(
         margin: EdgeInsets.only(
             right: 0, left: 0),
-        height: MediaQuery.of(context).size.height /1.7,
+        height: MediaQuery.of(context).size.height /1.5,
         child: ProfileListRowWidget()
     );
 
-    Widget followRow = Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            children: [
-              Text("128"),
-              Text("Following"),
-            ],
-          ),
-          Column(
-            children: [
-              Text("128"),
-              Text("Follower"),
-            ],
-          ),
-          Column(
-            children: [
-              Text("128"),
-              Text("Likes"),
-            ],
-          ),
-        ],
-      ),
-    );
-
     Widget topSection =  Container(
-      padding: EdgeInsets.only(top: 30),
+      padding: EdgeInsets.only(top: 35),
       color: AppColors().appBgColor3,
       child:  Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              NotificationBal(onTap: (){},),
-              IconButton(
-                splashRadius: 25,
-                padding: EdgeInsets.zero,
-                alignment: Alignment.center,
-                onPressed: (){},
-                icon:iconApps.iconImage(imageUrl: iconApps.settingIcon,iconSize: Size(20, 20)),
+              NotificationBal(onTap: (){},rightIconSize: 30,),
+              Material(
+                color: Colors.transparent,
+                child: IconButton(
+                  splashRadius: 25,
+                  padding: EdgeInsets.zero,
+                  alignment: Alignment.center,
+                  onPressed: (){print("hh");},
+                  icon:iconApps.iconImage(imageUrl: iconApps.settingIcon,iconSize: Size(30, 30)),
+                ),
               ) ,
             ],
           ),
@@ -132,7 +110,6 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-
                     Text(widget.userName,style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.w700),),
                     SizedBox(height: 5,),
                     Text(widget.email,style: TextStyle(color: Colors.grey,fontSize: 14,fontWeight: FontWeight.w500),),
@@ -179,10 +156,10 @@ class _UserProfileScreenState extends State<UserProfileScreen>
         onWillPop: null, //_onBackPressed,
         child: ContainerMenuPage(
             contextCurrentView: context,
-            // scrollPadding: EdgeInsets.only(bottom: 110),
+            scrollPadding: EdgeInsets.only(bottom: 110),
             isSingleChildScrollViewNeed: true,
             isFixedDeviceHeight: true,
-            appBarHeight: 280,
+            appBarHeight: 290,
             appBar: topSection,
             containChild:Stack(
               children: [
@@ -190,7 +167,6 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // topSection,
                     profileList
                   ],
                 ),
