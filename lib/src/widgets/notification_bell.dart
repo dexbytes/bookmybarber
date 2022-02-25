@@ -12,6 +12,7 @@ class NotificationBal extends StatelessWidget {
   final double? countTextSize;
   final Color? boxShapeCircleColor;
   final Color? iconDataColor;
+  final AlignmentGeometry  alignment;
   const NotificationBal(
       {Key? key,
         this.onTap,
@@ -21,7 +22,7 @@ class NotificationBal extends StatelessWidget {
         this.iconDataColor,
         this.notificationCount = 0,
         this.countTextSize,
-        this.boxShapeCircleColor})
+        this.boxShapeCircleColor, this.alignment =  Alignment.center})
       : super(key: key);
 
   @override
@@ -67,7 +68,7 @@ class NotificationBal extends StatelessWidget {
             width: rightIconSizeTemp,
             padding: const EdgeInsets.symmetric(horizontal: 0),
             child: Stack(
-              alignment: Alignment.center,
+              alignment: alignment,
               children: [
                 Container(
                   child: menuIcon,

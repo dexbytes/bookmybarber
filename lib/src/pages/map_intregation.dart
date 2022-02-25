@@ -1,181 +1,189 @@
-// import 'dart:async';
-//
-// import 'package:flutter/material.dart';
-// import 'package:geolocator/geolocator.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
-//
-// class MapIntegration extends StatefulWidget {
-//   const MapIntegration({Key? key}) : super(key: key);
-//
-//   @override
-//   _MapIntegrationState createState() => _MapIntegrationState();
-// }
-//
-// class _MapIntegrationState extends State<MapIntegration> {
-//   Completer<GoogleMapController> _controller = Completer();
-//
-//   static final CameraPosition _kGooglePlex = CameraPosition(
-//     target: LatLng(37.42796133580664, -122.085749655962),
-//     zoom: 14.4746,
-//   );
-//
-//   // static final CameraPosition _kLake = CameraPosition(
-//   //     bearing: 192.8334901395799,
-//   //     target: LatLng(37.43296265331129, -122.08832357078792),
-//   //     tilt: 59.440717697143555,mkjfdz
-//   //     zoom: 19.151926040649414);
-//
-//
-//   //Move camera on
-//
-//   bool isMapLoading = true;
-//   static double latitude = 37.51248996354304, longitude = 127.05270253797428;
-//    LatLng _initialCameraPosition = LatLng(20.5937, 78.9629);
-//    LatLng ? currentLocation;
-//    GoogleMapController? mapController;
-//
-//
-//   //Recenter my location
-//   recenterMyLocation({bool fromInit = false}) {
-//     try {
-//       // searchController.text = '';
-//       // mSearchedInputvalue = '';
-//     } catch (e) {
-//       print(e);
-//     }
-//     try {
-//       // getPermission(onlyGetLocation: fromInit).then((value) {
-//       //   if (value) {
-//           // moveCameraToFirstStore(latitude, longitude, zoom: 16.0); //,zoom:16.0
-//           Geolocator.getCurrentPosition(
-//               desiredAccuracy: LocationAccuracy.medium)
-//               .then((Position position) async {
-//             if (position != null) {
-//               if (position.latitude != latitude &&
-//                   longitude != position.longitude) {
-//                 latitude = position.latitude;
-//                 longitude = position.longitude;
-//                 if (mapController == null) {
-//                   mapController =await  _controller.future;
-//                 }
-//                 mapController!.animateCamera(
-//                     CameraUpdate.newLatLngZoom(LatLng(latitude, longitude), 16));
-//
-//               }
-//               setState(() {
-//
-//               });
-//             }
-//           });
-//       //   } else {
-//       //     //getStationIndexes();
-//       //   }
-//       // });
-//     } catch (e) {
-//       print(e);
-//     }
-//   }
-//
-//   //
-//   Future<void> ?  resetCameraOnCurrentLocation(
-//       {isRecenterMap = false, bool fromInit = false}) {
-//     //hideKeyboardOnTapCross(true);
-//     if (isRecenterMap != null && isRecenterMap) {
-//       try {
-//         // getPermissionAwait().then((value) {
-//         //   if (value) {
-//         Geolocator.getCurrentPosition(
-//             desiredAccuracy: LocationAccuracy.medium)
-//             .then((Position position) {
-//           if (position != null) {
-//             setState(() {
-//               if (position.latitude != latitude &&
-//                   longitude != position.longitude) {
-//                 latitude = position.latitude;
-//                 longitude = position.longitude;
-//               }
-//              // isCurrentLocationEnabled = true;
-//               //rebuildAllChildren(context);
-//               mapController!.animateCamera(
-//                   CameraUpdate.newLatLngZoom(LatLng(latitude, longitude), 16));
-//             });
-//           }
-//         });
-//         // }
-//       } catch (e) {
-//         print(e);
-//       }
-//     }
-//   }
-//
-//   Future<void>? rebuildAllChildren(BuildContext context) {
-//     void rebuild(Element el) {
-//       el.markNeedsBuild();
-//       el.visitChildren(rebuild);
-//     }
-//
-//     (context as Element).visitChildren(rebuild);
-//     return null;
-//   }
-//
-//   _onMapCreated(GoogleMapController controller) {
-//     // _controller.complete(controller);
-//     if (!_controller.isCompleted) {
-//       _controller.complete(controller);
-//     }
-//
-//     if (isMapLoading) {
-//       Future.delayed(Duration(milliseconds: 100), () => setState(() {
-//             isMapLoading = false;
-//             rebuildAllChildren(context);
-//             recenterMyLocation(
-//             //  isRecenterMap: true,
-//                 fromInit: true);
-//           }));
-//     }
-//   }
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return new Scaffold(
-//       body: GoogleMap(
-//         initialCameraPosition: CameraPosition(target: _initialCameraPosition, zoom: 16),
-//         mapType: MapType.normal,
-//         onMapCreated: _onMapCreated,
-//         //myLocationEnabled: isCurrentLocationEnabled,
-//         circles: Set.from(
-//           [
-//             Circle(
-//               circleId: CircleId('currentCircle'),
-//               center: currentLocation ?? _initialCameraPosition,
-//               radius: 200,
-//               fillColor: Colors.blue.shade100.withOpacity(0.5),
-//               strokeColor: Colors.blue.shade100.withOpacity(0.1),
-//             ),
-//           ],
-//         ),
-//         zoomControlsEnabled: false,
-//         // myLocationButtonEnabled: true,
-//       ),/* GoogleMap(
-//         mapType: MapType.normal,
-//         initialCameraPosition: _kGooglePlex,
-//         zoomControlsEnabled: true,
-//         myLocationEnabled: true,
-//         onMapCreated: (GoogleMapController controller) {
-//           _controller.complete(controller);
-//         },
-//       ),*/
-//       // floatingActionButton: FloatingActionButton.extended(
-//       //   onPressed: _goToTheLake,
-//       //   label: Text('To the lake!'),
-//       //   icon: Icon(Icons.directions_boat),
-//       // ),
-//     );
-//   }
-//
-//   // Future<void> _goToTheLake() async {
-//   //   final GoogleMapController controller = await _controller.future;
-//   //   controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-//   // }
-// }
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
+import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
+import 'package:base_flutter_app/src/widgets/notification_bell.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_map_custom/google_map_custom.dart';
+
+class MapIntregationScreen extends StatefulWidget {
+
+
+  const MapIntregationScreen({Key? key,})
+      : super(key: key);
+  @override
+  _MapIntregationScreenState createState() => _MapIntregationScreenState();
+}
+
+
+class _MapIntregationScreenState extends State<MapIntregationScreen>
+    with TickerProviderStateMixin {
+  TextEditingController inputController = new TextEditingController();
+
+  Map<String, TextEditingController> controllers = {
+    'search': new TextEditingController(),
+  };
+
+  Map<String, FocusNode> focusNodes = {
+    'search': new FocusNode(),
+  };
+
+  Map<String, String> errorMessages = {
+    'search': "",
+  };
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    _searchField() {
+      return Container(
+        padding: EdgeInsets.only(
+          left: 14,right: 14,top: 0,bottom: 18
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: CommonTextFieldWithError(
+                focusNode: focusNodes['search'],
+                isShowBottomErrorMsg: true,
+                errorMessages: errorMessages['search']?.toString()??'',
+                controllerT: controllers['search'],
+                borderRadius: 12,
+                inputHeight: 40,
+                errorLeftRightMargin: 0,
+                errorMsgHeight: 0,
+                autoFocus: false,
+                capitalization: CapitalizationText.sentences,
+                cursorColor: Colors.grey,
+                enabledBorderColor:AppColors().appBgColor2,
+                focusedBorderColor:AppColors().appBgColor2,
+                backgroundColor: AppColors().appBgColor2,
+                borderStyle: BorderStyle.none,
+                inputKeyboardType: InputKeyboardTypeWithError.text,
+                textInputAction: TextInputAction.next,
+                inputFieldPrefixIcon: IconButton(
+                  splashRadius: 22,
+                  onPressed:(){},
+                  icon:Icon(CupertinoIcons.search,color: Colors.grey,size: 18,),
+                ),
+                hintText: "Search salon's & spa",
+                hintStyle: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff828588),
+                ),
+                textStyle: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
+                contentPadding: EdgeInsets.only(left: 0),
+                onTextChange: (value) {
+                  // _checkName(value, 'user_name', onchange: true);
+                },
+                onEndEditing: (value) {
+                  // _checkName(value, 'user_name');
+                  FocusScope.of(context).requestFocus(focusNodes['search']);
+                },
+              ),
+            ),
+            SizedBox(width: 12,),
+            Text("Cancel",
+            style: TextStyle(fontSize: 16,color: Color(0xffE4B343),fontWeight: FontWeight.w600),
+            )
+          ],
+        ),
+      );
+    }
+
+
+    Widget mapView = Container(
+        height: 1,
+        child: MainMapView()
+
+    );
+
+    Widget appbar = Container(
+      padding: EdgeInsets.only(left: 15),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 4.0),
+                    child: Text("Your location",style: TextStyle(fontSize: 13,color: Colors.grey),),
+                  ),
+                  SizedBox(height: 5,),
+                  Row(
+                    children: [
+                    Icon(Icons.location_on,color: Colors.white,size: 20,),
+                      SizedBox(width: 8,),
+                    Text("San Francisco City",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w600),),
+                      SizedBox(width: 8,),
+                    Icon(CupertinoIcons.location_fill,color:  Color(0xffCCA76A),size: 18,)
+                  ],)
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(bottom:3.0),
+                  child: NotificationBal(alignment: Alignment.bottomCenter,onTap: (){},rightIconSize: 25,),
+                ),
+                IconButton(
+                  splashRadius: 25,
+                  padding: EdgeInsets.zero,
+                  alignment: Alignment.center,
+                  onPressed: (){},
+                  icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(25, 25)),
+                ) ,
+              ],
+            ),
+          ],
+        ),
+    );
+
+
+
+    //Return main Ui view
+    return WillPopScope(
+        onWillPop: null, //_onBackPressed,
+        child: ContainerMenuPage(
+            contextCurrentView: context,
+            // scrollPadding: EdgeInsets.only(bottom: 110),
+            isSingleChildScrollViewNeed: true,
+            isFixedDeviceHeight: true,
+            appBarHeight: 170,
+            appBar: Container(
+              color: Color(0xff323446),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  appbar,
+                 SizedBox(height: 10,),
+                 _searchField()
+                ],
+              ),
+            ),
+            containChild: Container(
+              color: Colors.white,
+              child: mapView,
+            )
+        )
+    );
+  }
+}
+

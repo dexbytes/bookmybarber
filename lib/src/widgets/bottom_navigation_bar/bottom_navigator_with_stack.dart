@@ -8,6 +8,7 @@ import 'package:base_flutter_app/src/pages/user_profile_screen.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_map_custom/google_map_custom.dart';
 
 final Map<TabItemBottomNavigatorWithStack, Widget> menuScreens = {
   TabItemBottomNavigatorWithStack.menu1: HomeScreen(),
@@ -380,7 +381,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen2",style: TextStyle(color: Colors.white),),),);
+      return MapIntregationScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
@@ -397,7 +398,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen2",style: TextStyle(color: Colors.white),),),);
+      return MapIntregationScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {

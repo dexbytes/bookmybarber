@@ -20,44 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/.filecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/App.framework/App" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/app.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_universal_framework.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/debug_unpack_ios.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/flutter_assets.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/gen_dart_plugin_registrant.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/kernel_snapshot.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/ba15b5f30475de7ad55036689e33fd74/outputs.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bookmybarber.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bookmybarber.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/build/Runner.build/Release-iphoneos/Runner.build/dgph" beforeDir="false" afterPath="$PROJECT_DIR$/ios/build/Runner.build/Release-iphoneos/Runner.build/dgph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/contact_us_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/contact_us_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/privacy_policy_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/privacy_policy_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/refer_a_friend_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/refer_a_friend_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_with_email_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_with_email_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_up_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_up_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/terms_screens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/terms_screens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/verification_code_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/verification_code_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/notification_bell.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/notification_bell.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,26 +133,26 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="556" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1645524264774" />
-    <state width="1018" height="527" key="GridCell.Tab.0.bottom" timestamp="1645778591948">
+    <state width="1047" height="123" key="GridCell.Tab.0.bottom" timestamp="1645786601065">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1018" height="527" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645778591948" />
-    <state width="1018" height="527" key="GridCell.Tab.0.center" timestamp="1645778591948">
+    <state width="1047" height="123" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1645786601065" />
+    <state width="1047" height="123" key="GridCell.Tab.0.center" timestamp="1645786601064">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="527" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645778591948" />
-    <state width="1018" height="527" key="GridCell.Tab.0.left" timestamp="1645778591947">
+    <state width="1047" height="123" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1645786601064" />
+    <state width="1047" height="123" key="GridCell.Tab.0.left" timestamp="1645786601064">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1018" height="527" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645778591947" />
-    <state width="1018" height="527" key="GridCell.Tab.0.right" timestamp="1645778591948">
+    <state width="1047" height="123" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1645786601064" />
+    <state width="1047" height="123" key="GridCell.Tab.0.right" timestamp="1645786601065">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1018" height="527" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645778591948" />
+    <state width="1047" height="123" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1645786601065" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1645769829356">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -193,30 +171,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/map_intregation.dart</url>
-          <line>143</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/map_intregation.dart</url>
-          <line>149</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/map_intregation.dart</url>
-          <line>150</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/map_intregation.dart</url>
-          <line>148</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$USER_HOME$/Downloads/flutter/flutter/packages/flutter/lib/src/material/flexible_space_bar.dart</url>
           <line>37</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/widgets/flexible_spacebar_widget.dart</url>
+          <line>30</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
