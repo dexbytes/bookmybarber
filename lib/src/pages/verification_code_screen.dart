@@ -383,12 +383,12 @@ class _VerificationCodePage extends State<VerificationCodePage>
                 style: _appStyle.privacyPolicyWithUnderlineStyle1(),
                 recognizer: new TapGestureRecognizer()
                   ..onTap = () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PrivacyPolicyScreen(),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => PrivacyPolicyScreen(),
+                    //   ),
+                    // );
                   }),
           ]),
     ));

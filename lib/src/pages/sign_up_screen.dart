@@ -399,12 +399,12 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                     style: _appStyle.privacyPolicyWithUnderlineStyle1(),
                     recognizer: new TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TermsScreen(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => TermsScreen(),
+                        //   ),
+                        // );
                       }),
                 TextSpan(
                   text: appString.trans(context, appString.and),
@@ -433,12 +433,12 @@ class _SignUpPageState extends State<SignUpPage> with TickerProviderStateMixin {
                     style: _appStyle.privacyPolicyWithUnderlineStyle1(),
                     recognizer: new TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PrivacyPolicyScreen(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => PrivacyPolicyScreen(),
+                        //   ),
+                        // );
                       })
               ]),
         ));

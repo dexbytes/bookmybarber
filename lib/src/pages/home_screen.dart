@@ -9,6 +9,7 @@ import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.d
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_text_list_widget.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
+import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
@@ -208,19 +209,19 @@ class _HomeScreenState extends State<HomeScreen>
                 floating: false,
                 expandedHeight: MediaQuery.of(context).size.height /3.4,
                 collapsedHeight: MediaQuery.of(context).size.height/6.7,
-                flexibleSpace: FlexibleSpaceBar(
+                flexibleSpace: FlexibleSpaceBarWidget(
                   expandedTitleScale: 1,
                   title: _userNameField(),
                   titlePadding: EdgeInsets.only(left: 16,right: 16,bottom: 0,),
                   background:Stack(
                     alignment: Alignment.center,
-                    fit: StackFit.expand,
                     children: [
                       Container(
                         child: ClipPath(
                           clipper: CustomAppBar(),
                           child: Container(
-                            child: Image( image:AssetImage('assets/images/home_screen_image.png',),
+                            width: MediaQuery.of(context).size.width,
+                            child: Image(image:AssetImage('assets/images/home_screen_image.png',),
                               fit: BoxFit.cover,)
                             ),
                         ),

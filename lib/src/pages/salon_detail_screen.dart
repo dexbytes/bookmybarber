@@ -472,6 +472,7 @@ import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.d
 import 'package:base_flutter_app/src/widgets/detail_screen_heading_widget.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
+import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -713,7 +714,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                         floating: true,
                         expandedHeight:expandedHeight,
                         collapsedHeight:collapsedHeight,
-                        flexibleSpace: FlexibleSpaceBar(
+                        flexibleSpace: FlexibleSpaceBarWidget(
                             expandedTitleScale: 1,
                             background:Stack(
                               fit: StackFit.expand,

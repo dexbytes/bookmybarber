@@ -43,10 +43,12 @@
 	<string>Camera is used to click an image in edit profile or add package</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Not used</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>...</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Not used</string>
+	<string>...</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Not used</string>
+	<string>...</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Not used</string>
 	<key>NSMotionUsageDescription</key>
@@ -55,12 +57,6 @@
 	<string>Photo library is used to select an image in edit profile or add package</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Not used</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    	<string>...</string>
-    	<key>NSLocationAlwaysUsageDescription</key>
-    	<string>...</string>
-    	<key>NSLocationWhenInUseUsageDescription</key>
-    	<string>...</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
