@@ -31,7 +31,7 @@ class PackageCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.vertical,
-      padding: EdgeInsets.only(right: 10,left: 10,bottom: 250),
+      padding: EdgeInsets.only(right: 10,left: 10,bottom: 110),
       physics: physics,
       itemCount:package.length ,
       shrinkWrap: true,

@@ -51,7 +51,7 @@ class HomeCardWidget extends StatelessWidget {
                     this.onCardClickCallBack?.call();
                   },
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -110,25 +110,28 @@ class HomeCardWidget extends StatelessWidget {
                         ),
                       ),
                       isBookRowVisible ?
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                        Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Colors.orangeAccent,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(12),
-                                bottomRight: Radius.circular(10))
-                          ),
-                          child: Text("Book",
-                            style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500),),
-                          height: 25,
-                          width: 70,
-                        )
-                      ],):Container()
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                          Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.orangeAccent,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(12),
+                                  bottomRight: Radius.circular(10))
+                            ),
+                            child: Text("Book",
+                              style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),),
+                            height: 25,
+                            width: 70,
+                          )
+                        ],),
+                      ):Container()
                     ],
                   ),
                 ),

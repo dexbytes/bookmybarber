@@ -37,7 +37,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
     Widget review = Container(
         padding: EdgeInsets.only(left: 10,),
-        height: MediaQuery.of(context).size.height +180,
+        height: MediaQuery.of(context).size.height +250,
         child: ReviewListView(
           onTap: (){
             setState(() {
@@ -185,7 +185,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
       // bottomBarSafeAreaColor: Colors.transparent,
         contextCurrentView: context,
         // appBackgroundColor: Colors.white,
-        // scrollPadding: EdgeInsets.only(bottom: 81),
+        scrollPadding: EdgeInsets.only(bottom: 81),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
         isSingleChildScrollViewNeed: widget.isScrollable,

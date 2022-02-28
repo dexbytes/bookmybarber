@@ -58,11 +58,13 @@ class _MainMapViewState extends State<MainMapView> {
   {
     _controller = _cntlr;
     _location.onLocationChanged.listen((l) {
-      _controller!.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(target: LatLng(l.latitude??20.5937, l.longitude??78.9629),zoom: 15),
-        ),
-      );
+     setState(() {
+       _controller!.animateCamera(
+         CameraUpdate.newCameraPosition(
+           CameraPosition(target: LatLng(l.latitude??20.5937, l.longitude??78.9629),zoom: 15),
+         ),
+       );
+     });
     });
   }
 

@@ -9,6 +9,7 @@ PreferredSizeWidget appBarWithBackArrow(
       bool isTrailingIconVisible = true,
       bool isLeadingIconVisible = true,
       Color leadingIconColor = Colors.white,
+      Size  leadingIconSize = const Size(25, 25),
       Widget? trailingIcon,
       String title = "",
       TextStyle textStyle = const TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Color(0xff828588)),
@@ -32,7 +33,9 @@ PreferredSizeWidget appBarWithBackArrow(
         splashRadius: 30,
         icon: iconApps.iconImage(
             imageUrl: iconApps.backArrow2,
-            imageColor:leadingIconColor,),
+            imageColor:leadingIconColor,
+            iconSize: leadingIconSize
+        ),
         onPressed: () {
           // if (onPress != null) {
           onPress!();

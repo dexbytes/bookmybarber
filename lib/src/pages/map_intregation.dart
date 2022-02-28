@@ -1,8 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
-import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

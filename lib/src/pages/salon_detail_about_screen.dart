@@ -84,7 +84,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       // bottomBarSafeAreaColor: Colors.transparent,
         contextCurrentView: context,
         // appBackgroundColor: Colors.white,
-        scrollPadding: EdgeInsets.only(bottom: 40),
+        scrollPadding: EdgeInsets.only(bottom: 80),
         /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
         isSingleChildScrollViewNeed: widget.isDataScroll,

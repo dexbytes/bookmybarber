@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class DatePickerWidget extends StatefulWidget {
+  final double errorHeight;
   final bool isShowMonthName;
 
-  const DatePickerWidget({Key? key, this.isShowMonthName = false}) : super(key: key);
+  const DatePickerWidget({Key? key, this.isShowMonthName = false, this.errorHeight = 20}) : super(key: key);
   @override
   _DatePickerWidgetState createState() => _DatePickerWidgetState();
 }
@@ -63,9 +64,9 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     errorMessages: errorMessages['dateOfBirth']?.toString()??'',
     controllerT: controllers['dateOfBirth'],
     borderRadius: 50,
-    inputHeight: 46,
+    inputHeight: 45,
     autoFocus: true,
-    errorMsgHeight: 20,
+    errorMsgHeight: widget.errorHeight,
     errorLeftRightMargin: 0,
     isTextFieldEnabled: false,
     capitalization: CapitalizationText.sentences,

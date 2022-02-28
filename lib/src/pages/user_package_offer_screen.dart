@@ -17,6 +17,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
   Widget build(BuildContext context) {
 
     Widget package = Container(
+      margin: EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height,
       child: PackageCardWidget(
         onCardClickCallBack: (){

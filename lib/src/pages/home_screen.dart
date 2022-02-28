@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
           },
           onEndEditing: (value) {
             // _checkName(value, 'user_name');
-            FocusScope.of(context).requestFocus(focusNodes['search']);
+            // FocusScope.of(context).requestFocus(focusNodes['search']);
           },
         ),
       );
@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen>
 
     Widget homeCard = Container(
         margin: EdgeInsets.only(top: 15 ),
-        height: 185,
+        height: 180,
         child: HomeCardWidget(
           onCardClickCallBack: (){
             Navigator.push(
@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen>
 
     Widget homeCard2 = Container(
         margin: EdgeInsets.only(top: 15 ),
-        height: 185,
+        height: 180,
         child: HomeCardWidget(
           isBookRowVisible: true,
           isSecondDataVisible: true,)

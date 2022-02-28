@@ -65,7 +65,7 @@ class ServicesListView extends StatelessWidget {
 
     return ListView.builder(
       scrollDirection: Axis.vertical,
-      padding: EdgeInsets.only(left: 20,top:0,right: 15),
+      padding: EdgeInsets.only(left: 20,top:0,right: 15,bottom: 50),
       physics: ClampingScrollPhysics(),
       itemCount:categories.length ,
       shrinkWrap: false,

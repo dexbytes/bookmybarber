@@ -5,6 +5,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 class ContainerFirst extends StatelessWidget {
   final Color appBackgroundColor;
   final Color? bottomBarSafeAreaColor;
+  final bool bottomSafeArea;
   final Color? statusBarColor;
   final Widget containChild;
   final bool isFixedDeviceHeight; // if it true than
@@ -32,6 +33,7 @@ class ContainerFirst extends StatelessWidget {
     this.appBarHeight = 0,
     this.isSingleChildScrollViewNeed = true,
     this.reverse = true,
+    this.bottomSafeArea = false,
   }) : super(key: key);
 
   @override
@@ -152,7 +154,7 @@ class ContainerFirst extends StatelessWidget {
     return Scaffold(
       backgroundColor: appBackgroundColor,
       body: SafeArea(
-        bottom: false,
+        bottom: bottomSafeArea,
         top: false,
         // maintainBottomViewPadding: true,
         child: isOverLayAppBar?Column(

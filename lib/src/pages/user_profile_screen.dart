@@ -159,7 +159,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
             scrollPadding: EdgeInsets.only(bottom: 110),
             isSingleChildScrollViewNeed: true,
             isFixedDeviceHeight: true,
-            appBarHeight: 290,
+            appBarHeight: 280,
             appBar: topSection,
             containChild:Stack(
               children: [
