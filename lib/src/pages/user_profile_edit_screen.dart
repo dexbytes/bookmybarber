@@ -537,6 +537,14 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
     }
 
 
+    Widget bottomText = Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      child: Text("Your email verification is still pending.\n"
+          " Please verify your account.",style: TextStyle(fontSize: 13,color: Colors.grey),
+        textAlign: TextAlign.center,
+      ),
+    );
+
 
 
     //Return main Ui view
@@ -582,6 +590,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                   gender,
                   _phoneField(),
                   locationFiled,
+                  SizedBox(height: 20,)
                 ],
               ),
               Align(
