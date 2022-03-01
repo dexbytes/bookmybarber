@@ -381,7 +381,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return MapIntregationScreen();
+      return Container();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
@@ -398,7 +398,7 @@ class AppNavigator extends StatelessWidget {
     if (tabItem == TabItemBottomNavigatorWithStack.menu1) {
       return new HomeScreen();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu2) {
-      return MapIntregationScreen();
+      return Container();
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
