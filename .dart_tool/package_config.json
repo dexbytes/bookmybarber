@@ -621,7 +621,7 @@
     },
     {
       "name": "permission_handler_apple",
-      "rootUri": "file:///Users/dexbytes/Downloads/flutter_2.8.1/.pub-cache/hosted/pub.dartlang.org/permission_handler_apple-9.0.2",
+      "rootUri": "file:///Users/dexbytes/Downloads/flutter_2.8.1/.pub-cache/hosted/pub.dartlang.org/permission_handler_apple-9.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -974,7 +974,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-02-28T09:16:03.275018Z",
+  "generated": "2022-03-01T05:55:38.690877Z",
   "generator": "pub",
   "generatorVersion": "2.15.1"
 }

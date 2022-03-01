@@ -1,13 +1,15 @@
+import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/user_profile_edit_screen.dart';
 import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
 import 'package:base_flutter_app/src/widgets/like_follow_row_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/profile_list_row_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 
 class UserProfileScreen extends StatefulWidget {
@@ -115,7 +117,13 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                     Text(widget.email,style: TextStyle(color: Colors.grey,fontSize: 14,fontWeight: FontWeight.w500),),
                     SizedBox(height: 18,),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          MainAppBloc.getDashboardContext,
+                          SlideRightRoute(
+                              widget: UserProfileEditScreen()),
+                        );
+                      },
                       child: Text(
                           "Edit profile"
                       ),

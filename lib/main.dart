@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
+import 'package:base_flutter_app/src/pages/filter_screen.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
@@ -293,7 +294,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return UserProfileEditScreen();
+    return DashBoardPage();
   }
 
   //Redirect to another screen if already loggedIn

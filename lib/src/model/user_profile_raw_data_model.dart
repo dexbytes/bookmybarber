@@ -26,10 +26,10 @@ List<UserProfileRawDataModel> userProfile = [
     title: "Payment Methods",
     imageUrl:'assets/images/user_profile_payment_method_icon.png',
   ),
-  UserProfileRawDataModel(
-    title: "Payment History",
-    imageUrl:'assets/images/user_profile_history_icon.png',
-  ),
+  // UserProfileRawDataModel(
+  //   title: "Payment History",
+  //   imageUrl:'assets/images/user_profile_history_icon.png',
+  // ),
   UserProfileRawDataModel(
     title: "Change Password",
     imageUrl:'assets/images/user_profile_change_password_icon.png',

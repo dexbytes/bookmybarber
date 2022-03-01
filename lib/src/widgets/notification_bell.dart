@@ -55,7 +55,7 @@ class NotificationBal extends StatelessWidget {
       color: iconDataColor,
     ))
         : Container(
-      child: iconApps.iconImage(imageUrl: iconApps.bellIcon,iconSize: Size(26, 26)),
+      child: iconApps.iconImage(imageUrl: iconApps.bellIcon2,iconSize: Size(26, 26)),
     );
 
     return Material(

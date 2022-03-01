@@ -36,6 +36,8 @@ class IconApps {
   String detailAppbarIcon = 'assets/images/detail_appbar_icon.png';
   String bottomMenuChatIcon = 'assets/images/bottom_menu_chat_icon.png';
   String settingIcon = 'assets/images/setting_icon.png';
+  String bellIcon2 = 'assets/images/bell_icon2.svg';
+
 
 
   iconImage(

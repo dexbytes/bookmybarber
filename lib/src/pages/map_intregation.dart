@@ -139,7 +139,8 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
               children: [
                 Padding(
                   padding: EdgeInsets.only(bottom:3.0),
-                  child: NotificationBal(alignment: Alignment.bottomCenter,onTap: (){},rightIconSize: 25,),
+                  child: NotificationBal(
+                    alignment: Alignment.bottomCenter,onTap: (){},rightIconSize: 25,),
                 ),
                 IconButton(
                   splashRadius: 25,
