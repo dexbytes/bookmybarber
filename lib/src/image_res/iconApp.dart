@@ -38,6 +38,7 @@ class IconApps {
   String settingIcon = 'assets/images/setting_icon.png';
   String bellIcon2 = 'assets/images/bell_icon2.svg';
   String mapIcon = 'assets/images/map_icon.svg';
+  String phoneIcon = 'assets/images/phone_icon.png';
 
 
 
