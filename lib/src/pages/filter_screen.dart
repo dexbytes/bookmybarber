@@ -44,7 +44,9 @@ class _FilterScreenState extends State<FilterScreen>
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.pop(context);
+                },
                 child: Text('Cancel',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Color(0xffE4B343)),)),
             Text('Filters',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white),),
             InkWell(

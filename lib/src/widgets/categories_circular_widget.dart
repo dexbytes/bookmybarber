@@ -1,4 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -96,6 +99,11 @@ class CategoriesCircularWidget extends StatelessWidget {
             onTap: (){
               print("$index",);
               this.onClickCardCallBack?.call(0);
+              Navigator.push(
+                MainAppBloc.getDashboardContext,
+                SlideRightRoute(
+                    widget: SalonListViewAllScreen(title: isListTwoVisible ? categories2[index].title : categories[index].title ,)),
+              );
 
             },
             child:Column(

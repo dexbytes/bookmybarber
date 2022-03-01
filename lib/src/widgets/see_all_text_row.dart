@@ -1,6 +1,3 @@
-import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
-import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
-import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:flutter/material.dart';
 
 class SeeAllTextRow extends StatelessWidget {
@@ -56,11 +53,6 @@ class SeeAllTextRow extends StatelessWidget {
                 onTap: (){
                   this.rightTextCallBack?.call();
                   print("sell All");
-                  Navigator.push(
-                    MainAppBloc.getDashboardContext,
-                    SlideRightRoute(
-                        widget: SalonListViewAllScreen()),
-                  );
                 },
                 child: Text(rightTitle,style: rightTitleTextStyle,)),
           ),

@@ -3,7 +3,9 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
+import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
@@ -15,6 +17,8 @@ import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'filter_screen.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -194,12 +198,24 @@ class _HomeScreenState extends State<HomeScreen>
                 title:Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                       NotificationBal(onTap: (){},),
+                       NotificationBal(onTap: (){
+                         Navigator.push(
+                           MainAppBloc.getDashboardContext,
+                           SlideRightRoute(
+                               widget: NotificationScreen()),
+                         );
+                       },),
                         IconButton(
                           splashRadius: 25,
                           padding: EdgeInsets.zero,
                           alignment: Alignment.center,
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(
+                              MainAppBloc.getDashboardContext,
+                              SlideRightRoute(
+                                  widget: FilterScreen()),
+                            );
+                          },
                           icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
                         ) ,
                       ],
@@ -252,13 +268,26 @@ class _HomeScreenState extends State<HomeScreen>
                             SeeAllTextRow(leftTitle: "Top categories",),
                             categories,
                             SizedBox(height: 15,),
-                            SeeAllTextRow(leftTitle: "Best salon",),
+                            SeeAllTextRow(leftTitle: "Best salon",
+                              rightTextCallBack: (){
+                              Navigator.push(
+                                MainAppBloc.getDashboardContext,
+                                SlideRightRoute(
+                                    widget: SalonListViewAllScreen(title: "Best salon",)),
+                              );},),
                             homeCard,
                             SizedBox(height: 30,),
                             SeeAllTextRow(leftTitle: "Top services",),
                             services,
                             SizedBox(height: 15,),
-                            SeeAllTextRow(leftTitle: "Popular salon nearby",),
+                            SeeAllTextRow(leftTitle: "Popular salon nearby",
+                              rightTextCallBack: (){
+                                Navigator.push(
+                                  MainAppBloc.getDashboardContext,
+                                  SlideRightRoute(
+                                      widget: SalonListViewAllScreen(title: "Popular salon nearby",)),
+                                );},
+                            ),
                             homeCard,
                             SizedBox(height: 30,),
                             categoriesTextList,
@@ -273,7 +302,6 @@ class _HomeScreenState extends State<HomeScreen>
                 childCount: 1,
               ),
           ),
-
               // Container(
               //   margin: EdgeInsets.only(top: 0),
               //   color: Color(0xff212327),
