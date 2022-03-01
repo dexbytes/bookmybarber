@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/filter_screen.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
+import 'package:base_flutter_app/src/pages/near_by_screen.dart';
 import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';

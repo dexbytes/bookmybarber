@@ -100,3 +100,18 @@ final List<PhotosRawData> photo = [
   ),
 
 ];
+
+
+final List<PhotosRawData> offer = [
+  PhotosRawData(
+    id: 'id-001',
+    imageUrl:"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/beauty-salon-discount-landscape-flyer-template-cfd6a99eae88da5a137d959f6ee54cda_screen.jpg?ts=1561725545",
+  ),
+
+  PhotosRawData(
+    id: 'id-002',
+    imageUrl:"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/hair-salon-cutting-and-coloring-sale-landscape-flyer-template-d20b166a5ed6dbaaa2326e820182e722_screen.jpg?ts=1561725533",
+  ),
+
+
+];

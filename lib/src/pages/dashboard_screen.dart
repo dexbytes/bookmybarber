@@ -130,7 +130,7 @@ class _DashBoardPage extends State<DashBoardPage>
                 bottomBarSafeAreaColor:AppColors().appBgColor2,
                 appBackgroundColor:AppColors().appBgColor3,
                 appBarHeight: -1,
-                bottomMenuHeight: 150,
+                bottomMenuHeight: 140,
                 bottomMenuView: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
@@ -148,14 +148,19 @@ class _DashBoardPage extends State<DashBoardPage>
                               sizeConstraints: BoxConstraints.tightFor(width: 63,height: 63),
                             )
                         ),
-                        child: FloatingActionButton(onPressed: (){},
-                          backgroundColor: Color(0xffE4B343),
-                          child: Container(
-                            alignment: Alignment.center,
-                           padding: EdgeInsets.only(top: 5),
-                           child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(35, 35)),
-                           )
-                          // iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon),
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10.0),
+                          child: FloatingActionButton(
+                              elevation: 0,
+                              onPressed: (){},
+                            backgroundColor: Color(0xffE4B343),
+                            child: Container(
+                              alignment: Alignment.center,
+                             padding: EdgeInsets.only(top: 5),
+                             child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(35, 35)),
+                             )
+                            // iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon),
+                          ),
                         ),
                       ),
                     )

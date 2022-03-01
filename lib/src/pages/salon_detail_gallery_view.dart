@@ -1,6 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
-import 'package:base_flutter_app/src/widgets/slider_screen.dart';
+import 'package:base_flutter_app/src/widgets/photo_slider_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -23,7 +23,7 @@ class SalonGalleryViewScreen extends StatelessWidget {
             Navigator.push(
               context,
               SlideRightRoute(
-                  widget: SliderScreen(
+                  widget: PhotoSliderScreen(
                    urlImages:photo,
                    initialPage:index,
                    isDotVisible: true,
