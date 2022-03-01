@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/filter_screen.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
+import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
@@ -26,6 +27,8 @@ import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
+import 'package:base_flutter_app/src/widgets/notification_card_widget.dart';
+import 'package:base_flutter_app/src/widgets/notification_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/package_detail_services_list.dart';
 import 'package:base_flutter_app/src/widgets/profile_list_row_widget.dart';
@@ -294,7 +297,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return DashBoardPage();
+    return NotificationScreen();
   }
 
   //Redirect to another screen if already loggedIn
