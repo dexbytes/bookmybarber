@@ -44,7 +44,7 @@ class BarberProfileTopRowWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(left: 30,right: 0),
+      padding: EdgeInsets.only(left: 18,right: 10),
       physics: NeverScrollableScrollPhysics(),
       itemCount:categories.length ,
       shrinkWrap: true,

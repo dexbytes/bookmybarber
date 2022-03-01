@@ -57,6 +57,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
 
   @override
   Widget build(BuildContext context) {
+    AppDimens appDimens = AppDimens();
+    appDimens.appDimensFind(context: context);
 
     Widget profileImageWithName =Container(
     child: Column(
@@ -67,7 +69,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
       children: [
         Container(
             padding: EdgeInsets.zero,
-            margin: EdgeInsets.only(top:MediaQuery.of(context).size.height /6.8),
+            margin: EdgeInsets.only(top: appDimens.heightFullScreen()/6.8 /* MediaQuery.of(context).size.height /6.8*/),
             height: 100,
             width: 100,
             decoration: BoxDecoration(
@@ -162,7 +164,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     Widget topSection = Container(
         height: 85,
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(top:MediaQuery.of(context).size.height /2.6),
+        margin: EdgeInsets.only(top:appDimens.heightFullScreen()/2.5 /*MediaQuery.of(context).size.height /2.6*/),
         color: Color(0xff323446),
         child: BarberProfileTopRowWidget(),
     );
@@ -226,8 +228,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight: MediaQuery.of(context).size.height /2.1,  //2.47,
-                            collapsedHeight: MediaQuery.of(context).size.height/8.5,
+                            expandedHeight:appDimens.heightFullScreen()/1.8, // MediaQuery.of(context).size.height /2.1,  //2.47,
+                            collapsedHeight:appDimens.heightFullScreen()/8,   //MediaQuery.of(context).size.height/8,
                             flexibleSpace: FlexibleSpaceBarWidget(
                               expandedTitleScale: 1,
                               background:Container(
