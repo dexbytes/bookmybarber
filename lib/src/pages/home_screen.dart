@@ -15,6 +15,7 @@ import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -107,6 +108,26 @@ class _HomeScreenState extends State<HomeScreen>
         ),
       );
     }
+
+    Widget topImage = ShaderMask(
+      shaderCallback: (bound) =>LinearGradient(
+        colors: [Colors.black38.withOpacity(0.35),Colors.black87.withOpacity(0.4)],
+        begin:Alignment.topLeft,
+        end: Alignment.topRight,
+      ).createShader(bound),
+      blendMode: BlendMode.dstOut,
+      child:ClipPath(
+          clipper:CustomAppBar(),
+          child: CachedNetworkImage(
+            imageUrl: "https://media.istockphoto.com/photos/portret-of-smiling-hairdresser-in-beauty-salon-beautiful-woman-in-picture-id1136599956?k=20&m=1136599956&s=612x612&w=0&h=04RSQtVf4KJxoQkwwItqh-q8jCODxQDbc6sYeqnq34U=",
+            fit:BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+            height:MediaQuery.of(context).size.height /2,
+          )
+      ),
+    );
+
+
 
     Widget categories = Container(
         height: 150,
@@ -232,16 +253,7 @@ class _HomeScreenState extends State<HomeScreen>
                   background:Stack(
                     alignment: Alignment.center,
                     children: [
-                      Container(
-                        child: ClipPath(
-                          clipper: CustomAppBar(),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            child: Image(image:AssetImage('assets/images/home_screen_image.png',),
-                              fit: BoxFit.cover,)
-                            ),
-                        ),
-                      ),
+                      topImage,
                       Positioned(
                         bottom:MediaQuery.of(context).size.height /9,
                         child: Text("Find and book best services",
