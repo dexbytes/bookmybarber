@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,15 @@ class _FilterScreenState extends State<FilterScreen>
   RangeLabels labels = RangeLabels("0", "10");
 
    int selectValue = 0;
-  String selectedChoice = "";
+  int selectedChoice = 0;
+
+
+  List<SortList> sort = [
+   SortList(title:"Most popular",),
+   SortList(title: "Cost Low to High",),
+   SortList(title:  "Cost High to Low"),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -240,8 +249,8 @@ class _FilterScreenState extends State<FilterScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 5.0,top: 20),
-            child: Text("Services",
+            padding: EdgeInsets.only(bottom: 5.0,top: 10),
+            child: Text("Price",
                 style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
           ),
           Container(
@@ -266,9 +275,9 @@ class _FilterScreenState extends State<FilterScreen>
       );
     }
 
-    Widget sort = Container(
-      height: 150,
-        padding: EdgeInsets.only(right: 50,top: 15,left: 2),
+    Widget sorting = Container(
+      height: 205,
+        padding: EdgeInsets.only(right: 20,top: 15,left: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -276,21 +285,48 @@ class _FilterScreenState extends State<FilterScreen>
             Padding(
               padding: EdgeInsets.only(left: 12.0),
               child: Container(
-                margin: EdgeInsets.only(bottom: 10),
+                margin: EdgeInsets.zero,
                 child: Text("Sort by",
                     style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
               ),
             ),
+            ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+            itemCount: sort.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return Material(
+                color: Colors.transparent,
+                child: ListTile(
+                    selected: selectedChoice == index,
+                    onTap: (){
+                      setState(() {
+                        selectedChoice = index;
+                      });
+                    },
+                    contentPadding: EdgeInsets.only(left: 15,bottom: 0,top: 0),
+                    minVerticalPadding: 0,
+                    minLeadingWidth: 0,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(sort[index].title,
+                        style:TextStyle(fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: selectedChoice == index? AppColors().textHeadingColor1:Colors.white) ,),
 
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title:Container(
-                margin: EdgeInsets.only(bottom: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: widget.subtitle.map((e) => subtitleText(e)).toList(),
+                        Container(
+                          child: selectedChoice == index
+                          ? iconApps.iconImage(imageUrl: iconApps.rightIcon,imageColor: AppColors().textHeadingColor1,iconSize: Size(12, 12))
+                          : Container(),
+                        )
+                      ],
+                    ),
+                  // trailing: Icon(Icons.arrow_forward_ios),
                 ),
-              )
+              );
+            }
             ),
 
           ],
@@ -324,35 +360,55 @@ class _FilterScreenState extends State<FilterScreen>
     //Return main Ui view
     return WillPopScope(
         onWillPop: null, //_onBackPressed,
-        child: ContainerFirst(
-          appBackgroundColor: AppColors().appBgColor2,
-          statusBarColor: AppColors().appBgColor3,
-          contextCurrentView: context,
-          isSingleChildScrollViewNeed: true,
-          isFixedDeviceHeight: true,
-          appBarHeight: 60,
-          appBar: appbarView,
-          containChild:Stack(
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  tag(),
-                  starRating,
-                  gender,
-                  slider,
-                  priceTag(),
-                ],
-              ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child:  bottomButton(),
-            )
-            ],
+        child: Scaffold(
+          body: SafeArea(
+            top: false,
+            bottom: true,
+            child: Stack(
+              children: [
+                ContainerFirst(
+                  appBackgroundColor: AppColors().appBgColor2,
+                  statusBarColor: AppColors().appBgColor3,
+                  contextCurrentView: context,
+                  isSingleChildScrollViewNeed: true,
+                  isFixedDeviceHeight: true,
+                  appBarHeight: 60,
+                  appBar: appbarView,
+                  containChild:Stack(
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          tag(),
+                          starRating,
+                          gender,
+                          slider,
+                          sorting,
+                          priceTag(),
+                          SizedBox(height: 80,)
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child:  bottomButton(),
+                )
+              ],
+            ),
           ),
         )
     );
   }
+}
+
+class SortList {
+  final String title;
+
+  SortList( {
+    required this.title,
+  });
 }
 
