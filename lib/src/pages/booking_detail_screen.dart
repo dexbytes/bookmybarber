@@ -2,13 +2,11 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
+import 'package:base_flutter_app/src/widgets/my_booking_cost_card.dart';
+import 'package:base_flutter_app/src/widgets/my_booking_detail_card_widget.dart';
+import 'package:base_flutter_app/src/widgets/my_booking_detail_service_card.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'my_booking_cost_card.dart';
-import 'my_booking_detail_card_widget.dart';
-import 'my_booking_detail_service_card.dart';
 
 class BookingDetailScreen extends StatefulWidget {
   const BookingDetailScreen({Key? key,}) : super(key: key);
@@ -27,8 +25,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         child: BookingDetailCardView()
     );
 
- Widget services =Container(
-       height: 95,
+    Widget services =Container(
+        height: 95,
         child: Column(
           children: [
             SeeAllTextRow(
@@ -42,7 +40,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         )
     );
 
- Widget cost = Container(
+    Widget cost = Container(
         height: 162,
         child: Column(
           children: [
@@ -58,7 +56,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
 
-  Widget payment =Container(
+    Widget payment = Container(
         height: 45,
         child: Container(
           padding: EdgeInsets.only(left: 20 ,right: 20,top: 12,bottom: 5),
@@ -77,8 +75,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     fontWeight: FontWeight.w400,
                     color: Colors.white)),
                 Text("Cash", style: TextStyle(fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color:AppColors().textHeadingColor1,),),
+                  fontWeight: FontWeight.w500,
+                  color:AppColors().textHeadingColor1,),),
               ],
             ),
           ),
@@ -86,7 +84,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
 
-  Widget topText = Container(
+    Widget topText = Container(
         height: 60,
         child: Container(
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
@@ -102,7 +100,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     Text("20 Jun 2022 at 1:00 PM", style: TextStyle(fontSize: 15,
                         fontWeight: FontWeight.w500,
                         color: Colors.white)),
-                   SizedBox(height: 4,),
+                    SizedBox(height: 4,),
                     Text("Appointment ID: TONI123", style: TextStyle(fontSize: 11,
                         fontWeight: FontWeight.w400,
                         color: Colors.white)),
@@ -111,8 +109,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 Container(
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(6)
+                      color: Colors.green.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(6)
                   ),
                   child: Text("COMPLETED", style: TextStyle(fontSize: 11,
                       fontWeight: FontWeight.w600,
@@ -124,7 +122,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         )
     );
 
-  Widget coupon  = Container(
+    Widget coupon  = Container(
         height: 58,
         child: Container(
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
@@ -146,7 +144,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     Text("Save50", style: TextStyle(fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: Colors.white)),
-                   SizedBox(height: 2,),
+                    SizedBox(height: 2,),
                     Text("You saved additional \$50", style: TextStyle(fontSize: 10.5,
                         fontWeight: FontWeight.w400,
                         color: AppColors().textHeadingColor1)),
@@ -160,14 +158,12 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
 
 
-
-
     return ContainerFirst(
-      appBackgroundColor:  Color(0xff212327),
+      appBackgroundColor: AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
       bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
+      statusBarColor: AppColors().appBgColor3,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
@@ -188,7 +184,6 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         ),
       ),
       containChild: Container(
-        color:  Color(0xff212327),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,

@@ -34,7 +34,7 @@ class BookingCardView extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: (){
-                    this.onClickCardCallBack?.call(0);
+                    this.onClickCardCallBack?.call();
                     print(index);
                   },
                   child: Column(

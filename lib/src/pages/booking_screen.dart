@@ -1,5 +1,8 @@
+import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +44,15 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
 
     Widget bookingList =Container(
         height: MediaQuery.of(context).size.height,
-        child: BookingCardView()
+        child: BookingCardView(
+          onClickCardCallBack: (){
+            Navigator.push(
+              MainAppBloc.getDashboardContext,
+              SlideRightRoute(
+                  widget: BookingDetailScreen()),
+            );
+          },
+        )
     );
 
 
@@ -51,7 +62,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
           Container(
             color: AppColors().appBgColor3,
             child: Container(
-              margin: EdgeInsets.only(top: 15,bottom: 25,left: 15,right: 15),
+              margin: EdgeInsets.only(top: 10,bottom: 25,left: 15,right: 15),
               height: 40,
               decoration: BoxDecoration(
                   color:Colors.transparent,
@@ -110,10 +121,11 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 75,
+      appBarHeight: 80,
       appBar: Container(
         color: AppColors().appBgColor3,
         child: appBarWithBackArrow(
+            isLeadingIconVisible: false,
             isTitleVisible: true,
             textStyle: TextStyle(fontSize: 20,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
             isTrailingIconVisible: false,
