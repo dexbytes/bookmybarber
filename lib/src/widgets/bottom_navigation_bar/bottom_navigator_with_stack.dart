@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.da
 import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/booking_screen.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/near_by_screen.dart';
@@ -386,7 +387,7 @@ class AppNavigator extends StatelessWidget {
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
+      return BookingScreen();
     } else {
       return UserProfileScreen();
     }
@@ -403,7 +404,7 @@ class AppNavigator extends StatelessWidget {
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu3) {
       return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen",style: TextStyle(color: Colors.white),),),);
     } else if (tabItem == TabItemBottomNavigatorWithStack.menu4) {
-      return Container(color: AppColors().appBgColor2,child: Center(child: Text("Screen3",style: TextStyle(color: Colors.white),),),);
+      return BookingScreen();
     } else {
       return UserProfileScreen();
     }

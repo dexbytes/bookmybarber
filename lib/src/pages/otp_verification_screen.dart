@@ -205,7 +205,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 62,
+      appBarHeight: 65,
       appBar: Container(
         color: Color(0xff212327),
         child: appBarWithBackArrow(

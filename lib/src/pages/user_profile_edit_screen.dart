@@ -558,7 +558,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           isSingleChildScrollViewNeed: true,
           isFixedDeviceHeight: true,
           statusBarColor: AppColors().appBgColor3,
-          appBarHeight: 60,
+          appBarHeight: 65,
           appBar: Container(
             color: AppColors().appBgColor3,
             child: appBarWithBackArrow(

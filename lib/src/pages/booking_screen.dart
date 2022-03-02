@@ -23,20 +23,16 @@ class _BookingScreenState extends State<BookingScreen> {
     );
 
 
-    return ContainerFirst(
-      appBackgroundColor:  Color(0xff212327),
-      reverse: false,
+    return ContainerMenuPage(
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
-      // scrollPadding: EdgeInsets.only(bottom: 0),
+      scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 62,
+      appBarHeight: 75,
       appBar: Container(
-        color: Color(0xff212327),
+        color: AppColors().appBgColor3,
         child: appBarWithBackArrow(
             isTitleVisible: true,
             textStyle: TextStyle(fontSize: 20,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),

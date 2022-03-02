@@ -67,7 +67,7 @@ PreferredSizeWidget appBarWithBackArrow(
       child: Material(
         color: Colors.transparent,
         child: Padding(
-          padding:EdgeInsets.only(top: 0.0),
+          padding:EdgeInsets.only(top: 20.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
