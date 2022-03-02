@@ -635,7 +635,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 65,
+      appBarHeight: 68,
       appBar: Container(
         color: Color(0xff212327),
         child: appBarWithBackArrow(

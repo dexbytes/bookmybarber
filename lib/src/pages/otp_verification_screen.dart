@@ -1,5 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/pin_code_fields.dart';
@@ -78,11 +80,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               setState(() {
                 errorMessage = '';
               });
-              // Navigator.push(
-              //   context,
-              //   SlideRightRoute(
-              //       widget: NamesScreen()),
-              // );
+              Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: DashBoardPage()),
+              );
             }else{
               setState(() {
                 if( verificationCodeStr == '')
@@ -205,7 +207,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 65,
+      appBarHeight: 68,
       appBar: Container(
         color: Color(0xff212327),
         child: appBarWithBackArrow(
