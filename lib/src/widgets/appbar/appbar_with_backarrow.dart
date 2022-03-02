@@ -65,6 +65,7 @@ PreferredSizeWidget appBarWithBackArrow(
   return PreferredSize(
       preferredSize: Size.fromHeight(0),
       child: Material(
+        elevation: 0,
         color: Colors.transparent,
         child: Padding(
           padding:EdgeInsets.only(top: 20.0),

@@ -15,8 +15,8 @@ class BookingCardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.only(left: 5,right: 5,top: 10),
-        physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.only(left: 5,right: 5,top: 10,bottom: 80),
+        physics: ClampingScrollPhysics(),
         itemCount: booking.length,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
