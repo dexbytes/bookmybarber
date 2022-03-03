@@ -136,8 +136,8 @@ class _MainMapViewState extends State<MainMapView> {
             Container(
               margin: EdgeInsets.only(left: 0,right: 0),
               padding: EdgeInsets.zero,
-              width: 260,
-              height: 130,
+              width: 280,
+              height: 150,
               child: Material(
                 color: Colors.transparent,
                 child: Card(
@@ -183,7 +183,9 @@ class _MainMapViewState extends State<MainMapView> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(mapData[index].title),
+                                Text(mapData[index].title,
+                                style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black,),
+                                ),
                                 // Expanded(
                                 //   child: Html(data: isSecondDataVisible ?home2[index].title :home[index].title,
                                 //     style: {'html' : Style.fromTextStyle(
@@ -192,13 +194,15 @@ class _MainMapViewState extends State<MainMapView> {
                                 //
                                 //   ),
                                 // ),
-                                Icon(Icons.star)
+                                Icon(Icons.star,color: Colors.orange,)
                                 // StarRatingBar(
                                 //   removeViewCount: true,
                                 // )
                               ],
                             ),
-                            Text(mapData[index].subtitle),
+                            Text(mapData[index].subtitle,
+                             style: TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,),
+                            ),
                             // Html(data:isSecondDataVisible ?home2[index].subtitle :home[index].subtitle,
                             //   style: {'html' : Style.fromTextStyle(
                             //       subtitleTextStyle
@@ -232,9 +236,9 @@ class _MainMapViewState extends State<MainMapView> {
           ),
         ),
         Positioned(
-          bottom: 35.0,
+          bottom: 40.0,
           child: Container(
-            height: 180.0,
+            height: 200.0,
             width: MediaQuery.of(context).size.width,
             child: PageView.builder(
               controller: _pageController,
