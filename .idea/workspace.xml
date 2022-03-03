@@ -21,10 +21,36 @@
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/notification_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/notification_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_listview_all.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_listview_all.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/user_package_offer_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/user_package_offer_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/user_profile_edit_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/user_profile_edit_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/appbar/appbar_with_backarrow.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/appbar/appbar_with_backarrow.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/book_appointment_time_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/book_appointment_time_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_cost_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_cost_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_card_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/profile_list_row_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/profile_list_row_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,53 +139,53 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="294" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.683@0.25.1366.683" timestamp="1645682993206" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1646216223454">
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1646284276330">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1646216223454" />
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1646284276330" />
     <state width="556" height="438" key="DebuggerActiveHint" timestamp="1645794208244">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="556" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1645794208244" />
-    <state width="987" height="339" key="GridCell.Tab.0.bottom" timestamp="1646224107267">
+    <state width="1026" height="258" key="GridCell.Tab.0.bottom" timestamp="1646299266985">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="987" height="339" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646224107267" />
-    <state width="987" height="339" key="GridCell.Tab.0.center" timestamp="1646224107267">
+    <state width="1026" height="258" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646299266985" />
+    <state width="1026" height="258" key="GridCell.Tab.0.center" timestamp="1646299266978">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="987" height="339" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646224107267" />
-    <state width="987" height="339" key="GridCell.Tab.0.left" timestamp="1646224107267">
+    <state width="1026" height="258" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646299266978" />
+    <state width="1026" height="258" key="GridCell.Tab.0.left" timestamp="1646299266974">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="987" height="339" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646224107267" />
-    <state width="987" height="339" key="GridCell.Tab.0.right" timestamp="1646224107267">
+    <state width="1026" height="258" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646299266974" />
+    <state width="1026" height="258" key="GridCell.Tab.0.right" timestamp="1646299266982">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="987" height="339" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646224107267" />
-    <state x="326" y="25" key="SettingsEditor" timestamp="1646198157675">
+    <state width="1026" height="258" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646299266982" />
+    <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="326" y="25" key="SettingsEditor/0.25.1366.670@0.25.1366.670" timestamp="1643966426010" />
-    <state x="326" y="25" key="SettingsEditor/0.25.1366.683@0.25.1366.683" timestamp="1646198157675" />
+    <state x="326" y="25" key="SettingsEditor/0.25.1366.683@0.25.1366.683" timestamp="1646286237489" />
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1645524399230">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1366.683@0.25.1366.683" timestamp="1645524399230" />
-    <state x="422" y="116" width="944" height="500" key="find.popup" timestamp="1646222226454">
+    <state x="344" y="82" width="1022" height="500" key="find.popup" timestamp="1646298868146">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
-    <state x="422" y="116" width="944" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1646222226454" />
-    <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646113129181">
+    <state x="344" y="82" width="1022" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1646298868146" />
+    <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646284262349">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
-    <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1366.683@0.25.1366.683" timestamp="1646113129181" />
+    <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.25.1366.683@0.25.1366.683" timestamp="1646284262349" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

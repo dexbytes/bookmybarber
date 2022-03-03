@@ -37,7 +37,7 @@ class _SalonListViewAllScreenState extends State<SalonListViewAllScreen> {
         color: Color(0xff212327),
         child: appBarWithBackArrow(
             isTitleVisible: true,
-            textStyle: TextStyle(fontSize: 20,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
+            textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
             isTrailingIconVisible: false,
             leadingIconColor:Color(0xFFCCA76A),
             title: widget.title,

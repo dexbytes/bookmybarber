@@ -35,8 +35,8 @@ class BookingDetailCostCardView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total Services Charge",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color: Colors.white)),
-                Text("\$$serviceCost",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color: Colors.white),),
+                Text("Total Services Charge",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color: Colors.white)),
+                Text("\$$serviceCost",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color: Colors.white),),
               ],
             ),
           ),
@@ -45,8 +45,8 @@ class BookingDetailCostCardView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Tax",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color:  Colors.white),),
-                Text("\$$tax",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color: Colors.white),textAlign: TextAlign.start,),
+                Text("Tax",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color:  Colors.white),),
+                Text("\$$tax",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color: Colors.white),textAlign: TextAlign.start,),
               ],
             ),
           ),
@@ -58,8 +58,8 @@ class BookingDetailCostCardView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Coupon Discount",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color: Colors.white),),
-                Text("\$$couponsDiscount",style:TextStyle(fontSize:13,fontWeight: FontWeight.w400,color: Colors.red),textAlign: TextAlign.start,),
+                Text("Coupon Discount",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color: Colors.white),),
+                Text("\$$couponsDiscount",style:TextStyle(fontSize:16,fontWeight: FontWeight.w400,color: Colors.red),textAlign: TextAlign.start,),
               ],
             ),
           ),
@@ -69,8 +69,8 @@ class BookingDetailCostCardView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total",style:TextStyle(fontSize:15,fontWeight: FontWeight.w600,color: Colors.white),textAlign: TextAlign.start,),
-                Text("\$${(serviceCost)+(tax)-(couponsDiscount)}",style:TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Colors.green),textAlign: TextAlign.start,),
+                Text("Total",style:TextStyle(fontSize:16, fontWeight: FontWeight.w600,color: Colors.white),textAlign: TextAlign.start,),
+                Text("\$${(serviceCost)+(tax)-(couponsDiscount)}",style:TextStyle(fontSize:16,fontWeight: FontWeight.w600,color: Colors.green),textAlign: TextAlign.start,),
               ],
             ),
           ),

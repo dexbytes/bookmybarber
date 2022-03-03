@@ -54,11 +54,11 @@ class BookingDetailServicesCardView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(service[index].serviceName, style: TextStyle(fontSize: 13,
-                fontWeight: FontWeight.w400,
+            Text(service[index].serviceName, style: TextStyle(fontSize: 16,
+                fontWeight: FontWeight.w500,
                 color: Colors.white)),
-            Text("\$${service[index].cost}", style: TextStyle(fontSize: 13,
-                fontWeight: FontWeight.w400,
+            Text("\$${service[index].cost}", style: TextStyle(fontSize: 16,
+                fontWeight: FontWeight.w500,
                 color: Colors.white),),
           ],
         ),

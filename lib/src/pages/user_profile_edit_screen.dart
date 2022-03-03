@@ -175,7 +175,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
       mainAxisAlignment: MainAxisAlignment.center,
     children:[
     Container(
-      height: 120,
+      height: 140,
       child: FlutterClipPolygon(
         sides: 6,
         borderRadius: 18.0, // Defaults to 0.0 degrees
@@ -235,12 +235,12 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         margin: EdgeInsets.only(left: 22),
         child: Row(
           children: [
-            Text("Gender",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.grey),),
+            Text("Gender",style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w500,color: Colors.grey),),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Transform.scale(
-                  scale: 1,
+                  scale: 1.1,
                   child: Radio<int>(
                     value: 0,
                     groupValue: selectValue,
@@ -248,10 +248,10 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                     onChanged: (value) =>setState(()=>selectValue = value!),
                   ),
                 ),
-                Text("Male",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
+                Text("Male",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
                 SizedBox(width: 40,),
                 Transform.scale(
-                  scale: 1,
+                  scale: 1.1,
                   child: Radio<int>(
                       value: 1,
                       activeColor: Color(0xffE4B343),
@@ -261,7 +261,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                       onChanged: (value) =>setState(()=>selectValue = value! )
                   ),
                 ),
-                Text("Female",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),)
+                Text("Female",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),)
               ],
             ),
           ],
@@ -384,7 +384,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
     _phoneField() {
       return Container(
         margin: EdgeInsets.only(
-          left: 20,right: 20,top: 8
+          left: 20,right: 20,top: 8,bottom: 5
         ),
         child: CommonTextFieldWithError(
           focusNode: focusNodes['phone'],
@@ -565,10 +565,9 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                 isTitleVisible: true,
                 isTrailingIconVisible: false,
                 leadingIconColor:Color(0xFFCCA76A),
-                leadingIconSize:  Size(21, 21),
                 title: "Edit Profile",
                 textStyle: TextStyle(
-                    fontSize: 15,
+                    fontSize: 21,
                     fontWeight: FontWeight.w500,
                     color: AppColors().textNormalColor
                 ),

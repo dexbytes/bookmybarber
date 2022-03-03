@@ -26,12 +26,12 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
     Widget services =Container(
-        height: 95,
+        height: 110,
         child: Column(
           children: [
             SeeAllTextRow(
               leftTitle: "Services",
-              leftTitleTextStyle: TextStyle(fontSize: 14.5,fontWeight: FontWeight.w500,color: Colors.white),
+              leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),
               isRightTextVisible: false,
             ),
             SizedBox(height: 5,),
@@ -41,12 +41,12 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
     Widget cost = Container(
-        height: 162,
+        height: 180,
         child: Column(
           children: [
             SeeAllTextRow(
               leftTitle: "Price Details",
-              leftTitleTextStyle: TextStyle(fontSize: 14.5,fontWeight: FontWeight.w500,color: Colors.white),
+              leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),
               isRightTextVisible: false,
             ),
             SizedBox(height: 5,),
@@ -57,7 +57,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
 
     Widget payment = Container(
-        height: 45,
+        height: 55,
         child: Container(
           padding: EdgeInsets.only(left: 20 ,right: 20,top: 12,bottom: 5),
           margin: EdgeInsets.only(right: 15,left: 15),
@@ -71,10 +71,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Payment mode", style: TextStyle(fontSize: 13,
+                Text("Payment mode", style: TextStyle(fontSize: 16,
                     fontWeight: FontWeight.w400,
                     color: Colors.white)),
-                Text("Cash", style: TextStyle(fontSize: 14,
+                Text("Cash", style: TextStyle(fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color:AppColors().textHeadingColor1,),),
               ],
@@ -85,7 +85,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
 
     Widget topText = Container(
-        height: 60,
+        height: 75,
         child: Container(
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
           color: AppColors().appBgColor3,
@@ -97,22 +97,22 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("20 Jun 2022 at 1:00 PM", style: TextStyle(fontSize: 15,
+                    Text("20 Jun 2022 at 1:00 PM", style: TextStyle(fontSize: 17.5,
                         fontWeight: FontWeight.w500,
                         color: Colors.white)),
                     SizedBox(height: 4,),
-                    Text("Appointment ID: TONI123", style: TextStyle(fontSize: 11,
+                    Text("Appointment ID: TONI123", style: TextStyle(fontSize: 13.5,
                         fontWeight: FontWeight.w400,
                         color: Colors.white)),
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(6),
                   decoration: BoxDecoration(
                       color: Colors.green.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(6)
                   ),
-                  child: Text("COMPLETED", style: TextStyle(fontSize: 11,
+                  child: Text("COMPLETED", style: TextStyle(fontSize: 12.5,
                       fontWeight: FontWeight.w600,
                       color:Colors.green),),
                 ),
@@ -123,7 +123,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
     Widget coupon  = Container(
-        height: 58,
+        height: 65,
         child: Container(
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
           margin: EdgeInsets.symmetric(horizontal: 15,),
@@ -136,16 +136,16 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                iconApps.iconImage(imageUrl: iconApps.discountIcon,imageColor: Colors.white,iconSize: Size(21, 21)),
+                iconApps.iconImage(imageUrl: iconApps.discountIcon,imageColor: Colors.white,iconSize: Size(25, 25)),
                 SizedBox(width: 10,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Save50", style: TextStyle(fontSize: 14,
+                    Text("Save50", style: TextStyle(fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: Colors.white)),
                     SizedBox(height: 2,),
-                    Text("You saved additional \$50", style: TextStyle(fontSize: 10.5,
+                    Text("You saved additional \$50", style: TextStyle(fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors().textHeadingColor1)),
                   ],
@@ -169,26 +169,32 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight : 66,
-      appBar: Container(
-        color: AppColors().appBgColor3,
-        child: appBarWithBackArrow(
-            isTitleVisible: true,
-            textStyle: TextStyle(fontSize: 20,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
-            isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
-            title: "Booking Details",
-            onPress: (){
-              Navigator.pop(context);
-            }
-        ),
+      appBarHeight : 133,
+      appBar: Column(
+        children: [
+          Container(
+            color: AppColors().appBgColor3,
+            child: appBarWithBackArrow(
+                isTitleVisible: true,
+                leadingPadding: EdgeInsets.only(left: 10.0 ,
+                    right: 10,bottom: 0,top: 0),
+                textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
+                isTrailingIconVisible: false,
+                leadingIconColor:Color(0xFFCCA76A),
+                title: "Booking Details",
+                onPress: (){
+                  Navigator.pop(context);
+                }
+            ),
+          ),
+          topText,
+        ],
       ),
       containChild: Container(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            topText,
             SizedBox(height: 15,),
             salonList,
             SizedBox(height: 10,),

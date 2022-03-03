@@ -85,7 +85,7 @@ class ProfileListRowWidget extends StatelessWidget {
         SlideRightRoute(
             widget: PackageOfferScreen()),
       );
-    }else if(index == 8){
+    }else if(index == 7){
 
       Navigator.push(
         MainAppBloc.getDashboardContext,

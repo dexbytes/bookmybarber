@@ -42,7 +42,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
             )
           ),
           Padding(
-            padding: EdgeInsets.only(top: 45,left: 10),
+            padding: EdgeInsets.only(top: 60,left: 10),
             child: Align(
               alignment: Alignment.topLeft,
               child:Material(

@@ -52,7 +52,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 isTrailingIconVisible: false,
                 leadingIconColor:Color(0xFFCCA76A),
                 title: "Notification",
-                textStyle: TextStyle(color: Color(0xFFCCA76A),fontSize: 18,fontWeight: FontWeight.w500),
+                textStyle: TextStyle(color: Color(0xFFCCA76A),fontSize: 20,fontWeight: FontWeight.w600),
                 onPress: (){
                   Navigator.pop(context);
                 }

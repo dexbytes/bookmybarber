@@ -1,5 +1,4 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 PreferredSizeWidget appBarWithBackArrow(
@@ -10,6 +9,7 @@ PreferredSizeWidget appBarWithBackArrow(
       bool isLeadingIconVisible = true,
       Color leadingIconColor = Colors.white,
       Size  leadingIconSize = const Size(25, 25),
+      EdgeInsetsGeometry?  leadingPadding,
       Widget? trailingIcon,
       String title = "",
       TextStyle textStyle = const TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Color(0xff828588)),
@@ -68,14 +68,14 @@ PreferredSizeWidget appBarWithBackArrow(
         elevation: 0,
         color: Colors.transparent,
         child: Padding(
-          padding:EdgeInsets.only(top: 20.0),
+          padding:EdgeInsets.only(top: 10),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding:EdgeInsets.only(left: isLeadingIconVisible ? 10.0 :60,
+                padding: leadingPadding ?? EdgeInsets.only(left: isLeadingIconVisible ? 10.0 :60,
                     right: 10,bottom: 10),
                 child: Align(
                   alignment: Alignment.centerLeft,

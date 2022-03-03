@@ -56,30 +56,31 @@ class _FilterScreenState extends State<FilterScreen>
                 onTap: (){
                   Navigator.pop(context);
                 },
-                child: Text('Cancel',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Color(0xffE4B343)),)),
-            Text('Filters',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white),),
+                child: Text('Cancel',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Color(0xffE4B343)),)),
+            Text('Filters',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),),
             InkWell(
                 onTap: (){},
-                child: Text('Reset',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color:  Color(0xffE4B343)),)),
+                child: Text('Reset',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:  Color(0xffE4B343)),)),
           ],
         ),
       )
     );
 
-    tag(){
+    serviceTag(){
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 5.0,left: 12,top: 20),
             child: Text("Services",
-                style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
           ),
           Container(
               margin: EdgeInsets.symmetric(horizontal:12,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
                 selectedColor: Color(0xffCCA76A),
+
                 isSecondColorShow: false,
                 reportList: [
                  "Hairstyle", "Makeup", "Hair Coloring", "Spa", "Facial Makeup", "Trim & saving"
@@ -95,20 +96,20 @@ class _FilterScreenState extends State<FilterScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Rating",
-                style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
             SizedBox(height: 8,),
             Row(
               children: [
                 StarRatingBar(
                   unratedColor: Colors.grey,
                   iconCount: 5,
-                  iconSize: 28,
+                  iconSize: 30,
                   removeViewCount: true,
-                  itemRatingTextStyle: TextStyle(color: Colors.white,fontSize: 13.5,fontWeight: FontWeight.w500,),
+                  itemRatingTextStyle: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),
                   spaceWithStar: 20,
                 ),
                 Text("Star",
-                    style: TextStyle(color: Colors.white,fontSize: 13.5,fontWeight: FontWeight.w500,),),
+                    style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),),
               ],
             ),
           ],
@@ -125,7 +126,7 @@ class _FilterScreenState extends State<FilterScreen>
             Padding(
               padding: EdgeInsets.only(left: 12.0),
               child: Text("Gender",
-                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
             ),
             SizedBox(height: 2,),
             Theme(
@@ -146,7 +147,7 @@ class _FilterScreenState extends State<FilterScreen>
                           onChanged: (value) =>setState(()=>selectValue = value!),
                         ),
                       ),
-                      Text("Man",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
+                      Text("Man",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
                     ],
                   ),
                   // Text("Man",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
@@ -163,7 +164,7 @@ class _FilterScreenState extends State<FilterScreen>
                             onChanged: (value) =>setState(()=>selectValue = value! )
                         ),
                       ),
-                      Text("Woman",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),),
+                      Text("Woman",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),),
                     ],
                   ),
                Row(
@@ -179,7 +180,7 @@ class _FilterScreenState extends State<FilterScreen>
                             onChanged: (value) =>setState(()=>selectValue = value! )
                         ),
                       ),
-                   Text("Other",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 2?Color(0xffE4B343):Colors.white),)
+                   Text("Other",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 2?Color(0xffE4B343):Colors.white),)
                  ],
                ),
                 ],
@@ -198,9 +199,9 @@ class _FilterScreenState extends State<FilterScreen>
             Padding(
               padding: EdgeInsets.only(left: 6.0),
               child: Text("Distance",
-                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
             ),
-            SizedBox(height: 18,),
+            SizedBox(height: 12,),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -249,12 +250,12 @@ class _FilterScreenState extends State<FilterScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 5.0,top: 10),
+            padding: EdgeInsets.only(bottom: 10.0,top: 10,left: 16),
             child: Text("Price",
-                style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
           ),
           Container(
-              margin: EdgeInsets.symmetric(horizontal:10,),
+              margin: EdgeInsets.only(left:30,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
                 selectedColor: Color(0xffCCA76A),
@@ -267,17 +268,9 @@ class _FilterScreenState extends State<FilterScreen>
       );
     }
 
-    subtitleText(String e) {
-      return Container(
-        child: Text("$e",
-          style:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),
-        ),
-      );
-    }
-
     Widget sorting = Container(
-      height: 205,
-        padding: EdgeInsets.only(right: 20,top: 15,left: 2),
+      height: 215,
+        padding: EdgeInsets.only(right: 20,top: 25,left: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -287,7 +280,7 @@ class _FilterScreenState extends State<FilterScreen>
               child: Container(
                 margin: EdgeInsets.zero,
                 child: Text("Sort by",
-                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
               ),
             ),
             ListView.builder(
@@ -312,7 +305,7 @@ class _FilterScreenState extends State<FilterScreen>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(sort[index].title,
-                        style:TextStyle(fontSize: 13,
+                        style:TextStyle(fontSize: 15,
                             fontWeight: FontWeight.w500,
                             color: selectedChoice == index? AppColors().textHeadingColor1:Colors.white) ,),
 
@@ -328,7 +321,6 @@ class _FilterScreenState extends State<FilterScreen>
               );
             }
             ),
-
           ],
         )
     );
@@ -361,6 +353,7 @@ class _FilterScreenState extends State<FilterScreen>
     return WillPopScope(
         onWillPop: null, //_onBackPressed,
         child: Scaffold(
+          backgroundColor: AppColors().appBgColor2,
           body: SafeArea(
             top: false,
             bottom: true,
@@ -372,15 +365,16 @@ class _FilterScreenState extends State<FilterScreen>
                   contextCurrentView: context,
                   isSingleChildScrollViewNeed: true,
                   isFixedDeviceHeight: true,
-                  appBarHeight: 60,
+                  appBarHeight: 65,
                   appBar: appbarView,
                   containChild:Stack(
                     children: [
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          tag(),
+                          serviceTag(),
                           starRating,
                           gender,
                           slider,

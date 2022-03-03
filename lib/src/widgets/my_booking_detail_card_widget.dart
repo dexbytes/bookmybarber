@@ -15,8 +15,8 @@ class BookingDetailCardView extends StatelessWidget {
         color: Colors.transparent,
         elevation: 0,
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20,),
-          padding: EdgeInsets.all(5),
+          margin: EdgeInsets.symmetric(horizontal: 15,),
+          padding: EdgeInsets.all(6),
           decoration: BoxDecoration(
               color: AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(8)
@@ -29,7 +29,7 @@ class BookingDetailCardView extends StatelessWidget {
                 // print(index);
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 12.0),
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -37,7 +37,7 @@ class BookingDetailCardView extends StatelessWidget {
                       style: {'html': Style.fromTextStyle(
                           TextStyle(
                             backgroundColor: Colors.transparent,
-                            fontSize: 14,
+                            fontSize: 17.5,
                             fontWeight: FontWeight.w600,
                             height: 0,
                             color: Colors.white,
@@ -49,16 +49,16 @@ class BookingDetailCardView extends StatelessWidget {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(left: 5.0),
-                          child: Icon(Icons.location_on,size: 14,color: Color(0xff3885FF),),
+                          child: Icon(Icons.location_on,size: 16,color: Color(0xff3885FF),),
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsets.only(top: 1.5),
+                            padding: EdgeInsets.only(top: 4),
                             child: Html(data: "288 McClure Court,Arkansas",
                               style: {'html': Style.fromTextStyle(
                                   TextStyle(
                                     backgroundColor: Colors.transparent,
-                                    fontSize: 11,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     height: 0,
                                     color: Colors.white.withOpacity(0.9),
@@ -69,13 +69,13 @@ class BookingDetailCardView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 2,),
+                    SizedBox(height: 6,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          height: 45.0,
-                          width: 45.0,
+                          height: 55.0,
+                          width: 55.0,
                           margin: EdgeInsets.all(4),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(50),
@@ -91,14 +91,14 @@ class BookingDetailCardView extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(left:10.0),
-                                child: Text("Stylist",style: TextStyle(color: Colors.grey, fontSize: 10,),),
+                                child: Text("Stylist",style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w500),),
                               ),
-                              SizedBox(height: 5,),
+                              SizedBox(height: 8,),
                               Html(data:"Julia Chan",
                                 style: {'html': Style.fromTextStyle(
                                     TextStyle(
                                       backgroundColor: Colors.transparent,
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                       height: 0,
                                       color: Colors.white,
@@ -125,15 +125,15 @@ class BookingDetailCardView extends StatelessWidget {
                                     child: Container(
                                         padding: EdgeInsets.zero,
                                         margin: EdgeInsets.zero,
-                                        height: 30,
-                                        width: 30,
+                                        height: 40,
+                                        width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:AppColors().textHeadingColor1,
                                         ),
                                         child:Align(
                                           alignment: Alignment.center,
-                                          child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(13, 13)),
+                                          child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(18, 18)),
                                         )
                                     ),
                                   ),
@@ -143,8 +143,8 @@ class BookingDetailCardView extends StatelessWidget {
                                     child: Container(
                                         padding: EdgeInsets.zero,
                                         margin: EdgeInsets.zero,
-                                        height: 30,
-                                        width: 30,
+                                        height: 40,
+                                        width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:AppColors().textHeadingColor1,
@@ -153,7 +153,7 @@ class BookingDetailCardView extends StatelessWidget {
                                           alignment: Alignment.center,
                                           child:iconApps.iconImage(imageUrl: iconApps.phoneIcon,
                                               imageColor: Colors.white,
-                                              iconSize: Size(13, 13)),
+                                              iconSize: Size(18, 18)),
                                         )
                                     ),
                                   ),

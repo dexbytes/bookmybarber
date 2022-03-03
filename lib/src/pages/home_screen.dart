@@ -210,37 +210,48 @@ class _HomeScreenState extends State<HomeScreen>
                 shrinkWrap: true,
                 slivers: <Widget>[
                 SliverAppBar(
+                  automaticallyImplyLeading: false,
                   elevation: 0,
-                leading: IconButton(
-                  onPressed: (){},
-                  icon:iconApps.iconImage(imageUrl: iconApps.lineIcon,iconSize: Size(26, 26)),
-                ) ,
+                // leading: Text("Book My Barber",
+                //   style:TextStyle(color: Colors.white, fontSize: 22,fontWeight: FontWeight.w800),
+                // ),
                 titleSpacing: 0,
                 title:Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                       NotificationBal(onTap: (){
-                         Navigator.push(
-                           MainAppBloc.getDashboardContext,
-                           SlideRightRoute(
-                               widget: NotificationScreen()),
-                         );
-                       },),
-                        IconButton(
-                          splashRadius: 25,
-                          padding: EdgeInsets.zero,
-                          alignment: Alignment.center,
-                          onPressed: (){
-                            Navigator.push(
-                              MainAppBloc.getDashboardContext,
-                              SlideRightRoute(
-                                  widget: FilterScreen()),
-                            );
-                          },
-                          icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
-                        ) ,
-                      ],
-                   ),
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 15.0),
+                    child: Text("Book My Barber",
+                      style:TextStyle(color: Colors.white, fontSize: 24,fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                    Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                           NotificationBal(onTap: (){
+                             Navigator.push(
+                               MainAppBloc.getDashboardContext,
+                               SlideRightRoute(
+                                   widget: NotificationScreen()),
+                             );
+                           },),
+                            IconButton(
+                              splashRadius: 25,
+                              padding: EdgeInsets.zero,
+                              alignment: Alignment.center,
+                              onPressed: (){
+                                Navigator.push(
+                                  MainAppBloc.getDashboardContext,
+                                  SlideRightRoute(
+                                      widget: FilterScreen()),
+                                );
+                              },
+                              icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
+                            ) ,
+                          ],
+                       ),
+                  ],
+                ),
                 backgroundColor: Color(0xff212327),
                 pinned: true,
                 floating: false,

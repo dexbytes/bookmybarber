@@ -115,7 +115,7 @@ class _NearByScreenState extends State<NearByScreen>
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Hello, John Doe",style: TextStyle(fontSize: 17,
+                Text("Hello, John Doe",style: TextStyle(fontSize: 20,
                     color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -124,14 +124,14 @@ class _NearByScreenState extends State<NearByScreen>
                     Padding(
                       padding: EdgeInsets.only(bottom:3.0),
                       child: NotificationBal(
-                        alignment: Alignment.bottomCenter,onTap: (){},rightIconSize: 18,),
+                        alignment: Alignment.bottomCenter,onTap: (){},),
                     ),
                     IconButton(
                       splashRadius: 25,
                       padding: EdgeInsets.zero,
                       alignment: Alignment.center,
                       onPressed: (){},
-                      icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(18, 18)),
+                      icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
                     ) ,
                   ],
                 ),
@@ -152,14 +152,14 @@ class _NearByScreenState extends State<NearByScreen>
                     children: [
                       Padding(
                         padding: EdgeInsets.only(left: 4.0),
-                        child: Text("Your location",style: TextStyle(fontSize: 11,color: Colors.grey),),
+                        child: Text("Your location",style: TextStyle(fontSize: 11.5,color: Colors.grey),),
                       ),
                       SizedBox(height: 5,),
                       Row(
                         children: [
                           Icon(Icons.location_on,color: Colors.white,size: 18,),
                           SizedBox(width: 8,),
-                          Text("San Francisco City",style: TextStyle(fontSize: 13,color: Colors.white,fontWeight: FontWeight.w600),),
+                          Text("San Francisco City",style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w600),),
                         ],)
                     ],
                   ),
@@ -174,7 +174,7 @@ class _NearByScreenState extends State<NearByScreen>
                       children: [
                         Icon(CupertinoIcons.location_fill,color: Color(0xff00B2AE),size: 15,),
                         SizedBox(width: 4,),
-                        Text("CHANGE",style:TextStyle(fontSize: 11,color: Color(0xff00B2AE),fontWeight: FontWeight.w500))
+                        Text("CHANGE",style:TextStyle(fontSize: 11.5,color: Color(0xff00B2AE),fontWeight: FontWeight.w500))
                       ],
                     ),
                   ),
@@ -241,7 +241,7 @@ class _NearByScreenState extends State<NearByScreen>
         child: Scaffold(
           backgroundColor: AppColors().appBgColor2,
           floatingActionButton: Padding(
-            padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height /9),
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height /10),
             child: FloatingActionButton(
                 backgroundColor: Color(0xffEE457C),
                 child: Container(
@@ -263,7 +263,7 @@ class _NearByScreenState extends State<NearByScreen>
               // scrollPadding: EdgeInsets.only(bottom: 110),
               isSingleChildScrollViewNeed: true,
               isFixedDeviceHeight: true,
-              appBarHeight: 180,
+              appBarHeight: 210,
               appBar: Container(
                 color: Color(0xff323446),
                 child: Column(

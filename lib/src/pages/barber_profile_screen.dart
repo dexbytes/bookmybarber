@@ -69,7 +69,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
       children: [
         Container(
             padding: EdgeInsets.zero,
-            margin: EdgeInsets.only(top: appDimens.heightFullScreen()/6.8 /* MediaQuery.of(context).size.height /6.8*/),
+            margin: EdgeInsets.only(top: appDimens.heightFullScreen()/6.2 /* MediaQuery.of(context).size.height /6.8*/),
             height: 100,
             width: 100,
             decoration: BoxDecoration(
@@ -145,12 +145,12 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
             length: 3,
             initialIndex: selectedTab,
             child: Container(
-              height: MediaQuery.of(context).size.height /1.45,
+              height: MediaQuery.of(context).size.height /3.5,
               child: TabBarView(
                 controller: tabController,
                 children: [
                   // DescriptionPage(),
-                  SalonDetailAboutScreen(isBarberInfoShow: true,),
+                  SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
                   Center(child: Text("Tab2"),),
                   SalonDetailReviewScreen()
 
@@ -164,7 +164,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     Widget topSection = Container(
         height: 85,
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(top:appDimens.heightFullScreen()/2.5 /*MediaQuery.of(context).size.height /2.6*/),
+        margin: EdgeInsets.only(top:appDimens.heightFullScreen()/2.4 /*MediaQuery.of(context).size.height /2.6*/),
         color: Color(0xff323446),
         child: BarberProfileTopRowWidget(),
     );
@@ -197,7 +197,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               },
                               icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor:Colors.white,iconSize: Size(26, 26)),
                             ),
-                            leadingWidth: 60,
+                            leadingWidth: 65,
+                            toolbarHeight: 60,
                             titleSpacing: 0,
                             title: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -228,12 +229,12 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight:appDimens.heightFullScreen()/1.8, // MediaQuery.of(context).size.height /2.1,  //2.47,
-                            collapsedHeight:appDimens.heightFullScreen()/8,   //MediaQuery.of(context).size.height/8,
+                            expandedHeight:appDimens.heightFullScreen()/2.1, // MediaQuery.of(context).size.height /2.1,  //2.47,
+                            collapsedHeight:appDimens.heightFullScreen()/10,   //MediaQuery.of(context).size.height/8,
                             flexibleSpace: FlexibleSpaceBarWidget(
                               expandedTitleScale: 1,
                               background:Container(
-                                color:Color(0xff323446),
+                                color: Color(0xff323446),
                                 child: Stack(
                                   alignment: Alignment.topCenter,
                                   children: [
@@ -265,34 +266,34 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                   ],
                                 ),
                               ),
-                              title:   Container(
-                                padding: EdgeInsets.zero,
-                                margin: EdgeInsets.zero,
-                                color: Colors.transparent,
-                                child: TabBar(
-                                  onTap: (index){
-                                    setState(() {
-                                      selectedTab = index;
-                                    });
-                                  },
-                                  controller: tabController,
-                                  tabs: [
-                                    Tab(text: "Basic Info",),
-                                    Tab(text: "Portfolio",),
-                                    Tab(text: "Review",),
-                                  ],
-                                  labelColor:Color(0xffE4B343),
-                                  isScrollable: false,
-                                  unselectedLabelColor: Color(0xff828588),
-                                  labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-                                  unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-                                  labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
-                                  indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                                  indicatorColor: Color(0xffE4B343),
-                                  padding: EdgeInsets.zero,
-                                ),
-                              ),
-                              titlePadding: EdgeInsets.zero,
+                              // title:   Container(
+                              //   padding: EdgeInsets.zero,
+                              //   margin: EdgeInsets.zero,
+                              //   color: Colors.transparent,
+                              //   child: TabBar(
+                              //     onTap: (index){
+                              //       setState(() {
+                              //         selectedTab = index;
+                              //       });
+                              //     },
+                              //     controller: tabController,
+                              //     tabs: [
+                              //       Tab(text: "Basic Info",),
+                              //       Tab(text: "Portfolio",),
+                              //       Tab(text: "Review",),
+                              //     ],
+                              //     labelColor:Color(0xffE4B343),
+                              //     isScrollable: false,
+                              //     unselectedLabelColor: Color(0xff828588),
+                              //     labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
+                              //     unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
+                              //     labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
+                              //     indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
+                              //     indicatorColor: Color(0xffE4B343),
+                              //     padding: EdgeInsets.zero,
+                              //   ),
+                              // ),
+                              // titlePadding: EdgeInsets.zero,
                             ),
                           ),
                           SliverFillRemaining(
@@ -305,24 +306,46 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                 children: [
                                   // topSection,
                                   // tabBar
-                                  Expanded(
-                                    child: DefaultTabController(
-                                      length: 3,
-                                      initialIndex: selectedTab,
-                                      child: Container(
-                                        padding: EdgeInsets.zero,
-                                        margin: EdgeInsets.zero,
-                                        height: MediaQuery.of(context).size.height,
-                                        child: TabBarView(
-                                          controller: tabController,
-                                          children: [
-                                            // DescriptionPage(),
-                                            SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: true,),
-                                            Center(child: Text("Tab2"),),
-                                            SalonDetailReviewScreen(isScrollable: true,)
+                                  Container(
+                                    color: Color(0xff323446),
+                                    child: TabBar(
+                                      onTap: (index){
+                                        setState(() {
+                                          selectedTab = index;
+                                        });
+                                      },
+                                      controller: tabController,
+                                      tabs: [
+                                        Tab(text: "Basic Info",),
+                                        Tab(text: "Portfolio",),
+                                        Tab(text: "Review",),
+                                      ],
+                                      labelColor:Color(0xffE4B343),
+                                      isScrollable: false,
+                                      unselectedLabelColor: Color(0xff828588),
+                                      labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
+                                      unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
+                                      labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
+                                      indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
+                                      indicatorColor: Color(0xffE4B343),
+                                    ),
+                                  ),
+                                  DefaultTabController(
+                                    length: 3,
+                                    initialIndex: selectedTab,
+                                    child: Container(
+                                      padding: EdgeInsets.zero,
+                                      margin: EdgeInsets.zero,
+                                      height: MediaQuery.of(context).size.height,
+                                      child: TabBarView(
+                                        controller: tabController,
+                                        children: [
+                                          // DescriptionPage(),
+                                          SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
+                                          Center(child: Text("Tab2"),),
+                                          SalonDetailReviewScreen(isScrollable: false,)
 
-                                          ],
-                                        ),
+                                        ],
                                       ),
                                     ),
                                   ),

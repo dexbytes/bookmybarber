@@ -44,7 +44,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
               )
           ),
           Padding(
-            padding: EdgeInsets.only(top: 45,left: 10),
+            padding: EdgeInsets.only(top: 55,left: 10),
             child: Align(
                 alignment: Alignment.topLeft,
                 child:Material(
@@ -80,7 +80,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
       );
     }
 
-    tag(){
+    time(){
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -188,7 +188,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           ),
           child: ContainerMenuPage(
             contextCurrentView: context,
-            scrollPadding: EdgeInsets.only(bottom: 60),
+            scrollPadding: EdgeInsets.only(bottom: 110),
             /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
             isSingleChildScrollViewNeed: true,
@@ -203,7 +203,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                 SizedBox(height: 15),
                 barberRow(),
                 SizedBox(height: 20),
-                tag(),
+                time(),
                 SizedBox(height: 25),
                 bottomButton(),
               ],
@@ -217,7 +217,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
 
     return ContainerMenuPage(
       contextCurrentView: context,
-      // scrollPadding: EdgeInsets.only(bottom: 81),
+      // scrollPadding: EdgeInsets.only(bottom: 180),
       /* statusBarColor: Colors.amber,
         bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: false,

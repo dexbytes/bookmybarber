@@ -266,7 +266,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               appBarHeight: 100,
               appBar: Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.only(top: 28),
+                padding: EdgeInsets.only(top: 60),
                 child: Material(
                   color: Colors.transparent,
                   child: Row(

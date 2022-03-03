@@ -41,7 +41,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 65,
+      appBarHeight: 66,
       appBar: Container(
         color: Color(0xff212327),
         child: appBarWithBackArrow(

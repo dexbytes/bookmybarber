@@ -15,7 +15,7 @@ class BookingCardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.only(left: 5,right: 5,top: 10,bottom: 80),
+        padding: EdgeInsets.only(left: 2,right: 2,top: 10,bottom: 80),
         physics: ClampingScrollPhysics(),
         itemCount: booking.length,
         shrinkWrap: true,
@@ -41,7 +41,7 @@ class BookingCardView extends StatelessWidget {
                     children: [
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 10),
-                        height: 30,
+                        height: 35,
                         decoration: BoxDecoration(
                             color: Colors.black87,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight:  Radius.circular(8))
@@ -51,33 +51,33 @@ class BookingCardView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.access_time,size: 12,color: Colors.white,),
+                                Icon(Icons.access_time,size: 14,color: Colors.white,),
                               SizedBox(width: 5,),
-                              Text("${booking[index].date}At",
-                              style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Colors.white ),
+                              Text("${booking[index].date} At",
+                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Colors.white ),
                               ),
                                 SizedBox(width: 5,),
                               Text(booking[index].time,
-                              style: TextStyle(fontSize:12,fontWeight: FontWeight.w500,color: Colors.white ),
+                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Colors.white ),
                               )
                               ],
                             ),
                             Text(booking[index].status ?"Accepted" : "Pending",
                             style:booking[index].status
-                                ? TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1 )
-                                : TextStyle(fontSize:13,fontWeight: FontWeight.w500,color:Colors.grey )
+                                ? TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1 )
+                                : TextStyle(fontSize:15,fontWeight: FontWeight.w500,color:Colors.grey )
                             )
                           ],
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(5.0),
+                        padding: EdgeInsets.all(6.0),
                         child: Row(
                           children: [
                             Container(
-                              height: 70.0,
-                              width: 70.0,
-                              margin: EdgeInsets.all(5),
+                              height: 80.0,
+                              width: 80.0,
+                              margin: EdgeInsets.all(2),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: CachedNetworkImage(
@@ -98,16 +98,18 @@ class BookingCardView extends StatelessWidget {
                                       style: {'html': Style.fromTextStyle(
                                           TextStyle(
                                             backgroundColor: Colors.transparent,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w700,
                                             height: 0,
                                             color: Colors.white,
-                                          ))
+
+                                          )
+                                      )
                                       },
                                     ),
                                     Html(data: booking[index].service,
                                       style: {'html': Style(
-                                        fontSize: FontSize.medium,
+                                        fontSize: FontSize.large,
                                         lineHeight: LineHeight(0.5),
                                         color: Colors.grey,
                                         height: 18,
@@ -115,19 +117,20 @@ class BookingCardView extends StatelessWidget {
                                             .of(context)
                                             .size
                                             .width,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w500,
                                         padding: EdgeInsets.all(0),
                                         margin: EdgeInsets.all(0),
                                       )},
                                     ),
+                                    SizedBox(height: 2,),
                                     Padding(
                                       padding: EdgeInsets.only(left: 8.0,top: 2),
                                       child: Row(
                                         children: [
-                                          Text("Stylist:",style: TextStyle(color: Colors.grey, fontSize: 11,),),
+                                          Text("Stylist:",style: TextStyle(color: Colors.grey, fontSize: 12.5,fontWeight:FontWeight.w500),),
                                           SizedBox(width: 2,),
                                           Text(booking[index].stylistName,style: TextStyle(color: Colors.white,
-                                              fontSize: 11,fontWeight:FontWeight.w400 ),),
+                                              fontSize: 13.5,fontWeight:FontWeight.w500 ),),
 
                                           // Expanded(
                                           //   child: Html(data:"Victor Black",
@@ -157,7 +160,7 @@ class BookingCardView extends StatelessWidget {
                               elevation: 0,
                               color: Colors.transparent,
                               child: Padding(
-                                padding: EdgeInsets.only(bottom: 20.0,right: 5),
+                                padding: EdgeInsets.only(bottom: 20.0,right: 2),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -166,8 +169,8 @@ class BookingCardView extends StatelessWidget {
                                       child: Container(
                                           padding: EdgeInsets.zero,
                                           margin: EdgeInsets.zero,
-                                          height: 35,
-                                          width: 35,
+                                          height: 38,
+                                          width: 38,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color:AppColors().textHeadingColor1,
@@ -184,8 +187,8 @@ class BookingCardView extends StatelessWidget {
                                       child: Container(
                                           padding: EdgeInsets.zero,
                                           margin: EdgeInsets.zero,
-                                          height: 35,
-                                          width: 35,
+                                          height: 38,
+                                          width: 38,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color:AppColors().textHeadingColor1,

@@ -90,8 +90,13 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
               ),
             ),
             SizedBox(width: 12,),
-            Text("Cancel",
-            style: TextStyle(fontSize: 16,color: Color(0xffE4B343),fontWeight: FontWeight.w600),
+            InkWell(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: Text("Cancel",
+              style: TextStyle(fontSize: 16,color: Color(0xffE4B343),fontWeight: FontWeight.w600),
+              ),
             )
           ],
         ),
