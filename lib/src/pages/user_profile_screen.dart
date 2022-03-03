@@ -11,6 +11,8 @@ import 'package:base_flutter_app/src/widgets/profile_list_row_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import 'notification_screen.dart';
+
 
 class UserProfileScreen extends StatefulWidget {
   final String userName;
@@ -89,7 +91,13 @@ class _UserProfileScreenState extends State<UserProfileScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              NotificationBal(onTap: (){},rightIconSize: 30,),
+              NotificationBal(onTap: (){
+                Navigator.push(
+                  MainAppBloc.getDashboardContext,
+                  SlideRightRoute(
+                      widget: NotificationScreen()),
+                );
+              },rightIconSize: 30,),
               Material(
                 color: Colors.transparent,
                 child: IconButton(

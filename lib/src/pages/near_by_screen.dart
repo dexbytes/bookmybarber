@@ -16,6 +16,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'barber_profile_screen.dart';
+import 'filter_screen.dart';
+import 'notification_screen.dart';
 
 class NearByScreen extends StatefulWidget {
 
@@ -124,13 +126,26 @@ class _NearByScreenState extends State<NearByScreen>
                     Padding(
                       padding: EdgeInsets.only(bottom:3.0),
                       child: NotificationBal(
-                        alignment: Alignment.bottomCenter,onTap: (){},),
+                        alignment: Alignment.bottomCenter,
+                        onTap: (){
+                          Navigator.push(
+                            MainAppBloc.getDashboardContext,
+                            SlideRightRoute(
+                                widget: NotificationScreen()),
+                          );
+                        },),
                     ),
                     IconButton(
                       splashRadius: 25,
                       padding: EdgeInsets.zero,
                       alignment: Alignment.center,
-                      onPressed: (){},
+                      onPressed: (){
+                        Navigator.push(
+                          MainAppBloc.getDashboardContext,
+                          SlideRightRoute(
+                              widget: FilterScreen()),
+                        );
+                      },
                       icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
                     ) ,
                   ],
