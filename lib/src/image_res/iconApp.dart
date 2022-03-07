@@ -40,6 +40,7 @@ class IconApps {
   String mapIcon = 'assets/images/map_icon.svg';
   String phoneIcon = 'assets/images/phone_icon.png';
   String discountIcon = 'assets/images/discount_icon.png';
+  String rightWithBackgroundIcon = 'assets/images/right_with_backgroung_icon.svg';
 
 
 

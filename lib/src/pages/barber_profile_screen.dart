@@ -261,7 +261,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                     ),
                                     Align(
                                         alignment: Alignment.topCenter,
-                                        child:    topSection,
+                                        child: topSection,
                                     ),
                                   ],
                                 ),
@@ -330,22 +330,23 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                       indicatorColor: Color(0xffE4B343),
                                     ),
                                   ),
-                                  DefaultTabController(
-                                    length: 3,
-                                    initialIndex: selectedTab,
-                                    child: Container(
-                                      padding: EdgeInsets.zero,
-                                      margin: EdgeInsets.zero,
-                                      height: MediaQuery.of(context).size.height,
-                                      child: TabBarView(
-                                        controller: tabController,
-                                        children: [
-                                          // DescriptionPage(),
-                                          SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
-                                          Center(child: Text("Tab2"),),
-                                          SalonDetailReviewScreen(isScrollable: false,)
+                                  Expanded(
+                                    child: DefaultTabController(
+                                      length: 3,
+                                      initialIndex: selectedTab,
+                                      child: Container(
+                                        padding: EdgeInsets.zero,
+                                        margin: EdgeInsets.zero,
+                                        child: TabBarView(
+                                          controller: tabController,
+                                          children: [
+                                            // DescriptionPage(),
+                                            SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
+                                            Center(child: Text("Tab2"),),
+                                            SalonDetailReviewScreen(isScrollable: false,)
 
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -353,7 +354,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               ),
                             )
                           )
-
                           // SliverList(
                           //   delegate: SliverChildBuilderDelegate(
                           //         (context, index) {

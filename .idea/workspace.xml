@@ -19,7 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="" />
+    <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/image_res/iconApp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_profile_top_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_profile_top_row.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottomsheet_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottomsheet_card_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/share_bottom_sheet_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/share_bottom_sheet_view.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/google_map_custom/test_package/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -55,14 +66,14 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/google_map_custom/test_package/assets" />
-      <recent name="$PROJECT_DIR$/google_map_custom/assets" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/google_map_custom/test_package/assets" />
+      <recent name="$PROJECT_DIR$/google_map_custom/assets" />
     </key>
   </component>
   <component name="RunManager">
@@ -114,30 +125,30 @@
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
     <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1646634732675" />
-    <state width="556" height="438" key="DebuggerActiveHint" timestamp="1645794208244">
+    <state width="632" height="438" key="DebuggerActiveHint" timestamp="1646645505780">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
-    <state width="556" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1645794208244" />
-    <state width="1012" height="234" key="GridCell.Tab.0.bottom" timestamp="1646633125468">
+    <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1646645505780" />
+    <state width="1012" height="494" key="GridCell.Tab.0.bottom" timestamp="1646642926148">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1012" height="234" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646633125468" />
-    <state width="1012" height="234" key="GridCell.Tab.0.center" timestamp="1646633125468">
+    <state width="1012" height="494" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646642926148" />
+    <state width="1012" height="494" key="GridCell.Tab.0.center" timestamp="1646642926147">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1012" height="234" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646633125468" />
-    <state width="1012" height="234" key="GridCell.Tab.0.left" timestamp="1646633125468">
+    <state width="1012" height="494" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646642926147" />
+    <state width="1012" height="494" key="GridCell.Tab.0.left" timestamp="1646642926147">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1012" height="234" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646633125468" />
-    <state width="1012" height="234" key="GridCell.Tab.0.right" timestamp="1646633125468">
+    <state width="1012" height="494" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646642926147" />
+    <state width="1012" height="494" key="GridCell.Tab.0.right" timestamp="1646642926148">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1012" height="234" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646633125468" />
+    <state width="1012" height="494" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646642926148" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -147,11 +158,11 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1366.683@0.25.1366.683" timestamp="1645524399230" />
-    <state x="344" y="82" width="1022" height="500" key="find.popup" timestamp="1646630557927">
+    <state x="344" y="82" width="1022" height="500" key="find.popup" timestamp="1646643950328">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
-    <state x="344" y="82" width="1022" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1646630557927" />
+    <state x="344" y="82" width="1022" height="500" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1646643950328" />
     <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646284262349">
       <screen x="0" y="25" width="1366" height="683" />
     </state>

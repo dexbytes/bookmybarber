@@ -2,13 +2,15 @@ import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.da
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
 import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
 import 'package:flutter/material.dart';
 
 class BookingScreen extends StatefulWidget {
   final String title;
-  const BookingScreen({Key? key, this.title = "Salon"}) : super(key: key);
+  final bool isShowBackArrow;
+  const BookingScreen({Key? key, this.title = "Salon", this.isShowBackArrow = false}) : super(key: key);
   @override
   _BookingScreenState createState() => _BookingScreenState();
 }
@@ -116,8 +118,25 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text("My Bookings",style: TextStyle(fontSize: 22,
-          color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Visibility(
+                visible: widget.isShowBackArrow,
+                child: Material(
+                  color: Colors.transparent,
+                  child: IconButton(
+                    onPressed: (){
+                    Navigator.pop(context);
+                       },
+                   icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,iconSize: Size(26, 26)),),
+                ),
+              ),
+              SizedBox(width:  widget.isShowBackArrow ? MediaQuery.of(context).size.width /5.3 :MediaQuery.of(context).size.width /3.35 ,),
+              Text("My Bookings",style: TextStyle(fontSize: 22,
+              color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
+            ],
+          ),
           SizedBox(height: 19,),
           Container(
             color: AppColors().appBgColor3,

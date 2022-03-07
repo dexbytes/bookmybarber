@@ -9,6 +9,8 @@ import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import 'booking_detail_payment_screen.dart';
+
 class BookAppointmentTimeScreen extends StatefulWidget {
   final double price;
 
@@ -159,11 +161,11 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
             fontWeight: FontWeight.w600,
             color: Color(0xff212327),),
           backCallback:(){
-            // Navigator.push(
-            //   context,
-            //   SlideRightRoute(
-            //       widget: HomeScreen()),
-            // );
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: BookingDetailPaymentScreen()),
+            );
           },
           isBottomMarginRequired: false,
         ),
