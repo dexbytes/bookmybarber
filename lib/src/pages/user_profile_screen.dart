@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/setting_screen.dart';
 import 'package:base_flutter_app/src/pages/user_profile_edit_screen.dart';
 import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
 import 'package:base_flutter_app/src/widgets/like_follow_row_widget.dart';
@@ -104,7 +105,14 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                   splashRadius: 25,
                   padding: EdgeInsets.zero,
                   alignment: Alignment.center,
-                  onPressed: (){print("hh");},
+                  onPressed: ()
+                  {
+                    Navigator.push(
+                      MainAppBloc.getDashboardContext,
+                      SlideRightRoute(
+                          widget: SettingScreen()),
+                    );
+                  },
                   icon:iconApps.iconImage(imageUrl: iconApps.settingIcon,iconSize: Size(30, 30)),
                 ),
               ) ,

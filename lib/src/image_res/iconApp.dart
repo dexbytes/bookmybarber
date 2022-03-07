@@ -41,6 +41,8 @@ class IconApps {
   String phoneIcon = 'assets/images/phone_icon.png';
   String discountIcon = 'assets/images/discount_icon.png';
   String rightWithBackgroundIcon = 'assets/images/right_with_backgroung_icon.svg';
+  String activeToggleBackground = 'assets/images/active_switch_background.svg';
+  String toggleIcon = 'assets/images/toggle_circle.png';
 
 
 
