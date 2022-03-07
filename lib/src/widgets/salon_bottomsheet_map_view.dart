@@ -207,7 +207,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
         sheetTitleStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,color:AppColors().textHeadingColor1),
         topLineShow: true,
         cardBackgroundColor: Color(0xff212327),
-        bottomSheetHeight: MediaQuery.of(context).size.height/1.6,
+        bottomSheetHeight: MediaQuery.of(context).size.height/2,
         child:_dataView()
     );
 
