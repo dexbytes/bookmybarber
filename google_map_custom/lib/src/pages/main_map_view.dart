@@ -1,11 +1,19 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:google_map_custom/src/pages/map_data_model.dart';
+import 'package:google_map_custom/src/widgets/star_rating_widget.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:location/location.dart'  as  addressLocation;
 
 class MainMapView extends StatefulWidget {
-  const MainMapView({Key? key}) : super(key: key);
+  final Widget? child;
+  final topLineClickCallBack;
+  const MainMapView({Key? key, this.child, this.topLineClickCallBack}) : super(key: key);
 
   @override
   _MainMapViewState createState() => _MainMapViewState();
@@ -112,7 +120,7 @@ class _MainMapViewState extends State<MainMapView> {
     }
   }
 
-  _coffeeShopList(index) {
+  _barberShopList(index) {
     return AnimatedBuilder(
       animation: _pageController,
       builder: (
@@ -130,93 +138,101 @@ class _MainMapViewState extends State<MainMapView> {
       },
       child: InkWell(
           onTap: () {
-            moveCamera();
+            // moveCamera();
           },
-          child: Stack(children: [
-            Container(
-              margin: EdgeInsets.only(left: 0,right: 0),
-              padding: EdgeInsets.zero,
-              width: 280,
-              height: 150,
-              child: Material(
-                color: Colors.transparent,
-                child: Card(
-                  elevation: 1,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
-                  margin: EdgeInsets.zero,
-                  color: Colors.white,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image(
-                          image: NetworkImage(mapData[index].imageUrl),
-                          fit: BoxFit.cover,
-                          height:MediaQuery.of(context).size.height/10,
-                          width:MediaQuery.of(context).size.height,
-                        ),
-
-                        // Image(image:AssetImage(home[index].imageUrl),
-                        //   fit: BoxFit.cover,
-                        //   height:MediaQuery.of(context).size.height/7,
-                        //   width:MediaQuery.of(context).size.height /2,
-                        // ),
-                        /* Ink.image(image:AssetImage("assets/images/card_image.png",),
-                  fit: BoxFit.cover,
-                  height:MediaQuery.of(context).size.height/6,
-                  width:MediaQuery.of(context).size.height /3,
-                  ),*/
-                      ),
-
-                      SizedBox(height: 10,),
-
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child:widget.child ??
+              Stack(children: [
+                Container(
+                margin: EdgeInsets.only(left: 12),
+                padding: EdgeInsets.zero,
+                height: 180,
+                width: 320,
+                child: Material(
+                  color: Colors.transparent,
+                  child: Card(
+                    elevation: 0.5,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    margin: EdgeInsets.zero,
+                    color: Colors.white,
+                    child: InkWell(
+                      onTap: (){
+                        // this.onCardClickCallBack?.call();
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: CachedNetworkImage(
+                                imageUrl: mapData[index].imageUrl,
+                                fit: BoxFit.cover,
+                                height:MediaQuery.of(context).size.height/8.5,
+                                width:MediaQuery.of(context).size.height /2,
+                              )
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 8),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(mapData[index].title,
-                                style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                      child: Html(data:mapData[index].title,
+                                        style: {'html' : Style.fromTextStyle(
+                                          TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.black,height: 0.5),
+                                        )},
+
+                                      ),
+                                    ),
+                                    StarRatingBar(
+                                      removeViewCount: true,
+                                    )
+                                  ],
                                 ),
-                                // Expanded(
-                                //   child: Html(data: isSecondDataVisible ?home2[index].title :home[index].title,
-                                //     style: {'html' : Style.fromTextStyle(
-                                //         titleTextStyle
-                                //     )},
-                                //
-                                //   ),
-                                // ),
-                                Icon(Icons.star,color: Colors.orange,)
-                                // StarRatingBar(
-                                //   removeViewCount: true,
-                                // )
+                                Html(data:mapData[index].subtitle,
+                                  style: {'html' : Style.fromTextStyle(
+                                    TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,height: 0.3),
+                                  )},
+
+                                ),
                               ],
                             ),
-                            Text(mapData[index].subtitle,
-                             style: TextStyle(fontSize: 13.5,fontWeight: FontWeight.w400,color: Colors.grey,),
-                            ),
-                            // Html(data:isSecondDataVisible ?home2[index].subtitle :home[index].subtitle,
-                            //   style: {'html' : Style.fromTextStyle(
-                            //       subtitleTextStyle
-                            //   )},
-                            //
-                            // ),
-                          ],
-                        ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.orangeAccent,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(12),
+                                          bottomRight: Radius.circular(10))
+                                  ),
+                                  child: Text("Book",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),),
+                                  height: 25,
+                                  width: 70,
+                                )
+                              ],),
+                          )
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            )
+              )
           ])),
     );
   }
@@ -236,19 +252,44 @@ class _MainMapViewState extends State<MainMapView> {
           ),
         ),
         Positioned(
-          bottom: 40.0,
+          bottom: 55.0,
           child: Container(
-            height: 200.0,
+            height: 210.0,
             width: MediaQuery.of(context).size.width,
             child: PageView.builder(
               controller: _pageController,
               itemCount: mapData.length,
               itemBuilder: (BuildContext context, int index) {
-                return _coffeeShopList(index);
+                return _barberShopList(index);
               },
             ),
           ),
+        ),
+    Positioned(
+       bottom: MediaQuery.of(context).size.height /10.5,
+       right: 15,
+         child: Theme(
+              data: Theme.of(context).copyWith(
+              floatingActionButtonTheme: FloatingActionButtonThemeData(
+              sizeConstraints: BoxConstraints.tightFor(width: 55,height: 55),
+          )),
+
+      child: Padding(
+         padding: EdgeInsets.only(bottom: 10.0),
+         child: FloatingActionButton(
+         elevation: 0,
+         onPressed: (){
+           widget.topLineClickCallBack.call();
+         },
+         backgroundColor: Color(0xffFE457C),
+         child: Container(
+         alignment: Alignment.center,
+         child:Icon(Icons.format_list_bulleted_rounded,size: 36,)
         )
+      ),
+      ),
+      ),
+    )
       ],
     );
   }

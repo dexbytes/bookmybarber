@@ -9,7 +9,7 @@ class BottomSheetOnlyCardView extends StatelessWidget {
   final double topLineWidth;
   final topLineClickCallBack;
   final Color cardBackgroundColor;
-  final double cardShape;
+  final double cardBorderShape;
   final double bottomSheetHeight;
   final Widget child;
   final bool topLineShow;
@@ -24,7 +24,7 @@ class BottomSheetOnlyCardView extends StatelessWidget {
         this.topLineThickness = 4,
         this.topLineWidth = 50,
         this.cardBackgroundColor = Colors.red,
-        this.cardShape = 30,
+        this.cardBorderShape = 20,
         this.topLineClickCallBack,
         required this.child,
         this.topLineShow =false,
@@ -38,6 +38,11 @@ class BottomSheetOnlyCardView extends StatelessWidget {
       child: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(
+          decoration: BoxDecoration(
+              color: cardBackgroundColor,
+              // ignore: prefer_const_constructors
+              borderRadius: BorderRadius.vertical(top: Radius.circular(cardBorderShape))
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -52,6 +57,7 @@ class BottomSheetOnlyCardView extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   child: Container(
+                    color: cardBackgroundColor,
                     margin: topLineMargin,
                     width: topLineWidth,
                     child: Divider(
@@ -65,13 +71,14 @@ class BottomSheetOnlyCardView extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text("$sheetTitle",
                         style: sheetTitleStyle),
                     Container(
+                        color: cardBackgroundColor,
                         height: bottomSheetHeight,
                         child: child
                     ),
@@ -81,7 +88,7 @@ class BottomSheetOnlyCardView extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )
     );
   }
 }

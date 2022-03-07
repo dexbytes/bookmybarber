@@ -3,4 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <type id="android" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/google_map_custom/lib/src/pages/salon_listview_data_model.dart" />
+  </component>
 </project>
