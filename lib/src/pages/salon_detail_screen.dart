@@ -30,8 +30,18 @@ class SalonDetailScreen extends StatefulWidget {
 class _SalonDetailScreenState extends State<SalonDetailScreen>
     with TickerProviderStateMixin {
   int selectedTab;
+
+
   _SalonDetailScreenState({this.selectedTab = 0});
   TabController? tabController;
+  late double maxAppBarHeight;
+  late double minAppBarHeight;
+  late double playPauseButtonSize;
+  late double infoBoxHeight;
+  late ScrollController _scrollController;
+  bool isAppBarCollapsed = false;
+  late double collapsedHeight;
+
   // int selectedTab = 0;
 
   @override
@@ -43,6 +53,17 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     tabController =
     new TabController(initialIndex: selectedTab, length: 4, vsync: this);
 
+    _scrollController = ScrollController()
+      ..addListener(
+            (){
+              print(_scrollController.position.pixels);
+
+              isAppBarCollapsed =  _scrollController.position.pixels >= collapsedHeight;
+              setState(() {
+
+              });
+            }
+      );
   }
 
   @override
@@ -54,9 +75,11 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
   @override
   Widget build(BuildContext context) {
+    double hedingHeight = 55;
+    double starHeight = 30;
+    double toolBarHeight = 120;
     double expandedHeight = MediaQuery.of(context).size.height /3.3;
-    double collapsedHeight =  MediaQuery.of(context).size.height /4.8;
-
+    collapsedHeight =  toolBarHeight+hedingHeight+starHeight+10+10;
 
     Widget tabBar = Column(
         mainAxisSize: MainAxisSize.min,
@@ -148,13 +171,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     Widget starRow = Container(
       margin: EdgeInsets.only(
           right: 14, left: 14,bottom: 10),
-      height: 30,
+      height: starHeight,
       child: DetailScreenStarRow(),
     );
 
     Widget heading = Container(
         margin: EdgeInsets.only(bottom: 0,left: 0),
-        height: 55,
+        height: hedingHeight,
         child:DetailHeadingWidget(mainAxisAlignment: MainAxisAlignment.end,)
 
     );
@@ -197,6 +220,11 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
 
 
+    getHeight(){
+      print(_scrollController.position.pixels);
+    return _scrollController.position.pixels >= collapsedHeight;
+    }
+
     //Return main Ui view
     return WillPopScope(
       onWillPop: null, //_onBackPressed,
@@ -218,71 +246,58 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             child: Stack(
               children: [
                 CustomScrollView(
-                    physics: ClampingScrollPhysics(),
-                    shrinkWrap: true,
-                    slivers: <Widget>[
-                      SliverAppBar(
-                        elevation: 0,
-                        toolbarHeight: 60,
-                        leading: IconButton(
-                          onPressed: (){
-                            Navigator.pop(context);
-                          },
-                          icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
-                              iconSize: Size(30, 30),
-                              imageColor: Colors.white),
-                          iconSize: 50,
-                        ),
-                        titleSpacing: 0,
-                        title:Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                  controller: _scrollController,
+                  slivers: [
+                    SliverAppBar(
+                      elevation: 0,
+                      toolbarHeight: toolBarHeight,
+                      leading: IconButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                        icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
+                            iconSize: Size(30, 30),
+                            imageColor: Colors.white),
+                        iconSize: 50,
+                      ),
+                      titleSpacing: 0,
+                      title:Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            splashRadius: 25,
+                            padding: EdgeInsets.zero,
+                            alignment: Alignment.center,
+                            onPressed: (){},
+                            icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,iconSize: Size(25, 25)),
+                          ) ,
+                        ],
+                      ),
+                      backgroundColor: Color(0xff212327),
+                      pinned: true,
+                      floating: true,
+                      expandedHeight:expandedHeight,
+                      collapsedHeight:collapsedHeight,
+                      flexibleSpace: FlexibleSpaceBarWidget(
+                        expandedTitleScale: 1,
+                        background:Stack(
+                          fit: StackFit.expand,
                           children: [
-                            IconButton(
-                              splashRadius: 25,
-                              padding: EdgeInsets.zero,
-                              alignment: Alignment.center,
-                              onPressed: (){},
-                              icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,iconSize: Size(25, 25)),
-                            ) ,
+                            Container(
+                                child:backgroundImage
+                            ),
+                            // starRow,
+                            // heading
                           ],
                         ),
-                        backgroundColor: Color(0xff212327),
-                        pinned: true,
-                        floating: true,
-                        expandedHeight:expandedHeight,
-                        collapsedHeight:collapsedHeight,
-                        flexibleSpace: FlexibleSpaceBarWidget(
-                            expandedTitleScale: 1,
-                            background:Stack(
-                              fit: StackFit.expand,
-                              children: [
-                                Container(
-                                    child:backgroundImage
-                                ),
-                                // starRow,
-                                // heading
-                              ],
-                            ),
-                            title:Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                heading,
-                                starRow,
-                              ],
-                            ) ,
-                            titlePadding: EdgeInsets.only(bottom: 2),
-
-
-                          // child: Image( image:AssetImage('assets/images/home_screen_image.png',),fit: BoxFit.cover,)),
-                        ),
-                      ),
-                      SliverFillRemaining(
-                        child: Column(
-                          children:[
-                            topSection,
-                            Container(
+                        title:Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            heading,
+                            starRow,
+                           ! isAppBarCollapsed?Container():Container(
                               color: Color(0xff323446),
                               child: TabBar(
                                 onTap: (index){
@@ -307,57 +322,92 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 indicatorColor: Color(0xffE4B343),
                               ),
                             ),
-                            DefaultTabController(
-                              length: 4,
-                              initialIndex: selectedTab,
-                              child: Container(
-                                // height: MediaQuery.of(context).size.height + 333,
-                                child: Expanded(
-                                  child: TabBarView(
-                                    controller: tabController,
-                                    children: [
-                                      // DescriptionPage(),
-                                      SalonDetailAboutScreen(),
-                                      SalonDetailSevicesScreen(),
-                                      SalonGalleryViewScreen(),
-                                      SalonDetailReviewScreen()
-                                    ],
-                                  ),
+                          ],
+                        ) ,
+                        titlePadding: EdgeInsets.only(bottom: 2),
+                        // child: Image( image:AssetImage('assets/images/home_screen_image.png',),fit: BoxFit.cover,)),
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      fillOverscroll: true,
+                      child:Column(
+                        children: [
+                          isAppBarCollapsed?Container():topSection,
+                          isAppBarCollapsed?Container():Container(
+                            color: Color(0xff323446),
+                            child: TabBar(
+                              onTap: (index){
+                                setState(() {
+                                  selectedTab = index;
+                                  isAppBarCollapsed = isAppBarCollapsed;
+                                });
+                              },
+                              controller: tabController,
+                              tabs: [
+                                Tab(text: "About",),
+                                Tab(text: "Services",),
+                                Tab(text: "Gallery",),
+                                Tab(text: "Review",),
+                              ],
+                              labelColor:Color(0xffE4B343),
+                              isScrollable: false,
+                              unselectedLabelColor: Color(0xff828588),
+                              labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
+                              unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
+                              labelPadding: EdgeInsets.only(right: 2,bottom: 0,top: 2),
+                              indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
+                              indicatorColor: Color(0xffE4B343),
+                            ),
+                          ),
+                          DefaultTabController(
+                            length: 4,
+                            initialIndex: selectedTab,
+                            child: Container(
+                              // height: MediaQuery.of(context).size.height + 333,
+                              child: Expanded(
+                                child: TabBarView(
+                                  physics: NeverScrollableScrollPhysics(),
+                                  controller: tabController,
+                                  children: [
+                                    // DescriptionPage(),
+                                    // Container(),
+                                    // Container(),
+                                    // Container(),
+                                    // Container(),
+
+                                    SalonDetailAboutScreen(
+                                        isDataScroll: isAppBarCollapsed,
+                                        collapsedheight:collapsedHeight,
+                                      onPhotoClickCallBack: (){
+                                        setState(() {
+                                          selectedTab = 2;
+                                          tabController!.index = 2;
+                                          isAppBarCollapsed = isAppBarCollapsed;
+                                        });
+                                      },
+                                    ),
+                                    SalonDetailSevicesScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
+                                    SalonGalleryViewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
+                                    SalonDetailReviewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
+
+                                    // SalonDetailSevicesScreen(),
+                                    // SalonGalleryViewScreen(),
+                                    // SalonDetailReviewScreen()
+                                  ],
                                 ),
                               ),
-                            )
-                          ],
-                        ),
+                            ),
+                          )
+                        ],
                       )
-                      // SliverList(
-                      //   delegate: SliverChildBuilderDelegate(
-                      //         (context, index) {
-                      //       return Container(
-                      //         margin: EdgeInsets.only(bottom: 25),
-                      //         color: Color(0xff212327),
-                      //         child: Column(
-                      //           mainAxisSize: MainAxisSize.min,
-                      //           mainAxisAlignment: MainAxisAlignment.start,
-                      //           children: [
-                      //           topSection,
-                      //           tabBar
-                      //           ],
-                      //         ),
-                      //       );
-                      //     },
-                      //     childCount: 1,
-                      //   ),
-                      // ),
-                    ]
+                    )
+                  ],
                 ),
-                Align(alignment: Alignment.bottomCenter,
-                  child: bottomButton(),
-                )
+
               ],
             ),
           )
-      ),
-
+          )
 
     );
   }

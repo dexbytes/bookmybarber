@@ -7,7 +7,10 @@ import 'package:flutter/material.dart';
 
 
 class SalonDetailSevicesScreen extends StatefulWidget {
-  const  SalonDetailSevicesScreen({Key? key,})
+  final bool isDataScroll;
+
+  final collapsedheight;
+  const  SalonDetailSevicesScreen({Key? key, this.isDataScroll = true, this.collapsedheight,})
       : super(key: key);
   @override
 
@@ -41,7 +44,10 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
   Widget build(BuildContext context) {
 
     Widget tabBar = Column(
-        children:[
+     /* shrinkWrap: true,
+        physics: widget.isDataScroll?AlwaysScrollableScrollPhysics():NeverScrollableScrollPhysics(),
+     */   children: [
+          SizedBox(height:  widget.isDataScroll?widget.collapsedheight+35:0,),
           Container(
             margin: EdgeInsets.only(top: 20,bottom: 25,left: 15,right: 15),
             height: 40,
@@ -83,7 +89,7 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
                 child: TabBarView(
                   controller: tabController,
                   children: [
-                    ServicesListView(),
+                    ServicesListView(isDataScroll: widget.isDataScroll,),
                     PackageCardWidget(onCardClickCallBack: (){
                       Navigator.push(
                         context,
@@ -102,22 +108,7 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
     //Return main Ui view
     return WillPopScope(
       onWillPop: null, //_onBackPressed,
-      child: ContainerMenuPage(
-          contextCurrentView: context,
-          // scrollPadding: EdgeInsets.only(bottom: 110),
-          isSingleChildScrollViewNeed: true,
-          isFixedDeviceHeight: true,
-          appBarHeight: -1,
-          appBar: Container(
-            height: 0,
-          ),
-          containChild: Container(
-            height: 1,
-            child: tabBar,
-          )
-      ),
-
-
+      child: tabBar,
     );
   }
 }

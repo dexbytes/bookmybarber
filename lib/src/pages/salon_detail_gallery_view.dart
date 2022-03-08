@@ -6,13 +6,54 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 
-class SalonGalleryViewScreen extends StatelessWidget {
-  const SalonGalleryViewScreen({Key? key}) : super(key: key);
+class SalonGalleryViewScreen extends StatefulWidget {
+  final bool isDataScroll;
+
+  final collapsedheight;
+  const SalonGalleryViewScreen({Key? key, this.isDataScroll = true, this.collapsedheight}) : super(key: key);
+
+  @override
+  State<SalonGalleryViewScreen> createState() => _SalonGalleryViewScreenState();
+}
+
+class _SalonGalleryViewScreenState extends State<SalonGalleryViewScreen> {
+  late ScrollController _scrollController;
+  bool isScrollable = true;
+
+  @override
+  void didUpdateWidget(covariant SalonGalleryViewScreen oldWidget) {
+    isScrollable = widget.isDataScroll;
+    setState(() {});
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    _scrollController = ScrollController()
+      ..addListener(
+              (){
+            print(_scrollController.position.pixels);
+
+
+            setState(() {
+              isScrollable =  _scrollController.position.pixels > 0;
+            });
+          }
+      );
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
     return StaggeredGridView.countBuilder(
-      padding: EdgeInsets.only(top: 15),
-      physics: ClampingScrollPhysics(),
+      controller: _scrollController,
+      padding: EdgeInsets.only(top:  widget.isDataScroll?widget.collapsedheight+15:15),
+      physics:  widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       crossAxisCount: 3,
       itemCount: photo.length,
       itemBuilder: (context, index) => Material(

@@ -144,6 +144,10 @@ class _TutorialScreenState extends State<TutorialScreen> {
       ],
     );
 
+    void _scrollToIndex(int index) {
+      _pageController.animateToPage(index, duration: Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
+    }
+
     bottomButton(){
       return Container(
         margin: EdgeInsets.only(left: 20,right: 20,bottom: 60),
@@ -155,12 +159,18 @@ class _TutorialScreenState extends State<TutorialScreen> {
             fontWeight: FontWeight.w600,
             color: Color(0xff212327),),
           backCallback:(){
-            activeIndex == 2 ?
-            Navigator.push(
-             context,
-              SlideRightRoute(
-                  widget: WelcomeScreen()),
-            ):Container();
+            if (     activeIndex == 2 ) {
+
+              Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: WelcomeScreen()),
+              );
+            }else{
+              activeIndex = activeIndex+1;
+              _scrollToIndex(activeIndex);
+
+            }
           },
           isBottomMarginRequired: false,
         ),

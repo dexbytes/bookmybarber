@@ -22,7 +22,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
   Widget build(BuildContext context) {
 
     Widget paymentMethod = Container(
-        color: Colors.white,
+        color: Colors.transparent,
         height: 350,
         child: Column(
           children: [

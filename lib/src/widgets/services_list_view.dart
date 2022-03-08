@@ -3,17 +3,23 @@ import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class ServicesListView extends StatelessWidget {
+class ServicesListView extends StatefulWidget {
   final onViewCardCallBack;
   bool isViewVisible;
+  final bool isDataScroll;
+
+  final collapsedheight;
 
   ServicesListView({Key? key,
     this.onViewCardCallBack,
-    this.isViewVisible = false
+    this.isViewVisible = false, this.isDataScroll = true, this.collapsedheight
   }) : super(key: key);
 
+  @override
+  State<ServicesListView> createState() => _ServicesListViewState();
+}
 
-
+class _ServicesListViewState extends State<ServicesListView> {
   List<ServicesRawDataList> categories = [
    ServicesRawDataList(
       title: 'HairStyle',
@@ -66,7 +72,7 @@ class ServicesListView extends StatelessWidget {
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(left: 20,top:0,right: 15,bottom: 50),
-      physics: ClampingScrollPhysics(),
+      physics: widget.isDataScroll?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       itemCount:categories.length ,
       shrinkWrap: false,
       itemBuilder: (BuildContext context, int index) {
@@ -122,7 +128,7 @@ class ServicesListView extends StatelessWidget {
                                 style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white)),
                             InkWell(
                               onTap: (){
-                                this.onViewCardCallBack?.call(0);
+                                this.widget.onViewCardCallBack?.call(0);
                               },
                               child:
                               // Expanded(child: DropDownDataPicker2())

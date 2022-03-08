@@ -8,12 +8,17 @@ import 'package:flutter/material.dart';
 
 class SalonDetailReviewScreen extends StatefulWidget {
   final bool isScrollable;
-  const SalonDetailReviewScreen({Key? key, this.isScrollable = true,}) : super(key: key);
+  final bool isDataScroll;
+
+  final collapsedheight;
+  const SalonDetailReviewScreen({Key? key, this.isScrollable = true, this.isDataScroll = true, this.collapsedheight,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
 
 class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
+  late ScrollController _scrollController;
+  bool isScrollable = true;
   Map<String, TextEditingController> controllers = {
     'review': new TextEditingController(),
 
@@ -29,6 +34,32 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
 
   bool isMore = false;
+
+  @override
+  void didUpdateWidget(covariant SalonDetailReviewScreen oldWidget) {
+    isScrollable = widget.isDataScroll;
+    setState(() {});
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    _scrollController = ScrollController()
+      ..addListener(
+              (){
+            print(_scrollController.position.pixels);
+
+
+            setState(() {
+              isScrollable =  _scrollController.position.pixels > 0;
+            });
+          }
+      );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -181,23 +212,11 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
 
 
-    return ContainerMenuPage(
-      // bottomBarSafeAreaColor: Colors.transparent,
-        contextCurrentView: context,
-        // appBackgroundColor: Colors.white,
-        scrollPadding: EdgeInsets.only(bottom: 81),
-        /* statusBarColor: Colors.amber,
-                bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: widget.isScrollable,
-        isFixedDeviceHeight: true,
-        appBarHeight: -1,
-        appBar: Container(
-          height: -1,
-        ),
-        containChild: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+    return ListView(
+      controller: _scrollController,
+      physics: widget.isDataScroll && isScrollable ? ClampingScrollPhysics():NeverScrollableScrollPhysics(),
+      children: [
+        //SizedBox(height:  widget.isDataScroll?widget.collapsedheight:0,),
             _reviewField(),
             SeeAllTextRow(
               margin: EdgeInsets.only(left: 20,top: 15,),
@@ -207,7 +226,6 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
             ),
             review
           ],
-        )
-    );
+        );
   }
 }

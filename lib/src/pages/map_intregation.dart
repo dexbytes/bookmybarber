@@ -10,6 +10,7 @@ import 'package:base_flutter_app/src/widgets/salon_bottomsheet_map_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_map_custom/google_map_custom.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
 
 class MapIntregationScreen extends StatefulWidget {
 
@@ -113,14 +114,71 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
         height: 1,
         child: MainMapView(
          topLineClickCallBack:() {
-           showModalBottomSheet(
-               context: MainAppBloc.getDashboardContext,
-               builder: (context) => SalonListBottomSheetScreen(),
-               isScrollControlled: true,
-               shape: RoundedRectangleBorder(
-                   borderRadius:
-                   BorderRadius.vertical(top: Radius.circular(20))
-               ));
+           // showModalBottomSheet(
+           //   enableDrag: true,
+           //     context: MainAppBloc.getDashboardContext,
+           //     builder: (context) => SalonListBottomSheetScreen(),
+           //     isScrollControlled: true,
+           //     shape: RoundedRectangleBorder(
+           //         borderRadius:
+           //         BorderRadius.vertical(top: Radius.circular(20))
+           //     ));
+
+
+           // sheetTitle: "Salons Nearby",
+           // sheetTitleStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,color:AppColors().textHeadingColor1),
+           // topLineShow: true,
+           // cardBackgroundColor: Color(0xff212327),
+           showSlidingBottomSheet(
+               MainAppBloc.getDashboardContext,
+               builder: (context) {
+                 return SlidingSheetDialog(
+                   elevation: 8,
+                   color: Color(0xff212327),
+                   cornerRadius: 16,
+                   snapSpec: const SnapSpec(
+                     snap: true,
+                     snappings: [0.4, 0.8],
+                     positioning: SnapPositioning.relativeToAvailableSpace,
+                   ),
+                   builder: (context, state) {
+                     return Material(
+                       color: Color(0xff212327),
+                       child: Column(
+                         children: [
+                           GestureDetector(
+                             //highlightColor: Colors.transparent,
+                             onTap: () {
+                               // if (topLineClickCallBack != null) {
+                               //   topLineClickCallBack(context);
+                               // }
+                               Navigator.pop(context);
+                             },
+                             child: Container(
+                               color: Color(0xff212327),
+                               margin: const EdgeInsets.only(top: 12, bottom: 10),
+                               width: 50,
+                               child: Divider(
+                                 color: Colors.grey,
+                                 thickness: 4,
+                                 indent: 1,
+                                 endIndent: 1,
+                               ),
+                             ),
+                           ),
+                           Padding(
+                             padding: const EdgeInsets.symmetric(vertical: 8.0),
+                             child: Text("Salons Nearby", style: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,color:AppColors().textHeadingColor1),
+                             ),
+                           ),
+                           SalonListBottomSheetScreen(),
+                         ],
+                       ),
+                     );
+                   },
+                 );
+               }
+           );
          },
         )
 

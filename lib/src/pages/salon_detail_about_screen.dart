@@ -9,10 +9,12 @@ import 'package:readmore/readmore.dart';
 
 class SalonDetailAboutScreen extends StatefulWidget {
   final bool isBarberInfoShow;
-  final bool isDataScroll;
   final onPhotoClickCallBack;
+  final bool isDataScroll;
 
-  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false, this.onPhotoClickCallBack, this.isDataScroll = true,}) : super(key: key);
+  final collapsedheight;
+
+  const SalonDetailAboutScreen({Key? key, this.isBarberInfoShow = false, this.onPhotoClickCallBack, this.isDataScroll = true, this.collapsedheight,}) : super(key: key);
   @override
   _SalonDetailAboutScreenState createState() => _SalonDetailAboutScreenState();
 }
@@ -20,6 +22,35 @@ class SalonDetailAboutScreen extends StatefulWidget {
 class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
   bool value = true;
+  late ScrollController _scrollController;
+  bool isScrollable = true;
+
+  @override
+  void didUpdateWidget(covariant SalonDetailAboutScreen oldWidget) {
+    isScrollable = widget.isDataScroll;
+    setState(() {});
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    _scrollController = ScrollController()
+      ..addListener(
+              (){
+            print(_scrollController.position.pixels);
+
+
+            setState(() {
+              isScrollable =  _scrollController.position.pixels > 0;
+            });
+          }
+      );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -80,57 +111,46 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
 
 
-    return ContainerMenuPage(
-      // bottomBarSafeAreaColor: Colors.transparent,
-        contextCurrentView: context,
-        // appBackgroundColor: Colors.white,
-        scrollPadding: EdgeInsets.only(bottom: 80),
-        /* statusBarColor: Colors.amber,
-                bottomBarSafeAreaColor: Colors.amber,*/
-        isSingleChildScrollViewNeed: widget.isDataScroll,
-        isFixedDeviceHeight: false,
-        appBarHeight: -1,
-        appBar: Container(
-          height: -1,
-        ),
-        containChild: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+    return ListView(
+      shrinkWrap: true,
+      controller: _scrollController,
+      physics: widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
+      children: [
+        SizedBox(height:  widget.isDataScroll?widget.collapsedheight:0,),
+      widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
+        children: [
+          SeeAllTextRow(
+            margin: EdgeInsets.only(left: 20,top: 25,bottom: 10),
+            leftTitle: "About",
+            isRightTextVisible: false,
+            leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,
+          ),
+          readMoreText,
+        ],
+      ),
 
-            widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
-              children: [
-                SeeAllTextRow(
-                  margin: EdgeInsets.only(left: 20,top: 25,bottom: 10),
-                  leftTitle: "About",
-                  isRightTextVisible: false,
-                  leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,
-                ),
-                readMoreText,
-              ],
-            ),
+      SeeAllTextRow(
+        margin: EdgeInsets.only(left: 20,bottom: 10),
+        leftTitle: "Opening Hour",
+        isRightTextVisible: false,
+        leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+      ),
+      openHours,
+      address,
 
-             SeeAllTextRow(
-              margin: EdgeInsets.only(left: 20,bottom: 10),
-              leftTitle: "Opening Hour",
-              isRightTextVisible: false,
-              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
-            ),
-            openHours,
-            address,
-
-            SeeAllTextRow(
-              margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
-              leftTitle: "Photos",
-              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
-              rightTextCallBack:() {
-                this.widget.onPhotoClickCallBack.call();
-              }
-            ),
-            image,
-            SizedBox(height: 0,)
-          ],
-        )
-    );
+      SeeAllTextRow(
+          margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
+          leftTitle: "Photos",
+          leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+          rightTextCallBack:() {
+            this.widget.onPhotoClickCallBack.call();
+          }
+      ),
+      image,
+    ],)
+      //physics: NeverScrollableScrollPhysics(),
+      // mainAxisAlignment: MainAxisAlignment.start,
+      // crossAxisAlignment: CrossAxisAlignment.start,
+    ;
   }
 }
