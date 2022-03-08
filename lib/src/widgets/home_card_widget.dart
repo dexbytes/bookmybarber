@@ -126,8 +126,8 @@ class HomeCardWidget extends StatelessWidget {
                             child: Text("Book",
                               style: TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.w500),),
-                            height: 25,
+                            fontWeight: FontWeight.w500,color: Colors.black),),
+                            height: 30,
                             width: 70,
                           )
                         ],),

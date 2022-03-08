@@ -195,7 +195,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               onPressed: (){
                                 Navigator.pop(context);
                               },
-                              icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor:Colors.white,iconSize: Size(26, 26)),
+                              icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor:Colors.white,iconSize: Size(21, 21)),
                             ),
                             leadingWidth: 65,
                             toolbarHeight: 60,

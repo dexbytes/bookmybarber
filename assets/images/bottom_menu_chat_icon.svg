@@ -1,0 +1,8 @@
+<svg id="ic_chat" xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 28 25">
+  <g id="Group_4554" data-name="Group 4554" transform="translate(-2 -6)">
+    <path id="Path_2873" data-name="Path 2873" d="M27.14,6H4.86A2.83,2.83,0,0,0,2,8.8V23.2A2.83,2.83,0,0,0,4.86,26H15.64l5.72,4.77A1,1,0,0,0,23,30V26h4.14A2.83,2.83,0,0,0,30,23.2V8.8A2.83,2.83,0,0,0,27.14,6ZM28,23.2a.83.83,0,0,1-.86.8H22a1,1,0,0,0-1,1v2.87l-4.36-3.64a.67.67,0,0,0-.12-.06.81.81,0,0,0-.18-.1.78.78,0,0,0-.21,0A.5.5,0,0,0,16,24H4.86A.83.83,0,0,1,4,23.2V8.8A.84.84,0,0,1,4.86,8H27.14a.84.84,0,0,1,.86.8Z" fill="#fff"/>
+    <circle id="Ellipse_331" data-name="Ellipse 331" cx="2" cy="2" r="2" transform="translate(8 14)" fill="#fff"/>
+    <circle id="Ellipse_332" data-name="Ellipse 332" cx="2" cy="2" r="2" transform="translate(14 14)" fill="#fff"/>
+    <circle id="Ellipse_333" data-name="Ellipse 333" cx="2" cy="2" r="2" transform="translate(20 14)" fill="#fff"/>
+  </g>
+</svg>

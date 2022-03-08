@@ -56,65 +56,8 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
         )
     );
 
-
-
-    // Widget tabBar = Column(
-    //     children:[
-    //       Container(
-    //         color: AppColors().appBgColor3,
-    //         child: Container(
-    //           margin: EdgeInsets.only(top: 10,bottom: 25,left: 15,right: 15),
-    //           height: 40,
-    //           decoration: BoxDecoration(
-    //               color:Colors.transparent,
-    //               borderRadius: BorderRadius.circular(5),
-    //               border: Border.all(width: 1,color:Color(0xffCCA76A))
-    //           ),
-    //           child: TabBar(
-    //             onTap: (index){
-    //               setState(() {
-    //                 selectedTab = index;
-    //               });
-    //             },
-    //             controller: tabController,
-    //             tabs: [
-    //               Tab(text: "UPCOMING",),
-    //               Tab(text: "PAST",),
-    //             ],
-    //             labelColor: Color(0xff323446),
-    //             isScrollable: false,
-    //             unselectedLabelColor:Color(0xffCCA76A),
-    //             labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color:Colors.black),
-    //             labelPadding: EdgeInsets.zero,
-    //             padding: EdgeInsets.zero,
-    //             unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
-    //             indicator:BoxDecoration(
-    //               color:Color(0xffCCA76A),
-    //               borderRadius: BorderRadius.circular(3),
-    //             ),
-    //           ),
-    //         ),
-    //       ),
-    //       Expanded(
-    //         child: DefaultTabController(
-    //           length: 2,
-    //           initialIndex: selectedTab,
-    //           child: Container(
-    //             // height: 1050,
-    //             child: TabBarView(
-    //               controller: tabController,
-    //               children: [
-    //                 bookingList,
-    //                 bookingList,
-    //               ],
-    //             ),
-    //           ),
-    //         ),
-    //       ),
-    //     ]);
-
     Widget appbar = Container(
-      padding: EdgeInsets.only(left: 15),
+      padding: EdgeInsets.only(left: 15,),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -129,7 +72,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                     onPressed: (){
                     Navigator.pop(context);
                        },
-                   icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,iconSize: Size(26, 26)),),
+                   icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,iconSize: Size(21, 21)),),
                 ),
               ),
               SizedBox(width:  widget.isShowBackArrow ? MediaQuery.of(context).size.width /5.3 :MediaQuery.of(context).size.width /3.35 ,),
@@ -137,7 +80,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
               color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
             ],
           ),
-          SizedBox(height: 19,),
+          SizedBox(height: 13,),
           Container(
             color: AppColors().appBgColor3,
             child: Container(

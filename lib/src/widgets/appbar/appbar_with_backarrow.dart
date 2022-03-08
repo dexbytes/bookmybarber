@@ -8,7 +8,7 @@ PreferredSizeWidget appBarWithBackArrow(
       bool isTrailingIconVisible = true,
       bool isLeadingIconVisible = true,
       Color leadingIconColor = Colors.white,
-      Size  leadingIconSize = const Size(25, 25),
+      Size  leadingIconSize = const Size(21, 21),
       EdgeInsetsGeometry?  leadingPadding,
       Widget? trailingIcon,
       String title = "",

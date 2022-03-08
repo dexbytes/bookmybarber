@@ -15,16 +15,16 @@
     "menu_item": [
 
       {
-        "activeIcon": "assets/images/bottom_menu_active_home_icon.png",
-        "deActiveIcon": "assets/images/bottom_menu_home_icon.png",
+        "activeIcon": "assets/images/bottom_menu_active_home_icon.svg",
+        "deActiveIcon": "assets/images/bottom_menu_home_icon.svg",
         "label": "Home",
         "backgroundColor": "0xFFDD2E37",
         "menuPageId": "menu1",
         "statusBarColors": "0xff212327"
       },
       {
-        "activeIcon": "assets/images/bottom_menu_active_location_icon.png",
-        "deActiveIcon":"assets/images/bottom_menu_location_icon.png",
+        "activeIcon": "assets/images/bottom_menu_active_location_icon.svg",
+        "deActiveIcon":"assets/images/bottom_menu_location_icon.svg",
         "label": "Near by",
         "backgroundColor": "0xFFDD2E37",
         "menuPageId": "menu2",
@@ -39,16 +39,16 @@
         "statusBarColors": "0xff212327"
       },
       {
-        "activeIcon": "assets/images/bottom_menu_active_booking_icon.png",
-        "deActiveIcon":"assets/images/bottom_menu_booking_icon.png",
+        "activeIcon": "assets/images/bottom_menu_active_booking_icon2.svg",
+        "deActiveIcon":"assets/images/bottom_menu_booking_icon.svg",
         "label": "Booking",
         "backgroundColor": "0xFFDD2E37",
         "menuPageId": "menu4",
         "statusBarColors": "0xff212327"
       },
       {
-        "activeIcon": "assets/images/bottom_menu_active_profile_icon.png",
-        "deActiveIcon":"assets/images/bottom_menu_profile_icon.png",
+        "activeIcon": "assets/images/bottom_menu_active_profile_icon.svg",
+        "deActiveIcon":"assets/images/bottom_menu_profile_icon.svg",
         "label": "Profile",
         "backgroundColor": "0xFFDD2E37",
         "statusBarColors": "0xff212327",

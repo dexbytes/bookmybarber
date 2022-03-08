@@ -241,7 +241,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
-                        padding: EdgeInsets.only(left: 13),
+                        padding: EdgeInsets.only(left: 12),
                         onPressed: (){
                           Navigator.pop(context);
                         },

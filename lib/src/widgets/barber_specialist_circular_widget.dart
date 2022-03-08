@@ -134,7 +134,7 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)
                       ),
                       child: Text("FEATURED",
-                        style: TextStyle(fontSize: 9,fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: 9,fontWeight: FontWeight.w500,color: Colors.black),
                       ),
                     ):Container(height: 0,width: 0,),
                   ),

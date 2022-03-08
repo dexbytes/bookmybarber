@@ -136,7 +136,7 @@ class _NearByScreenState extends State<NearByScreen>
                         },),
                     ),
                     IconButton(
-                      splashRadius: 25,
+                      splashRadius: 20,
                       padding: EdgeInsets.zero,
                       alignment: Alignment.center,
                       onPressed: (){
@@ -258,6 +258,7 @@ class _NearByScreenState extends State<NearByScreen>
           floatingActionButton: Padding(
             padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height /10),
             child: FloatingActionButton(
+                heroTag: "Button 2",
                 backgroundColor: Color(0xffEE457C),
                 child: Container(
                   alignment: Alignment.center,
