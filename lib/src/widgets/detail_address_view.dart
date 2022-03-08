@@ -94,7 +94,7 @@ class DetailAddressView extends StatelessWidget {
           ),
           InkWell(
             onTap: (){
-              this.onMapCallBack.call(0);
+              this.onMapCallBack.call();
             },
             child: Container(
               child: ClipRRect(

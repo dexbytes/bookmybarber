@@ -1,5 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:base_flutter_app/src/widgets/Salon_list_view.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,16 @@ class _SalonListViewAllScreenState extends State<SalonListViewAllScreen> {
   Widget build(BuildContext context) {
     Widget salonList =Container(
         height: MediaQuery.of(context).size.height,
-        child: SalonDataListView()
+        child: SalonDataListView(
+          onBookClickCallBack: (){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: BookAppointmentScreen()),
+            );
+          },
+
+        )
     );
 
 
@@ -35,15 +46,19 @@ class _SalonListViewAllScreenState extends State<SalonListViewAllScreen> {
       appBarHeight: 68,
       appBar: Container(
         color: Color(0xff212327),
-        child: appBarWithBackArrow(
-            isTitleVisible: true,
-            textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
-            isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
-            title: widget.title,
-            onPress: (){
-              Navigator.pop(context);
-            }
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 5.0),
+          child: appBarWithBackArrow(
+              isTitleVisible: true,
+              textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
+              isTrailingIconVisible: false,
+              leadingIconColor:Color(0xFFCCA76A),
+              title: widget.title,
+              leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0),
+              onPress: (){
+                Navigator.pop(context);
+              }
+          ),
         ),
       ),
       containChild: Container(

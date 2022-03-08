@@ -112,7 +112,7 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
     Widget mapView = Container(
         height: 1,
         child: MainMapView(
-         topLineClickCallBack:() {
+         floatingButtonClickCallBack:() {
            showModalBottomSheet(
                context: MainAppBloc.getDashboardContext,
                builder: (context) => SalonListBottomSheetScreen(),

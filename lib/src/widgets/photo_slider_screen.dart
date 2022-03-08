@@ -93,15 +93,16 @@ class _PhotoSliderScreenState extends State<PhotoSliderScreen> {
     return Scaffold(
       backgroundColor: AppColors().appBgColor2,
       appBar: AppBar(
+        toolbarHeight: 60,
         leading: IconButton(
           onPressed: (){
             Navigator.pop(context);
           },
           icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
         ),
-      leadingWidth: 80,
+      leadingWidth: 65,
       elevation: 0,
-      backgroundColor: AppColors().appBgColor2,
+      backgroundColor: AppColors().appBgColor3,
       title: Text("Gallery"),
       titleTextStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),
       ),

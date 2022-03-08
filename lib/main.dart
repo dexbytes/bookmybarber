@@ -31,6 +31,7 @@ import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.d
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
 import 'package:base_flutter_app/src/widgets/booking_detail_payment_card.dart';
+import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
@@ -272,8 +273,8 @@ class _MyAppState extends State<MyAppFlutterMain> {
           supportedLocales: supportedLocales1,
           locale: _locale,
           theme: ThemeData(
-            brightness: Brightness.light,
-            primarySwatch: Colors.blue,
+              brightness: Brightness.dark,
+              primarySwatch: Colors.cyan,
           ),
 
           // These delegates make sure that the localization data for the proper language is loaded
@@ -307,7 +308,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return DashBoardPage();
   }
 
   //Redirect to another screen if already loggedIn

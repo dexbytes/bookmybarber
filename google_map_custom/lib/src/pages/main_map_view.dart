@@ -12,8 +12,8 @@ import 'package:location/location.dart'  as  addressLocation;
 
 class MainMapView extends StatefulWidget {
   final Widget? child;
-  final topLineClickCallBack;
-  const MainMapView({Key? key, this.child, this.topLineClickCallBack}) : super(key: key);
+  final floatingButtonClickCallBack;
+  const MainMapView({Key? key, this.child, this.floatingButtonClickCallBack}) : super(key: key);
 
   @override
   _MainMapViewState createState() => _MainMapViewState();
@@ -221,8 +221,8 @@ class _MainMapViewState extends State<MainMapView> {
                                   child: Text("Book",
                                     style: TextStyle(
                                         fontSize: 15,
-                                        fontWeight: FontWeight.w500),),
-                                  height: 25,
+                                        fontWeight: FontWeight.w500,color: Colors.black),),
+                                  height: 28,
                                   width: 70,
                                 )
                               ],),
@@ -249,6 +249,7 @@ class _MainMapViewState extends State<MainMapView> {
                 target: LatLng(22.758940, 75.891418), zoom: 14.0),
             markers: Set.from(allMarkers),
             onMapCreated: _onMapCreated,
+
           ),
         ),
         Positioned(
@@ -273,18 +274,17 @@ class _MainMapViewState extends State<MainMapView> {
               floatingActionButtonTheme: FloatingActionButtonThemeData(
               sizeConstraints: BoxConstraints.tightFor(width: 55,height: 55),
           )),
-
-      child: Padding(
+         child: Padding(
          padding: EdgeInsets.only(bottom: 10.0),
          child: FloatingActionButton(
          elevation: 0,
          onPressed: (){
-           widget.topLineClickCallBack.call();
+           widget.floatingButtonClickCallBack.call();
          },
          backgroundColor: Color(0xffFE457C),
          child: Container(
          alignment: Alignment.center,
-         child:Icon(Icons.format_list_bulleted_rounded,size: 36,)
+         child:Icon(Icons.format_list_bulleted_rounded,size: 36,color: Colors.white,)
         )
       ),
       ),
@@ -303,8 +303,8 @@ class _MainMapViewState extends State<MainMapView> {
   void _onMapCreated(GoogleMapController _cntlr)
   {
     _controller = _cntlr;
-    _location.onLocationChanged.listen((l) {
-      setState(() {
+    _location.onLocationChanged.listen((l)  {
+     setState(() {
         _markers.add(
             Marker(markerId: MarkerId("id-1"),
                 position:LatLng(l.latitude??20.5937, l.longitude??78.9629),
@@ -322,8 +322,9 @@ class _MainMapViewState extends State<MainMapView> {
               CameraPosition(target: LatLng(l.latitude??20.5937, l.longitude??78.9629),zoom: 15),
             ),
           );
-        };
+        }
       });
+
     });
   }
 

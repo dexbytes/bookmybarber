@@ -22,7 +22,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
   Widget build(BuildContext context) {
 
     Widget paymentMethod = Container(
-        color: Colors.white,
+        color: Colors.transparent,
         height: 350,
         child: Column(
           children: [
@@ -111,17 +111,20 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
               appBarHeight : 65,
               appBar: Container(
                 color: AppColors().appBgColor3,
-                child: appBarWithBackArrow(
-                    isTitleVisible: true,
-                    leadingPadding: EdgeInsets.only(left: 10.0 ,
-                        right: 10,bottom: 0,top: 0),
-                    textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
-                    isTrailingIconVisible: false,
-                    leadingIconColor:Color(0xFFCCA76A),
-                    title: "Booking Details",
-                    onPress: (){
-                      Navigator.pop(context);
-                    }
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: appBarWithBackArrow(
+                      isTitleVisible: true,
+                      leadingPadding: EdgeInsets.only(left: 10.0,
+                          right: 10,bottom: 5,top: 0),
+                      textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
+                      isTrailingIconVisible: false,
+                      leadingIconColor:Color(0xFFCCA76A),
+                      title: "Booking Details",
+                      onPress: (){
+                        Navigator.pop(context);
+                      }
+                  ),
                 ),
               ),
               containChild: Container(

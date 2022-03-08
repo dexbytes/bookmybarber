@@ -47,38 +47,6 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 ),
               )
           ),
-          // Padding(
-          //   padding: EdgeInsets.only(top: 45,left: 10),
-          //   child: Align(
-          //       alignment: Alignment.topLeft,
-          //       child:Material(
-          //         color: Colors.transparent,
-          //         child: Row(
-          //           children: [
-          //             IconButton(
-          //               onPressed: (){
-          //                 Navigator.pop(context);
-          //               },
-          //               icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
-          //             ),
-          //             Expanded(
-          //               child: Row(
-          //                 mainAxisAlignment: MainAxisAlignment.center,
-          //                 children: [
-          //                   Text("Book Appointment",
-          //                   style:TextStyle(
-          //                       fontSize: 22,
-          //                       fontWeight: FontWeight.w800,
-          //                       color: AppColors().textNormalColor6
-          //                   ),
-          //                   ),
-          //                 ],
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       )),
-          // ),
         ],
       );
     }
@@ -273,6 +241,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
+                        padding: EdgeInsets.only(left: 13),
                         onPressed: (){
                           Navigator.pop(context);
                         },
