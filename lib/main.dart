@@ -308,7 +308,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return DashBoardPage();
   }
 
   //Redirect to another screen if already loggedIn
