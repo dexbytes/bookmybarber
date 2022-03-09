@@ -215,11 +215,8 @@ class CommonTextFieldWithError extends StatelessWidget {
                         <TextInputFormatter>[
                           LengthLimitingTextInputFormatter(maxCharLength),
                         ],
-                    textInputAction: maxLines > 1
-                        ? TextInputAction.newline
-                        : textInputAction == null
-                        ? TextInputAction.done
-                        : TextInputAction.next,
+                    textInputAction: maxLines > 1 ? TextInputAction.newline
+                        :( textInputAction == null ||  textInputAction == TextInputAction.done) ? TextInputAction.done : TextInputAction.next,
                     textAlign: textAlignment ?? TextAlign.left,
                     textAlignVertical: textAlignmentVertical == null
                         ? TextAlignVertical.center

@@ -12,8 +12,9 @@ import 'package:location/location.dart'  as  addressLocation;
 
 class MainMapView extends StatefulWidget {
   final Widget? child;
+  final bool isKeyBoardOpen;
   final floatingButtonClickCallBack;
-  const MainMapView({Key? key, this.child, this.floatingButtonClickCallBack}) : super(key: key);
+  const MainMapView({Key? key, this.child, this.floatingButtonClickCallBack, this.isKeyBoardOpen = false}) : super(key: key);
 
   @override
   _MainMapViewState createState() => _MainMapViewState();
@@ -121,7 +122,7 @@ class _MainMapViewState extends State<MainMapView> {
   }
 
   _barberShopList(index) {
-    return AnimatedBuilder(
+    return widget.isKeyBoardOpen?Container():AnimatedBuilder(
       animation: _pageController,
       builder: (
           BuildContext context,widget) {
@@ -266,7 +267,7 @@ class _MainMapViewState extends State<MainMapView> {
             ),
           ),
         ),
-    Positioned(
+        widget.isKeyBoardOpen?Container(): Positioned(
        bottom: MediaQuery.of(context).size.height /10.5,
        right: 15,
          child: Theme(

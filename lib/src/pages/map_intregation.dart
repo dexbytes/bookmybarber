@@ -113,22 +113,8 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
     Widget mapView = Container(
         height: 1,
         child: MainMapView(
+          isKeyBoardOpen: MediaQuery.of(context).viewInsets.bottom != 0,
         floatingButtonClickCallBack:() {
-          // showModalBottomSheet(
-          //   enableDrag: true,
-          //     context: MainAppBloc.getDashboardContext,
-          //     builder: (context) => SalonListBottomSheetScreen(),
-          //     isScrollControlled: true,
-          //     shape: RoundedRectangleBorder(
-          //         borderRadius:
-          //         BorderRadius.vertical(top: Radius.circular(20))
-          //     ));
-
-
-          // sheetTitle: "Salons Nearby",
-          // sheetTitleStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,color:AppColors().textHeadingColor1),
-          // topLineShow: true,
-          // cardBackgroundColor: Color(0xff212327),
           showSlidingBottomSheet(
               MainAppBloc.getDashboardContext,
               builder: (context) {

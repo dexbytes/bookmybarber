@@ -1,5 +1,6 @@
 export 'package:base_flutter_app/src/widgets/alerts/error_alert.dart';
 export 'package:base_flutter_app/src/widgets/tooltip_shaper.dart';
+export 'package:base_flutter_app/src/widgets/sliding_bottomsheet_card_view.dart';
 export 'package:base_flutter_app/src/widgets/common_button.dart';
 export 'package:base_flutter_app/src/widgets/screen_title_widget_with_backarrow.dart';
 export 'package:base_flutter_app/src/widgets/progress_bar_custom.dart';
