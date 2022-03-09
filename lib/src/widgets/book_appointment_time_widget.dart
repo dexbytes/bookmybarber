@@ -8,6 +8,7 @@ class BookAppointmentTimeList extends StatefulWidget {
   final bool isSecondColorShow;
   final EdgeInsetsGeometry? padding;
   final Function(dynamic)? tagClickCallBack;
+  final TextStyle? labelTextStyle;
 
 
   const BookAppointmentTimeList({Key? key,
@@ -17,6 +18,7 @@ class BookAppointmentTimeList extends StatefulWidget {
     this.selectedColor,
     this.isSecondColorShow = true,
     this.padding,
+    this.labelTextStyle,
 
   }) : super(key: key);
 
@@ -43,7 +45,7 @@ class _BookAppointmentTimeListState extends State<BookAppointmentTimeList> {
           elevation: 0,
           pressElevation: 0,
           label: Text(item),
-          labelStyle: widget.isSecondColorShow ? TextStyle(
+          labelStyle: widget.labelTextStyle ?? (widget.isSecondColorShow ? TextStyle(
               color: selectedChoice == item ?
               Colors.white:Color(0xff828588),
               fontSize: 13.5,
@@ -51,7 +53,7 @@ class _BookAppointmentTimeListState extends State<BookAppointmentTimeList> {
               color: selectedChoice == item ?
               Colors.black:Colors.white,
               fontSize: 15,
-              fontWeight: FontWeight.w400),
+              fontWeight: FontWeight.w400)),
           shape:StadiumBorder(side: BorderSide(width: 0.1,color:AppColors().appBgColor2)),
 
           // RoundedRectangleBorder(
