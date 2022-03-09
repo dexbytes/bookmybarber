@@ -38,21 +38,18 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
     'phone': new TextEditingController(),
     'user_name': new TextEditingController(),
     'email': new TextEditingController(),
-    'password': new TextEditingController(),
   };
 
   Map<String, FocusNode> focusNodes = {
     'phone': new FocusNode(),
     'user_name': new FocusNode(),
     'email': new FocusNode(),
-    'password': new FocusNode(),
   };
 
   Map<String, String> errorMessages = {
     'phone': "",
     'user_name': "",
     'email': "",
-    'password': "",
   };
 
   int selectValue = 0;
@@ -374,7 +371,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           },
           onEndEditing: (value) {
             _checkEmail(value, 'email');
-            FocusScope.of(context).requestFocus(focusNodes['password']);
+            FocusScope.of(context).requestFocus(focusNodes['phone']);
           },
         ),
       );
@@ -403,6 +400,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           borderStyle: BorderStyle.none,
           backgroundColor: Color(0xff323446),
           inputKeyboardType: InputKeyboardTypeWithError.phone,
+          textInputAction: TextInputAction.done,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
           // textStyle: _appStyle.labelTextStyle(),
           hintText: "Mobile Number",

@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/pages/dummy.dart';
 import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
+import 'package:base_flutter_app/src/pages/serach_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
@@ -117,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           Navigator.push(
           MainAppBloc.getDashboardContext,
             BottomUpTransition(
-          widget: Dummy()),
+          widget: SearchScreen()),
           );
           }),
 
@@ -152,7 +153,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         margin: EdgeInsets.only(top: 20),
         height: 130,
         child: BarberSpecialistCircularWidget(
-          onClickCardCallBack: () {
+          onClickCardCallBack:(){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(widget: BarberProfileScreen()),
@@ -175,7 +177,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         margin: EdgeInsets.only(top: 15),
         height: 180,
         child: HomeCardWidget(
-          onCardClickCallBack: () {
+          onCardClickCallBack: (){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(widget: SalonDetailScreen()),

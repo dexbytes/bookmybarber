@@ -71,7 +71,7 @@ class _NearByScreenState extends State<NearByScreen>
           backgroundColor: AppColors().appBgColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
-          textInputAction: TextInputAction.next,
+          textInputAction: TextInputAction.done,
           inputFieldPrefixIcon: IconButton(
             splashRadius: 22,
             onPressed:(){},
@@ -128,6 +128,7 @@ class _NearByScreenState extends State<NearByScreen>
                       child: NotificationBal(
                         alignment: Alignment.bottomCenter,
                         onTap: (){
+                          FocusScope.of(context).requestFocus(FocusNode());
                           Navigator.push(
                             MainAppBloc.getDashboardContext,
                             SlideRightRoute(
@@ -140,6 +141,7 @@ class _NearByScreenState extends State<NearByScreen>
                       padding: EdgeInsets.zero,
                       alignment: Alignment.center,
                       onPressed: (){
+                        FocusScope.of(context).requestFocus(FocusNode());
                         Navigator.push(
                           MainAppBloc.getDashboardContext,
                           SlideRightRoute(
@@ -206,6 +208,7 @@ class _NearByScreenState extends State<NearByScreen>
         height: 115,
         child: BarberSpecialistCircularWidget(
           onClickCardCallBack:(){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(
@@ -219,6 +222,7 @@ class _NearByScreenState extends State<NearByScreen>
         height: 180,
         child: HomeCardWidget(
           onCardClickCallBack: (){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(
@@ -266,6 +270,7 @@ class _NearByScreenState extends State<NearByScreen>
                   child:iconApps.iconImage(imageUrl: iconApps.mapIcon,iconSize: Size(30, 30)),
                 ),
               onPressed: (){
+                FocusScope.of(context).requestFocus(FocusNode());
                 Navigator.push(
                   context,
                   SlideRightRoute(
@@ -301,6 +306,7 @@ class _NearByScreenState extends State<NearByScreen>
                     barberSpecialist,
                     SeeAllTextRow(leftTitle: "Popular salon nearby",
                       rightTextCallBack: (){
+                        FocusScope.of(context).requestFocus(FocusNode());
                         Navigator.push(
                           MainAppBloc.getDashboardContext,
                           SlideRightRoute(

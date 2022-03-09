@@ -130,7 +130,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
         children: [
           SeeAllTextRow(
-            margin: EdgeInsets.only(left: 20,top: 25,bottom: 10),
+            margin: EdgeInsets.only(left: 20,top: 5,bottom: 10),
             leftTitle: "About",
             isRightTextVisible: false,
             leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,

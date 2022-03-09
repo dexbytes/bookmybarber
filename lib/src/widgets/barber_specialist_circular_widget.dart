@@ -1,15 +1,15 @@
 import 'package:base_flutter_app/src/model/barber_name_row_data_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 
-// ignore: must_be_immutable
-class BarberSpecialistCircularWidget extends StatelessWidget {
+class BarberSpecialistCircularWidget extends StatefulWidget {
   final onClickCardCallBack;
   final bool isFeatureVisible;
   final bool isSubtitleVisible;
   final bool isSecondDataVisible;
+  final bool isBorderSelectVisible;
   final TextStyle titleTextStyle;
+  final TextStyle? titleAfterSelectTextStyle;
   final TextStyle subtitleTextStyle;
   final EdgeInsetsGeometry padding;
   final Color borderColor;
@@ -19,24 +19,32 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
   BarberSpecialistCircularWidget({Key? key,
     this.onClickCardCallBack,
     this.isFeatureVisible = true,
-    this.titleTextStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color:  Color(0xff828588)),
-    this.subtitleTextStyle = const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w400, color: Color(0xffCBAD90)),
+    this.titleTextStyle =  const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Color(0xff828588)),
+    this.subtitleTextStyle = const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w400, color:  Color(0xffCBAD90)),
     this.isSubtitleVisible = false,
     this.isSecondDataVisible = false,
     this.padding = const EdgeInsets.only(left: 10),
     this.borderColor = const Color(0xffCBAD90),
     this.height = 68,
     this.width = 68,
+    this.isBorderSelectVisible = false,
+    this.titleAfterSelectTextStyle,
   }) : super(key: key);
 
+  @override
+  State<BarberSpecialistCircularWidget> createState() => _BarberSpecialistCircularWidgetState();
+}
+
+class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircularWidget> {
+  int selectImage = 0;
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       scrollDirection: Axis.horizontal,
-      padding:padding,
+      padding:widget.padding,
       physics: ClampingScrollPhysics(),
-      itemCount: isSecondDataVisible ?barber2.length :barber.length ,
+      itemCount: widget.isSecondDataVisible ?barber2.length :barber.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return Material(
@@ -44,7 +52,11 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
           child: InkWell(
             onTap: (){
               print("$index",);
-              this.onClickCardCallBack?.call();
+              this.widget.onClickCardCallBack?.call();
+              setState(() {
+                selectImage = index;
+              });
+
             },
             child:Stack(
               children: [
@@ -62,33 +74,39 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                       child: Container(
                           padding: EdgeInsets.zero,
                           margin: EdgeInsets.zero,
-                          height: height,
-                          width: width,
+                          height: widget.height,
+                          width: widget.width,
                           decoration: BoxDecoration(
-                            border: Border.all(width: 2,color: borderColor),
+                            border: widget.isBorderSelectVisible
+                                ? Border.all(width: 2,color: selectImage == index ? Color(0xff00B2AE):widget.borderColor )
+                                : Border.all(width: 2,color:widget.borderColor),
                             shape: BoxShape.circle,
                             color: Colors.transparent,
                           ),
                           child: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 2,color: Color(0xff212327)),
-                              shape: BoxShape.circle,
-                              color: Colors.transparent,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(40),
-                              child: CachedNetworkImage(
-                                imageUrl: isSecondDataVisible ? barber2[index].imageUrl: barber[index].imageUrl,
-                                fit: BoxFit.cover,
+                              decoration: BoxDecoration(
+                                border: Border.all(width: 2,color: Color(0xff212327)),
+                                shape: BoxShape.circle,
+                                color: Colors.transparent,
                               ),
-                            )
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(40),
+                                child: CachedNetworkImage(
+                                  imageUrl: widget.isSecondDataVisible ? barber2[index].imageUrl: barber[index].imageUrl,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
                           )
                       ),
                     ),
                     SizedBox(height: 10),
 
-                    Text( isSecondDataVisible ? barber2[index].title: barber[index].title,
-                        style: titleTextStyle,maxLines: 1,),
+                    Text( widget.isSecondDataVisible ? barber2[index].title: barber[index].title,
+                      style:  widget.isBorderSelectVisible ?
+                      widget.titleAfterSelectTextStyle ??
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: selectImage == index ? Color(0xff00B2AE) : Color(0xff828588))
+                          :widget.titleTextStyle
+                      ,maxLines: 1,),
                     // Html(data: barber[index].title,
                     //   style: {'html' : Style(
                     //     fontSize: FontSize.medium,
@@ -112,16 +130,16 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
                     //     textAlign: TextAlign.start
                     //   )},
                     // ),
-                    SizedBox(height: isSubtitleVisible ?4:0),
+                    SizedBox(height: widget.isSubtitleVisible ?4:0),
                     Visibility(
-                        visible: isSubtitleVisible,
-                        child: Text(isSecondDataVisible ? barber2[index].subtitle: barber[index].subtitle,
-                          style:subtitleTextStyle,
-                          textAlign: TextAlign.center,maxLines: 1,),),
+                      visible: widget.isSubtitleVisible,
+                      child: Text(widget.isSecondDataVisible ? barber2[index].subtitle: barber[index].subtitle,
+                        style:widget.subtitleTextStyle,
+                        textAlign: TextAlign.center,maxLines: 1,),),
                   ],
                 ),
                 Visibility(
-                  visible: isFeatureVisible,
+                  visible: widget.isFeatureVisible,
                   child: Positioned(
                     top: 58,
                     left: 7,
@@ -146,12 +164,16 @@ class BarberSpecialistCircularWidget extends StatelessWidget {
       }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,         //for most popular item list count : 2  & for BrandCardView count :4
         mainAxisSpacing: 5,       //for most popular item list mainSpacing : 5  & for BrandCardView mainSpacing : 10
-        mainAxisExtent: isSubtitleVisible ? 96 :90
+        mainAxisExtent: widget.isSubtitleVisible ? 96 :90
     ),
     );
 
   }
 }
+
+
+
+
 
 
 

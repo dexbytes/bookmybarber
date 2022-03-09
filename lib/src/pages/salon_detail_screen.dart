@@ -77,9 +77,9 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
   Widget build(BuildContext context) {
     double hedingHeight = 55;
     double starHeight = 30;
-    double toolBarHeight = 120;
+    double toolBarHeight = 80;
     double expandedHeight = MediaQuery.of(context).size.height /3.3;
-    collapsedHeight =  toolBarHeight+hedingHeight+starHeight+10+10;
+    collapsedHeight =  toolBarHeight+hedingHeight+starHeight+30+10;
 
     Widget tabBar = Column(
         mainAxisSize: MainAxisSize.min,
@@ -256,7 +256,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                           Navigator.pop(context);
                         },
                         icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
-                            iconSize: Size(30, 30),
+                            iconSize: Size(22, 22),
                             imageColor: Colors.white),
                         iconSize: 50,
                       ),
@@ -403,7 +403,9 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                     )
                   ],
                 ),
-
+                Align(alignment: Alignment.bottomCenter,
+                  child: bottomButton(),
+                )
               ],
             ),
           )

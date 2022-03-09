@@ -121,6 +121,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                 // ignore: unrelated_type_equality_checks
                 isSecondDataVisible: false,
                 isFeatureVisible: false,
+                isBorderSelectVisible: true,
                 // onClickCardCallBack: (){},
               )),
         ],

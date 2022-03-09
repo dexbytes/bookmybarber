@@ -87,7 +87,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
             color: Colors.transparent,
             border: Border(bottom: BorderSide(color: Colors.grey,width: 0.3,))
         ),
-        padding: EdgeInsets.only(left: 10,right: 15,top: 20),
+        padding: EdgeInsets.only(left: 10,right: 15,top: 5),
         margin:  EdgeInsets.only(left: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
