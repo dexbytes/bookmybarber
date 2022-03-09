@@ -150,7 +150,7 @@ class _ShareBottomSheetScreenState extends State<ShareBottomSheetScreen> {
     return BottomSheetOnlyCardView(
         cardBackgroundColor: Colors.white,
         sheetTitle: "Share to",
-        sheetTitleStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+        sheetTitleStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.black),
         topLineShow: false,
 
         bottomSheetHeight: MediaQuery.of(context).size.height/2.5,

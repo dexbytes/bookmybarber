@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
+import 'package:base_flutter_app/src/widgets/photo_slider_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +34,22 @@ class DetailPhotoView extends StatelessWidget {
         return GestureDetector(
           onTap: (){
             this.cardCallBack?.call();
+
+              print(photo[index].id,);
+              Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: PhotoSliderScreen(
+                      urlImages:photo,
+                      initialPage:index,
+                      isDotVisible: true,
+                      activeDotColor: Color(0xffE4B343),
+                      dotHeight: 8,
+                      dotWidth: 8,
+
+                    )),
+              );
+
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),

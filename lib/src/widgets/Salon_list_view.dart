@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class SalonDataListView extends StatelessWidget {
+  final onBookClickCallBack;
 
-  const SalonDataListView({Key? key}) : super(key: key);
+  const SalonDataListView({Key? key, this.onBookClickCallBack}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +60,6 @@ class SalonDataListView extends StatelessWidget {
                               height: 0,
                               color: Colors.white,
                             )
-                            // fontSize: FontSize.large,
-                            // lineHeight: LineHeight(0.6),
-                            // color: Colors.white,
-                            // height: 20,
-                            // width: MediaQuery
-                            //     .of(context)
-                            //     .size
-                            //     .width,
-                            // fontWeight: FontWeight.w600,
-                            // padding: EdgeInsets.all(0),
-                            // margin: EdgeInsets.all(0),
                           )
                           },
                         ),
@@ -143,7 +133,9 @@ class SalonDataListView extends StatelessWidget {
                       ),
                       // Text("8:30AM - 9:00PM"),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          this.onBookClickCallBack.call();
+                        },
                         child: Text(
                             "Book"
                         ),

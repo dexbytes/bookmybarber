@@ -25,7 +25,7 @@ class IconApps {
   String signInBackgroundImage = 'assets/images/sign_in_image.png';
   String personIcon = 'assets/images/person_icon.png';
   String personIcon2 = 'assets/images/person2.png';
-  String backArrow2 = 'assets/images/back_arrow2.png';
+  String backArrow2 = 'assets/images/back_arrow_2.svg';
   String lock = 'assets/images/lock_icon.png';
   String passwordIcon = 'assets/images/password_icon.png';
   String closeIcon = 'assets/images/Close_icon.png';
@@ -34,7 +34,7 @@ class IconApps {
   String bellIcon = 'assets/images/bell_icon.png';
   String micIcon = 'assets/images/mic_icon.png';
   String detailAppbarIcon = 'assets/images/detail_appbar_icon.png';
-  String bottomMenuChatIcon = 'assets/images/bottom_menu_chat_icon.png';
+  String bottomMenuChatIcon = 'assets/images/bottom_menu_chat_icon.svg';
   String settingIcon = 'assets/images/setting_icon.png';
   String bellIcon2 = 'assets/images/bell_icon2.svg';
   String mapIcon = 'assets/images/map_icon.svg';

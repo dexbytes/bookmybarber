@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_company_info_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
 import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
@@ -100,7 +102,15 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
     Widget address = Container(
       margin: EdgeInsets.only(left: 10,right: 15),
        height: 100,
-       child: DetailAddressView());
+       child: DetailAddressView(
+         onMapCallBack: (){
+           Navigator.push(
+             context,
+             SlideRightRoute(
+                 widget: MapIntregationScreen()),
+           );
+         },
+       ));
 
 
     Widget image = Container(

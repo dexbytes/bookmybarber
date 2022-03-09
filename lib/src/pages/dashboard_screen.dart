@@ -157,7 +157,7 @@ class _DashBoardPage extends State<DashBoardPage>
                             child: Container(
                               alignment: Alignment.center,
                              padding: EdgeInsets.only(top: 5),
-                             child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(35, 35)),
+                             child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(26, 26)),
                              )
                             // iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon),
                           ),
