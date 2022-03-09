@@ -77,7 +77,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
   Widget build(BuildContext context) {
     double hedingHeight = 55;
     double starHeight = 30;
-    double toolBarHeight = 80;
+    double toolBarHeight = 60;
     double expandedHeight = MediaQuery.of(context).size.height /3.3;
     collapsedHeight =  toolBarHeight+hedingHeight+starHeight+30+10;
 
@@ -246,6 +246,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             child: Stack(
               children: [
                 CustomScrollView(
+                  physics: ClampingScrollPhysics(),
                   controller: _scrollController,
                   slivers: [
                     SliverAppBar(

@@ -87,6 +87,7 @@ class AppColors {
 
   //*  Bottom bar color ***********************************
   Color appStatusBarColor = const Color(0xFF000000);
+  Color appStatusBarColor2 = const Color(0xff212327);
   Color appDisabledColor = const Color(0xFF6C6C6C);
   Color appErrorTextColor = const Color(0xFFDD2E37);
 

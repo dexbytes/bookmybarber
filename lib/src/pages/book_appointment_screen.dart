@@ -223,47 +223,40 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               alignment: Alignment.topCenter,
               child:_topView(),
             ),
-            ContainerMenuPage(
-              backgroundColor: Colors.transparent,
+            ContainerFirst(
+              appBackgroundColor: Colors.transparent,
               contextCurrentView: context,
-              scrollPadding: EdgeInsets.only(bottom: 0),
+             // scrollPadding: EdgeInsets.only(bottom: 0),
               /* statusBarColor: Colors.amber,
                 bottomBarSafeAreaColor: Colors.amber,*/
               isSingleChildScrollViewNeed: true,
               isFixedDeviceHeight: true,
-              appBarHeight: 100,
-              appBar: Container(
-                color: Colors.transparent,
-                padding: EdgeInsets.only(top: 60),
-                child: Material(
-                  color: Colors.transparent,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        padding: EdgeInsets.only(left: 12),
-                        onPressed: (){
-                          Navigator.pop(context);
-                        },
-                        icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Book Appointment",
-                              style:TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w800,
-                                  color: AppColors().textNormalColor6
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+              appBarHeight: 60,
+              appBar: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    padding: EdgeInsets.only(left: 12),
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
                   ),
-                ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Book Appointment",
+                          style:TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors().textNormalColor6
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
               containChild:Container(
                 height: size.height/1.16 ,

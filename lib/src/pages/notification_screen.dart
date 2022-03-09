@@ -44,7 +44,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
           isSingleChildScrollViewNeed: true,
           isFixedDeviceHeight: true,
-          appBarHeight: 70,
+          appBarHeight: 60,
           appBar: Container(
             color: AppColors().appBgColor3,
             child: appBarWithBackArrow(

@@ -60,6 +60,15 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     AppDimens appDimens = AppDimens();
     appDimens.appDimensFind(context: context);
 
+    Widget topSection = Container(
+      height: 105,
+      width: MediaQuery.of(context).size.width,
+      margin: EdgeInsets.only(top:15/*MediaQuery.of(context).size.height /2.6*/),
+      color: Color(0xff323446),
+      child: BarberProfileTopRowWidget(),
+    );
+
+
     Widget profileImageWithName =Container(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,63 +121,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
        itemReviewCount: 125,
        itemViewCountTextStyle:TextStyle(color: AppColors().textNormalColor8,fontSize: 15,fontWeight: FontWeight.w400,),
        mainAxisAlignment: MainAxisAlignment.center,
-     )
+     ),
+        topSection,
   ]));
-
-    Widget tabBar = Column(
-        children:[
-          Container(
-            color: Color(0xff323446),
-            child: TabBar(
-              onTap: (index){
-                setState(() {
-                  selectedTab = index;
-                });
-              },
-              controller: tabController,
-              tabs: [
-                Tab(text: "Basic Info",),
-                Tab(text: "Portfolio",),
-                Tab(text: "Review",),
-              ],
-              labelColor:Color(0xffE4B343),
-              isScrollable: false,
-              unselectedLabelColor: Color(0xff828588),
-              labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-              unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-              labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
-              indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-              indicatorColor: Color(0xffE4B343),
-            ),
-          ),
-          DefaultTabController(
-            length: 3,
-            initialIndex: selectedTab,
-            child: Container(
-              height: MediaQuery.of(context).size.height /3.5,
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  // DescriptionPage(),
-                  SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
-                  Center(child: Text("Tab2"),),
-                  SalonDetailReviewScreen()
-
-                ],
-              ),
-            ),
-          ),
-        ]);
-
-
-    Widget topSection = Container(
-        height: 85,
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(top:appDimens.heightFullScreen()/2.4 /*MediaQuery.of(context).size.height /2.6*/),
-        color: Color(0xff323446),
-        child: BarberProfileTopRowWidget(),
-    );
-
 
     //Return main Ui view
     return WillPopScope(
@@ -229,7 +184,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight:appDimens.heightFullScreen()/2.1, // MediaQuery.of(context).size.height /2.1,  //2.47,
+                            expandedHeight:401, // MediaQuery.of(context).size.height /2.1,  //2.47,
                             collapsedHeight:appDimens.heightFullScreen()/10,   //MediaQuery.of(context).size.height/8,
                             flexibleSpace: FlexibleSpaceBarWidget(
                               expandedTitleScale: 1,
@@ -258,10 +213,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                     Align(
                                         alignment: Alignment.topCenter,
                                         child: profileImageWithName,
-                                    ),
-                                    Align(
-                                        alignment: Alignment.topCenter,
-                                        child: topSection,
                                     ),
                                   ],
                                 ),

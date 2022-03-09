@@ -68,7 +68,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
     Widget review = Container(
         padding: EdgeInsets.only(left: 10,),
-        height: MediaQuery.of(context).size.height +250,
+       // height: MediaQuery.of(context).size.height +250,
         child: ReviewListView(
           onTap: (){
             setState(() {
@@ -204,6 +204,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                     minimumSize: Size(70, 30)),
               ),
             ),
+
           ],
         ),
       );
@@ -224,7 +225,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
               isRightTextVisible: false,
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Color(0xFFCCA76A)) ,
             ),
-            review
+            review,
+        SizedBox(height: 10,)
           ],
         );
   }

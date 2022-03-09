@@ -52,12 +52,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double toolBarHeight = 60;
+
     _searchField() {
       return Container(
         padding: EdgeInsets.only(
           left: 14,
           right: 14,
           top: 0,
+        ),
+        margin: EdgeInsets.only(
+          top: 10,
         ),
         child: CommonTextFieldWithError(
           focusNode: focusNodes['search'],
@@ -230,58 +235,62 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           automaticallyImplyLeading: false,
                           elevation: 0,
                           titleSpacing: 0,
-                          title: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(left: 15.0),
-                                child: Text(
-                                  "Book My Barber",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w800),
+                          title: Container(
+                            height: toolBarHeight,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 15.0),
+                                  child: Text(
+                                    "Book My Barber",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w800),
+                                  ),
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  NotificationBal(
-                                    onTap: () {
-                                      FocusScope.of(context)
-                                          .requestFocus(FocusNode());
-                                      Navigator.push(
-                                        MainAppBloc.getDashboardContext,
-                                        SlideRightRoute(
-                                            widget: NotificationScreen()),
-                                      );
-                                    },
-                                  ),
-                                  IconButton(
-                                    splashRadius: 25,
-                                    padding: EdgeInsets.zero,
-                                    alignment: Alignment.center,
-                                    onPressed: () {
-                                      Navigator.push(
-                                        MainAppBloc.getDashboardContext,
-                                        SlideRightRoute(widget: FilterScreen()),
-                                      );
-                                    },
-                                    icon: iconApps.iconImage(
-                                        imageUrl: iconApps.filterIcon,
-                                        iconSize: Size(20, 20)),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    NotificationBal(
+                                      onTap: () {
+                                        FocusScope.of(context)
+                                            .requestFocus(FocusNode());
+                                        Navigator.push(
+                                          MainAppBloc.getDashboardContext,
+                                          SlideRightRoute(
+                                              widget: NotificationScreen()),
+                                        );
+                                      },
+                                    ),
+                                    IconButton(
+                                      splashRadius: 25,
+                                      padding: EdgeInsets.zero,
+                                      alignment: Alignment.center,
+                                      onPressed: () {
+                                        Navigator.push(
+                                          MainAppBloc.getDashboardContext,
+                                          SlideRightRoute(widget: FilterScreen()),
+                                        );
+                                      },
+                                      icon: iconApps.iconImage(
+                                          imageUrl: iconApps.filterIcon,
+                                          iconSize: Size(20, 20)),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                           backgroundColor: Color(0xff212327),
                           pinned: true,
                           floating: true,
                           expandedHeight:
                               MediaQuery.of(context).size.height / 3.4,
-                          collapsedHeight:
-                          _visible?MediaQuery.of(context).size.height / 6.7:MediaQuery.of(context).size.height / 12,
+                          collapsedHeight: _visible?
+                          toolBarHeight+60
+                              :toolBarHeight+10,
                           flexibleSpace: FlexibleSpaceBarWidget(
                             expandedTitleScale: 1,
                             title: _visible?_searchField():Container(),

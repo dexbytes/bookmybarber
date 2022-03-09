@@ -365,7 +365,7 @@ class _FilterScreenState extends State<FilterScreen>
                   contextCurrentView: context,
                   isSingleChildScrollViewNeed: true,
                   isFixedDeviceHeight: true,
-                  appBarHeight: 65,
+                  appBarHeight: 60,
                   appBar: appbarView,
                   containChild:Stack(
                     children: [

@@ -134,8 +134,8 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                   children: [
                     topView,
                     SizedBox(height: 25,),
-                    paymentMethod
-
+                    paymentMethod,
+                    SizedBox(height: 55,),
                   ],
                 ),
               ),
@@ -170,18 +170,15 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
               borderRadius: BorderRadius.circular(20),
             ),
             child: Container(
-              padding: EdgeInsets.only(
-                  top: 35,
-                  left: 16,
-                  right: 16
-              ),
-              height: MediaQuery.of(context).size.height/2.1,
+              padding: EdgeInsets.all(20),
+             // height: MediaQuery.of(context).size.height/2.1,
               width: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                   color: Color(0xff384054),
                   borderRadius: BorderRadius.circular(20)
               ),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   iconApps.iconImage(
                     imageUrl: iconApps.rightWithBackgroundIcon,
@@ -250,6 +247,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                    color: Colors.transparent,
                    child: InkWell(
                      onTap: (){
+                       Navigator.pop(context);
                        Navigator.push(
                          context,
                          SlideRightRoute(

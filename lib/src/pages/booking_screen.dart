@@ -121,37 +121,53 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
       ),
     );
 
+    Widget buildBody = Container(
+      height: 1,
+      child: DefaultTabController(
+        length: 2,
+        initialIndex: selectedTab,
+        child: Container(
+          // height: 1050,
+          child: TabBarView(
+            controller: tabController,
+            children: [
+              bookingList,
+              bookingList,
+            ],
+          ),
+        ),
+      ),
+    );
 
 
-    return ContainerMenuPage(
+    return widget.isShowBackArrow?ContainerFirst(
+      contextCurrentView: context,
+      appBackgroundColor: appColors.appBgColor2,
+      statusBarColor: AppColors().appBgColor3,
+      /* statusBarColor: Colors.amber,
+          bottomBarSafeAreaColor: Colors.amber,*/
+      isSingleChildScrollViewNeed: true,
+      isFixedDeviceHeight: true,
+      appBarHeight: 128,
+      appBar: Container(
+        color: AppColors().appBgColor3,
+        child: appbar
+      ),
+      containChild: buildBody
+    ):
+    ContainerMenuPage(
       contextCurrentView: context,
       scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 170,
+      appBarHeight: 150,
       appBar: Container(
         color: AppColors().appBgColor3,
         child: appbar
       ),
-      containChild: Container(
-        height: 1,
-        child: DefaultTabController(
-          length: 2,
-          initialIndex: selectedTab,
-          child: Container(
-            // height: 1050,
-            child: TabBarView(
-              controller: tabController,
-              children: [
-                bookingList,
-                bookingList,
-              ],
-            ),
-          ),
-        ),
-      ),
+      containChild: buildBody
     );
 
   }

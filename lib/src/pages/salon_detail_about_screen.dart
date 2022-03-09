@@ -157,6 +157,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
           }
       ),
       image,
+        SizedBox(height:  60,),
     ],)
       //physics: NeverScrollableScrollPhysics(),
       // mainAxisAlignment: MainAxisAlignment.start,

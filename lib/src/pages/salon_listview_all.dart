@@ -43,7 +43,7 @@ class _SalonListViewAllScreenState extends State<SalonListViewAllScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 68,
+      appBarHeight: 60,
       appBar: Container(
         color: Color(0xff212327),
         child: Padding(

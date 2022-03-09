@@ -41,8 +41,8 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
               ),
             )
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 60,left: 10),
+         /* Padding(
+            padding: EdgeInsets.only(top: 25,left: 10),
             child: Align(
               alignment: Alignment.topLeft,
               child:Material(
@@ -54,7 +54,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
                  icon:   iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
                  ),
               )),
-          ),
+          ),*/
         ],
       );
     }
@@ -105,7 +105,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
     }
 
     Widget services = Container(
-      height: 255,
+      //height: 255,
       child:Column(
         children: [
           PriceTextRow(
@@ -143,10 +143,10 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
 
 
 
-    Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/3.4,
+    Widget bottomCardView1 =  Positioned(
+      top: MediaQuery.of(context).size.height/4,
       child: Container(
-          padding: EdgeInsets.only(top: 25),
+          padding: EdgeInsets.only(top: 0),
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
@@ -158,7 +158,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
           ),
           child: ContainerMenuPage(
             contextCurrentView: context,
-            scrollPadding: EdgeInsets.only(bottom: 60),
+            //scrollPadding: EdgeInsets.only(bottom: 60),
             /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
             isSingleChildScrollViewNeed: true,
@@ -171,38 +171,91 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
                 _welcomeTextView(),
                 SizedBox(height: 30),
                 services,
-                SizedBox(height: 20),
-                bottomButton(),
+                SizedBox(height: 60),
+               // bottomButton(),
               ],
             ),
           )
       ),
     );
 
-
-
-
-    return ContainerMenuPage(
-      contextCurrentView: context,
-      // scrollPadding: EdgeInsets.only(bottom: 81),
-      /* statusBarColor: Colors.amber,
-        bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: false,
-      isFixedDeviceHeight: true,
-      appBarHeight: -1,
-      appBar: Container(),
-      containChild:Container(
+    Widget bottomCardView =  Positioned(
+      top: MediaQuery.of(context).size.height/7.5,
+      child: Container(
+        padding: EdgeInsets.only(top: 5),
+        width: size.width,
         height: size.height,
-        width: size.height,
-        child: Stack(
+        decoration: BoxDecoration(
+          color: AppColors().appBgColor2,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25),
+            topRight: Radius.circular(25),
+          ),
+        ),
+        child: ListView(
+          shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
           children: [
-            _topView(),
-            bottomCardView
+            _welcomeTextView(),
+            SizedBox(height: 30),
+            services,
+            SizedBox(height: 200),
+
           ],
         ),
       ),
-
     );
+
+
+    return Scaffold(
+      backgroundColor: AppColors().appBgColor2,
+      body: SafeArea(
+        top: false,
+        bottom: true,
+        right: false,
+        left: false,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child:_topView(),
+            ),
+            ContainerFirst(
+              appBackgroundColor: Colors.transparent,
+              contextCurrentView: context,
+              isSingleChildScrollViewNeed: true,
+              isFixedDeviceHeight: true,
+              appBarHeight: 60,
+              appBar: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    padding: EdgeInsets.only(left: 12),
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+                  ),
+                ],
+              ),
+              containChild:Container(
+               // height: size.height,
+                child: Stack(
+                  children: [
+                    bottomCardView,
+                  ],
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child:bottomButton(),
+            ),
+          ],
+        ),
+      ),
+    );
+
   }
 }
 
