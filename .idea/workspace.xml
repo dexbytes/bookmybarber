@@ -20,26 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/generated_main.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/notification_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/notification_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_listview_all.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_listview_all.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/values/app_color.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/values/app_color.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_profile_top_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_profile_top_row.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_first.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_first.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,34 +123,34 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1646645505780" />
-    <state width="1013" height="59" key="GridCell.Tab.0.bottom" timestamp="1646822031901">
+    <state width="1013" height="333" key="GridCell.Tab.0.bottom" timestamp="1646833603716">
       <screen x="0" y="25" width="1366" height="667" />
     </state>
-    <state width="1013" height="59" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646822031901" />
+    <state width="1013" height="333" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
     <state width="1013" height="444" key="GridCell.Tab.0.bottom/0.25.1366.676@0.25.1366.676" timestamp="1646818233260" />
     <state width="1013" height="74" key="GridCell.Tab.0.bottom/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
     <state width="1033" height="258" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646810623551" />
-    <state width="1013" height="59" key="GridCell.Tab.0.center" timestamp="1646822031900">
+    <state width="1013" height="333" key="GridCell.Tab.0.center" timestamp="1646833603715">
       <screen x="0" y="25" width="1366" height="667" />
     </state>
-    <state width="1013" height="59" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646822031900" />
+    <state width="1013" height="333" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.center/0.25.1366.676@0.25.1366.676" timestamp="1646818233254" />
     <state width="1013" height="74" key="GridCell.Tab.0.center/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
     <state width="1033" height="258" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646810623550" />
-    <state width="1013" height="59" key="GridCell.Tab.0.left" timestamp="1646822031899">
+    <state width="1013" height="333" key="GridCell.Tab.0.left" timestamp="1646833603715">
       <screen x="0" y="25" width="1366" height="667" />
     </state>
-    <state width="1013" height="59" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646822031899" />
+    <state width="1013" height="333" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
     <state width="1013" height="444" key="GridCell.Tab.0.left/0.25.1366.676@0.25.1366.676" timestamp="1646818233252" />
     <state width="1013" height="74" key="GridCell.Tab.0.left/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
     <state width="1033" height="258" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646810623550" />
-    <state width="1013" height="59" key="GridCell.Tab.0.right" timestamp="1646822031900">
+    <state width="1013" height="333" key="GridCell.Tab.0.right" timestamp="1646833603716">
       <screen x="0" y="25" width="1366" height="667" />
     </state>
-    <state width="1013" height="59" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646822031900" />
+    <state width="1013" height="333" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.right/0.25.1366.676@0.25.1366.676" timestamp="1646818233258" />
     <state width="1013" height="74" key="GridCell.Tab.0.right/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
