@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen>
           backgroundColor: Color(0xff323446),
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
-          textInputAction: TextInputAction.next,
+          textInputAction: TextInputAction.done,
           inputFieldSuffixIcon: IconButton(
             splashRadius: 22,
             onPressed:(){},
@@ -139,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen>
         height: 130,
         child: BarberSpecialistCircularWidget(
           onClickCardCallBack:(){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(
@@ -167,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen>
         height: 180,
         child: HomeCardWidget(
           onCardClickCallBack: (){
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.push(
               MainAppBloc.getDashboardContext,
               SlideRightRoute(
@@ -229,6 +231,7 @@ class _HomeScreenState extends State<HomeScreen>
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                            NotificationBal(onTap: (){
+                             FocusScope.of(context).requestFocus(FocusNode());
                              Navigator.push(
                                MainAppBloc.getDashboardContext,
                                SlideRightRoute(
@@ -240,6 +243,7 @@ class _HomeScreenState extends State<HomeScreen>
                               padding: EdgeInsets.zero,
                               alignment: Alignment.center,
                               onPressed: (){
+                                FocusScope.of(context).requestFocus(FocusNode());
                                 Navigator.push(
                                   MainAppBloc.getDashboardContext,
                                   SlideRightRoute(
@@ -293,6 +297,7 @@ class _HomeScreenState extends State<HomeScreen>
                             SizedBox(height: 15,),
                             SeeAllTextRow(leftTitle: "Best salon",
                               rightTextCallBack: (){
+                                FocusScope.of(context).requestFocus(FocusNode());
                               Navigator.push(
                                 MainAppBloc.getDashboardContext,
                                 SlideRightRoute(
@@ -305,6 +310,7 @@ class _HomeScreenState extends State<HomeScreen>
                             SizedBox(height: 15,),
                             SeeAllTextRow(leftTitle: "Popular salon nearby",
                               rightTextCallBack: (){
+                                FocusScope.of(context).requestFocus(FocusNode());
                                 Navigator.push(
                                   MainAppBloc.getDashboardContext,
                                   SlideRightRoute(

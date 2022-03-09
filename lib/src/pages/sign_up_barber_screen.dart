@@ -350,7 +350,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           },
           onEndEditing: (value) {
             _checkEmail(value, 'email');
-            FocusScope.of(context).requestFocus(focusNodes['password']);
+            FocusScope.of(context).requestFocus(focusNodes['phone']);
           },
         ),
       );
@@ -393,7 +393,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               cursorColor: Colors.grey,
               enabledBorderColor: Color(0xff323446),
               focusedBorderColor: Color(0xff323446),
-              textInputAction: TextInputAction.next,
+              textInputAction: TextInputAction.done,
               backgroundColor: Color(0xff323446),
               borderStyle: BorderStyle.none,
               inputKeyboardType: InputKeyboardTypeWithError.email,

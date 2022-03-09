@@ -251,7 +251,7 @@ class _SignInScreenState extends State<SignInScreen> {
             cursorColor: Colors.grey,
             enabledBorderColor: Color(0xff323446),
             focusedBorderColor: Color(0xff323446),
-            textInputAction: TextInputAction.next,
+            textInputAction: TextInputAction.done,
             backgroundColor: Color(0xff323446),
             borderStyle: BorderStyle.none,
             inputKeyboardType: InputKeyboardTypeWithError.email,

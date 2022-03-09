@@ -20,8 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/forgot_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/forgot_password_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_up_barber_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_up_barber_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/user_profile_edit_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/user_profile_edit_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/common_text_field_with_error.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/common_text_field_with_error.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,26 +131,26 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1646645505780" />
-    <state width="1033" height="179" key="GridCell.Tab.0.bottom" timestamp="1646746698596">
+    <state width="1033" height="179" key="GridCell.Tab.0.bottom" timestamp="1646803275549">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
-    <state width="1033" height="179" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646746698596" />
-    <state width="1033" height="179" key="GridCell.Tab.0.center" timestamp="1646746698593">
+    <state width="1033" height="179" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1646803275549" />
+    <state width="1033" height="179" key="GridCell.Tab.0.center" timestamp="1646803275549">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1033" height="179" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646746698593" />
-    <state width="1033" height="179" key="GridCell.Tab.0.left" timestamp="1646746698591">
+    <state width="1033" height="179" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1646803275549" />
+    <state width="1033" height="179" key="GridCell.Tab.0.left" timestamp="1646803275548">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
-    <state width="1033" height="179" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646746698591" />
-    <state width="1033" height="179" key="GridCell.Tab.0.right" timestamp="1646746698595">
+    <state width="1033" height="179" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1646803275548" />
+    <state width="1033" height="179" key="GridCell.Tab.0.right" timestamp="1646803275549">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
-    <state width="1033" height="179" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646746698595" />
+    <state width="1033" height="179" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1646803275549" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
