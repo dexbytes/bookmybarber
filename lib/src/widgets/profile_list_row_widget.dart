@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/user_profile_raw_data_model.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
+import 'package:base_flutter_app/src/pages/change_password_screen.dart';
 import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
@@ -93,6 +94,13 @@ class ProfileListRowWidget extends StatelessWidget {
         MainAppBloc.getDashboardContext,
         SlideRightRoute(
             widget: FavoriteSalonScreen()),
+      );
+    }else if(index == 4){
+
+      Navigator.push(
+        MainAppBloc.getDashboardContext,
+        SlideRightRoute(
+            widget: ChangePasswordScreen()),
       );
     }else if(index == 7){
       alertDialog(context);

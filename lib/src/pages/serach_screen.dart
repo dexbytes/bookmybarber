@@ -4,11 +4,14 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'categories_screen.dart';
 
 class SearchScreen extends StatefulWidget {
     const SearchScreen({Key? key,
@@ -123,7 +126,7 @@ class _SearchScreenState extends State<SearchScreen> {
               Navigator.push(
                       context,
                       SlideRightRoute(
-                          widget: SalonDetailScreen()),
+                          widget: SalonListViewAllScreen(title: "Recent History",)),
                     );
             },
             //   tagClickCallBack: (item){
@@ -213,7 +216,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 Navigator.push(
                   context,
                   SlideRightRoute(
-                      widget: SalonDetailScreen()),
+                      widget: CategoriesViewAllScreen(title: "Categories",)),
                 );
               },
             //   tagClickCallBack: (item){

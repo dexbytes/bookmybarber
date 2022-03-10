@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/pages/booking_detail_payment_screen.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
+import 'package:base_flutter_app/src/pages/change_password_screen.dart';
 import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
 import 'package:base_flutter_app/src/pages/filter_screen.dart';
@@ -310,7 +311,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return BarberProfileScreen();
+    return DashBoardPage();
   }
 
   //Redirect to another screen if already loggedIn
