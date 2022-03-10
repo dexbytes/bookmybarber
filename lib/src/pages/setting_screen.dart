@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingScreen extends StatefulWidget {
 
@@ -178,7 +179,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
 
     Widget settingList = Container(
-      height: 500,
+      height: 330,
      child:  ListView.builder(
        scrollDirection: Axis.vertical,
        padding: EdgeInsets.only(left: 10,right: 10,),
@@ -219,6 +220,29 @@ class _SettingScreenState extends State<SettingScreen> {
      ),
     );
 
+
+    Widget version = Container(
+      // color: Colors.grey,
+      height: 50,
+     child: FutureBuilder(
+       future: PackageInfo.fromPlatform(),
+       builder: (BuildContext context, AsyncSnapshot<PackageInfo> snapshot) {
+         if(snapshot.hasData)
+           return Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               Text("Version: ",
+                 style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+               ),Text(snapshot.data!.version,
+                 style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+               ),
+             ],
+           );
+         return Container();
+       },
+     ),
+    );
+
     return ContainerFirst(
         appBackgroundColor: AppColors().appBgColor2,
         contextCurrentView: context,
@@ -252,7 +276,8 @@ class _SettingScreenState extends State<SettingScreen> {
                 popUpNotification,
                 volumeNotification,
                 appointmentNotification,
-                settingList
+                settingList,
+                version
 
 
               ],

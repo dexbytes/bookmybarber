@@ -11,6 +11,7 @@ import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/profile_list_row_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import 'notification_screen.dart';
 
@@ -76,10 +77,32 @@ class _UserProfileScreenState extends State<UserProfileScreen>
       ),
     );
 
+    Widget version = Container(
+      // color: Colors.grey,
+      height: 50,
+      child: FutureBuilder(
+        future: PackageInfo.fromPlatform(),
+        builder: (BuildContext context, AsyncSnapshot<PackageInfo> snapshot) {
+          if(snapshot.hasData)
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Version: ",
+                  style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+                ),Text(snapshot.data!.version,
+                  style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+                ),
+              ],
+            );
+          return Container();
+        },
+      ),
+    );
+
     Widget profileList = Container(
         margin: EdgeInsets.only(
             right: 0, left: 0),
-        height: MediaQuery.of(context).size.height /1.5,
+        height: MediaQuery.of(context).size.height /1.55,
         child: ProfileListRowWidget()
     );
 
@@ -191,7 +214,8 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    profileList
+                    profileList,
+                    version
                   ],
                 ),
               ],

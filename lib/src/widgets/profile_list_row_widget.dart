@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/model/user_profile_raw_data_model.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
 import 'package:base_flutter_app/src/pages/change_password_screen.dart';
 import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
+import 'package:base_flutter_app/src/pages/invite_friend_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
@@ -26,52 +27,54 @@ class ProfileListRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        scrollDirection: Axis.vertical,
-        padding: EdgeInsets.only(left: 10,right: 10,),
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: userProfile.length,
-        shrinkWrap: true,
-        itemBuilder: (BuildContext context, int index) {
-          return InkWell(
-            onTap: (){
-              this.onClickListCallBack?.call(index);
-              print(index);
-              redirectTo(index,context);
-            },
-            child: Container(
-              padding: EdgeInsets.only(top: 12,bottom: 12),
-              decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.grey,width:0.15,))
-              ),
-              child: Row(
-                children: [
-                  iconApps.iconImage(
-                      imageUrl:userProfile[index].imageUrl,
-                      iconSize: Size(30, 30)
-                  ),
-                  SizedBox(width: 5,),
-                  Expanded(
-                    child: Html(data: userProfile[index].title,
-                      style: {'html' : Style.fromTextStyle(
-                           TextStyle(
-                             fontSize: 16.5,
-                             color: Colors.white,
-                             fontWeight: FontWeight.w500
-                           )
-                      )},
+    return Expanded(
+      child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          padding: EdgeInsets.only(left: 10,right: 10,bottom: 90),
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: userProfile.length,
+          shrinkWrap: true,
+          itemBuilder: (BuildContext context, int index) {
+            return InkWell(
+              onTap: (){
+                this.onClickListCallBack?.call(index);
+                print(index);
+                redirectTo(index,context);
+              },
+              child: Container(
+                padding: EdgeInsets.only(top: 12,bottom: 12),
+                decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(color: Colors.grey,width:0.15,))
+                ),
+                child: Row(
+                  children: [
+                    iconApps.iconImage(
+                        imageUrl:userProfile[index].imageUrl,
+                        iconSize: Size(30, 30)
                     ),
-                  ),
-                  Icon(Icons.arrow_forward_ios,size: 18,color: Colors.grey.shade600,),
-                  // Text(userProfile[index].title,
-                  //   style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w400,color: Colors.white),
-                  // ),
-                ],
+                    SizedBox(width: 5,),
+                    Expanded(
+                      child: Html(data: userProfile[index].title,
+                        style: {'html' : Style.fromTextStyle(
+                             TextStyle(
+                               fontSize: 16.5,
+                               color: Colors.white,
+                               fontWeight: FontWeight.w500
+                             )
+                        )},
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward_ios,size: 18,color: Colors.grey.shade600,),
+                    // Text(userProfile[index].title,
+                    //   style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w400,color: Colors.white),
+                    // ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
-      );
+            );
+          },
+        ),
+    );
 
   }
   void redirectTo(index,context) {
@@ -101,6 +104,13 @@ class ProfileListRowWidget extends StatelessWidget {
         MainAppBloc.getDashboardContext,
         SlideRightRoute(
             widget: ChangePasswordScreen()),
+      );
+    }else if(index == 5){
+
+      Navigator.push(
+        MainAppBloc.getDashboardContext,
+        SlideRightRoute(
+            widget: InviteFriendScreen()),
       );
     }else if(index == 7){
       alertDialog(context);

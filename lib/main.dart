@@ -12,6 +12,7 @@ import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
 import 'package:base_flutter_app/src/pages/filter_screen.dart';
 import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
 import 'package:base_flutter_app/src/pages/home_screen.dart';
+import 'package:base_flutter_app/src/pages/invite_friend_screen.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/pages/near_by_screen.dart';
