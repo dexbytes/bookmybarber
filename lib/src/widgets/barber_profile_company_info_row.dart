@@ -24,7 +24,7 @@ class BarberCompanyInfoRow extends StatelessWidget {
     this.rightTitle = "Start from",
     this.leftTitleTextStyle = const TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.white),
     this.rightTitleTextStyle = const TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color: Colors.white),
-    this.margin = const EdgeInsets.only(left: 20,right: 20,top: 30,bottom: 10),
+    this.margin = const EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 10),
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
     this.colors = Colors.transparent,
     this.leftTextCallBack,

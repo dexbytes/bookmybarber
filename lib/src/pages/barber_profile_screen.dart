@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_top_row.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
@@ -32,8 +33,15 @@ class BarberProfileScreen extends StatefulWidget {
 
 class _BarberProfileScreenState extends State<BarberProfileScreen>
     with TickerProviderStateMixin {
-
   TabController? tabController;
+  late double maxAppBarHeight;
+  late double minAppBarHeight;
+  late double playPauseButtonSize;
+  late double infoBoxHeight;
+  late ScrollController _scrollController;
+  bool isAppBarCollapsed = false;
+  late double collapsedHeight;
+
   int selectedTab = 0;
 
   @override
@@ -45,21 +53,39 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     tabController =
     new TabController(initialIndex: selectedTab, length: 3, vsync: this);
 
+
+    _scrollController = ScrollController()
+      ..addListener(
+              (){
+            print(_scrollController.position.pixels);
+
+            isAppBarCollapsed =  _scrollController.position.pixels >= collapsedHeight;
+            setState(() {
+
+            });
+          }
+      );
+
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
     tabController?.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
 
   @override
   Widget build(BuildContext context) {
+    double toolBarHeight = 60;
+    double expandedHeight = MediaQuery.of(context).size.height /1.96;
+    collapsedHeight =  toolBarHeight + 50;
+
+
     AppDimens appDimens = AppDimens();
     appDimens.appDimensFind(context: context);
-
     Widget topSection = Container(
       height: 105,
       width: MediaQuery.of(context).size.width,
@@ -67,7 +93,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
       color: Color(0xff323446),
       child: BarberProfileTopRowWidget(),
     );
-
 
     Widget profileImageWithName =Container(
     child: Column(
@@ -125,10 +150,14 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
         topSection,
   ]));
 
+
+
     //Return main Ui view
     return WillPopScope(
         onWillPop: null, //_onBackPressed,
-        child: ContainerMenuPage(
+        child: ContainerFirst(
+            isOverLayStatusBar:true,
+            appBackgroundColor: appColors.appBgColor2,
             contextCurrentView: context,
             // scrollPadding: EdgeInsets.only(bottom: 110),
             isSingleChildScrollViewNeed: true,
@@ -141,6 +170,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                 children: [
                   Container(
                     child: CustomScrollView(
+                        controller: _scrollController,
                         physics: ClampingScrollPhysics(),
                         shrinkWrap: true,
                         slivers: <Widget>[
@@ -164,7 +194,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text("Profile",
+                                      Text( isAppBarCollapsed ? widget.userName:"Profile",
                                       style:TextStyle(color: Colors.white, fontSize: 22,fontWeight: FontWeight.w700),
                                       ),
                                     ],
@@ -184,8 +214,8 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             backgroundColor:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
-                            expandedHeight:401, // MediaQuery.of(context).size.height /2.1,  //2.47,
-                            collapsedHeight:appDimens.heightFullScreen()/10,   //MediaQuery.of(context).size.height/8,
+                            expandedHeight:expandedHeight, // MediaQuery.of(context).size.height /2.1,  //2.47,
+                            collapsedHeight:collapsedHeight,   //MediaQuery.of(context).size.height/8,
                             flexibleSpace: FlexibleSpaceBarWidget(
                               expandedTitleScale: 1,
                               background:Container(
@@ -217,37 +247,39 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                   ],
                                 ),
                               ),
-                              // title:   Container(
-                              //   padding: EdgeInsets.zero,
-                              //   margin: EdgeInsets.zero,
-                              //   color: Colors.transparent,
-                              //   child: TabBar(
-                              //     onTap: (index){
-                              //       setState(() {
-                              //         selectedTab = index;
-                              //       });
-                              //     },
-                              //     controller: tabController,
-                              //     tabs: [
-                              //       Tab(text: "Basic Info",),
-                              //       Tab(text: "Portfolio",),
-                              //       Tab(text: "Review",),
-                              //     ],
-                              //     labelColor:Color(0xffE4B343),
-                              //     isScrollable: false,
-                              //     unselectedLabelColor: Color(0xff828588),
-                              //     labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-                              //     unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-                              //     labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
-                              //     indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                              //     indicatorColor: Color(0xffE4B343),
-                              //     padding: EdgeInsets.zero,
-                              //   ),
-                              // ),
-                              // titlePadding: EdgeInsets.zero,
+                              title:Container(
+                                padding: EdgeInsets.zero,
+                                margin: EdgeInsets.zero,
+                                color: Colors.transparent,
+                                child: TabBar(
+                                  onTap: (index){
+                                    setState(() {
+                                      selectedTab = index;
+                                      isAppBarCollapsed = isAppBarCollapsed;
+                                    });
+                                  },
+                                  controller: tabController,
+                                  tabs: [
+                                    Tab(text: "Basic Info",),
+                                    Tab(text: "Portfolio",),
+                                    Tab(text: "Review",),
+                                  ],
+                                  labelColor:Color(0xffE4B343),
+                                  isScrollable: false,
+                                  unselectedLabelColor: Color(0xff828588),
+                                  labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
+                                  unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
+                                  labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
+                                  indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
+                                  indicatorColor: Color(0xffE4B343),
+                                  padding: EdgeInsets.zero,
+                                ),
+                              ),
+                              titlePadding: EdgeInsets.only(top: 20),
                             ),
                           ),
                           SliverFillRemaining(
+                            fillOverscroll: true,
                             child: Container(
                               padding: EdgeInsets.zero,
                               margin: EdgeInsets.only(bottom: 0),
@@ -257,30 +289,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                 children: [
                                   // topSection,
                                   // tabBar
-                                  Container(
-                                    color: Color(0xff323446),
-                                    child: TabBar(
-                                      onTap: (index){
-                                        setState(() {
-                                          selectedTab = index;
-                                        });
-                                      },
-                                      controller: tabController,
-                                      tabs: [
-                                        Tab(text: "Basic Info",),
-                                        Tab(text: "Portfolio",),
-                                        Tab(text: "Review",),
-                                      ],
-                                      labelColor:Color(0xffE4B343),
-                                      isScrollable: false,
-                                      unselectedLabelColor: Color(0xff828588),
-                                      labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-                                      unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-                                      labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
-                                      indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                                      indicatorColor: Color(0xffE4B343),
-                                    ),
-                                  ),
                                   Expanded(
                                     child: DefaultTabController(
                                       length: 3,
@@ -292,9 +300,20 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                           controller: tabController,
                                           children: [
                                             // DescriptionPage(),
-                                            SalonDetailAboutScreen(isBarberInfoShow: true,isDataScroll: false,),
-                                            Center(child: Text("Tab2"),),
-                                            SalonDetailReviewScreen(isScrollable: false,)
+                                            SalonDetailAboutScreen(
+                                              isBarberInfoShow: true,
+                                              isDataScroll: isAppBarCollapsed,
+                                              collapsedheight:collapsedHeight,
+                                              onPhotoClickCallBack: (){
+                                                setState(() {
+                                                  selectedTab = 1;
+                                                  tabController!.index = 1;
+                                                  isAppBarCollapsed = isAppBarCollapsed;
+                                                });
+                                              },
+                                            ),
+                                            SalonGalleryViewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
+                                            SalonDetailReviewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
 
                                           ],
                                         ),

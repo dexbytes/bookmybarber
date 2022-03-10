@@ -70,6 +70,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
   void dispose() {
     // TODO: implement dispose
     tabController?.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -165,8 +166,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           ],
         )
     );
-
-
 
     Widget starRow = Container(
       margin: EdgeInsets.only(

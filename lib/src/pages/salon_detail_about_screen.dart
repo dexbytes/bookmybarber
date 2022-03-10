@@ -122,6 +122,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
 
     return ListView(
+      padding: EdgeInsets.zero,
       shrinkWrap: true,
       controller: _scrollController,
       physics: widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
@@ -130,7 +131,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
         children: [
           SeeAllTextRow(
-            margin: EdgeInsets.only(left: 20,top: 5,bottom: 10),
+            margin: EdgeInsets.only(left: 20,top: 20,bottom: 10),
             leftTitle: "About",
             isRightTextVisible: false,
             leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,

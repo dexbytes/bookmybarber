@@ -87,8 +87,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
             color: Colors.transparent,
             border: Border(bottom: BorderSide(color: Colors.grey,width: 0.3,))
         ),
-        padding: EdgeInsets.only(left: 10,right: 15,top: 5),
-        margin:  EdgeInsets.only(left: 10),
+        padding: EdgeInsets.only(left: 10,right: 15,top: 20),
+        margin:  EdgeInsets.only(left: 10,top: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -214,6 +214,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
 
     return ListView(
+      padding: EdgeInsets.zero,
       controller: _scrollController,
       physics: widget.isDataScroll && isScrollable ? ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       children: [
