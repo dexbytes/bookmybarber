@@ -8,6 +8,7 @@ import 'package:base_flutter_app/src/pages/booking_detail_payment_screen.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
 import 'package:base_flutter_app/src/pages/change_password_screen.dart';
 import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
+import 'package:base_flutter_app/src/pages/faq_screen.dart';
 import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
 import 'package:base_flutter_app/src/pages/filter_screen.dart';
 import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';

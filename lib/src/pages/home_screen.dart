@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
+import 'package:base_flutter_app/src/pages/categories_screen.dart';
 import 'package:base_flutter_app/src/pages/dummy.dart';
 import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
@@ -325,6 +326,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                     SeeAllTextRow(
                                       leftTitle: "Top categories",
+                                      rightTextCallBack: (){
+                                        Navigator.push(
+                                          MainAppBloc.getDashboardContext,
+                                          SlideRightRoute(
+                                              widget: CategoriesViewAllScreen(
+                                                title: "Top categories",
+                                              )),
+                                        );
+                                      },
                                     ),
                                     categories,
                                     SizedBox(
@@ -348,6 +358,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                     SeeAllTextRow(
                                       leftTitle: "Top services",
+                                      rightTextCallBack: (){
+                                        Navigator.push(
+                                          MainAppBloc.getDashboardContext,
+                                          SlideRightRoute(
+                                              widget: CategoriesViewAllScreen(
+                                                title: "Top services",
+                                              )),
+                                        );
+                                      },
                                     ),
                                     services,
                                     SizedBox(

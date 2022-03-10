@@ -1,5 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/categories_listview_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,17 @@ class _CategoriesViewAllScreenState extends State<CategoriesViewAllScreen> {
     Widget salonList = Container(
       margin: EdgeInsets.only(top: 20),
         height: MediaQuery.of(context).size.height,
-        child:CategoriesListView(),
+        child:CategoriesListView(
+          onCardCallBack: (){
+            Navigator.push(
+              context,
+              SlideRightRoute(
+                  widget: SalonListViewAllScreen(
+                    title: "Top services",
+                  )),
+            );
+          },
+        ),
     );
 
 

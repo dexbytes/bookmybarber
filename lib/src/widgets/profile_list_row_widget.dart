@@ -27,54 +27,52 @@ class ProfileListRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          padding: EdgeInsets.only(left: 10,right: 10,bottom: 90),
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: userProfile.length,
-          shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: (){
-                this.onClickListCallBack?.call(index);
-                print(index);
-                redirectTo(index,context);
-              },
-              child: Container(
-                padding: EdgeInsets.only(top: 12,bottom: 12),
-                decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Colors.grey,width:0.15,))
-                ),
-                child: Row(
-                  children: [
-                    iconApps.iconImage(
-                        imageUrl:userProfile[index].imageUrl,
-                        iconSize: Size(30, 30)
-                    ),
-                    SizedBox(width: 5,),
-                    Expanded(
-                      child: Html(data: userProfile[index].title,
-                        style: {'html' : Style.fromTextStyle(
-                             TextStyle(
-                               fontSize: 16.5,
-                               color: Colors.white,
-                               fontWeight: FontWeight.w500
-                             )
-                        )},
-                      ),
-                    ),
-                    Icon(Icons.arrow_forward_ios,size: 18,color: Colors.grey.shade600,),
-                    // Text(userProfile[index].title,
-                    //   style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w400,color: Colors.white),
-                    // ),
-                  ],
-                ),
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        padding: EdgeInsets.only(left: 10,right: 10,bottom: 90),
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: userProfile.length,
+        shrinkWrap: true,
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+            onTap: (){
+              this.onClickListCallBack?.call(index);
+              print(index);
+              redirectTo(index,context);
+            },
+            child: Container(
+              padding: EdgeInsets.only(top: 12,bottom: 12),
+              decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: Colors.grey,width:0.15,))
               ),
-            );
-          },
-        ),
-    );
+              child: Row(
+                children: [
+                  iconApps.iconImage(
+                      imageUrl:userProfile[index].imageUrl,
+                      iconSize: Size(30, 30)
+                  ),
+                  SizedBox(width: 5,),
+                  Expanded(
+                    child: Html(data: userProfile[index].title,
+                      style: {'html' : Style.fromTextStyle(
+                           TextStyle(
+                             fontSize: 16.5,
+                             color: Colors.white,
+                             fontWeight: FontWeight.w500
+                           )
+                      )},
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_ios,size: 18,color: Colors.grey.shade600,),
+                  // Text(userProfile[index].title,
+                  //   style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w400,color: Colors.white),
+                  // ),
+                ],
+              ),
+            ),
+          );
+        },
+      );
 
   }
   void redirectTo(index,context) {

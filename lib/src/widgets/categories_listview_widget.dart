@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CategoriesListView extends StatefulWidget {
-  final onViewCardCallBack;
+  final onCardCallBack;
   bool isViewVisible;
   final bool isDataScroll;
 
   final collapsedheight;
 
   CategoriesListView({Key? key,
-    this.onViewCardCallBack,
+    this.onCardCallBack,
     this.isViewVisible = false, this.isDataScroll = true, this.collapsedheight
   }) : super(key: key);
 
@@ -96,10 +96,10 @@ class _CategoriesListViewState extends State<CategoriesListView> {
         return Material(
           color: Colors.transparent,
           child: InkWell(
-            // onTap: (){
-            //   print("$index",);
-            //   this.onClickCardCallBack?.call(0);
-            // },
+            onTap: (){
+              print("$index",);
+              this.widget.onCardCallBack?.call();
+            },
             child:Row(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +145,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
                                 style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white)),
                             InkWell(
                               onTap: (){
-                                this.widget.onViewCardCallBack?.call(0);
+                                this.widget.onCardCallBack?.call();
                               },
                               child:
                               // Expanded(child: DropDownDataPicker2())
