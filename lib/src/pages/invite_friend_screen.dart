@@ -18,33 +18,27 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
     ShareList(
       title: 'Friends',
       icon: 'assets/images/facebook_icon2.png',
-      colors: Color(0xff14D9D4),
     ),
     ShareList(
       title: 'Message',
       icon: 'assets/images/google_plus_icon.png',
-      colors: Color(0xff00FA9A),
     ),
     ShareList(
       title: 'Facebook',
       icon: 'assets/images/instagram_icon.png',
-      colors: Color(0xff4267B2),
     ),
 
     ShareList(
       title: 'Email',
       icon: 'assets/images/messenger_icon2.png',
-      colors: Color(0xffCD5C5C),
     ),
     ShareList(
       title: 'Messenger',
       icon: 'assets/images/whatsapp_icon.png',
-      colors: Color(0xff006AFF),
     ),
     ShareList(
       title: 'Pinterest',
       icon: 'assets/images/paypal_icon.svg',
-      colors: Color(0xffB22222),
     ),
 
   ];
@@ -201,12 +195,10 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
 
 class ShareList {
   final String title;
-  final Color colors;
   final String icon;
 
   ShareList( {
     required this.title,
-    required this.colors,
     required this.icon,
   });
 }
