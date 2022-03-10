@@ -2,12 +2,16 @@ import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.da
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/user_profile_raw_data_model.dart';
+import 'package:base_flutter_app/src/pages/booking_screen.dart';
+import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+
+import 'common_button.dart';
 
 class ProfileListRowWidget extends StatelessWidget {
   final onClickListCallBack;
@@ -32,7 +36,7 @@ class ProfileListRowWidget extends StatelessWidget {
             onTap: (){
               this.onClickListCallBack?.call(index);
               print(index);
-              redirectTo(index);
+              redirectTo(index,context);
             },
             child: Container(
               padding: EdgeInsets.only(top: 12,bottom: 12),
@@ -54,15 +58,6 @@ class ProfileListRowWidget extends StatelessWidget {
                              color: Colors.white,
                              fontWeight: FontWeight.w500
                            )
-
-                          // fontSize:FontSize.large,
-                          // lineHeight: LineHeight(0.6),
-                          // color: Colors.white,
-                          // height: 20,
-                          // width: MediaQuery.of(context).size.width,
-                          // fontWeight: FontWeight.w500,
-                          // padding: EdgeInsets.all(0),
-                          // margin: EdgeInsets.all(0),
                       )},
                     ),
                   ),
@@ -78,20 +73,105 @@ class ProfileListRowWidget extends StatelessWidget {
       );
 
   }
-  void redirectTo(index) {
-    if(index == 1 ){
+  void redirectTo(index,context) {
+    if(index == 0 ){
+      Navigator.push(
+        MainAppBloc.getDashboardContext,
+        SlideRightRoute(
+            widget: BookingScreen(isShowBackArrow: true,)),
+      );
+    }else if(index == 1){
+
       Navigator.push(
         MainAppBloc.getDashboardContext,
         SlideRightRoute(
             widget: PackageOfferScreen()),
       );
-    }else if(index == 7){
+    }else if(index == 2){
 
       Navigator.push(
         MainAppBloc.getDashboardContext,
         SlideRightRoute(
-            widget: SignInScreen()),
+            widget: FavoriteSalonScreen()),
       );
+    }else if(index == 7){
+      alertDialog(context);
     }
+  }
+
+  void alertDialog(BuildContext context) {
+
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context){
+          return Dialog(
+            insetPadding: EdgeInsets.all(30),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Container(
+              padding:EdgeInsets.only(top: 25,bottom: 25,left: 5,right: 5),
+              decoration: BoxDecoration(
+                  color: appColors.appBgColor2,
+                  borderRadius: BorderRadius.circular(20)
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("Are you sure to logout?",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors().textHeadingColor1
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                            "No",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            primary: appColors.appBgColor2,
+                            side: BorderSide(width: 1.5,color: Color(0xffCCA76A),),
+                            minimumSize: Size(70, 40)),
+                      ),
+                      SizedBox(width: 30,),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            MainAppBloc.getDashboardContext,
+                            BottomUpTransition(
+                                widget: SignInScreen()),
+                          );
+                        },
+                        child: Text(
+                            "Yes",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            primary: Color(0xffCCA76A),
+                            minimumSize: Size(70, 40)),
+                      ),
+                    ],
+                  ),
+
+                ],
+              ),
+            ),
+          );
+
+        });
+
   }
 }

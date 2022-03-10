@@ -24,7 +24,7 @@ class BookingCardView extends StatelessWidget {
             color: Colors.transparent,
             elevation: 0,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+              margin: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
               padding: EdgeInsets.only(bottom: 5),
               decoration: BoxDecoration(
                   color: AppColors().appBgColor3,
@@ -71,12 +71,12 @@ class BookingCardView extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(6.0),
+                        padding: EdgeInsets.all(5.0),
                         child: Row(
                           children: [
                             Container(
-                              height: 80.0,
-                              width: 80.0,
+                              height: 78.0,
+                              width: 78.0,
                               margin: EdgeInsets.all(2),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
@@ -169,8 +169,8 @@ class BookingCardView extends StatelessWidget {
                                       child: Container(
                                           padding: EdgeInsets.zero,
                                           margin: EdgeInsets.zero,
-                                          height: 38,
-                                          width: 38,
+                                          height: 36,
+                                          width: 36,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color:AppColors().textHeadingColor1,
@@ -181,14 +181,14 @@ class BookingCardView extends StatelessWidget {
                                       )
                                       ),
                                     ),
-                                    SizedBox(width: 10,),
+                                    SizedBox(width: 8,),
                                     InkWell(
                                       onTap: (){},
                                       child: Container(
                                           padding: EdgeInsets.zero,
                                           margin: EdgeInsets.zero,
-                                          height: 38,
-                                          width: 38,
+                                          height: 36,
+                                          width: 36,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             color:AppColors().textHeadingColor1,

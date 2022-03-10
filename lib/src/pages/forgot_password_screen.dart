@@ -214,26 +214,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   void alertDialog(BuildContext context) {
 
        showDialog(
+         barrierDismissible: false,
           context: context,
           builder: (context){
            return Dialog(
-             insetPadding: EdgeInsets.symmetric(horizontal: 20),
+             insetPadding: EdgeInsets.all(20),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Container(
-                padding: EdgeInsets.only(
-                    top: 35,
-                    left: 16,
-                    right: 16
-                    ),
-                height: MediaQuery.of(context).size.height/2.2,
-                width: MediaQuery.of(context).size.height,
+                padding:EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Color(0xff384054),
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     iconApps.iconImage(
                       imageUrl: iconApps.passwordIcon,

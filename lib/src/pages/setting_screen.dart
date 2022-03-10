@@ -224,7 +224,7 @@ class _SettingScreenState extends State<SettingScreen> {
         contextCurrentView: context,
         isSingleChildScrollViewNeed: true,
         isFixedDeviceHeight: false,
-        appBarHeight: 70,
+        appBarHeight: 60,
         statusBarColor: AppColors().appBgColor3,
         appBar: Container(
           color:AppColors().appBgColor3,

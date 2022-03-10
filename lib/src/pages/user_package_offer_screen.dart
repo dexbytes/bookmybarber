@@ -48,6 +48,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
             isTitleVisible: true,
             isTrailingIconVisible: false,
             leadingIconColor:Color(0xFFCCA76A),
+            leadingPadding: EdgeInsets.only(left: 12.0,bottom: 8,top: 0,right: 15),
             title: "Package & Offers",
             textStyle: TextStyle(
                 fontSize: 20,

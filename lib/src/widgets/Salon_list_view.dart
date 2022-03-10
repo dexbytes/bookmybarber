@@ -30,7 +30,7 @@ class SalonDataListView extends StatelessWidget {
           Container(
             height: 100.0,
             width: 115.0,
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.all(3),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: CachedNetworkImage(
