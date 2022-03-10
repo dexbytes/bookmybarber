@@ -206,15 +206,7 @@ class _NearByScreenState extends State<NearByScreen>
     Widget barberSpecialist = Container(
         margin: EdgeInsets.only(top: 20),
         height: 115,
-        child: BarberSpecialistCircularWidget(
-          onClickCardCallBack:(){
-            FocusScope.of(context).requestFocus(FocusNode());
-            Navigator.push(
-              MainAppBloc.getDashboardContext,
-              SlideRightRoute(
-                  widget: BarberProfileScreen()),
-            );
-          } ,)
+        child: BarberSpecialistCircularWidget()
     );
 
     Widget homeCard = Container(

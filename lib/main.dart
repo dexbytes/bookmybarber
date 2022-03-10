@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
+import 'package:base_flutter_app/src/pages/Barber_listview_screen.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';

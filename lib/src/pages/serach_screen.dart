@@ -11,6 +11,7 @@ import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Barber_listview_screen.dart';
 import 'categories_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -171,7 +172,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 Navigator.push(
                   context,
                   SlideRightRoute(
-                      widget: BarberProfileScreen()),
+                      widget: BarbersListScreen(title: "Top Barbers",)),
                 );
               },
             //   tagClickCallBack: (item){

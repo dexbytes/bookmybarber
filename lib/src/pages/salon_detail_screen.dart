@@ -155,13 +155,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                   isSecondDataVisible: true,
                   isFeatureVisible: false,
                   titleTextStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500, color:Colors.white),
-                  onClickCardCallBack: (){
-                    Navigator.push(
-                      context,
-                      SlideRightRoute(
-                          widget: BarberProfileScreen()),
-                    );
-                  },
                 )),
           ],
         )

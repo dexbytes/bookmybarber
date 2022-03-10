@@ -157,15 +157,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Widget barberSpecialist = Container(
         margin: EdgeInsets.only(top: 20),
         height: 130,
-        child: BarberSpecialistCircularWidget(
-          onClickCardCallBack:(){
-            FocusScope.of(context).requestFocus(FocusNode());
-            Navigator.push(
-              MainAppBloc.getDashboardContext,
-              SlideRightRoute(widget: BarberProfileScreen()),
-            );
-          },
-        ));
+        child: BarberSpecialistCircularWidget());
 
     Widget services = Container(
         height: 150,

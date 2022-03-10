@@ -16,13 +16,15 @@ class BarberProfileScreen extends StatefulWidget {
   final String profileImgUrl;
   final String userName;
   final String subtitle;
+  final String salonName;
 
 
   const BarberProfileScreen({Key? key,
     this.onImageCallBack,
     this.profileImgUrl = "https://s3-media0.fl.yelpcdn.com/bphoto/JlcWA9GcKhJaggojJuV8sw/348s.jpg",
     this.userName = "Daniel William",
-    this.subtitle = "Barberman at RedBox Barber",
+    this.subtitle = "Barberman",
+    this.salonName ="RedBox Barber",
 
   })
       : super(key: key);
@@ -135,7 +137,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
          style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.w700),
        ),
         SizedBox(height: 5,),
-         Text(widget.subtitle,
+         Text("${widget.subtitle} at ${widget.salonName}",
         style:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1)),
         SizedBox(height: 5,),
         StarRatingBar(
