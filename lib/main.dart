@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
+import 'package:base_flutter_app/src/app_theme/theme_provider.dart';
 import 'package:base_flutter_app/src/pages/Barber_listview_screen.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
@@ -31,6 +32,7 @@ import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/pages/user_profile_edit_screen.dart';
 import 'package:base_flutter_app/src/pages/user_profile_screen.dart';
+import 'package:base_flutter_app/src/pages/welcome_screen.dart';
 import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
 import 'package:base_flutter_app/src/widgets/Salon_list_view.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
@@ -278,10 +280,10 @@ class _MyAppState extends State<MyAppFlutterMain> {
           // List all of the app's supported locales here
           supportedLocales: supportedLocales1,
           locale: _locale,
-          theme: ThemeData(
-              brightness: Brightness.dark,
-              primarySwatch: Colors.cyan,
-          ),
+
+          themeMode: ThemeMode.system,
+          theme: MyThemes.lightTheme,
+          darkTheme: MyThemes.darkTheme,
 
           // These delegates make sure that the localization data for the proper language is loaded
           localizationsDelegates: const [
@@ -314,7 +316,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return DashBoardPage();
+    return TutorialScreen();
   }
 
   //Redirect to another screen if already loggedIn

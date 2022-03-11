@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/pages/welcome_screen.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class TutorialScreen extends StatefulWidget {
@@ -74,6 +75,9 @@ class _TutorialScreenState extends State<TutorialScreen> {
   @override
   Widget build(BuildContext context) {
 
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     Widget slideItem(int index) => Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,7 +127,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.w700,
-            color: AppColors().textHeadingColor1
+            color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
           ),
         ),
         SizedBox(

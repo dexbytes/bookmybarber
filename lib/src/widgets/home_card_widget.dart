@@ -35,13 +35,14 @@ class HomeCardWidget extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             margin: EdgeInsets.zero,
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.only(bottom: 5),
             // height: 180,
             // width: 320,
             child: Material(
+              elevation: 0,
               color: Colors.transparent,
               child: Card(
-                elevation: 0.5,
+                elevation: 1,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
                 margin: EdgeInsets.zero,

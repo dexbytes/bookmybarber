@@ -134,13 +134,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     Widget topImage = ShaderMask(
       shaderCallback: (bound) => LinearGradient(
         colors: [
-          Colors.black38.withOpacity(0.35),
-          Colors.black87.withOpacity(0.4)
+          Colors.black38.withOpacity(0.2),
+          Colors.black87.withOpacity(0.2)
         ],
         begin: Alignment.topLeft,
         end: Alignment.topRight,
       ).createShader(bound),
-      blendMode: BlendMode.dstOut,
+      blendMode: BlendMode.srcATop,
       child: ClipPath(
           clipper: CustomAppBar(),
           child: CachedNetworkImage(
@@ -172,8 +172,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         child: CategoriesTextWidget());
 
     Widget homeCard = Container(
-        margin: EdgeInsets.only(top: 15),
-        height: 180,
+        margin: EdgeInsets.only(top: 15,bottom: 5),
+        height: 185,
         child: HomeCardWidget(
           onCardClickCallBack: (){
             FocusScope.of(context).requestFocus(FocusNode());
@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     Widget homeCard2 = Container(
         margin: EdgeInsets.only(top: 15),
-        height: 180,
+        height: 185,
         child: HomeCardWidget(
           isBookRowVisible: true,
           isSecondDataVisible: true,
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             isFixedDeviceHeight: true,
             appBarHeight: -1,
             appBar: Container(
-                color: Color(0xff212327),
+             //   color: Color(0xff212327),
                 width: MediaQuery.of(context).size.width,
                 // height: MediaQuery.of(context).size.height / 3,
                 child: appBarWithCurve()),
@@ -238,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   child: Text(
                                     "Book My Barber",
                                     style: TextStyle(
-                                        color: Colors.white,
+                                       //   color: Colors.white,
                                         fontSize: 24,
                                         fontWeight: FontWeight.w800),
                                   ),
@@ -276,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                               ],
                             ),
                           ),
-                          backgroundColor: Color(0xff212327),
+                          // backgroundColor: Color(0xff212327),
                           pinned: true,
                           floating: true,
                           expandedHeight:
@@ -290,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             titlePadding: EdgeInsets.only(
                               left: 16,
                               right: 16,
-                              bottom: 0,
+                              bottom: 8,
                             ),
                             background: Stack(
                               alignment: Alignment.center,
@@ -302,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   child: Text(
                                     "Find and book best services",
                                     style: TextStyle(
-                                        color: Colors.white,
+                                       color: Colors.white,
                                         fontSize: 22,
                                         fontWeight: FontWeight.w800),
                                   ),
@@ -316,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             (context, index) {
                               return Container(
                                 margin: EdgeInsets.only(bottom: 90),
-                                color: Color(0xff212327),
+                                // color: Color(0xff212327),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -388,8 +388,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     SizedBox(
                                       height: 30,
                                     ),
-                                    categoriesTextList,
-                                    // SeeAllTextRow(leftTitle: "Barber Specialist",),
+                                    // categoriesTextList,
+                                    SeeAllTextRow(leftTitle: "Barber Specialist",),
                                     barberSpecialist,
                                     SeeAllTextRow(
                                       leftTitle: "Popular salon nearby",

@@ -83,7 +83,7 @@ class ContainerMenuPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: backgroundColor ?? Color(0xff212327),
+      // backgroundColor: backgroundColor ?? Color(0xff212327),
       body: SafeArea(
         bottom: true,
         top: false,

@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/connet_to_social_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -18,6 +19,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     Widget googleCard = ConnectCard(
       color: Color(0xffFB6C56),);
+
+
 
     Widget facebookCard = ConnectCard(
       sizeBoxWidth: 19,
@@ -56,8 +59,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/signup_signin_background.png'),
-                fit: BoxFit.fill,
+                image: NetworkImage('https://i.pinimg.com/736x/11/64/58/116458ad3a32cb261cd88428a17058f6.jpg'),
+                fit: BoxFit.cover,
             )
         ),
 

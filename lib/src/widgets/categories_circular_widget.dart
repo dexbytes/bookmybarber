@@ -139,7 +139,7 @@ class CategoriesCircularWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                Text( isListTwoVisible ? categories2[index].title : categories[index].title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.white)),
+                Text( isListTwoVisible ? categories2[index].title : categories[index].title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500)),
                 SizedBox(height: 2),
                 Text(isListTwoVisible ? categories2[index].subtitle : categories[index].subtitle,style: TextStyle(fontSize: 11.5,fontWeight: FontWeight.w400,color: Color(0xff828588))),
               ],

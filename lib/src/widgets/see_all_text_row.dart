@@ -18,7 +18,7 @@ class SeeAllTextRow extends StatelessWidget {
   const SeeAllTextRow({Key? key,
     this.leftTitle = "Categories",
     this.rightTitle = "View all",
-    this.leftTitleTextStyle = const TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white),
+    this.leftTitleTextStyle = const TextStyle(fontSize: 20,fontWeight: FontWeight.w700),
     this.rightTitleTextStyle = const TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: Color(0xFFCCA76A)),
     this.margin = const EdgeInsets.symmetric(horizontal: 20,vertical: 0),
     this.mainAxisAlignment = MainAxisAlignment.spaceBetween,
@@ -46,7 +46,9 @@ class SeeAllTextRow extends StatelessWidget {
                 this.leftTextCallBack?.call(0);
                 print("Categories");
               },
-              child: Text(leftTitle,style: leftTitleTextStyle,)),
+              child: Text(leftTitle,
+                style: leftTitleTextStyle,
+              )),
           Visibility(
             visible: isRightTextVisible,
             child: InkWell(
