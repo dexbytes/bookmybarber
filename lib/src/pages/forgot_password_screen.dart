@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -29,6 +30,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     Size size = MediaQuery.of(context).size;
 
     //Check email field
@@ -65,28 +68,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           top: 5,
           left: 25,
           right: 25,
-          bottom: MediaQuery.of(context).size.height/ 10
+          bottom: 40
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Forgot Password",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
-              ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text("Please enter your email address. You will receive a code to create a new password\nvia email.",
+            Text("Please enter your registered email address. You will receive a code to create a new password via email.",
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
-                  color: AppColors().textNormalColor6.withOpacity(0.8)
+                  color:!isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
               ),
               textAlign: TextAlign.center,
             )
@@ -100,8 +92,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       return Container(
         padding: EdgeInsets.only(
             left: 25,right: 20,
-            top: 25,
-            bottom: 20
+            top: 0,
+            bottom: 0
         ),
         width: MediaQuery.of(context).size.width,
         child: CommonTextFieldWithError(
@@ -114,12 +106,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           errorLeftRightMargin: 0,
           errorMsgHeight: 24,
           autoFocus: true,
-          capitalization: CapitalizationText.sentences,
+          capitalization: CapitalizationText.none,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.done,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
           hintText: "Your email address",
@@ -131,7 +123,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           inputFieldSuffixIcon: Padding(
             padding: EdgeInsets.only(right: 15),
@@ -154,14 +146,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
     bottomButton(){
       return Container(
-        margin: EdgeInsets.only(left: 28,right: 28,top: 30),
+        margin: EdgeInsets.only(left: 28,right: 28,top: 12),
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "Reset password",
-          buttonColor:Color(0xFFCCA76A),
+          buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),
+          ),
           backCallback:(){
             alertDialog(context);
           },
@@ -172,33 +165,39 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
 
     return ContainerFirst(
-     appBackgroundColor:  Color(0xff212327),
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
+      // bottomBarSafeAreaColor: Color(0xff212327),
+      // statusBarColor: Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 68,
+      appBarHeight: 60,
       appBar: Container(
-        color: Color(0xff212327),
+        // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
         child: appBarWithBackArrow(
-            isTitleVisible: false,
+            isTitleVisible: true,
             isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
+            title: "Forgot Password",
+            textStyle: TextStyle(
+                fontSize: 21,
+                fontWeight: FontWeight.w700,
+                color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+            ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
             onPress: (){
               Navigator.pop(context);
             }
         ),
       ),
       containChild: Container(
-        color:  Color(0xff212327),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _welcomeTextView(),
             SizedBox(height: 8,),
@@ -212,6 +211,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   }
 
   void alertDialog(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
        showDialog(
          barrierDismissible: false,
@@ -225,7 +226,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Container(
                 padding:EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Color(0xff384054),
+                  color: !isDarkMode? AppColors().white:AppColors().appBgColor3,
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: Column(
@@ -239,7 +240,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
-                          color: AppColors().textHeadingColor1
+                          color:!isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -248,7 +249,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
-                          color: AppColors().textNormalColor6.withOpacity(0.8)
+                          color: !isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -256,10 +257,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     CommonButton(
                       buttonHeight: 50,
                       buttonName: "Done",
-                      buttonColor:Color(0xFFCCA76A),
+                      buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
                       textStyle: TextStyle(fontSize: 18,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff212327),),
+                        color: !isDarkMode? Colors.white:Color(0xff212327),
+                      ),
                       backCallback:(){
                         Navigator.pop(context);
                       },

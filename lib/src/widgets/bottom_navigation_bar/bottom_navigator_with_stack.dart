@@ -10,6 +10,7 @@ import 'package:base_flutter_app/src/pages/user_profile_screen.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_map_custom/google_map_custom.dart';
 
 final Map<TabItemBottomNavigatorWithStack, Widget> menuScreens = {
@@ -286,6 +287,9 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
   }
 
   void updateMenuItem() {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     if (homeBottomNavigationBar.containsKey("menu_item")) {
       menuItemTemp = homeBottomNavigationBar["menu_item"];
       menuItem = [];
@@ -321,14 +325,16 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
             height: 30,
             // color: Color.fromARGB(255, 18, 124, 157),
             child:  iconApps.iconImage(imageUrl: values["activeIcon"],
-                imageColor:Color(0xffE4B343)),
+
+
+            ),
           ),
           icon: Container(
               margin: EdgeInsets.only(bottom: 5),
               padding: EdgeInsets.all(0),
               height: 30,
               //color: Color.fromARGB(255, 18, 124, 157),
-              child: iconApps.iconImage(imageUrl: values["deActiveIcon"])),
+              child: iconApps.iconImage(imageUrl: values["deActiveIcon"],)),
 
 
           // Icon(
@@ -426,11 +432,16 @@ class AppNavigator extends StatelessWidget {
   }
 }
 
+
+
+
 class BNBCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     Paint paint = new Paint()
-      ..color = Color(0xff323446) //AppColors().appBgColor3
+      ..color = appColors.appBgColor3//AppColors().appBgColor3
       ..style = PaintingStyle.fill;
 
     Path path = Path();

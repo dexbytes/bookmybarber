@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'otp_verification_screen.dart';
 
@@ -47,7 +48,8 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     _welcomeTextView() {
       return Container(
@@ -55,28 +57,28 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
             top: 5,
             left: 25,
             right: 25,
-            bottom: MediaQuery.of(context).size.height/ 11
+            bottom: 45
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Verify Phone Number",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
-              ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(
-              height: 20,
-            ),
+            // Text("Verify Phone Number",
+            //   style: TextStyle(
+            //       fontSize: 30,
+            //       fontWeight: FontWeight.w700,
+            //       color: AppColors().textHeadingColor1
+            //   ),
+            //   textAlign: TextAlign.start,
+            // ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             Text("We have sent you an SMS with a code to number ${controllers['phone']?.text.toString()}",
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: AppColors().textNormalColor6.withOpacity(0.8)
+                  color: !isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
               ),
               textAlign: TextAlign.center,
             )
@@ -117,8 +119,8 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
       return Container(
         margin: EdgeInsets.only(
             left: 25,right: 20,
-            top: 25,
-            bottom: 20
+            top: 0,
+            bottom: 0
         ),
         child: CommonTextFieldWithError(
           focusNode: focusNodes['phone'],
@@ -128,14 +130,14 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
           controllerT: controllers['phone'],
           borderRadius: 50,
           inputHeight: 50,
-          autoFocus: true,
-          errorMsgHeight: 30,
+          autoFocus: false,
+          errorMsgHeight: 25,
           errorLeftRightMargin: 0,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           cursorColor: Colors.grey,
           borderStyle: BorderStyle.none,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           inputKeyboardType: InputKeyboardTypeWithError.phone,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
           // textStyle: _appStyle.labelTextStyle(),
@@ -148,7 +150,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color:!isDarkMode? Colors.black:Colors.white,
           ),
           inputFieldSuffixIcon:controllers['phone']!.text.isEmpty
               ?Container(height: 0,width: 0,)
@@ -165,10 +167,10 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width/4.5,
+                      left: MediaQuery.of(context).size.width/4.1,
                       top: 10,
                       bottom: 10,
-                      right: 15
+                      right: 10
                   ),
                   child: VerticalDivider(
                     width: 10,
@@ -188,16 +190,16 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
                   flagWidth: 21,
                   showFlagDialog: true,
                   showOnlyCountryWhenClosed: false,
-                  dialogBackgroundColor: Color(0xff212327),
+                  dialogBackgroundColor:!isDarkMode? Colors.white:Color(0xff212327),
                   dialogTextStyle: TextStyle(
                       fontSize: 16,
-                      color:Color(0xffFE9654)),
+                      color: !isDarkMode? Colors.black:Color(0xffFE9654)),
                   closeIcon: Icon(Icons.clear,size: 26,color:Color(0xFFCCA76A)),
                   hideSearch: true,
                   favorite: ['+91','In','+1','US',"+61","+55","47"],
                   // showDropDownButton: true,
                   hideMainText: false,
-                  textStyle: TextStyle(fontSize: 15,color: Color(0xffFE9654)),
+                  textStyle: TextStyle(fontSize: 15,color: !isDarkMode? Colors.black:Color(0xffFE9654)),
                   // flagWidth: ,
                 ),
 
@@ -223,10 +225,11 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
         child: CommonButton(
           buttonName: "Continue",
           buttonHeight: 50,
-          buttonColor:Color(0xFFCCA76A),
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),
+          ),
           isBottomMarginRequired: false,
           backCallback: (){
             // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
@@ -258,7 +261,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
     }
 
     Widget socialNetworkText = Container(
-      margin: EdgeInsets.only(bottom: 30),
+      margin: EdgeInsets.only(bottom: 25),
       child: AlreadyHaveAccountRow(
         leftText: "Or Login with",
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
@@ -268,33 +271,37 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
 
 
     return ContainerFirst(
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
-      appBackgroundColor:  Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 68,
-      appBar: Container(
-        color: Color(0xff212327),
+      appBarHeight: 60,
+      appBar:Container(
+        // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
         child: appBarWithBackArrow(
-            isTitleVisible: false,
+            isTitleVisible: true,
             isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
+            title: "Verify Phone Number",
+            textStyle: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+            ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 13),
             onPress: (){
               Navigator.pop(context);
             }
         ),
       ),
       containChild: Container(
-        color:  Color(0xff212327),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _welcomeTextView(),
             _phoneField(),

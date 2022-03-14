@@ -6,6 +6,7 @@ import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/pin_code_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   @override
@@ -26,6 +27,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
 
     _welcomeTextView() {
@@ -34,28 +37,28 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             top: 5,
             left: 25,
             right: 25,
-            bottom: MediaQuery.of(context).size.height/ 11
+            bottom: 45
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Phone Verification",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
-              ),
-              textAlign: TextAlign.start,
-            ),
-            SizedBox(
-              height: 20,
-            ),
+            // Text("Phone Verification",
+            //   style: TextStyle(
+            //       fontSize: 30,
+            //       fontWeight: FontWeight.w700,
+            //       color: AppColors().textHeadingColor1
+            //   ),
+            //   textAlign: TextAlign.start,
+            // ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             Text("Enter your OTP code here",
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: AppColors().textNormalColor6.withOpacity(0.8)
+                  color:  !isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
               ),
               textAlign: TextAlign.center,
             )
@@ -69,13 +72,14 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       return Container(
         margin: EdgeInsets.only(left: 20,right: 20,top: 35),
         child: CommonButton(
-          buttonColor: Color(0xFFCCA76A),
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           buttonName: "CONTINUE",
           buttonHeight: 50,
           isBottomMarginRequired: false,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),          backCallback: (){
+            color:!isDarkMode? Colors.white:Color(0xff212327),
+          ),          backCallback: (){
             if (verificationCodeStr != '' && verificationCodeStr.trim().length == otpLength) {
               setState(() {
                 errorMessage = '';
@@ -100,7 +104,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
 
     Widget resendCode = Container(
-      margin: EdgeInsets.only(bottom: 50,top: 35),
+      margin: EdgeInsets.only(bottom: 30,top: 22),
       child: AlreadyHaveAccountRow(
         leftText: "Did't you receive any code?",
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
@@ -111,11 +115,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
 
     verificationCode() {
-      Color fieldBackgroundColor = Color(0xFFCCA76A);
-      Color activeBorderColor = Color(0xFF5D3F30).withOpacity(0.1);
-      Color activeBackgroundColor = Color(0xFFCCA76A);
-      Color borderColor = Color(0xFF5D3F30).withOpacity(0.1);
-      Color disableBackgroundColor = Color(0xFF384054);
+      Color fieldBackgroundColor =  !isDarkMode?AppColors().buttonColor2: Color(0xFFCCA76A);
+      Color activeBorderColor = !isDarkMode?Color(0xFF5D3F30).withOpacity(0.0):Color(0xFF5D3F30).withOpacity(0.1);
+      Color activeBackgroundColor =  !isDarkMode?AppColors().buttonColor2: Color(0xFFCCA76A);
+      Color borderColor = !isDarkMode?Color(0xFF5D3F30).withOpacity(0.0):Color(0xFF5D3F30).withOpacity(0.1);
+      Color disableBackgroundColor = !isDarkMode?AppColors().textNormalColor6.withOpacity(0.9): appColors.appBgColor3;
 
       return Container(
         // color: Colors.red,
@@ -124,7 +128,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           child: PinCodeFields(
             controller: inputController,
             length: otpLength,
-            margin: EdgeInsets.only(left: 10,right:10,top: 10),
+            margin: EdgeInsets.only(left: 10,right:10,top: 0),
             fieldBorderStyle: FieldBorderStyle.Square,
             responsive: false,
             fieldHeight: 50.0,
@@ -197,33 +201,37 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
 
     return ContainerFirst(
-      appBackgroundColor:  Color(0xff212327),
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 68,
-      appBar: Container(
-        color: Color(0xff212327),
+      appBarHeight: 60,
+      appBar:Container(
+        // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
         child: appBarWithBackArrow(
-            isTitleVisible: false,
+            isTitleVisible: true,
             isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
+            title: "Phone Verification",
+            textStyle: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+            ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 13),
             onPress: (){
               Navigator.pop(context);
             }
         ),
       ),
       containChild: Container(
-        color:  Color(0xff212327),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _welcomeTextView(),
             verificationCode(),

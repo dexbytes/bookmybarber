@@ -181,6 +181,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               _welcomeTextView(),
               SizedBox(height: 20),
               _services(),
+
               // bottomButton(),
             ],
           ),
@@ -259,7 +260,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 ],
               ),
               containChild:Container(
-                height: size.height/1.16 ,
+                height: size.height/0.9,
                 child: Stack(
                   children: [
                     bottomCardView,

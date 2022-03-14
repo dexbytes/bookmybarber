@@ -6,6 +6,7 @@ import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
 import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class BookingScreen extends StatefulWidget {
   final String title;
@@ -42,6 +43,8 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     Widget bookingList =Container(
         height: MediaQuery.of(context).size.height,
@@ -77,19 +80,19 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
               ),
               SizedBox(width:  widget.isShowBackArrow ? MediaQuery.of(context).size.width /5.3 :MediaQuery.of(context).size.width /3.35 ,),
               Text("My Bookings",style: TextStyle(fontSize: 22,
-              color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
+              color:!isDarkMode? AppColors().black :AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
             ],
           ),
           SizedBox(height: 13,),
           Container(
-            color: AppColors().appBgColor3,
+            color:!isDarkMode? appColors.white :appColors.appBgColor3,
             child: Container(
               margin: EdgeInsets.only(top: 5,bottom: 15,left: 15,right: 15),
               height: 40,
               decoration: BoxDecoration(
                   color:Colors.transparent,
                   borderRadius: BorderRadius.circular(5),
-                  border: Border.all(width: 1,color:Color(0xffCCA76A))
+                  border: Border.all(width: 1,color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,)
               ),
               child: TabBar(
                 onTap: (index){
@@ -102,15 +105,15 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                   Tab(text: "UPCOMING",),
                   Tab(text: "PAST",),
                 ],
-                labelColor: Color(0xff323446),
+                labelColor:!isDarkMode? AppColors().white:Color(0xff323446),
                 isScrollable: false,
-                unselectedLabelColor:Color(0xffCCA76A),
+                unselectedLabelColor:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,
                 labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color:Colors.black),
                 labelPadding: EdgeInsets.zero,
                 padding: EdgeInsets.zero,
                 unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
                 indicator:BoxDecoration(
-                  color:Color(0xffCCA76A),
+                  color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
@@ -150,7 +153,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
       isFixedDeviceHeight: true,
       appBarHeight: 128,
       appBar: Container(
-        color: AppColors().appBgColor3,
+        color:!isDarkMode? appColors.white :appColors.appBgColor3,
         child: appbar
       ),
       containChild: buildBody
@@ -164,7 +167,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
       isFixedDeviceHeight: true,
       appBarHeight: 150,
       appBar: Container(
-        color: AppColors().appBgColor3,
+        color: !isDarkMode? appColors.white :appColors.appBgColor3,
         child: appbar
       ),
       containChild: buildBody

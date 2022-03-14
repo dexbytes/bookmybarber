@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
@@ -60,6 +61,8 @@ class _DashBoardPage extends State<DashBoardPage>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     appDimens.appDimensFind(context: context);
     SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
     MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);
@@ -153,7 +156,7 @@ class _DashBoardPage extends State<DashBoardPage>
                           child: FloatingActionButton(
                               elevation: 0,
                               onPressed: (){},
-                            backgroundColor: Color(0xffE4B343),
+                            backgroundColor: !isDarkMode ? Color(0xffFE9654):Color(0xffE4B343),
                             child: Container(
                               alignment: Alignment.center,
                              padding: EdgeInsets.only(top: 5),

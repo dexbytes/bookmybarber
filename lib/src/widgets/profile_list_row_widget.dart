@@ -11,6 +11,7 @@ import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 import 'common_button.dart';
@@ -27,6 +28,10 @@ class ProfileListRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
+
     return ListView.builder(
         scrollDirection: Axis.vertical,
         padding: EdgeInsets.only(left: 10,right: 10,bottom: 90),
@@ -49,7 +54,8 @@ class ProfileListRowWidget extends StatelessWidget {
                 children: [
                   iconApps.iconImage(
                       imageUrl:userProfile[index].imageUrl,
-                      iconSize: Size(30, 30)
+                      iconSize: Size(30, 30),
+                      imageColor:!isDarkMode? appColors.textHeadingColor2:Color(0xffE4B343)
                   ),
                   SizedBox(width: 5,),
                   Expanded(
@@ -57,7 +63,7 @@ class ProfileListRowWidget extends StatelessWidget {
                       style: {'html' : Style.fromTextStyle(
                            TextStyle(
                              fontSize: 16.5,
-                             color: Colors.white,
+                             color: !isDarkMode? appColors.black:Colors.white,
                              fontWeight: FontWeight.w500
                            )
                       )},

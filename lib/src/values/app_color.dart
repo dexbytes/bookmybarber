@@ -80,6 +80,7 @@ class AppColors {
   Color appBgColor = const Color(0xFF000000);
   Color appBgColor2 = const Color(0xff212327);
   Color appBgColor3 = const Color(0xff323446);
+  Color appBgColor4 = const Color(0xFFFFFFFF);
 
   Color appTopBgColor = const Color(0xFFFFFFFF);
   Color appCenterBgColor = const Color(0xFFFFFFFF);
@@ -105,7 +106,11 @@ class AppColors {
   Color activeBorderColor = const Color(0xFF27AE60);
   Color borderColor = const Color(0xFF575757);
   Color buttonColor = const Color(0xFFCCA76A);
+  Color buttonColor2 = const Color(0xffFE9654);
+  Color buttonColor3 = const Color(0xFF000000);
   Color buttonTextColor5 = const Color(0xffFE9654);
+  Color buttonTextColor6 = const Color(0xFF000000);
+
 
 
 
@@ -141,6 +146,7 @@ class AppColors {
   Color textSubHeadingColor = const Color(0xFF000000);
   Color textHeadingColor = const Color(0xFF2c3134);
   Color textHeadingColor1 = const Color(0xFFCCA76A);
+  Color textHeadingColor2 = const Color(0xffFE9654);
 
   Color textDisabledColor = const Color(0xFFCCCCCC);
   Color textIconColor = const Color(0xFF000000);
@@ -168,6 +174,10 @@ class AppColors {
   Color BoxBtextorderColor = const Color(0xFFE5E5E5);
 
   Color datetimeColor = const Color(0xFF4AA546);
+
+  Color textFiledColor = const Color(0xff828588);
+  Color textFiledColor2 = const Color(0xff323446);
+
 
   List<Color> gredientColor = const [
     Color(0xFFeaeaee),

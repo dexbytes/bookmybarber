@@ -19,6 +19,7 @@ import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/pages/near_by_screen.dart';
 import 'package:base_flutter_app/src/pages/notification_screen.dart';
+import 'package:base_flutter_app/src/pages/otp_verification_screen.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
@@ -316,7 +317,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return DashBoardPage();
   }
 
   //Redirect to another screen if already loggedIn

@@ -9,6 +9,7 @@ import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'home_screen.dart';
 
@@ -51,6 +52,10 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+  var brightness = SchedulerBinding.instance!.window.platformBrightness;
+  bool isDarkMode = brightness == Brightness.dark;
+
   Size size = MediaQuery.of(context).size;
 
 
@@ -120,7 +125,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ).createShader(bound),
             blendMode: BlendMode.darken,
             child:CachedNetworkImage(
-              height: MediaQuery.of(context).size.height/2.5,
+              height: MediaQuery.of(context).size.height/2.7,
               width: MediaQuery.of(context).size.width,
               imageUrl: "https://media1.popsugar-assets.com/files/thumbor/objfVkqK2u27teSwF05B732vpHg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2021/04/09/609/n/29590734/tmp_hzooXG_c3a3612a3e8fdf28_GettyImages-1235174298.jpg",
               fit:BoxFit.cover,
@@ -137,19 +142,19 @@ class _SignInScreenState extends State<SignInScreen> {
         Text("Welcome back",
           style: TextStyle(
             fontSize: 30,
-            fontWeight: FontWeight.w700,
-            color: AppColors().textHeadingColor1
+            fontWeight: FontWeight.w800,
+            color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
           ),
           textAlign: TextAlign.start,
         ),
         SizedBox(
           height: 10,
         ),
-        Text("STYLE THAT FIT YOUR LIFESTYLE",
+        Text("Login to your account",
           style: TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w500,
-            color: AppColors().textNormalColor6.withOpacity(0.8)
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: !isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
           ),
           textAlign: TextAlign.start,
         )
@@ -177,10 +182,10 @@ class _SignInScreenState extends State<SignInScreen> {
         autoFocus: false,
         capitalization: CapitalizationText.sentences,
         cursorColor: Colors.grey,
-        enabledBorderColor: Color(0xff323446),
-        focusedBorderColor:Color(0xff323446),
+        enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.2): AppColors().textFiledColor2,
+        focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.2): AppColors().textFiledColor2,
         textInputAction: TextInputAction.next,
-        backgroundColor: Color(0xff323446),
+        backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
         borderStyle: BorderStyle.none,
         inputKeyboardType: InputKeyboardTypeWithError.email,
         hintText: "Email",
@@ -192,7 +197,7 @@ class _SignInScreenState extends State<SignInScreen> {
         textStyle: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: Colors.white,
+          color: !isDarkMode? Colors.black:Colors.white,
         ),
         inputFieldSuffixIcon: Padding(
           padding: EdgeInsets.only(right: 15),
@@ -249,10 +254,10 @@ class _SignInScreenState extends State<SignInScreen> {
             errorLeftRightMargin: 0,
             capitalization: CapitalizationText.sentences,
             cursorColor: Colors.grey,
-            enabledBorderColor: Color(0xff323446),
-            focusedBorderColor: Color(0xff323446),
+            enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+            focusedBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
             textInputAction: TextInputAction.done,
-            backgroundColor: Color(0xff323446),
+            backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
             borderStyle: BorderStyle.none,
             inputKeyboardType: InputKeyboardTypeWithError.email,
             obscureText: hideNewPassword,
@@ -265,7 +270,7 @@ class _SignInScreenState extends State<SignInScreen> {
             textStyle: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
-              color: Colors.white,
+              color: !isDarkMode?Colors.black :Colors.white,
             ),
             contentPadding: EdgeInsets.only(left: 25),
             inputFieldSuffixIcon: Padding(
@@ -300,10 +305,11 @@ class _SignInScreenState extends State<SignInScreen> {
       child:CommonButton(
         buttonHeight: 50,
         buttonName: "Login",
-        buttonColor: AppColors().buttonColor,
+        buttonColor:  !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
         textStyle: TextStyle(fontSize: 18,
           fontWeight: FontWeight.w600,
-          color: Color(0xff212327),),
+          color:  !isDarkMode? Colors.white:Color(0xff212327),
+        ),
         backCallback:(){
           Navigator.push(
             context,
@@ -333,7 +339,7 @@ class _SignInScreenState extends State<SignInScreen> {
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w500,
-              color:AppColors().buttonTextColor
+              color: !isDarkMode?AppColors().buttonTextColor6:AppColors().buttonTextColor,
             ),
           ),
         ),
@@ -360,13 +366,13 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
   Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/2.8,
+      top: MediaQuery.of(context).size.height/3,
       child: Container(
         padding: EdgeInsets.only(top: 35),
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-          color: Color(0xff212327),
+          color:!isDarkMode?AppColors().appBgColor4:AppColors().appBgColor2,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
@@ -377,8 +383,8 @@ class _SignInScreenState extends State<SignInScreen> {
           scrollPadding: EdgeInsets.only(bottom: 70),
           /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
-          isSingleChildScrollViewNeed: true,
-          isFixedDeviceHeight: true,
+          isSingleChildScrollViewNeed: false,
+          isFixedDeviceHeight: false,
           appBarHeight: -1,
           appBar: Container(),
           containChild: Column(
@@ -397,48 +403,45 @@ class _SignInScreenState extends State<SignInScreen> {
             ],
           ),
         )
-
-        // Column(
-        //   children: [
-        //     _welcomeTextView(),
-        //     SizedBox(height: 18),
-        //     _emailField(),
-        //     _passwordField(),
-        //     bottomButton(),
-        //     forgotText(),
-        //     SizedBox(height: 28,),
-        //     Align(
-        //       alignment: Alignment.bottomCenter,
-        //       child: signUpText
-        //     )
-        //   ],
-        // ),
       ),
     );
 
 
 
-
-    return ContainerMenuPage(
-      contextCurrentView: context,
-      // scrollPadding: EdgeInsets.only(bottom: 81),
-      /* statusBarColor: Colors.amber,
-        bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: false,
-      isFixedDeviceHeight: true,
-      appBarHeight: -1,
-      appBar: Container(),
-      containChild:Container(
-          height: size.height,
-          width: size.height,
-          child: Stack(
-            children: [
-              _topView(),
-              bottomCardView
-            ],
-          ),
+    return Scaffold(
+      backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+      body: SafeArea(
+        top: false,
+        bottom: true,
+        right: false,
+        left: false,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child:_topView(),
+            ),
+            ContainerFirst(
+              appBackgroundColor: Colors.transparent,
+              contextCurrentView: context,
+              // scrollPadding: EdgeInsets.only(bottom: 0),
+              /* statusBarColor: Colors.amber,
+                bottomBarSafeAreaColor: Colors.amber,*/
+              isSingleChildScrollViewNeed: true,
+              isFixedDeviceHeight: true,
+              appBarHeight: -1,
+              containChild:Container(
+                height: size.height/0.9,
+                child: Stack(
+                  children: [
+                    bottomCardView,
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
-
+      ),
     );
   }
 }

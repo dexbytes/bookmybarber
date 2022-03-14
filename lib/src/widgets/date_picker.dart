@@ -1,13 +1,16 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart';
 
 class DatePickerWidget extends StatefulWidget {
   final double errorHeight;
   final bool isShowMonthName;
+  final Widget? child;
 
-  const DatePickerWidget({Key? key, this.isShowMonthName = false, this.errorHeight = 20}) : super(key: key);
+  const DatePickerWidget({Key? key, this.isShowMonthName = false, this.errorHeight = 20, this.child}) : super(key: key);
   @override
   _DatePickerWidgetState createState() => _DatePickerWidgetState();
 }
@@ -47,14 +50,32 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
 
 
   void pickDate(BuildContext context) async {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     final newDate = await showDatePicker(
       context: context,
       fieldLabelText: "DOB",
       initialDate: date,
+      initialEntryMode: DatePickerEntryMode.calendarOnly,
       firstDate: DateTime(DateTime.now().year - 50),
       lastDate: DateTime(DateTime.now().year + 20),
       confirmText: "Ok",
+      builder: (context ,child ) {
+        return Theme(
+            child: child!,
+            data: ThemeData().copyWith(
+              // brightness:!isDarkMode? Brightness.light:Brightness.dark,
+              colorScheme: ColorScheme.dark(
+                primary: !isDarkMode? Color(0xffFE9654):Color(0xff00B2AE),
+                onSurface: !isDarkMode? Colors.black:Colors.white,
+                onPrimary: Colors.white,
+                surface:!isDarkMode? Color(0xffFE9654) :appColors.appBgColor2
+              ),
+              dialogBackgroundColor: !isDarkMode? Colors.grey.shade100 :appColors.appBgColor2
 
+            )
+            );
+      }
 
     );
 
@@ -65,6 +86,9 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return InkWell(
           onTap: ()
       {
@@ -91,11 +115,11 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       errorLeftRightMargin: 0,
       isTextFieldEnabled: false,
       capitalization: CapitalizationText.sentences,
-      enabledBorderColor: Color(0xff323446),
-      focusedBorderColor: Color(0xff323446),
+      enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+      focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
       cursorColor: Colors.grey,
       borderStyle: BorderStyle.none,
-      backgroundColor: Color(0xff323446),
+      backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
       inputKeyboardType: InputKeyboardTypeWithError.text,
       textInputAction: TextInputAction.next,
       hintText: "Date of Birth",
@@ -107,7 +131,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       textStyle: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: !isDarkMode?Colors.black:Colors.white,
       ),
       contentPadding: EdgeInsets.only(left: 25),
       inputFieldSuffixIcon: Padding(

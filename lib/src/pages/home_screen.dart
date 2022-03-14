@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
@@ -22,6 +23,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'filter_screen.dart';
 
@@ -53,6 +55,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     double toolBarHeight = 60;
 
     _searchField() {
@@ -70,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           isShowBottomErrorMsg: true,
           errorMessages: errorMessages['search']?.toString() ?? '',
           controllerT: controllers['search'],
-          borderRadius: 15,
+          borderRadius: 12,
           inputHeight: 45,
           isTextFieldEnabled: false,
           errorLeftRightMargin: 0,
@@ -78,9 +83,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
-          backgroundColor: Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
+          backgroundColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.done,
@@ -97,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             onPressed: () {},
             icon: Icon(
               CupertinoIcons.search,
-              color: Colors.white,
+              color: !isDarkMode? Colors.grey:Colors.white,
               size: 20,
             ),
           ),
@@ -290,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             titlePadding: EdgeInsets.only(
                               left: 16,
                               right: 16,
-                              bottom: 8,
+                              bottom: 5,
                             ),
                             background: Stack(
                               alignment: Alignment.center,

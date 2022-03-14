@@ -1,4 +1,5 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
@@ -69,9 +70,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
 
 
-    return ContainerMenuPage(
-      // bottomBarSafeAreaColor: Colors.transparent,
+    return ContainerFirst(
+      bottomBarSafeAreaColor: appColors.appBgColor2,
       contextCurrentView: context,
+      isOverLayStatusBar: true,
       // appBackgroundColor: Colors.white,
       // scrollPadding: EdgeInsets.only(bottom: 81),
       /* statusBarColor: Colors.amber,

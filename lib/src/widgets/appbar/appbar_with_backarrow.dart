@@ -1,5 +1,7 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 PreferredSizeWidget appBarWithBackArrow(
     {double height = kToolbarHeight,bool isDisplayActions = true,
@@ -8,6 +10,7 @@ PreferredSizeWidget appBarWithBackArrow(
       bool isTrailingIconVisible = true,
       bool isLeadingIconVisible = true,
       Color leadingIconColor = Colors.white,
+      Color backgroundColor = Colors.white,
       Size  leadingIconSize = const Size(21, 21),
       EdgeInsetsGeometry?  leadingPadding,
       Widget? trailingIcon,
@@ -15,7 +18,8 @@ PreferredSizeWidget appBarWithBackArrow(
       TextStyle textStyle = const TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: Color(0xff828588)),
     }) {
 
-
+  var brightness = SchedulerBinding.instance!.window.platformBrightness;
+  bool isDarkMode = brightness == Brightness.dark;
 
   Widget _action = Row(children: [
     Container(
@@ -64,48 +68,53 @@ PreferredSizeWidget appBarWithBackArrow(
 
   return PreferredSize(
       preferredSize: Size.fromHeight(0),
-      child: Material(
-        elevation: 0,
-        color: Colors.transparent,
-        child: Padding(
-          padding:EdgeInsets.only(top: 10),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: leadingPadding ?? EdgeInsets.only(left: isLeadingIconVisible ? 10.0 :60,
-                    right: 10,bottom: 10),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Visibility(
-                      visible: isLeadingIconVisible,
-                      child: _leading),
-                ),
-              ),
-              Visibility(
-                  visible: isTitleVisible,
+      child: Card(
+        color: !isDarkMode ? appColors.appBgColor4 :appColors.appBgColor2 ,
+        margin: EdgeInsets.only(bottom: 0.6),
+        elevation: 0.8,
+        child: Material(
+          elevation: 0,
+          color: Colors.transparent,
+          child: Padding(
+            padding:EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: leadingPadding ?? EdgeInsets.only(left: isLeadingIconVisible ? 10.0 :60,
+                      right: 10,bottom: 10),
                   child: Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 8.0),
-                        child: _title,
-                      ))),
-              Padding(
-                padding: EdgeInsets.only(
-                    right: isTrailingIconVisible ? 12.0
-                        :80,bottom: 15),
-                child: Visibility(
-                  visible: isTrailingIconVisible,
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: _action,
+                    alignment: Alignment.centerLeft,
+                    child: Visibility(
+                        visible: isLeadingIconVisible,
+                        child: _leading),
                   ),
                 ),
-              ),
+                Visibility(
+                    visible: isTitleVisible,
+                    child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 8.0),
+                          child: _title,
+                        ))),
+                Padding(
+                  padding: EdgeInsets.only(
+                      right: isTrailingIconVisible ? 12.0
+                          :80,bottom: 15),
+                  child: Visibility(
+                    visible: isTrailingIconVisible,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: _action,
+                    ),
+                  ),
+                ),
 
-            ],
+              ],
+            ),
           ),
         ),
       )

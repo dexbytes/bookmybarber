@@ -4,7 +4,6 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
-import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/date_picker.dart';
@@ -13,6 +12,7 @@ import 'package:base_flutter_app/src/widgets/terms_and_condition_row.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -94,6 +94,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     bool isChecked = false;
 
     _welcomeTextView() {
@@ -249,7 +251,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _userNameField() {
       return Container(
         padding: EdgeInsets.only(
-            left: 22,right: 22,top: 10
+            left: 22,right: 22,top: 20
         ),
         width: MediaQuery.of(context).size.width,
         child: CommonTextFieldWithError(
@@ -264,9 +266,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor:Color(0xff323446),
-          backgroundColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.next,
@@ -286,7 +288,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           contentPadding: EdgeInsets.only(left: 25),
           onTextChange: (value) {
@@ -319,10 +321,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor:Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.next,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
           hintText: "Email address",
@@ -334,7 +336,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           inputFieldSuffixIcon: Padding(
             padding: EdgeInsets.only(right: 10),
@@ -391,10 +393,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               errorLeftRightMargin: 0,
               capitalization: CapitalizationText.sentences,
               cursorColor: Colors.grey,
-              enabledBorderColor: Color(0xff323446),
-              focusedBorderColor: Color(0xff323446),
+              enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+              focusedBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
               textInputAction: TextInputAction.done,
-              backgroundColor: Color(0xff323446),
+              backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
               borderStyle: BorderStyle.none,
               inputKeyboardType: InputKeyboardTypeWithError.email,
               obscureText: hideNewPassword,
@@ -407,7 +409,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               textStyle: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white,
+                color: !isDarkMode? Colors.black: Colors.white,
               ),
               contentPadding: EdgeInsets.only(left: 25),
               inputFieldSuffixIcon: Padding(
@@ -452,11 +454,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
           autoFocus: false,
           errorMsgHeight: 20,
           errorLeftRightMargin: 0,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           cursorColor: Colors.grey,
           borderStyle: BorderStyle.none,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           inputKeyboardType: InputKeyboardTypeWithError.phone,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
           // textStyle: _appStyle.labelTextStyle(),
@@ -469,7 +471,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           // inputFieldSuffixIcon:controllers['phone']!.text.isEmpty
           //     ?Container(height: 0,width: 0,)
@@ -493,10 +495,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width/4.5,
+                      left: MediaQuery.of(context).size.width/4.1,
                       top: 10,
                       bottom: 10,
-                      right: 15
+                      right: 10
                   ),
                   child: VerticalDivider(
                     width: 10,
@@ -517,16 +519,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   showFlagDialog: true,
                   showDropDownButton: true,
                   showOnlyCountryWhenClosed: false,
-                  dialogBackgroundColor: Color(0xff212327),
+                  dialogBackgroundColor:!isDarkMode? Colors.white:Color(0xff212327),
                   dialogTextStyle: TextStyle(
                       fontSize: 16,
-                      color:Color(0xffFE9654)),
+                      color: !isDarkMode? Colors.black:Color(0xffFE9654)),
                   closeIcon: Icon(Icons.clear,size: 26,color:Color(0xFFCCA76A)),
                   hideSearch: true,
                   favorite: ['+91','In','+1','US',"+61","+55","47"],
                   // showDropDownButton: true,
                   hideMainText: false,
-                  textStyle: TextStyle(fontSize: 15,color: Color(0xffFE9654)),
+                  textStyle: TextStyle(fontSize: 15,color: !isDarkMode? Colors.black:Color(0xffFE9654)),
                   // flagWidth: ,
                 ),
 
@@ -549,14 +551,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     bottomButton(){
       return Container(
-        margin: EdgeInsets.only(left: 35,right: 35,bottom: 5),
+        margin: EdgeInsets.only(left: 28,right: 28,bottom: 5),
         child: CommonButton(
           buttonName: "Sign Up",
           buttonHeight: 48,
-          buttonColor:Color(0xFFCCA76A),
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),
+          ),
           isBottomMarginRequired: false,
           backCallback: (){
             // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
@@ -591,6 +594,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       margin: EdgeInsets.only(bottom: 20),
       child: AlreadyHaveAccountRow(
         leftText: "Already have an account\?",
+        leftTextStyle: !isDarkMode? TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Color(0xff828588))
+        :TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),
         rightText: "Sign In",
         signInCallBack: (){
           Navigator.push(
@@ -604,12 +609,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     Widget selectGenderFiled = DropDownDataPicker();
     Widget locationFiled = DropDownDataPicker(
-      hint:"Location" ,
+      hint:"Location",
       itemList: items.map(buildMenuItem).toList(),
     );
 
 
-    Widget checkBox =Container(
+    Widget checkBox = Container(
       margin: EdgeInsets.only(left: 20,right: 11,bottom: 30,top: 5),
     child: CustomCheckBox(
       isChecked: isChecked,
@@ -617,7 +622,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         isChecked = value;
         print(isChecked);
       },
-      backgroundColor:Color(0xFFCCA76A),
+      backgroundColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
       borderColor: Colors.grey,
       icon: Icons.done,
       size: 20,
@@ -627,33 +632,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return ContainerFirst(
       reverse: false,
       contextCurrentView: context,
-      appBackgroundColor:Color(0xff212327),
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 68,
+      appBarHeight: 60,
       appBar: Container(
-        color: Color(0xff212327),
+        // color:AppColors().appBgColor3,
         child: appBarWithBackArrow(
-            isTitleVisible: false,
+            isTitleVisible: true,
             isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
+            title: "Create an Account",
+            textStyle: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+            ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
             onPress: (){
               Navigator.pop(context);
             }
         ),
       ),
       containChild: Container(
-        color:  Color(0xff212327),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _welcomeTextView(),
             _userNameField(),
             _emailField(),
             _phoneField(),
@@ -662,7 +670,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
              locationFiled,
             _passwordField(),
              checkBox,
-
             bottomButton(),
             signInText
           ],
@@ -680,7 +687,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: Colors.white,
+          color:!isDarkMode?  Colors.black:Colors.white,
         ),
       )
   );

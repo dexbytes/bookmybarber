@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/model/my_booking_raw_model.dart';
 import 'package:base_flutter_app/src/model/salon_list_raw_data_model.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class BookingCardView extends StatelessWidget {
@@ -13,6 +14,9 @@ class BookingCardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ListView.builder(
         scrollDirection: Axis.vertical,
         padding: EdgeInsets.only(left: 2,right: 2,top: 10,bottom: 80),
@@ -27,7 +31,7 @@ class BookingCardView extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
               padding: EdgeInsets.only(bottom: 5),
               decoration: BoxDecoration(
-                  color: AppColors().appBgColor3,
+                  color:!isDarkMode?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
                 borderRadius: BorderRadius.circular(8)
               ),
               child: Material(
@@ -43,7 +47,7 @@ class BookingCardView extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         height: 35,
                         decoration: BoxDecoration(
-                            color: Colors.black87,
+                            color: !isDarkMode?Colors.black87.withOpacity(0.7):Colors.black87,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight:  Radius.circular(8))
                         ),
                         child: Row(
@@ -101,7 +105,7 @@ class BookingCardView extends StatelessWidget {
                                             fontSize: 16,
                                             fontWeight: FontWeight.w700,
                                             height: 0,
-                                            color: Colors.white,
+                                            color:!isDarkMode? Colors.black : Colors.white,
 
                                           )
                                       )
@@ -111,7 +115,7 @@ class BookingCardView extends StatelessWidget {
                                       style: {'html': Style(
                                         fontSize: FontSize.large,
                                         lineHeight: LineHeight(0.5),
-                                        color: Colors.grey,
+                                        color: !isDarkMode? Colors.black.withOpacity(0.5) :Colors.grey,
                                         height: 18,
                                         width: MediaQuery
                                             .of(context)
@@ -124,14 +128,72 @@ class BookingCardView extends StatelessWidget {
                                     ),
                                     SizedBox(height: 2,),
                                     Padding(
-                                      padding: EdgeInsets.only(left: 8.0,top: 2),
+                                      padding: EdgeInsets.only(left: 8.0,top: 0),
                                       child: Row(
+                                        mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Text("Stylist:",style: TextStyle(color: Colors.grey, fontSize: 12.5,fontWeight:FontWeight.w500),),
+                                          Text("Stylist:",style: TextStyle(color: !isDarkMode? Colors.black.withOpacity(0.5) :Colors.grey, fontSize: 12.5,fontWeight:FontWeight.w500),),
                                           SizedBox(width: 2,),
-                                          Text(booking[index].stylistName,style: TextStyle(color: Colors.white,
-                                              fontSize: 13.5,fontWeight:FontWeight.w500 ),),
+                                          Text(booking[index].stylistName,style: TextStyle(
+                                              color:  !isDarkMode? Colors.black:Colors.white,
+                                              fontSize: 13.5,
+                                              fontWeight:FontWeight.w500 ),),
+                                          Expanded(
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              children: [
+                                              Material(
+                                                elevation: 0,
+                                                color: Colors.transparent,
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(bottom: 0.0,right: 2),
+                                                  child: Row(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      InkWell(
+                                                        onTap: (){},
+                                                        child: Container(
+                                                            padding: EdgeInsets.zero,
+                                                            margin: EdgeInsets.zero,
+                                                            height: 36,
+                                                            width: 36,
+                                                            decoration: BoxDecoration(
+                                                              shape: BoxShape.circle,
+                                                              color:!isDarkMode? Colors.black87.withOpacity(0.7):appColors.buttonColor,
+                                                            ),
+                                                            child:Align(
+                                                              alignment: Alignment.center,
+                                                              child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(13, 13)),
+                                                            )
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 8,),
+                                                      InkWell(
+                                                        onTap: (){},
+                                                        child: Container(
+                                                            padding: EdgeInsets.zero,
+                                                            margin: EdgeInsets.zero,
+                                                            height: 36,
+                                                            width: 36,
+                                                            decoration: BoxDecoration(
+                                                              shape: BoxShape.circle,
+                                                              color:!isDarkMode?Colors.black87.withOpacity(0.7) :appColors.buttonColor,
+                                                            ),
+                                                            child:Align(
+                                                              alignment: Alignment.center,
+                                                              child:iconApps.iconImage(imageUrl: iconApps.phoneIcon,
+                                                                  imageColor: Colors.white,
+                                                                  iconSize: Size(13, 13)),
+                                                            )
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
 
+                                            ],),
+                                          )
                                           // Expanded(
                                           //   child: Html(data:"Victor Black",
                                           //     style: {'html': Style(
@@ -150,55 +212,6 @@ class BookingCardView extends StatelessWidget {
                                           //   ),
                                           // ),
                                         ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Material(
-                              elevation: 0,
-                              color: Colors.transparent,
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 20.0,right: 2),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    InkWell(
-                                      onTap: (){},
-                                      child: Container(
-                                          padding: EdgeInsets.zero,
-                                          margin: EdgeInsets.zero,
-                                          height: 36,
-                                          width: 36,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color:AppColors().textHeadingColor1,
-                                          ),
-                                          child:Align(
-                                            alignment: Alignment.center,
-                                            child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(13, 13)),
-                                      )
-                                      ),
-                                    ),
-                                    SizedBox(width: 8,),
-                                    InkWell(
-                                      onTap: (){},
-                                      child: Container(
-                                          padding: EdgeInsets.zero,
-                                          margin: EdgeInsets.zero,
-                                          height: 36,
-                                          width: 36,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color:AppColors().textHeadingColor1,
-                                          ),
-                                          child:Align(
-                                            alignment: Alignment.center,
-                                            child:iconApps.iconImage(imageUrl: iconApps.phoneIcon,
-                                                imageColor: Colors.white,
-                                                iconSize: Size(13, 13)),
-                                      )
                                       ),
                                     ),
                                   ],

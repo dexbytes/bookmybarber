@@ -1,4 +1,6 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 
@@ -24,12 +26,14 @@ class _DropDownDataPickerState extends State<DropDownDataPicker> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     return Container(
         height: 46,
         margin: EdgeInsets.only(right:20,left: 20,bottom: 20),
         decoration: BoxDecoration(
-          color: Color(0xff323446),
+          color:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Padding(
@@ -50,7 +54,7 @@ class _DropDownDataPickerState extends State<DropDownDataPicker> {
                   ),
                 ),
               ),
-              dropdownColor:Color(0xff212327),
+              dropdownColor: !isDarkMode? Colors.grey.shade300 : Color(0xff212327),
               alignment: Alignment.bottomCenter,
               borderRadius: BorderRadius.circular(8),
               hint: Text( widget.hint ??"Select gender",style: TextStyle(
@@ -76,13 +80,14 @@ DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: Colors.white,
+          color: !isDarkMode?  Colors.black:Colors.white,
         ),
       )
   );
 
 }
-
+var brightness = SchedulerBinding.instance!.window.platformBrightness;
+bool isDarkMode = brightness == Brightness.dark;
 
 
 // For Female
@@ -162,6 +167,7 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
 
   }
 }
+
 
 
 

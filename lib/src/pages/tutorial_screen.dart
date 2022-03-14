@@ -115,7 +115,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
             effect: ExpandingDotsEffect(
               dotHeight:10,
               dotWidth: 10,
-              activeDotColor:Color(0xFFCCA76A),
+              activeDotColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
               dotColor: Colors.grey,
 
             )),
@@ -126,7 +126,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
           tutorialModelList[index].title,
           style: TextStyle(
             fontSize: 22,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w800,
             color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
           ),
         ),
@@ -140,8 +140,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: AppColors().textNormalColor6.withOpacity(0.8)
+              fontWeight: FontWeight.w500,
+              color: !isDarkMode? AppColors().textNormalColor8: AppColors().textNormalColor6.withOpacity(0.6),
             ),
           ),
         ),
@@ -154,14 +154,16 @@ class _TutorialScreenState extends State<TutorialScreen> {
 
     bottomButton(){
       return Container(
-        margin: EdgeInsets.only(left: 20,right: 20,bottom: 60),
+        margin: EdgeInsets.only(left: 20,right: 20,bottom: 45),
         child:CommonButton(
           buttonHeight: 50,
           buttonName: activeIndex == 2 ?"Get Started" :"Next",
-          buttonColor:AppColors().buttonColor,
+          buttonColor:  !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),
+
+          ),
           backCallback:(){
             if (     activeIndex == 2 ) {
 
@@ -181,75 +183,57 @@ class _TutorialScreenState extends State<TutorialScreen> {
       );
     }
 
-    return Scaffold(
-      backgroundColor:Color(0xff212327),
-      body: SafeArea(
-        top: false,
-        bottom: true,
-        child: Stack(
-          children: [
-            ContainerMenuPage(
-              // bottomBarSafeAreaColor: Colors.transparent,
-              contextCurrentView: context,
-              // appBackgroundColor: Colors.white,
-              // scrollPadding: EdgeInsets.only(bottom: 81),
-              /* statusBarColor: Colors.amber,
-                bottomBarSafeAreaColor: Colors.amber,*/
-              isSingleChildScrollViewNeed: false,
-              isFixedDeviceHeight: true,
-              appBarHeight: -1,
-              appBar: Container(
-                height: -1,
-                // color: Colors.white,
-                // child: appBarWithBackArrow(
-                //     isTitleVisible: false,
-                //     isTrailingIconVisible: false,
-                //     leadingIconColor: Colors.black,
-                //   onPress: (){}
-                // ),
-              ),
-              containChild: Container(
-                color: Color(0xff212327),
-                child: Stack(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+    return ContainerMenuPage(
+        // bottomBarSafeAreaColor: Colors.transparent,
+        contextCurrentView: context,
+        // appBackgroundColor: Colors.white,
+        // scrollPadding: EdgeInsets.only(bottom: 81),
+        /* statusBarColor: Colors.amber,
+          bottomBarSafeAreaColor: Colors.amber,*/
+        isSingleChildScrollViewNeed: false,
+        isFixedDeviceHeight: true,
+        appBarHeight: -1,
+        appBar: Container(
+          height: -1,
+        ),
+        containChild: Container(
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      // alignment: AlignmentDirectional.bottomCenter,
                       children: <Widget>[
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            // alignment: AlignmentDirectional.bottomCenter,
-                            children: <Widget>[
-                              Container(
-                                height: MediaQuery.of(context).size.height/1.1,
-                                child: PageView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  controller: _pageController,
-                                  // onPageChanged: _onPageChanged,
-                                  onPageChanged: (index) =>
-                                      setState(() => activeIndex = index),
+                        Container(
+                          height: MediaQuery.of(context).size.height/1.1,
+                          child: PageView.builder(
+                            scrollDirection: Axis.horizontal,
+                            controller: _pageController,
+                            // onPageChanged: _onPageChanged,
+                            onPageChanged: (index) =>
+                                setState(() => activeIndex = index),
 
-                                  itemCount: tutorialModelList.length,
-                                  itemBuilder: (ctx, index) => slideItem(index),
-                                ),
-                              ),
-                              SizedBox(height: 25),
-                            ],
+                            itemCount: tutorialModelList.length,
+                            itemBuilder: (ctx, index) => slideItem(index),
                           ),
                         ),
+                        SizedBox(height: 25),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: bottomButton())
-          ],
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: bottomButton())
+            ],
+          ),
         ),
-      ),
-    );
+      );
+
   }
 }
 

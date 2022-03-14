@@ -14,6 +14,7 @@ import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:base_flutter_app/src/widgets/slider_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'barber_profile_screen.dart';
 import 'filter_screen.dart';
@@ -48,6 +49,8 @@ class _NearByScreenState extends State<NearByScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     _searchField() {
       return Container(
@@ -66,9 +69,9 @@ class _NearByScreenState extends State<NearByScreen>
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor:AppColors().appBgColor2,
-          focusedBorderColor:AppColors().appBgColor2,
-          backgroundColor: AppColors().appBgColor2,
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.done,
@@ -118,7 +121,8 @@ class _NearByScreenState extends State<NearByScreen>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Hello, John Doe",style: TextStyle(fontSize: 20,
-                    color:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),),
+                    color: !isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                    fontWeight: FontWeight.w700),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -126,6 +130,7 @@ class _NearByScreenState extends State<NearByScreen>
                     Padding(
                       padding: EdgeInsets.only(bottom:3.0),
                       child: NotificationBal(
+                        iconDataColor: !isDarkMode? AppColors().black: AppColors().white,
                         alignment: Alignment.bottomCenter,
                         onTap: (){
                           FocusScope.of(context).requestFocus(FocusNode());
@@ -148,7 +153,9 @@ class _NearByScreenState extends State<NearByScreen>
                               widget: FilterScreen()),
                         );
                       },
-                      icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(20, 20)),
+                      icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,
+                          imageColor: !isDarkMode? AppColors().black: AppColors().white,
+                          iconSize: Size(20, 20)),
                     ) ,
                   ],
                 ),
@@ -174,9 +181,13 @@ class _NearByScreenState extends State<NearByScreen>
                       SizedBox(height: 5,),
                       Row(
                         children: [
-                          Icon(Icons.location_on,color: Colors.white,size: 18,),
+                          Icon(Icons.location_on,
+                            color:!isDarkMode? AppColors().buttonColor2: AppColors().textNormalColor6.withOpacity(0.6),
+                            size: 18,),
                           SizedBox(width: 8,),
-                          Text("San Francisco City",style: TextStyle(fontSize: 14,color: Colors.white,fontWeight: FontWeight.w600),),
+                          Text("San Francisco City",style: TextStyle(fontSize: 14,
+                              color: !isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                              fontWeight: FontWeight.w600),),
                         ],)
                     ],
                   ),
@@ -189,9 +200,13 @@ class _NearByScreenState extends State<NearByScreen>
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(CupertinoIcons.location_fill,color: Color(0xff00B2AE),size: 15,),
+                        Icon(CupertinoIcons.location_fill,
+                          color:!isDarkMode? AppColors().buttonColor2:Color(0xff00B2AE)
+                          ,size: 15,),
                         SizedBox(width: 4,),
-                        Text("CHANGE",style:TextStyle(fontSize: 11.5,color: Color(0xff00B2AE),fontWeight: FontWeight.w500))
+                        Text("CHANGE",style:TextStyle(fontSize: 11.5,
+                            color: !isDarkMode? AppColors().buttonColor2:Color(0xff00B2AE),
+                            fontWeight: FontWeight.w500))
                       ],
                     ),
                   ),
@@ -276,9 +291,9 @@ class _NearByScreenState extends State<NearByScreen>
               // scrollPadding: EdgeInsets.only(bottom: 110),
               isSingleChildScrollViewNeed: true,
               isFixedDeviceHeight: true,
-              appBarHeight: 210,
+              appBarHeight: 200,
               appBar: Container(
-                color: Color(0xff323446),
+                color: !isDarkMode?Colors.white:Color(0xff323446),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
