@@ -58,7 +58,7 @@ class _PaymentMethodCardWidgetState extends State<PaymentMethodCardWidget> {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: !isDarkMode ?Colors.grey.withOpacity(0.12):AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(12),
               border:!isDarkMode ?
               Border.fromBorderSide(

@@ -52,7 +52,8 @@ class _SalonGalleryViewScreenState extends State<SalonGalleryViewScreen> {
 
     return StaggeredGridView.countBuilder(
       controller: _scrollController,
-      padding: EdgeInsets.only(top:  widget.isDataScroll?widget.collapsedheight+15:15),
+      padding: EdgeInsets.only(bottom: 20,top: 20),
+      // padding: EdgeInsets.only(top:  widget.isDataScroll?widget.collapsedheight+0:0),
       physics:  widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       crossAxisCount: 3,
       itemCount: photo.length,

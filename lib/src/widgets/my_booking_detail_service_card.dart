@@ -44,7 +44,7 @@ class BookingDetailServicesCardView extends StatelessWidget {
       margin: EdgeInsets.only(right: 15,left: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
+        color: !isDarkMode ?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
 
       ),
       child: ListView.builder(

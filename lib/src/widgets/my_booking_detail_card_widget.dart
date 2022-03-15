@@ -22,7 +22,7 @@ class BookingDetailCardView extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 15,),
           padding: EdgeInsets.all(6),
           decoration: BoxDecoration(
-              color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(8)
           ),
           child: Material(
@@ -138,11 +138,13 @@ class BookingDetailCardView extends StatelessWidget {
                                         width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:!isDarkMode ?appColors.buttonColor2:appColors.buttonColor,
+                                          color:!isDarkMode ?appColors.grey.withOpacity(0.35):appColors.buttonColor,
                                         ),
                                         child:Align(
                                           alignment: Alignment.center,
-                                          child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(18, 18)),
+                                          child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,
+                                              imageColor:!isDarkMode ?Colors.black:Colors.white,
+                                              iconSize: Size(17, 17)),
                                         )
                                     ),
                                   ),
@@ -156,13 +158,13 @@ class BookingDetailCardView extends StatelessWidget {
                                         width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:!isDarkMode ?appColors.buttonColor2:appColors.buttonColor,
+                                          color:!isDarkMode ?appColors.grey.withOpacity(0.35):appColors.buttonColor,
                                         ),
                                         child:Align(
                                           alignment: Alignment.center,
                                           child:iconApps.iconImage(imageUrl: iconApps.phoneIcon,
-                                              imageColor: Colors.white,
-                                              iconSize: Size(18, 18)),
+                                              imageColor: !isDarkMode ?Colors.black:Colors.white,
+                                              iconSize: Size(17, 17)),
                                         )
                                     ),
                                   ),

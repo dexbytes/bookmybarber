@@ -116,10 +116,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
-              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: !isDarkMode? Colors.white:Color(0xff828588),
+                  color: !isDarkMode? Colors.black:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [
@@ -159,10 +159,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
-              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: !isDarkMode?Colors.white:Color(0xff828588),
+                  color: !isDarkMode?Colors.black:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [
@@ -204,10 +204,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
-              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.grey.withOpacity(0.15):AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: !isDarkMode?Colors.white:Color(0xff828588),
+                  color: !isDarkMode?Colors.black:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [

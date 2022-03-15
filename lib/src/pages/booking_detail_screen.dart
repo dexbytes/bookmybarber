@@ -70,7 +70,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           margin: EdgeInsets.only(right: 15,left: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
-            color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
+            color: !isDarkMode ?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
 
           ),
           child: Container(
@@ -136,7 +136,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
           margin: EdgeInsets.symmetric(horizontal: 15,),
           decoration: BoxDecoration(
-              color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(8)
           ),
           child: Container(

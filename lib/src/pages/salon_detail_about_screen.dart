@@ -131,7 +131,11 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       physics: widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       children: [
         SizedBox(height:  widget.isDataScroll?widget.collapsedheight:0,),
-      widget.isBarberInfoShow? BarberCompanyInfoRow():Column(
+      widget.isBarberInfoShow?
+      BarberCompanyInfoRow(
+        rightTitleTextStyle:  TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color:!isDarkMode? Colors.black:Colors.white),
+        leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode? Colors.black:Colors.white),)
+     :Column(
         children: [
           SeeAllTextRow(
             margin: EdgeInsets.only(left: 20,top: 20,bottom: 10),

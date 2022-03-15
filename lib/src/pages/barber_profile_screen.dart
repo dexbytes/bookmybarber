@@ -86,7 +86,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     bool isDarkMode = brightness == Brightness.dark;
 
     double toolBarHeight = 60;
-    double expandedHeight = MediaQuery.of(context).size.height /1.96;
+    double expandedHeight = MediaQuery.of(context).size.height /1.9;
     collapsedHeight =  toolBarHeight + 50;
 
 
@@ -321,7 +321,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                             SalonDetailAboutScreen(
                                               isBarberInfoShow: true,
                                               isDataScroll: isAppBarCollapsed,
-                                              collapsedheight:collapsedHeight,
+                                              // collapsedheight:collapsedHeight,
                                               onPhotoClickCallBack: (){
                                                 setState(() {
                                                   selectedTab = 1;
@@ -330,7 +330,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                                 });
                                               },
                                             ),
-                                            SalonGalleryViewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
+                                            SalonGalleryViewScreen(isDataScroll: isAppBarCollapsed,),
                                             SalonDetailReviewScreen(isDataScroll: isAppBarCollapsed,collapsedheight:collapsedHeight),
 
                                           ],

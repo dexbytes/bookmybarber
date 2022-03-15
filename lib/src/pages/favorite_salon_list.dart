@@ -42,8 +42,8 @@ class _FavoriteSalonScreenState extends State<FavoriteSalonScreen> {
       appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: appColors.appBgColor2,
+      bottomBarSafeAreaColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+      statusBarColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/

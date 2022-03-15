@@ -31,7 +31,7 @@ class BookingCardView extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
               padding: EdgeInsets.only(bottom: 5),
               decoration: BoxDecoration(
-                  color:!isDarkMode?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
+                  color:!isDarkMode?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
                 borderRadius: BorderRadius.circular(8)
               ),
               child: Material(
@@ -47,7 +47,7 @@ class BookingCardView extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         height: 35,
                         decoration: BoxDecoration(
-                            color: !isDarkMode?Colors.black87.withOpacity(0.7):Colors.black87,
+                            color: !isDarkMode?Colors.grey.withOpacity(0.18):Colors.black87,
                             borderRadius: BorderRadius.only(topLeft: Radius.circular(8),topRight:  Radius.circular(8))
                         ),
                         child: Row(
@@ -55,21 +55,25 @@ class BookingCardView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.access_time,size: 14,color: Colors.white,),
+                                Icon(Icons.access_time,size: 14,color:!isDarkMode? Colors.black:Colors.white,),
                               SizedBox(width: 5,),
                               Text("${booking[index].date} At",
-                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Colors.white ),
+                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color:!isDarkMode? Colors.black:Colors.white,),
                               ),
                                 SizedBox(width: 5,),
                               Text(booking[index].time,
-                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: Colors.white ),
+                              style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: !isDarkMode? Colors.black:Colors.white,),
                               )
                               ],
                             ),
                             Text(booking[index].status ?"Accepted" : "Pending",
-                            style:booking[index].status
-                                ? TextStyle(fontSize:15,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1 )
-                                : TextStyle(fontSize:15,fontWeight: FontWeight.w500,color:Colors.grey )
+                            style:!isDarkMode?
+                            booking[index].status
+                                ? TextStyle(fontSize:15.5,fontWeight: FontWeight.w600,color:Colors.green )
+                                : TextStyle(fontSize:15.5,fontWeight: FontWeight.w500,color:AppColors().textNormalColor8)
+                                : booking[index].status
+                                ? TextStyle(fontSize:15.5,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1 )
+                                : TextStyle(fontSize:15.5,fontWeight: FontWeight.w500,color:Colors.grey )
                             )
                           ],
                         ),
@@ -159,11 +163,13 @@ class BookingCardView extends StatelessWidget {
                                                             width: 36,
                                                             decoration: BoxDecoration(
                                                               shape: BoxShape.circle,
-                                                              color:!isDarkMode? Colors.black87.withOpacity(0.7):appColors.buttonColor,
+                                                              color:!isDarkMode? Colors.black87.withOpacity(0.2):appColors.buttonColor,
                                                             ),
                                                             child:Align(
                                                               alignment: Alignment.center,
-                                                              child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,iconSize: Size(13, 13)),
+                                                              child:iconApps.iconImage(imageUrl: iconApps.bottomMenuChatIcon,
+                                                                  imageColor: !isDarkMode?Colors.black87:appColors.white,
+                                                                  iconSize: Size(13, 13)),
                                                             )
                                                         ),
                                                       ),
@@ -177,12 +183,12 @@ class BookingCardView extends StatelessWidget {
                                                             width: 36,
                                                             decoration: BoxDecoration(
                                                               shape: BoxShape.circle,
-                                                              color:!isDarkMode?Colors.black87.withOpacity(0.7) :appColors.buttonColor,
+                                                              color:!isDarkMode?Colors.black87.withOpacity(0.2) :appColors.buttonColor,
                                                             ),
                                                             child:Align(
                                                               alignment: Alignment.center,
                                                               child:iconApps.iconImage(imageUrl: iconApps.phoneIcon,
-                                                                  imageColor: Colors.white,
+                                                                  imageColor: !isDarkMode?Colors.black87:appColors.white,
                                                                   iconSize: Size(13, 13)),
                                                             )
                                                         ),
