@@ -71,7 +71,7 @@ PreferredSizeWidget appBarWithBackArrow(
       child: Card(
         color: !isDarkMode ? appColors.appBgColor4 :appColors.appBgColor2 ,
         margin: EdgeInsets.only(bottom: 0.6),
-        elevation: 0.8,
+        elevation: 0.6,
         child: Material(
           elevation: 0,
           color: Colors.transparent,

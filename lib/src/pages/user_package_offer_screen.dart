@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class PackageOfferScreen extends StatefulWidget {
   @override
@@ -15,11 +16,16 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     Widget package = Container(
       margin: EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height,
       child: PackageCardWidget(
+        titleTextStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,
+            color: !isDarkMode?  Colors.black :Colors.white,
+            height: 0.5),
         onCardClickCallBack: (){
         Navigator.push(
           context,
@@ -31,30 +37,27 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
 
 
     return ContainerFirst(
-      appBackgroundColor:  Color(0xff212327),
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: Color(0xff212327),
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight: 66,
-      appBar: Container(
-        color: Color(0xff212327),
+      appBarHeight: 60,
+      appBar:  Container(
+        // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            leadingIconColor:Color(0xFFCCA76A),
-            leadingPadding: EdgeInsets.only(left: 12.0,bottom: 8,top: 0,right: 15),
-            title: "Package & Offers",
+            title: "Packages & Offers",
             textStyle: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: AppColors().textHeadingColor1
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
             ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
             onPress: (){
               Navigator.pop(context);
             }

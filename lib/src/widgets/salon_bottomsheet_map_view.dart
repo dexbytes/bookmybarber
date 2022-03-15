@@ -10,6 +10,7 @@ import 'package:base_flutter_app/src/widgets/bottomsheet_card_view.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 
@@ -30,6 +31,9 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
 
 
 
@@ -60,7 +64,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
             return Container(
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: Color(0xff212327),
+                  color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
                   border: Border(bottom: BorderSide(width: 0.3,color: Colors.grey))
               ),
               child: Row(
@@ -68,7 +72,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                   Container(
                     height: 100.0,
                     width: 115.0,
-                    margin: EdgeInsets.all(6),
+                    margin: EdgeInsets.all(3),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: CachedNetworkImage(
@@ -96,7 +100,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
                                         height: 0,
-                                        color: Colors.white,
+                                        color:!isDarkMode ?Colors.black:Colors.white,
                                       )
                                   )
                                   },
@@ -143,9 +147,10 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                           //  Text("288 McClure Court, Arkansas"),
                           SizedBox(height: 5,),
                           StarRatingBar(
+                            color: !isDarkMode ? Color(0xffFD6C57):Color(0xffE4B343),
                             padding: EdgeInsets.only(left: 5, bottom: 0),
                             removeViewCount: true,
-                            itemRatingTextStyle: TextStyle(color: Colors.white),
+                            itemRatingTextStyle: TextStyle(color: !isDarkMode ?Colors.black:Colors.white),
                             initialRating:salonList[index].rating,
                           ),
                           Row(
@@ -156,7 +161,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                                   style: {'html': Style(
                                     fontSize: FontSize.medium,
                                     lineHeight: LineHeight(0.6),
-                                    color: Color(0xFFCCA76A),
+                                    color:  !isDarkMode ? Color(0xffFE9654):AppColors().textHeadingColor1,
                                     height: 20,
                                     width: MediaQuery
                                         .of(context)
@@ -172,11 +177,7 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                               // Text("8:30AM - 9:00PM"),
                               ElevatedButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    SlideRightRoute(
-                                        widget: BookAppointmentScreen()),
-                                  );
+                                  // this.onBookClickCallBack.call();
                                 },
                                 child: Text(
                                     "Book"
@@ -184,8 +185,8 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(50)),
-                                    primary: Color(0xffE4B343),
-                                    onPrimary: Colors.black,
+                                    primary: !isDarkMode ? Color(0xffFE9654):Color(0xffE4B343),
+                                    onPrimary: !isDarkMode ?Colors.white :Colors.black,
                                     minimumSize: Size(70, 30)),
                               ),
                             ],

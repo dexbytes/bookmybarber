@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class CategoriesListView extends StatefulWidget {
@@ -85,6 +86,8 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   ];
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     return ListView.builder(
       scrollDirection: Axis.vertical,
@@ -142,7 +145,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text( categories[index].title,
-                                style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white)),
+                                style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:!isDarkMode ?Colors.black:Colors.white,)),
                             InkWell(
                               onTap: (){
                                 this.widget.onCardCallBack?.call();

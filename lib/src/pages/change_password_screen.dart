@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class ChangePasswordScreen extends StatefulWidget {
@@ -59,6 +60,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     appDimens.appDimensFind(context: context);
 
     bool _validateFields({isButtonClicked = false}) {
@@ -206,10 +209,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "SAVE",
-          buttonColor: AppColors().buttonColor,
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),),
           backCallback: (){
             setState(() {
 
@@ -269,10 +272,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           errorLeftRightMargin: 0,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.next,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.password,
           obscureText: hideCurrentPassword,
@@ -289,7 +292,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           contentPadding: EdgeInsets.only(left: 25),
           inputFieldSuffixIcon: Padding(
@@ -334,10 +337,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           errorLeftRightMargin: 0,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.next,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.password,
           obscureText: hideNewPassword,
@@ -350,10 +353,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             fontWeight: FontWeight.w500,
             color: Color(0xff828588),
           ),
-          textStyle: TextStyle(
+          textStyle:TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           contentPadding: EdgeInsets.only(left: 25),
           inputFieldSuffixIcon: Padding(
@@ -397,10 +400,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           errorLeftRightMargin: 0,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.done,
-          backgroundColor: Color(0xff323446),
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.password,
           obscureText: hideConfirmPassword,
@@ -423,7 +426,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode? Colors.black:Colors.white,
           ),
           contentPadding: EdgeInsets.only(left: 25),
           onTextChange: (value) {
@@ -444,28 +447,27 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
 
     //Return main Ui view
     return ContainerFirst(
-        appBackgroundColor:  Color(0xff212327),
+        appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
         reverse: false,
         contextCurrentView: context,
-        bottomBarSafeAreaColor: Color(0xff212327),
-        statusBarColor: appColors.appBgColor2,
         isSingleChildScrollViewNeed: false,
         isFixedDeviceHeight: false,
         appBar: Container(
-          color:appColors.appBgColor2,
-          child: Padding(
-            padding: EdgeInsets.only(bottom: 5.0),
-            child: appBarWithBackArrow(
-                isTitleVisible: true,
-                textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
-                isTrailingIconVisible: false,
-                leadingIconColor:Color(0xFFCCA76A),
-                title: "Change Password",
-                leadingPadding: EdgeInsets.only(left: 12.0,bottom: 8,top: 0,right: 20),
-                onPress: (){
-                  Navigator.pop(context);
-                }
-            ),
+          // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+          child: appBarWithBackArrow(
+              isTitleVisible: true,
+              isTrailingIconVisible: false,
+              title: "Change Password",
+              textStyle: TextStyle(
+                fontSize: 21,
+                fontWeight: FontWeight.w700,
+                color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+              ),
+              leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+              leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
+              onPress: (){
+                Navigator.pop(context);
+              }
           ),
         ),
         containChild:

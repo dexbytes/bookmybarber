@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/model/salon_list_raw_data_model.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class SalonDataListView extends StatelessWidget {
@@ -12,9 +13,12 @@ class SalonDataListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ListView.builder(
-      scrollDirection: Axis.vertical,
-      padding: EdgeInsets.only(left: 5,right: 5),
+    scrollDirection: Axis.vertical,
+    padding: EdgeInsets.only(left: 1,right: 1,bottom: 70),
     physics: ClampingScrollPhysics(),
     itemCount: salonList.length,
     shrinkWrap: true,
@@ -22,8 +26,8 @@ class SalonDataListView extends StatelessWidget {
       return Container(
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: AppColors().appBgColor2,
-        border: Border(bottom: BorderSide(width: 0.2,color: Colors.grey))
+        color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+        border: Border(bottom: BorderSide(width: 0.3,color: Colors.grey))
       ),
       child: Row(
         children: [
@@ -58,7 +62,7 @@ class SalonDataListView extends StatelessWidget {
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               height: 0,
-                              color: Colors.white,
+                              color:!isDarkMode ?Colors.black:Colors.white,
                             )
                           )
                           },
@@ -105,9 +109,10 @@ class SalonDataListView extends StatelessWidget {
                   //  Text("288 McClure Court, Arkansas"),
                   SizedBox(height: 5,),
                   StarRatingBar(
+                    color: !isDarkMode ? Color(0xffFD6C57):Color(0xffE4B343),
                     padding: EdgeInsets.only(left: 5, bottom: 0),
                     removeViewCount: true,
-                    itemRatingTextStyle: TextStyle(color: Colors.white),
+                    itemRatingTextStyle: TextStyle(color: !isDarkMode ?Colors.black:Colors.white),
                     initialRating:salonList[index].rating,
                   ),
                   Row(
@@ -118,7 +123,7 @@ class SalonDataListView extends StatelessWidget {
                           style: {'html': Style(
                             fontSize: FontSize.medium,
                             lineHeight: LineHeight(0.6),
-                            color: AppColors().textHeadingColor1,
+                            color:  !isDarkMode ? Color(0xffFE9654):AppColors().textHeadingColor1,
                             height: 20,
                             width: MediaQuery
                                 .of(context)
@@ -142,8 +147,8 @@ class SalonDataListView extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50)),
-                            primary: Color(0xffE4B343),
-                            onPrimary: Colors.black,
+                            primary: !isDarkMode ? Color(0xffFE9654):Color(0xffE4B343),
+                            onPrimary: !isDarkMode ?Colors.white :Colors.black,
                             minimumSize: Size(70, 30)),
                       ),
                     ],

@@ -1,6 +1,7 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class PackageServicesList extends StatelessWidget {
@@ -43,6 +44,9 @@ class PackageServicesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -66,7 +70,7 @@ class PackageServicesList extends StatelessWidget {
                       iconApps.iconImage(imageUrl: iconApps.rightIcon,imageColor:Color(0xffCCA76A),iconSize: Size(13, 13)),
                       SizedBox(width: 10,),
                       Text(services[index].title,
-                      style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.w600,),
+                      style: TextStyle(fontSize: 16,color: !isDarkMode?  Colors.black: Colors.white,fontWeight: FontWeight.w600,),
                       )
                     ],
                   )

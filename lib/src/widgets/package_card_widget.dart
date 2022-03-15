@@ -1,8 +1,10 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/model/home_card_model.dart';
 import 'package:base_flutter_app/src/model/pakage_raw_data_model.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 // ignore: must_be_immutable
@@ -29,6 +31,9 @@ class PackageCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(right: 10,left: 10,bottom: 110),
@@ -89,7 +94,7 @@ class PackageCardWidget extends StatelessWidget {
                                 ),
                               ),
                               Text("Book Now",
-                                style:TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Color(0xFFCCA76A)),)
+                                style:TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: !isDarkMode? appColors.textHeadingColor2:Color(0xFFCCA76A)),)
                             ],
                           ),
 
@@ -105,7 +110,7 @@ class PackageCardWidget extends StatelessWidget {
                                 ),
                               ),
                               Text("\$${package[index].price}",
-                                style:TextStyle(fontSize: 12.5,fontWeight: FontWeight.w600,color: Colors.white),)
+                                style:TextStyle(fontSize: 13,fontWeight: FontWeight.w600,color: !isDarkMode?  Colors.black :Colors.white,),)
                             ],
                           ),
 

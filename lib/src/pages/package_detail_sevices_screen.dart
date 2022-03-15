@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/widgets/package_detail_services_list.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class PackageDetailServicesScreen extends StatefulWidget {
   final double price;
@@ -19,6 +20,9 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     Size size = MediaQuery.of(context).size;
 
     _topView() {
@@ -70,7 +74,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
+                  color: !isDarkMode?  Colors.black :AppColors().textHeadingColor1
               ),
               textAlign: TextAlign.start,
             ),
@@ -95,7 +99,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
                   fontSize: 15,
                   height: 1.4,
                   fontWeight: FontWeight.w500,
-                  color: AppColors().textNormalColor6,
+                  color:!isDarkMode?  Colors.black :AppColors().textNormalColor6,
               ),
               textAlign: TextAlign.start,
             )
@@ -150,7 +154,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
-            color: AppColors().appBgColor2,
+            color:!isDarkMode?  Colors.white :AppColors().appBgColor2,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25),
               topRight: Radius.circular(25),
@@ -180,13 +184,13 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
     );
 
     Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/7.5,
+      top: MediaQuery.of(context).size.height/7.9,
       child: Container(
         padding: EdgeInsets.only(top: 5),
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-          color: AppColors().appBgColor2,
+          color:!isDarkMode?  Colors.white :AppColors().appBgColor2,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
@@ -208,7 +212,7 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
 
 
     return Scaffold(
-      backgroundColor: AppColors().appBgColor2,
+      backgroundColor: !isDarkMode?  Colors.white :AppColors().appBgColor2,
       body: SafeArea(
         top: false,
         bottom: true,

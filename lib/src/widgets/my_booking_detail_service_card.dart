@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 // ignore: must_be_immutable
@@ -35,12 +36,15 @@ class BookingDetailServicesCardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Container(
       padding: EdgeInsets.only(left: 20 ,right: 20,top: 12,bottom: 5),
       margin: EdgeInsets.only(right: 15,left: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: cardColor?? AppColors().appBgColor3,
+        color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
 
       ),
       child: ListView.builder(
@@ -56,10 +60,10 @@ class BookingDetailServicesCardView extends StatelessWidget {
           children: [
             Text(service[index].serviceName, style: TextStyle(fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white)),
+                color:!isDarkMode ?Colors.black:Colors.white)),
             Text("\$${service[index].cost}", style: TextStyle(fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white),),
+                color: !isDarkMode ?Colors.black:Colors.white),),
           ],
         ),
       );

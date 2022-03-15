@@ -122,6 +122,8 @@ class ProfileListRowWidget extends StatelessWidget {
   }
 
   void alertDialog(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     showDialog(
         barrierDismissible: false,
@@ -135,7 +137,7 @@ class ProfileListRowWidget extends StatelessWidget {
             child: Container(
               padding:EdgeInsets.only(top: 25,bottom: 25,left: 5,right: 5),
               decoration: BoxDecoration(
-                  color: appColors.appBgColor2,
+                  color: !isDarkMode? AppColors().white: appColors.appBgColor2,
                   borderRadius: BorderRadius.circular(20)
               ),
               child: Column(
@@ -145,7 +147,7 @@ class ProfileListRowWidget extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
-                        color: AppColors().textHeadingColor1
+                        color: !isDarkMode? AppColors().textHeadingColor2:AppColors().textHeadingColor1
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -158,13 +160,13 @@ class ProfileListRowWidget extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: Text(
-                            "No",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.white),
+                            "No",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color:!isDarkMode? AppColors().buttonColor2: Colors.white),
                         ),
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8)),
-                            primary: appColors.appBgColor2,
-                            side: BorderSide(width: 1.5,color: Color(0xffCCA76A),),
+                            primary: !isDarkMode? Colors.white:appColors.appBgColor2,
+                            side: BorderSide(width: 1.5,color: !isDarkMode? AppColors().buttonColor2:Color(0xffCCA76A),),
                             minimumSize: Size(70, 40)),
                       ),
                       SizedBox(width: 30,),
@@ -182,7 +184,7 @@ class ProfileListRowWidget extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8)),
-                            primary: Color(0xffCCA76A),
+                            primary: !isDarkMode? AppColors().buttonColor2:Color(0xffCCA76A),
                             minimumSize: Size(70, 40)),
                       ),
                     ],

@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class BookingDetailCardView extends StatelessWidget {
@@ -11,6 +12,9 @@ class BookingDetailCardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Material(
         color: Colors.transparent,
         elevation: 0,
@@ -18,7 +22,7 @@ class BookingDetailCardView extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 15,),
           padding: EdgeInsets.all(6),
           decoration: BoxDecoration(
-              color: AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(8)
           ),
           child: Material(
@@ -40,7 +44,7 @@ class BookingDetailCardView extends StatelessWidget {
                             fontSize: 17.5,
                             fontWeight: FontWeight.w600,
                             height: 0,
-                            color: Colors.white,
+                            color: !isDarkMode ?Colors.black:Colors.white,
                           ))
                       },
                     ),
@@ -49,7 +53,9 @@ class BookingDetailCardView extends StatelessWidget {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(left: 5.0),
-                          child: Icon(Icons.location_on,size: 16,color: Color(0xff3885FF),),
+                          child: Icon(Icons.location_on,size: 16,
+                            color:Color(0xff3885FF),
+                          ),
                         ),
                         Expanded(
                           child: Padding(
@@ -61,7 +67,7 @@ class BookingDetailCardView extends StatelessWidget {
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     height: 0,
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: !isDarkMode ?Colors.black:Colors.white.withOpacity(0.9),
                                   )
                               )},
                             ),
@@ -91,7 +97,10 @@ class BookingDetailCardView extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(left:10.0),
-                                child: Text("Stylist",style: TextStyle(color: Colors.grey, fontSize: 14,fontWeight: FontWeight.w500),),
+                                child: Text("Stylist",style: TextStyle(
+                                    color:!isDarkMode ?Colors.black.withOpacity(0.8):Colors.grey,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500),),
                               ),
                               SizedBox(height: 8,),
                               Html(data:"Julia Chan",
@@ -101,7 +110,7 @@ class BookingDetailCardView extends StatelessWidget {
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                       height: 0,
-                                      color: Colors.white,
+                                      color:!isDarkMode ?Colors.black:Colors.white,
                                     )
                                 )},
                               ),
@@ -129,7 +138,7 @@ class BookingDetailCardView extends StatelessWidget {
                                         width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:AppColors().textHeadingColor1,
+                                          color:!isDarkMode ?appColors.buttonColor2:appColors.buttonColor,
                                         ),
                                         child:Align(
                                           alignment: Alignment.center,
@@ -147,7 +156,7 @@ class BookingDetailCardView extends StatelessWidget {
                                         width: 40,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color:AppColors().textHeadingColor1,
+                                          color:!isDarkMode ?appColors.buttonColor2:appColors.buttonColor,
                                         ),
                                         child:Align(
                                           alignment: Alignment.center,

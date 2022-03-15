@@ -146,7 +146,7 @@ class _MainMapViewState extends State<MainMapView> {
                 Container(
                 margin: EdgeInsets.only(left: 12),
                 padding: EdgeInsets.zero,
-                height: 180,
+                height: 170,
                 width: 320,
                 child: Material(
                   color: Colors.transparent,
@@ -247,14 +247,14 @@ class _MainMapViewState extends State<MainMapView> {
           width: MediaQuery.of(context).size.width,
           child: GoogleMap(
             initialCameraPosition: CameraPosition(
-                target: LatLng(22.758940, 75.891418), zoom: 14.0),
+                target: LatLng(22.758940, 75.891418), zoom: 14),
             markers: Set.from(allMarkers),
             onMapCreated: _onMapCreated,
 
           ),
         ),
         Positioned(
-          bottom: 55.0,
+          bottom: 45.0,
           child: Container(
             height: 210.0,
             width: MediaQuery.of(context).size.width,
@@ -268,7 +268,7 @@ class _MainMapViewState extends State<MainMapView> {
           ),
         ),
         widget.isKeyBoardOpen?Container(): Positioned(
-       bottom: MediaQuery.of(context).size.height /10.5,
+       bottom: MediaQuery.of(context).size.height /10,
        right: 15,
          child: Theme(
               data: Theme.of(context).copyWith(
@@ -321,7 +321,7 @@ class _MainMapViewState extends State<MainMapView> {
         if (mapData.length == 0) {
           _controller!.animateCamera(
             CameraUpdate.newCameraPosition(
-              CameraPosition(target: LatLng(l.latitude??20.5937, l.longitude??78.9629),zoom: 15),
+              CameraPosition(target: LatLng(l.latitude??20.5937, l.longitude??78.9629),zoom: 14),
             ),
           );
         }

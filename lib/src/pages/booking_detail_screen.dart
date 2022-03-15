@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/my_booking_detail_card_widget.dart'
 import 'package:base_flutter_app/src/widgets/my_booking_detail_service_card.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class BookingDetailScreen extends StatefulWidget {
   const BookingDetailScreen({Key? key,}) : super(key: key);
@@ -18,6 +19,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
 
     Widget salonList =Container(
@@ -31,7 +34,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           children: [
             SeeAllTextRow(
               leftTitle: "Services",
-              leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),
+              leftTitleTextStyle: TextStyle(fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color:!isDarkMode ?Colors.black:Colors.white),
               isRightTextVisible: false,
             ),
             SizedBox(height: 5,),
@@ -41,12 +46,14 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     );
 
     Widget cost = Container(
-        height: 180,
+        height: 195,
         child: Column(
           children: [
             SeeAllTextRow(
-              leftTitle: "Price Details",
-              leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),
+              leftTitle: "Payment Details",
+              leftTitleTextStyle: TextStyle(fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color:!isDarkMode ?Colors.black:Colors.white),
               isRightTextVisible: false,
             ),
             SizedBox(height: 5,),
@@ -63,7 +70,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           margin: EdgeInsets.only(right: 15,left: 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
-            color: AppColors().appBgColor3,
+            color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
 
           ),
           child: Container(
@@ -73,10 +80,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               children: [
                 Text("Payment mode", style: TextStyle(fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: Colors.white)),
+                    color:!isDarkMode ?Colors.black: Colors.white)),
                 Text("Cash", style: TextStyle(fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color:AppColors().textHeadingColor1,),),
+                  color:!isDarkMode ?Colors.black: Colors.white),),
               ],
             ),
           ),
@@ -88,7 +95,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         height: 75,
         child: Container(
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
-          color: AppColors().appBgColor3,
+          color: !isDarkMode ?Colors.grey.shade100:AppColors().appBgColor3,
           child: Container(
             margin: EdgeInsets.only(bottom: 8),
             child: Row(
@@ -99,11 +106,12 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   children: [
                     Text("20 Jun 2022 at 1:00 PM", style: TextStyle(fontSize: 17.5,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white)),
+                        color: !isDarkMode ?Colors.black:Colors.white
+                    )),
                     SizedBox(height: 4,),
                     Text("Appointment ID: TONI123", style: TextStyle(fontSize: 13.5,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white)),
+                        color:!isDarkMode ?Colors.black:Colors.white)),
                   ],
                 ),
                 Container(
@@ -128,7 +136,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
           margin: EdgeInsets.symmetric(horizontal: 15,),
           decoration: BoxDecoration(
-              color: AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.35):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(8)
           ),
           child: Container(
@@ -136,18 +144,19 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                iconApps.iconImage(imageUrl: iconApps.discountIcon,imageColor: Colors.white,iconSize: Size(25, 25)),
+                iconApps.iconImage(imageUrl: iconApps.discountIcon,imageColor:!isDarkMode ?AppColors().red:AppColors().white
+                    ,iconSize: Size(25, 25)),
                 SizedBox(width: 10,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Save50", style: TextStyle(fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white)),
+                        color:!isDarkMode ?Colors.black:AppColors().white,)),
                     SizedBox(height: 2,),
                     Text("You saved additional \$50", style: TextStyle(fontSize: 12,
                         fontWeight: FontWeight.w400,
-                        color: AppColors().textHeadingColor1)),
+                        color: !isDarkMode ?AppColors().red:AppColors().textHeadingColor1)),
                   ],
                 ),
               ],
@@ -159,7 +168,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
 
     return ContainerFirst(
-      appBackgroundColor: AppColors().appBgColor2,
+      appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
       bottomBarSafeAreaColor: Color(0xff212327),
@@ -169,11 +178,11 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,
-      appBarHeight : 133,
+      appBarHeight : 135,
       appBar: Column(
         children: [
           Container(
-            color: AppColors().appBgColor3,
+            color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
             child: appBarWithBackArrow(
                 isTitleVisible: true,
                 leadingPadding: EdgeInsets.only(left: 10.0 ,
@@ -199,10 +208,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             salonList,
             SizedBox(height: 10,),
             services,
-            SizedBox(height: 15,),
-            coupon,
             SizedBox(height: 10,),
             cost,
+            SizedBox(height: 15,),
+            coupon,
             SizedBox(height: 20,),
             payment,
             SizedBox(height: 20,),

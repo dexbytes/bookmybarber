@@ -145,9 +145,9 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
 
     return widget.isShowBackArrow?ContainerFirst(
       contextCurrentView: context,
-      appBackgroundColor: appColors.appBgColor2,
-      statusBarColor: AppColors().appBgColor3,
-      /* statusBarColor: Colors.amber,
+        appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+        statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+        /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
       isSingleChildScrollViewNeed: true,
       isFixedDeviceHeight: true,

@@ -9,8 +9,12 @@ import 'package:base_flutter_app/src/widgets/notification_bell.dart';
 import 'package:base_flutter_app/src/widgets/salon_bottomsheet_map_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_map_custom/google_map_custom.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+
+import 'filter_screen.dart';
+import 'notification_screen.dart';
 
 class MapIntregationScreen extends StatefulWidget {
 
@@ -41,6 +45,8 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     _searchField() {
       return Container(
@@ -63,9 +69,9 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                 autoFocus: false,
                 capitalization: CapitalizationText.sentences,
                 cursorColor: Colors.grey,
-                enabledBorderColor:AppColors().appBgColor2,
-                focusedBorderColor:AppColors().appBgColor2,
-                backgroundColor: AppColors().appBgColor2,
+                enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
                 borderStyle: BorderStyle.none,
                 inputKeyboardType: InputKeyboardTypeWithError.text,
                 textInputAction: TextInputAction.next,
@@ -120,7 +126,7 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
               builder: (context) {
                 return SlidingSheetDialog(
                   elevation: 8,
-                  color: Color(0xff212327),
+                  color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
                   cornerRadius: 16,
                   snapSpec: const SnapSpec(
                     snap: true,
@@ -129,7 +135,7 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                   ),
                   builder: (context, state) {
                     return Material(
-                      color: Color(0xff212327),
+                      color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
                       child: Column(
                         children: [
                           GestureDetector(
@@ -141,7 +147,7 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                               Navigator.pop(context);
                             },
                             child: Container(
-                              color: Color(0xff212327),
+                              color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
                               margin: const EdgeInsets.only(
                                   top: 12, bottom: 10),
                               width: 50,
@@ -158,7 +164,8 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                             child: Text("Salons Nearby", style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.w600,
-                                color: AppColors().textHeadingColor1),
+                                color: !isDarkMode ? Colors.black:AppColors().textHeadingColor1)
+                              ,
                             ),
                           ),
                           SalonListBottomSheetScreen(),
@@ -194,9 +201,13 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                   SizedBox(height: 5,),
                   Row(
                     children: [
-                    Icon(Icons.location_on,color: Colors.white,size: 20,),
+                    Icon(Icons.location_on,
+                      color: !isDarkMode? AppColors().black: Colors.white,
+                      size: 20,),
                       SizedBox(width: 8,),
-                    Text("San Francisco City",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w600),),
+                    Text("San Francisco City",style: TextStyle(fontSize: 15,
+                        color:!isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                        fontWeight: FontWeight.w600),),
                       SizedBox(width: 8,),
                     Icon(CupertinoIcons.location_fill,color:  Color(0xffCCA76A),size: 18,)
                   ],)
@@ -210,14 +221,32 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                 Padding(
                   padding: EdgeInsets.only(bottom:3.0),
                   child: NotificationBal(
-                    alignment: Alignment.bottomCenter,onTap: (){},rightIconSize: 25,),
+                    iconDataColor: !isDarkMode? AppColors().black: AppColors().white,
+                    alignment: Alignment.bottomCenter,
+                    onTap: (){
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      Navigator.push(
+                        MainAppBloc.getDashboardContext,
+                        SlideRightRoute(
+                            widget: NotificationScreen()),
+                      );
+                    },),
                 ),
                 IconButton(
-                  splashRadius: 25,
+                  splashRadius: 20,
                   padding: EdgeInsets.zero,
                   alignment: Alignment.center,
-                  onPressed: (){},
-                  icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,iconSize: Size(25, 25)),
+                  onPressed: (){
+                    FocusScope.of(context).requestFocus(FocusNode());
+                    Navigator.push(
+                      MainAppBloc.getDashboardContext,
+                      SlideRightRoute(
+                          widget: FilterScreen()),
+                    );
+                  },
+                  icon:iconApps.iconImage(imageUrl: iconApps.filterIcon,
+                      imageColor: !isDarkMode? AppColors().black: AppColors().white,
+                      iconSize: Size(20, 20)),
                 ) ,
               ],
             ),
@@ -237,7 +266,7 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
             isFixedDeviceHeight: true,
             appBarHeight: 170,
             appBar: Container(
-              color: Color(0xff323446),
+              color: !isDarkMode? Colors.white :Color(0xff323446),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
