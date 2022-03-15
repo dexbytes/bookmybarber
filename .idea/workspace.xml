@@ -21,33 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/src/pages/main_map_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/google_map_custom/lib/src/pages/main_map_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/Barber_listview_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/Barber_listview_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/package_detail_sevices_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/Review_screen_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/Review_screen_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barber_specialist_circular_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/barbers_search_grid_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/barbers_search_grid_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/book_appointment_row_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/book_appointment_row_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/booking_detail_payment_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/booking_detail_payment_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/date_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/date_picker.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_address_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_address_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_screen_top_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_screen_top_row.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/dropdown_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/dropdown_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/photo_slider_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/photo_slider_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/services_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/services_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/faq_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/faq_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,38 +123,38 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1647329233503" />
-    <state width="1026" height="262" key="GridCell.Tab.0.bottom" timestamp="1647326025843">
+    <state width="1026" height="262" key="GridCell.Tab.0.bottom" timestamp="1647341377399">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
     <state width="1013" height="444" key="GridCell.Tab.0.bottom/0.25.1366.676@0.25.1366.676" timestamp="1646818233260" />
     <state width="1013" height="74" key="GridCell.Tab.0.bottom/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="262" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1647326025843" />
-    <state width="1026" height="262" key="GridCell.Tab.0.center" timestamp="1647326025843">
+    <state width="1026" height="262" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1647341377399" />
+    <state width="1026" height="262" key="GridCell.Tab.0.center" timestamp="1647341377398">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.center/0.25.1366.676@0.25.1366.676" timestamp="1646818233254" />
     <state width="1013" height="74" key="GridCell.Tab.0.center/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="262" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1647326025843" />
-    <state width="1026" height="262" key="GridCell.Tab.0.left" timestamp="1647326025843">
+    <state width="1026" height="262" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1647341377398" />
+    <state width="1026" height="262" key="GridCell.Tab.0.left" timestamp="1647341377397">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
     <state width="1013" height="444" key="GridCell.Tab.0.left/0.25.1366.676@0.25.1366.676" timestamp="1646818233252" />
     <state width="1013" height="74" key="GridCell.Tab.0.left/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="262" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1647326025843" />
-    <state width="1026" height="262" key="GridCell.Tab.0.right" timestamp="1647326025843">
+    <state width="1026" height="262" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1647341377397" />
+    <state width="1026" height="262" key="GridCell.Tab.0.right" timestamp="1647341377398">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.right/0.25.1366.676@0.25.1366.676" timestamp="1646818233258" />
     <state width="1013" height="74" key="GridCell.Tab.0.right/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="262" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1647326025843" />
+    <state width="1026" height="262" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1647341377398" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>

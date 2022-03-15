@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/model/faq_data_model.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class FaqScreen extends StatefulWidget {
@@ -82,12 +83,15 @@ class _FaqScreenState extends State<FaqScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ContainerFirst(
-      appBackgroundColor:  Color(0xff212327),
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: appColors.appBgColor2,
+      bottomBarSafeAreaColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+      statusBarColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
@@ -95,24 +99,24 @@ class _FaqScreenState extends State<FaqScreen> {
       isFixedDeviceHeight: true,
       appBarHeight: 60,
       appBar: Container(
-        color:appColors.appBgColor2,
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 5.0),
-          child: appBarWithBackArrow(
-              isTitleVisible: true,
-              textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
-              isTrailingIconVisible: false,
-              leadingIconColor:Color(0xFFCCA76A),
-              title: "Favorite Salon",
-              leadingPadding: EdgeInsets.only(left: 12.0,bottom: 8,top: 0,right: 15),
-              onPress: (){
-                Navigator.pop(context);
-              }
-          ),
+        // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+        child: appBarWithBackArrow(
+            isTitleVisible: true,
+            isTrailingIconVisible: false,
+            title: "Help & Support",
+            textStyle: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w700,
+              color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+            ),
+            leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
+            onPress: (){
+              Navigator.pop(context);
+            }
         ),
       ),
       containChild: Container(
-        color: appColors.appBgColor2,
         child: Stack(
           children: [
             Column(
@@ -130,6 +134,9 @@ class _FaqScreenState extends State<FaqScreen> {
 
 
   Widget blackIconTiles(){
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Container(
       padding: EdgeInsets.zero,
       margin:EdgeInsets.zero,
@@ -138,7 +145,7 @@ class _FaqScreenState extends State<FaqScreen> {
         children: [
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(top: 15.0),
+              padding: EdgeInsets.only(top: 0.0),
               child: ListView.builder(
                 padding: EdgeInsets.zero,
                 physics: ClampingScrollPhysics(),
@@ -161,13 +168,13 @@ class _FaqScreenState extends State<FaqScreen> {
                               msg: "Tapped on ${menu.title}",
                               fontSize: 14,
                               backgroundColor: Color(0xff828588),
-                              textColor: Colors.white,
+                              textColor: !isDarkMode? Colors.black:Colors.white,
                             ):Container();
                           });
                         },
                         // leading: Icon(cdm.icon,color: Colors.white),
                         title: Text("${menu.title}",
-                          style: TextStyle(color:appColors.white,fontSize: 16.5,fontWeight: FontWeight.w500),
+                          style: TextStyle(color:!isDarkMode? Colors.black:appColors.white,fontSize: 16.5,fontWeight: FontWeight.w500),
                         ),
                         trailing: menu.menuSubList.isEmpty?
                         Icon(selected?Icons.keyboard_arrow_down:Icons.keyboard_arrow_down,color: Colors.transparent,):
@@ -175,8 +182,9 @@ class _FaqScreenState extends State<FaqScreen> {
                         ),
                         children:[
                           Container(
-                            height: menu.menuSubList.isEmpty ? 0 : MediaQuery.of(context).size.height/6.2,
+                            height: menu.menuSubList.isEmpty ? 0 : MediaQuery.of(context).size.height/6.25,
                             child: ListView.builder(
+                              padding: EdgeInsets.zero,
                               physics: NeverScrollableScrollPhysics(),
                               itemCount: menu.menuSubList.length,
                               itemBuilder: (BuildContext context, int index) {
@@ -184,6 +192,10 @@ class _FaqScreenState extends State<FaqScreen> {
                                 DrawerSubMenu menu2 = menu.menuSubList[index];
                                 return Container(
                                   child:ListTile(
+                                    minLeadingWidth: 0,
+                                    minVerticalPadding:0,
+                                    horizontalTitleGap: 0,
+                                    contentPadding: EdgeInsets.only(left: 15,right: 15,top: 5),
                                     onTap: (){
                                       Fluttertoast.showToast(
                                           msg: "Tapped on ${menu2.title}",
@@ -193,7 +205,7 @@ class _FaqScreenState extends State<FaqScreen> {
                                       );
                                     },
                                     title: Text("${menu2.title}",
-                                      style: TextStyle(color: appColors.white.withOpacity(0.8),fontSize: 15.5,
+                                      style: TextStyle(color: !isDarkMode? Colors.black.withOpacity(0.75):appColors.white.withOpacity(0.8),fontSize: 15.5,
                                         fontWeight: FontWeight.w500,),textAlign: TextAlign.start,
                                     ),
                                   ),
