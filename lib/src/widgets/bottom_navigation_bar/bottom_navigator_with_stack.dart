@@ -334,7 +334,7 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
               padding: EdgeInsets.all(0),
               height: 30,
               //color: Color.fromARGB(255, 18, 124, 157),
-              child: iconApps.iconImage(imageUrl: values["deActiveIcon"],)),
+              child: iconApps.iconImage(imageUrl: values["deActiveIcon"],imageColor:!isDarkMode? Colors.black.withOpacity(0.6):Colors.grey)),
 
 
           // Icon(
@@ -441,7 +441,7 @@ class BNBCustomPainter extends CustomPainter {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     Paint paint = new Paint()
-      ..color = !isDarkMode? appColors.appBgColor2:appColors.appBgColor3//AppColors().appBgColor3
+      ..color = !isDarkMode? appColors.white.withOpacity(1):appColors.appBgColor3//AppColors().appBgColor3
       ..style = PaintingStyle.fill;
 
     Path path = Path();

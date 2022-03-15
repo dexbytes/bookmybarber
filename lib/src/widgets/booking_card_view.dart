@@ -31,7 +31,7 @@ class BookingCardView extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
               padding: EdgeInsets.only(bottom: 5),
               decoration: BoxDecoration(
-                  color:!isDarkMode?Colors.grey.withOpacity(0.10):AppColors().appBgColor3,
+                  color:!isDarkMode?Colors.grey.withOpacity(0.05):AppColors().appBgColor3,
                 borderRadius: BorderRadius.circular(8)
               ),
               child: Material(

@@ -20,24 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/generated_main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/favorite_salon_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/favorite_salon_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/serach_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/serach_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_cost_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_cost_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,11 +165,11 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1366.683@0.25.1366.683" timestamp="1645524399230" />
-    <state x="344" y="25" width="1022" height="548" key="find.popup" timestamp="1647344973006">
+    <state x="344" y="25" width="1022" height="548" key="find.popup" timestamp="1647350125628">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
-    <state x="344" y="25" width="1022" height="548" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1647344973006" />
+    <state x="344" y="25" width="1022" height="548" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1647350125628" />
     <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646284262349">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
