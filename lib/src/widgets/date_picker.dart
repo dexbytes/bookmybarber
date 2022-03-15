@@ -8,9 +8,10 @@ import 'package:intl/intl.dart';
 class DatePickerWidget extends StatefulWidget {
   final double errorHeight;
   final bool isShowMonthName;
+  final String? hintText;
   final Widget? child;
 
-  const DatePickerWidget({Key? key, this.isShowMonthName = false, this.errorHeight = 20, this.child}) : super(key: key);
+  const DatePickerWidget({Key? key, this.isShowMonthName = false, this.errorHeight = 20, this.child, this.hintText}) : super(key: key);
   @override
   _DatePickerWidgetState createState() => _DatePickerWidgetState();
 }
@@ -122,7 +123,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
       inputKeyboardType: InputKeyboardTypeWithError.text,
       textInputAction: TextInputAction.next,
-      hintText: "Date of Birth",
+      hintText: widget.hintText?? "Date of Birth",
       hintStyle:TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,

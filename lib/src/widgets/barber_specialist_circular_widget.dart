@@ -1,9 +1,11 @@
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/model/barber_name_row_data_model.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class BarberSpecialistCircularWidget extends StatefulWidget {
   final onClickCardCallBack;
@@ -43,6 +45,9 @@ class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircula
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return GridView.builder(
       scrollDirection: Axis.horizontal,
       padding:widget.padding,
@@ -79,7 +84,7 @@ class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircula
                   children: [
                     Card(
                       margin: EdgeInsets.zero,
-                      elevation: 3,
+                      elevation: 1.5,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80)
                       ),
@@ -90,14 +95,16 @@ class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircula
                           width: widget.width,
                           decoration: BoxDecoration(
                             border: widget.isBorderSelectVisible
-                                ? Border.all(width: 2,color: selectImage == index ? Color(0xff00B2AE):widget.borderColor )
-                                : Border.all(width: 2,color:widget.borderColor),
+                                ? !isDarkMode?
+                                 Border.all(width: 2,color: selectImage == index ? appColors.buttonColor2:widget.borderColor )
+                                :Border.all(width: 2,color: selectImage == index ? Color(0xff00B2AE):widget.borderColor )
+                                : Border.all(width: 2,color: !isDarkMode? appColors.buttonColor2:widget.borderColor),
                             shape: BoxShape.circle,
                             color: Colors.transparent,
                           ),
                           child: Container(
                               decoration: BoxDecoration(
-                                border: Border.all(width: 2,color: Color(0xff212327)),
+                                border: Border.all(width: 2,color: !isDarkMode? Colors.white:Color(0xff212327)),
                                 shape: BoxShape.circle,
                                 color: Colors.transparent,
                               ),
@@ -116,7 +123,10 @@ class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircula
                     Text( widget.isSecondDataVisible ? barber2[index].title: barber[index].title,
                       style:  widget.isBorderSelectVisible ?
                       widget.titleAfterSelectTextStyle ??
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: selectImage == index ? Color(0xff00B2AE) : Color(0xff828588))
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500,
+                              color:  !isDarkMode?
+                              selectImage == index ? appColors.buttonColor2: Color(0xff828588)
+                             :selectImage == index ? Color(0xff00B2AE) : Color(0xff828588))
                           :widget.titleTextStyle
                       ,maxLines: 1,),
                     // Html(data: barber[index].title,
@@ -160,7 +170,7 @@ class _BarberSpecialistCircularWidgetState extends State<BarberSpecialistCircula
                       height: 18,
                       width: 62,
                       decoration: BoxDecoration(
-                          color: Color(0xffE4B343),
+                          color: !isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
                           borderRadius: BorderRadius.circular(20)
                       ),
                       child: Text("FEATURED",

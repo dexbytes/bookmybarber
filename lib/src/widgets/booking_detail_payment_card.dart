@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class BookingDetailPaymentCard extends StatelessWidget {
@@ -10,8 +11,11 @@ class BookingDetailPaymentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Container(
-        color: AppColors().appBgColor3,
+        color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
         height: 152,
         padding: EdgeInsets.all(5),
         child: Column(
@@ -50,7 +54,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                                       fontSize: 19,
                                       fontWeight: FontWeight.w600,
                                       height: 0,
-                                      color: Colors.white,
+                                      color:!isDarkMode ?Colors.black:Colors.white,
                                     ))
                                 },
                               ),
@@ -59,7 +63,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                             StarRatingBar(
                               padding: EdgeInsets.only(right:0),
                               removeViewCount: true,
-                              itemRatingTextStyle: TextStyle(color: Colors.white),
+                              itemRatingTextStyle: TextStyle(color: Colors.black),
                               initialRating:4
                             ),
                             // Text("1.2Km"),
@@ -116,7 +120,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: AppColors().textHeadingColor1,
+                                  color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1,
                                 ),
 
                               ),
@@ -126,7 +130,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                                 style: {'html': Style(
                                   fontSize: FontSize.medium,
                                   lineHeight: LineHeight(0.6),
-                                  color: AppColors().textHeadingColor1,
+                                  color:!isDarkMode ?Colors.grey:AppColors().textHeadingColor1,
                                   height: 20,
                                   width: MediaQuery
                                       .of(context)
@@ -156,7 +160,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      color: !isDarkMode ?Colors.black:AppColors().white,
                     ),
 
                   ),
@@ -166,7 +170,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xff14D9D4),
+                    color:!isDarkMode ?AppColors().textHeadingColor2:Color(0xff14D9D4),
                   ),
                   ),
                 ],

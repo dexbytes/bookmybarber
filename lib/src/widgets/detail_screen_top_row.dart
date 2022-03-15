@@ -1,6 +1,8 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/share_bottom_sheet_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class DetailScreenTopRowWidget extends StatelessWidget {
@@ -37,6 +39,10 @@ class DetailScreenTopRowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
+
     return GridView.builder(
       scrollDirection: Axis.horizontal,
       padding: EdgeInsets.only(left: 20,right: 15),
@@ -70,7 +76,7 @@ class DetailScreenTopRowWidget extends StatelessWidget {
                     child:Align(
                       child:iconApps.iconImage(
                           imageUrl: rowData[index].icon,
-                          imageColor: Color(0xffE4B343),
+                          imageColor: !isDarkMode?appColors.buttonColor2:Color(0xffE4B343),
                           iconSize: Size(35, 35)
 
                       ),
@@ -80,7 +86,7 @@ class DetailScreenTopRowWidget extends StatelessWidget {
                 Text( rowData[index].title,
                     style: TextStyle(fontSize: 14,
                           fontWeight: FontWeight.w500,
-                        color: Color(0xffCBAD90))),
+                        color:!isDarkMode?Color(0xff323446):Color(0xffCBAD90))),
                 // SizedBox(height: 2),
                 // Text(rowData[index].subtitle,style: TextStyle(fontSize: 11.5,fontWeight: FontWeight.w400,color: Color(0xff828588))),
               ],

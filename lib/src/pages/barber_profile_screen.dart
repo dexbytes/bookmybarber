@@ -10,6 +10,7 @@ import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class BarberProfileScreen extends StatefulWidget {
   final onImageCallBack;
@@ -81,6 +82,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     double toolBarHeight = 60;
     double expandedHeight = MediaQuery.of(context).size.height /1.96;
     collapsedHeight =  toolBarHeight + 50;
@@ -88,11 +92,12 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
 
     AppDimens appDimens = AppDimens();
     appDimens.appDimensFind(context: context);
+
     Widget topSection = Container(
       height: 105,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.only(top:15/*MediaQuery.of(context).size.height /2.6*/),
-      color: Color(0xff323446),
+      color:!isDarkMode? appColors.white:appColors.appBgColor3,
       child: BarberProfileTopRowWidget(),
     );
 
@@ -109,9 +114,10 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
             height: 100,
             width: 100,
             decoration: BoxDecoration(
-              border: Border.all(width: 2,color:  Color(0xffCCA76A)),
+              border: Border.all(width: 2,color:!isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
+            ),
               shape: BoxShape.circle,
-              color: Colors.transparent,
+              color:Colors.transparent,
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(60),
@@ -134,15 +140,17 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
       ]),
          SizedBox(height: 10,),
          Text(widget.userName,
-         style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.w700),
+         style: TextStyle(fontSize: 22,color:!isDarkMode?Colors.black : Colors.white,fontWeight: FontWeight.w700),
        ),
         SizedBox(height: 5,),
          Text("${widget.subtitle} at ${widget.salonName}",
-        style:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: AppColors().textHeadingColor1)),
+        style:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: !isDarkMode?appColors.textHeadingColor2:AppColors().textHeadingColor1)),
         SizedBox(height: 5,),
         StarRatingBar(
        iconCount: 5,
        iconSize: 23,
+       color: !isDarkMode?appColors.buttonColor2 :appColors.buttonColor2,
+       unratedColor:!isDarkMode?Colors.grey :Colors.white,
        padding: EdgeInsets.all(2),
        removeItemRating: true,
        itemReviewCount: 125,
@@ -159,7 +167,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
         onWillPop: null, //_onBackPressed,
         child: ContainerFirst(
             isOverLayStatusBar:true,
-            appBackgroundColor: appColors.appBgColor2,
+            appBackgroundColor: !isDarkMode?Colors.white:appColors.appBgColor2,
             contextCurrentView: context,
             // scrollPadding: EdgeInsets.only(bottom: 110),
             isSingleChildScrollViewNeed: true,
@@ -182,7 +190,11 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               onPressed: (){
                                 Navigator.pop(context);
                               },
-                              icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor:Colors.white,iconSize: Size(21, 21)),
+                              icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
+                             imageColor: isAppBarCollapsed ?
+                             !isDarkMode? Colors.black:Colors.white
+                             :!isDarkMode? Colors.white:Colors.white,
+                             iconSize: Size(21, 21)),
                             ),
                             leadingWidth: 65,
                             toolbarHeight: 60,
@@ -197,7 +209,11 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text( isAppBarCollapsed ? widget.userName:"Profile",
-                                      style:TextStyle(color: Colors.white, fontSize: 22,fontWeight: FontWeight.w700),
+                                      style:TextStyle(
+                                          color:isAppBarCollapsed ?
+                                      !isDarkMode? Colors.black:Colors.white
+                                          :!isDarkMode? Colors.white:Colors.white,
+                                          fontSize: 22,fontWeight: FontWeight.w700),
                                       ),
                                     ],
                                   ),
@@ -213,7 +229,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                 ),
                               ],
                             ),
-                            backgroundColor:Color(0xff212327),  //Color(0xff323446),
+                            backgroundColor:!isDarkMode? Colors.white:Color(0xff212327),  //Color(0xff323446),
                             pinned: true,
                             floating: false,
                             expandedHeight:expandedHeight, // MediaQuery.of(context).size.height /2.1,  //2.47,
@@ -221,17 +237,17 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                             flexibleSpace: FlexibleSpaceBarWidget(
                               expandedTitleScale: 1,
                               background:Container(
-                                color: Color(0xff323446),
+                                color: !isDarkMode?Colors.white: Color(0xff323446),
                                 child: Stack(
                                   alignment: Alignment.topCenter,
                                   children: [
                                     ShaderMask(
                                       shaderCallback: (bound) =>LinearGradient(
-                                        colors: [Colors.black38.withOpacity(0.35),Colors.black87.withOpacity(0.35)],
+                                        colors: [Colors.black38.withOpacity(0.15),Colors.black87.withOpacity(0.15)],
                                         begin:Alignment.topLeft,
                                         end: Alignment.topRight,
                                       ).createShader(bound),
-                                      blendMode: BlendMode.dstOut,
+                                      blendMode: BlendMode.srcATop,
                                       child:ClipPath(
                                           clipper:CustomProfileAppBar(),
                                           child: CachedNetworkImage(
@@ -252,7 +268,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               title:Container(
                                 padding: EdgeInsets.zero,
                                 margin: EdgeInsets.zero,
-                                color: Colors.transparent,
+                                color: !isDarkMode?Colors.white:Colors.transparent,
                                 child: TabBar(
                                   onTap: (index){
                                     setState(() {
@@ -266,14 +282,14 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                     Tab(text: "Portfolio",),
                                     Tab(text: "Review",),
                                   ],
-                                  labelColor:Color(0xffE4B343),
+                                  labelColor: !isDarkMode?Colors.black :Color(0xffE4B343),
                                   isScrollable: false,
                                   unselectedLabelColor: Color(0xff828588),
                                   labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
                                   unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
                                   labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
                                   indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                                  indicatorColor: Color(0xffE4B343),
+                                  indicatorColor:!isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
                                   padding: EdgeInsets.zero,
                                 ),
                               ),

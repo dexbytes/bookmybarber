@@ -128,10 +128,10 @@ class _PackageDetailServicesScreenState extends State<PackageDetailServicesScree
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "Book now",
-          buttonColor: AppColors().buttonColor,
+          buttonColor:  !isDarkMode? AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode?Colors.white :Color(0xff212327),),
           backCallback:(){
             // Navigator.push(
             //   context,

@@ -1,3 +1,4 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
@@ -5,6 +6,7 @@ import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class SalonDetailReviewScreen extends StatefulWidget {
   final bool isScrollable;
@@ -63,6 +65,9 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
   String imageUrl = "https://i.pinimg.com/originals/4d/72/1a/4d721a17b1c40775eb535fa1bc46567d.jpg";
 
 
@@ -102,6 +107,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                   removeViewCount: true,
                   iconCount: 5,
                   iconSize: 20,
+                  color: !isDarkMode?appColors.buttonColor2 :appColors.buttonColor2,
+                  unratedColor:!isDarkMode?Colors.grey :Colors.white,
                 )
               ],
             ),
@@ -114,13 +121,13 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                     height: 58,
                     width: 58,
                     decoration: BoxDecoration(
-                      border: Border.all(width: 2,color: Color(0xffCCA76A) ),
+                      border: Border.all(width: 2,color: !isDarkMode?appColors.buttonColor2 :appColors.buttonColor2),
                       shape: BoxShape.circle,
                       color: Colors.transparent,
                     ),
                     child: Container(
                         decoration: BoxDecoration(
-                          border: Border.all(width: 2,color:Color(0xff323446)),
+                          border: Border.all(width: 2,color:!isDarkMode?appColors.white :appColors.appBgColor3 ),
                           shape: BoxShape.circle,
                           color: Colors.transparent,
                         ),
@@ -151,9 +158,9 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                       autoFocus: false,
                       capitalization: CapitalizationText.sentences,
                       cursorColor: Colors.grey,
-                      enabledBorderColor: Color(0xff323446),
-                      focusedBorderColor:Color(0xff323446),
-                      backgroundColor: Color(0xff323446),
+                      enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                      focusedBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                      backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
                       borderStyle: BorderStyle.none,
                       inputKeyboardType: InputKeyboardTypeWithError.text,
                       textInputAction: TextInputAction.next,
@@ -162,7 +169,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                         child: IconButton(
                           onPressed:(){},
                           icon: iconApps.iconImage(imageUrl: iconApps.micIcon,
-                              imageColor:Colors.white,iconSize: Size(20, 20)),
+                              imageColor:!isDarkMode? Colors.black:Colors.white,iconSize: Size(20, 20)),
                         ),
                       ),
                       hintText: "Leave your experience..",
@@ -199,8 +206,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
-                    primary: Color(0xffE4B343),
-                    onPrimary: Colors.black,
+                    primary: !isDarkMode?appColors.buttonColor2:Color(0xffE4B343),
+                    onPrimary:!isDarkMode?Colors.white:Colors.black,
                     minimumSize: Size(70, 30)),
               ),
             ),
@@ -209,7 +216,6 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
         ),
       );
     }
-
 
 
 
@@ -224,7 +230,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
               margin: EdgeInsets.only(left: 20,top: 15,),
               leftTitle: "All Reviews (128)",
               isRightTextVisible: false,
-              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Color(0xFFCCA76A)) ,
+              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: !isDarkMode?Colors.grey:Color(0xFFCCA76A)) ,
             ),
             review,
         SizedBox(height: 10,)

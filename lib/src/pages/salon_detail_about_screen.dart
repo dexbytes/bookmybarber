@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
 import 'package:base_flutter_app/src/widgets/detail_photo_row_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:readmore/readmore.dart';
 
 class SalonDetailAboutScreen extends StatefulWidget {
@@ -56,6 +57,8 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
 
     Widget readMoreText = Container(
@@ -134,7 +137,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
             margin: EdgeInsets.only(left: 20,top: 20,bottom: 10),
             leftTitle: "About",
             isRightTextVisible: false,
-            leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white) ,
+            leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white) ,
           ),
           readMoreText,
         ],
@@ -144,7 +147,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
         margin: EdgeInsets.only(left: 20,bottom: 10),
         leftTitle: "Opening Hour",
         isRightTextVisible: false,
-        leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+        leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white),
       ),
       openHours,
       address,
@@ -152,7 +155,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       SeeAllTextRow(
           margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
           leftTitle: "Photos",
-          leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:Colors.white),
+          leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white),
           rightTextCallBack:() {
             this.widget.onPhotoClickCallBack.call();
           }

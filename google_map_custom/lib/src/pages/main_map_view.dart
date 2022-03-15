@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:google_map_custom/src/pages/map_data_model.dart';
 import 'package:google_map_custom/src/widgets/star_rating_widget.dart';
@@ -240,6 +241,9 @@ class _MainMapViewState extends State<MainMapView> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Stack(
       children: <Widget>[
         Container(
@@ -283,7 +287,7 @@ class _MainMapViewState extends State<MainMapView> {
          onPressed: (){
            widget.floatingButtonClickCallBack.call();
          },
-         backgroundColor: Color(0xffFE457C),
+         backgroundColor: !isDarkMode ?Color(0xffFE9654):Color(0xffFE457C),
          child: Container(
          alignment: Alignment.center,
          child:Icon(Icons.format_list_bulleted_rounded,size: 36,color: Colors.white,)

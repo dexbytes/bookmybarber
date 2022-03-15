@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/book_appointment_row_view.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class BookAppointmentScreen extends StatefulWidget {
@@ -23,6 +24,9 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     Size size = MediaQuery.of(context).size;
 
     _topView() {
@@ -84,24 +88,36 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     child: Radio<int>(
                         value: 0,
                         groupValue: selectValue,
-                        activeColor: Color(0xffE4B343),
+                        activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                         onChanged: (value) =>setState(()=>selectValue = value!),
                     ),
                   ),
-                  Text("Male",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
+                  Text("Male",style: !isDarkMode ?
+                  TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+                      color: selectValue == 0?appColors.buttonColor2:Colors.black.withOpacity(0.5))
+                      :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+                      color: selectValue == 0?Color(0xffE4B343):Colors.white)
+
+                  ),
                   SizedBox(width: 70,),
                   Transform.scale(
                     scale: 1.3,
                     child: Radio<int>(
                         value: 1,
-                        activeColor: Color(0xffE4B343),
+                        activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                         focusColor: Colors.white,
 
                         groupValue: selectValue,
                         onChanged: (value) =>setState(()=>selectValue = value! )
                     ),
                   ),
-                  Text("Female",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),)
+                  Text("Female",style:!isDarkMode ?
+                  TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+                      color: selectValue == 1?appColors.buttonColor2:Colors.black.withOpacity(0.5))
+                      :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+                      color: selectValue == 1?Color(0xffE4B343):Colors.white)
+
+                  )
                 ],
               ),
             )
@@ -143,10 +159,10 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "Book now",
-          buttonColor: AppColors().buttonColor,
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode?Colors.white:Color(0xff212327),),
           backCallback:(){
             Navigator.push(
               context,
@@ -169,7 +185,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
-            color: AppColors().appBgColor2,
+            color:!isDarkMode? Colors.white: AppColors().appBgColor2,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(25),
               topRight: Radius.circular(25),
@@ -212,7 +228,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
 
     return Scaffold(
-      backgroundColor: AppColors().appBgColor2,
+      backgroundColor:!isDarkMode? Colors.white: AppColors().appBgColor2,
       body: SafeArea(
         top: false,
         bottom: true,

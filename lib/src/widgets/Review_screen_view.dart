@@ -1,7 +1,9 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/model/review_raw_data_model.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class ReviewListView extends StatelessWidget {
@@ -20,6 +22,9 @@ class ReviewListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
@@ -50,13 +55,13 @@ class ReviewListView extends StatelessWidget {
                       height: 65,
                       width: 65,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 2,color: Color(0xff323446)),
+                        border: Border.all(width: 2,color:!isDarkMode?Colors.grey:Color(0xff323446)),
                         shape: BoxShape.circle,
                         color: Colors.transparent,
                       ),
                       child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(width: 2,color: Color(0xff212327)),
+                            border: Border.all(width: 2,color: !isDarkMode?Colors.white:Color(0xff212327)),
                             shape: BoxShape.circle,
                             color: Colors.transparent,
                           ),
@@ -72,23 +77,27 @@ class ReviewListView extends StatelessWidget {
                   Expanded(
                     flex: 6,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 2.5),
+                      padding: EdgeInsets.only(top: 4),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Html(data: review[index].name,
-                            style: {'html' : Style(
-                              fontSize: FontSize.xLarge,
-                              lineHeight: LineHeight(1),
-                              color: Colors.white,
-                              height: 30,
-                              fontWeight: FontWeight.w500,
-                              padding: EdgeInsets.zero,
-                              margin: EdgeInsets.all(0),
+                            style: {'html' : Style.fromTextStyle(
+                              TextStyle(fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                  height: 0.85),
+                              // fontSize: FontSize.xLarge,
+                              // lineHeight: LineHeight(1),
+                              // color:!isDarkMode? Colors.black:Colors.white,
+                              // height: 30,
+                              // fontWeight: FontWeight.w500,
+                              // padding: EdgeInsets.zero,
+                              // margin: EdgeInsets.all(0),
 
                             )},
                           ),
-                          SizedBox(height: 5),
+                          SizedBox(height: 1),
                           Padding(
                             padding:EdgeInsets.only(left: 5.0),
                             child: StarRatingBar(
@@ -96,6 +105,8 @@ class ReviewListView extends StatelessWidget {
                               removeItemRating: true,
                               iconSize: 20,
                               iconCount: 5,
+                              color: !isDarkMode?appColors.buttonColor2 :appColors.buttonColor2,
+                              unratedColor:!isDarkMode?Colors.grey :Colors.white,
                               initialRating: review[index].rating,
                             ),
                           ),

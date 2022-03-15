@@ -1,6 +1,7 @@
 import 'package:base_flutter_app/src/model/book_appointment_raw_data_model.dart';
 import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class BookAppointmentRowViewWidget extends StatelessWidget {
@@ -15,6 +16,9 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return ListView.builder(
         scrollDirection: Axis.vertical,
         padding: EdgeInsets.only(left: 18,right: 15),
@@ -30,7 +34,7 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
                     style:  TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: !isDarkMode? Colors.black.withOpacity(0.6):Colors.grey,
                     ),
 
                   )),
@@ -52,7 +56,11 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
 
   }
 
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+  DropdownMenuItem<String> buildMenuItem(String item) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return DropdownMenuItem(
       value:item,
       child: Padding(
         padding: EdgeInsets.only(left: 10.0),
@@ -61,13 +69,18 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 15.5,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode?  Colors.black:Colors.white,
           ),
+          maxLines: 1,
         ),
       )
-  );
+  );}
 
-  DropdownMenuItem<String> buildMenuItem2(String item) => DropdownMenuItem(
+  DropdownMenuItem<String> buildMenuItem2(String item) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return DropdownMenuItem(
       value:item,
       child: Padding(
         padding: EdgeInsets.only(left: 10.0),
@@ -76,10 +89,10 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 15.5,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: !isDarkMode?  Colors.black:Colors.white,
           ),
         ),
       )
-  );
+  );}
 }
 

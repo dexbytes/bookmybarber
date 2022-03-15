@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class PaymentMethodCardWidget extends StatefulWidget {
@@ -40,6 +41,10 @@ class _PaymentMethodCardWidgetState extends State<PaymentMethodCardWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
+
     return ListView.builder(
       scrollDirection: Axis.vertical,
       padding: EdgeInsets.only(left: 0,right: 0),
@@ -53,42 +58,53 @@ class _PaymentMethodCardWidgetState extends State<PaymentMethodCardWidget> {
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors().appBgColor3,
+              color: !isDarkMode ?Colors.grey.withOpacity(0.12):AppColors().appBgColor3,
               borderRadius: BorderRadius.circular(12),
-              border: Border.fromBorderSide(
+              border:!isDarkMode ?
+              Border.fromBorderSide(
+                  BorderSide(width: 1.2,
+                      color: selectValue ==index
+                          ? appColors.buttonColor2
+                          : Colors.transparent))
+                  :Border.fromBorderSide(
                   BorderSide(width: 1.2,
                   color: selectValue ==index
                       ? Color(0xffE4B343)
                       : Colors.transparent))
             ),
             margin: EdgeInsets.symmetric(
-                horizontal: 10, vertical: 8),
+                horizontal: 12, vertical: 7),
             child: Transform.scale(
               scale: 1.1,
               child: RadioListTile<int>(
                 value: index,
                 groupValue: selectValue,
-                activeColor: Color(0xffE4B343),
+                activeColor:!isDarkMode ? appColors.buttonColor2:Color(0xffE4B343),
                 onChanged: (index) =>
                     setState(() => selectValue = index!),
                 title: Text(payment[index].title,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: !isDarkMode ?Colors.black:Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w600
                   ),),
                 subtitle: Text(payment[index].subtitle,
                   style: TextStyle(
-                      color: AppColors().textHeadingColor1,
+                      color: !isDarkMode ?AppColors().textHeadingColor2:AppColors().textHeadingColor1,
                       fontSize: 12,
                       fontWeight: FontWeight.w500
                   ),),
                 tileColor: AppColors().appBgColor3,
                 contentPadding: EdgeInsets.only(
-                    left: 35, right: 20, top: 6, bottom: 6),
+                    left: 35, right: 20, top: 5, bottom: 5),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
-                    side: BorderSide(width: 1,
+                    side:!isDarkMode ?
+                    BorderSide(width: 1,
+                        color: selectValue ==index
+                            ? appColors.buttonColor2
+                            : Colors.white):
+                    BorderSide(width: 1,
                         color: selectValue ==index
                             ? Color(0xffE4B343)
                             : Colors.white)

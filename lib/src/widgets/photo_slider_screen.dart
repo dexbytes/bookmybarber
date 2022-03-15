@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -70,7 +71,8 @@ class _PhotoSliderScreenState extends State<PhotoSliderScreen> {
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
-
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     Widget buildImage(String photo ,int index) => GestureDetector(
       onTap:() {
@@ -83,7 +85,7 @@ class _PhotoSliderScreenState extends State<PhotoSliderScreen> {
           // width:  widget.imageWidth == null? MediaQuery.of(context).size.width:widget.imageWidth, ,
         ),
       backgroundDecoration: BoxDecoration(
-        color: AppColors().appBgColor2,
+        color:!isDarkMode? Colors.white:AppColors().appBgColor2,
       ),
       maxScale: PhotoViewComputedScale.covered * 1.8,
       minScale: PhotoViewComputedScale.contained * 1,
@@ -91,20 +93,24 @@ class _PhotoSliderScreenState extends State<PhotoSliderScreen> {
     );
 
     return Scaffold(
-      backgroundColor: AppColors().appBgColor2,
+      backgroundColor:  !isDarkMode? Colors.white:AppColors().appBgColor2,
       appBar: AppBar(
         toolbarHeight: 60,
         leading: IconButton(
           onPressed: (){
             Navigator.pop(context);
           },
-          icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,imageColor: Colors.white),
+          icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
+              imageColor: !isDarkMode? Colors.black:Colors.white),
         ),
       leadingWidth: 65,
-      elevation: 0,
-      backgroundColor: AppColors().appBgColor3,
+      elevation: 0.8,
+      backgroundColor: !isDarkMode? Colors.white:AppColors().appBgColor3,
       title: Text("Gallery"),
-      titleTextStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w500),
+      titleTextStyle: TextStyle(fontSize: 22,
+          fontWeight: FontWeight.w500,
+          color: !isDarkMode? Colors.black:AppColors().white,
+      ),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,

@@ -114,6 +114,9 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Material(
         color: Colors.transparent,
         child: Container(
@@ -122,7 +125,7 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
           padding: EdgeInsets.only(right:0,left: 0,bottom: 0),
           margin: EdgeInsets.only(right:10,left: 10,bottom: 0),
           decoration: BoxDecoration(
-            color: Color(0xff323446),
+            color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Padding(
@@ -144,7 +147,7 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
                       ),
                     ),
                   ),
-                  dropdownColor:Color(0xff212327),
+                  dropdownColor: !isDarkMode? Colors.grey.shade300 : Color(0xff212327),
                   alignment: Alignment.bottomCenter,
                   borderRadius: BorderRadius.circular(5),
                   hint: Padding(
@@ -195,6 +198,9 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return Material(
       color: Colors.transparent,
       child: Container(
@@ -203,7 +209,7 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
         padding: EdgeInsets.only(right:0,left: 0,bottom: 0),
         margin: EdgeInsets.only(right:10,left: 10,bottom: 0),
         decoration: BoxDecoration(
-          color: Color(0xff323446),
+          color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
@@ -225,7 +231,7 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
                     ),
                   ),
                 ),
-                dropdownColor:Color(0xff212327),
+                dropdownColor: !isDarkMode? Colors.grey.shade300 : Color(0xff212327),
                 alignment: Alignment.bottomCenter,
                 borderRadius: BorderRadius.circular(5),
                 hint: Padding(

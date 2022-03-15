@@ -131,7 +131,7 @@ class _DashBoardPage extends State<DashBoardPage>
                 isOverLayStatusBar: true,
                 statusBarColor: statusBarColorsLocal,
                 bottomBarSafeAreaColor:AppColors().appBgColor2,
-                appBackgroundColor:AppColors().appBgColor3,
+                appBackgroundColor:!isDarkMode? appColors.appBgColor2:appColors.appBgColor3,
                 appBarHeight: -1,
                 bottomMenuHeight: 140,
                 bottomMenuView: Stack(

@@ -75,7 +75,9 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                     onPressed: (){
                     Navigator.pop(context);
                        },
-                   icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,iconSize: Size(21, 21)),),
+                   icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,
+                       imageColor:!isDarkMode?AppColors().black:AppColors().buttonColor,
+                       iconSize: Size(21, 21)),),
                 ),
               ),
               SizedBox(width:  widget.isShowBackArrow ? MediaQuery.of(context).size.width /5.3 :MediaQuery.of(context).size.width /3.35 ,),

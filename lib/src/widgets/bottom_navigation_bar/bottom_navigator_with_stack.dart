@@ -441,13 +441,13 @@ class BNBCustomPainter extends CustomPainter {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     Paint paint = new Paint()
-      ..color = appColors.appBgColor3//AppColors().appBgColor3
+      ..color = !isDarkMode? appColors.appBgColor2:appColors.appBgColor3//AppColors().appBgColor3
       ..style = PaintingStyle.fill;
 
     Path path = Path();
     path.moveTo(0, 0); // Start
     path.quadraticBezierTo(size.width * 0.9, 5.7, size.width * 0.339, 2.1);
-    path.quadraticBezierTo(size.width * 0.395 ,10, size.width * 0.40, 15);
+    path.quadraticBezierTo(size.width * 0.390 ,6, size.width * 0.40, 15);
     path.arcToPoint(Offset(size.width * 0.60, 16), radius: Radius.elliptical(44,44), clockwise: false);
     path.quadraticBezierTo(size.width * 0.63, 0, size.width *0.71, 0);
     path.quadraticBezierTo(size.width * 0.0, 0, size.width, 0);

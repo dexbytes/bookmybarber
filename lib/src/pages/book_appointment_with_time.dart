@@ -7,6 +7,7 @@ import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 import 'booking_detail_payment_screen.dart';
@@ -23,6 +24,8 @@ class BookAppointmentTimeScreen extends StatefulWidget {
 class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     Size size = MediaQuery.of(context).size;
 
     _topView() {
@@ -56,12 +59,14 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,left: 12,),
             child: Text("Available slot",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: Colors.white)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode? Colors.black :Colors.white)),
           ),
           Container(
               margin: EdgeInsets.symmetric(horizontal:12,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
+                selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xff00B2AE),
+                backgroundColor:!isDarkMode ?appColors.grey.withOpacity(0.3):appColors.appBgColor3,
                 reportList: [
                   "9:30 AM","10:00 AM","10:30 AM","11:00 AM",
                   "11:30 AM","12:00 PM","1:30 PM","2:00 PM",
@@ -80,7 +85,9 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,left: 12,),
             child: Text("Select specialist",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color:Color(0xffCCA76A))),
+                style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: !isDarkMode?Colors.black:Color(0xffCCA76A))),
           ),
           Container(
               margin:EdgeInsets.only(top: 8) ,
@@ -104,12 +111,14 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           Padding(
             padding: EdgeInsets.only(bottom: 0.0,left:20,),
             child: Text("Select your date",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700,color:Color(0xffCCA76A))),
+                style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: !isDarkMode?Colors.black:Color(0xffCCA76A))),
           ),
           Container(
             margin:EdgeInsets.only(top: 12) ,
             height: 66,
-            child: DatePickerWidget(isShowMonthName: true,),
+            child: DatePickerWidget(isShowMonthName: true,hintText: "Select your date",),
           ),
         ],
       );
@@ -124,10 +133,10 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "Continue",
-          buttonColor: AppColors().buttonColor,
+          buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color:!isDarkMode? Colors.white: Color(0xff212327),),
           backCallback:(){
             Navigator.push(
               context,
@@ -147,7 +156,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-          color: AppColors().appBgColor2,
+          color:!isDarkMode? Colors.white: AppColors().appBgColor2,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
@@ -178,7 +187,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
 
 
     return Scaffold(
-      backgroundColor: AppColors().appBgColor2,
+      backgroundColor:!isDarkMode? Colors.white: AppColors().appBgColor2,
       body: SafeArea(
         top: false,
         bottom: true,
@@ -226,7 +235,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                 ],
               ),
               containChild:Container(
-                height: size.height/1.8 ,
+                height: size.height/1.05,
                 child: Stack(
                   children: [
                     bottomCardView,

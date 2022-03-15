@@ -1,8 +1,10 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/model/barber_name_row_data_model.dart';
 import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class BarberSearchGridViewWidget extends StatefulWidget {
   final onClickCardCallBack;
@@ -39,6 +41,9 @@ class _BarberSearchGridViewWidgetState extends State<BarberSearchGridViewWidget>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return GridView.builder(
       scrollDirection: Axis.vertical,
       padding:widget.padding,
@@ -72,7 +77,7 @@ class _BarberSearchGridViewWidgetState extends State<BarberSearchGridViewWidget>
                   children: [
                     Card(
                       margin: EdgeInsets.zero,
-                      elevation: 3,
+                      elevation: 1.5,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80)
                       ),
@@ -82,13 +87,13 @@ class _BarberSearchGridViewWidgetState extends State<BarberSearchGridViewWidget>
                           height: widget.height,
                           width: widget.width,
                           decoration: BoxDecoration(
-                            border:Border.all(width: 2,color:widget.borderColor),
+                            border:Border.all(width: 2,color:!isDarkMode? appColors.buttonColor2:widget.borderColor),
                             shape: BoxShape.circle,
                             color: Colors.transparent,
                           ),
                           child: Container(
                               decoration: BoxDecoration(
-                                border: Border.all(width: 2,color: Color(0xff212327)),
+                                border: Border.all(width: 2,color: !isDarkMode? Colors.white:Color(0xff212327)),
                                 shape: BoxShape.circle,
                                 color: Colors.transparent,
                               ),

@@ -171,8 +171,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
       reverse: false,
       contextCurrentView: context,
-      bottomBarSafeAreaColor: Color(0xff212327),
-      statusBarColor: AppColors().appBgColor3,
+      bottomBarSafeAreaColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+      statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/
@@ -188,9 +188,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 isTitleVisible: true,
                 leadingPadding: EdgeInsets.only(left: 10.0 ,
                     right: 10,bottom: 0,top: 0),
-                textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
+                textStyle: TextStyle(fontSize: 22,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
                 isTrailingIconVisible: false,
-                leadingIconColor:Color(0xFFCCA76A),
+                leadingIconColor:!isDarkMode ?Colors.black:Color(0xFFCCA76A),
                 title: "Booking Details",
                 onPress: (){
                   Navigator.pop(context);

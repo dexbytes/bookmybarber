@@ -14,6 +14,7 @@ import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'barber_profile_screen.dart';
 import 'book_appointment_screen.dart';
@@ -76,6 +77,9 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     double hedingHeight = 55;
     double starHeight = 30;
     double toolBarHeight = 60;
@@ -133,7 +137,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
     Widget topSection = Container(
         height: 226,
-        color: Color(0xff323446),
+        color: !isDarkMode? Colors.white:Color(0xff323446),
         child: Column(
           children: [
             Container(
@@ -143,7 +147,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
             SeeAllTextRow(
               leftTitle: "Salon specialists",
               isRightTextVisible: false,
-              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color:Colors.white) ,
+              leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: !isDarkMode?Color(0xff323446):Colors.white,) ,
             ),
             Container(
                 margin:EdgeInsets.only(top: 10) ,
@@ -154,7 +158,8 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                   isSubtitleVisible: true,
                   isSecondDataVisible: true,
                   isFeatureVisible: false,
-                  titleTextStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500, color:Colors.white),
+                  titleTextStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w500,color: !isDarkMode? Color(0xff323446):Colors.white),
+                  subtitleTextStyle: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w400, color:  !isDarkMode? appColors.buttonColor2:Color(0xffCBAD90)),
                 )),
           ],
         )
@@ -170,7 +175,16 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     Widget heading = Container(
         margin: EdgeInsets.only(bottom: 0,left: 0),
         height: hedingHeight,
-        child:DetailHeadingWidget(mainAxisAlignment: MainAxisAlignment.end,)
+        child:DetailHeadingWidget(
+          titleTextStyle: TextStyle(fontSize: 24,fontWeight: FontWeight.w800,
+              color: isAppBarCollapsed ?
+              !isDarkMode? Colors.black:Colors.white
+                  :!isDarkMode? Colors.white:Colors.white),
+          subtitleTextStyle: TextStyle(fontSize: 13,fontWeight: FontWeight.w500,
+              color:isAppBarCollapsed ?
+              !isDarkMode? Colors.black:Colors.white
+                  :!isDarkMode? Colors.white:Colors.white),
+          mainAxisAlignment: MainAxisAlignment.end,)
 
     );
 
@@ -194,10 +208,10 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
         child:selectedTab <= 0 ?CommonButton(
           buttonHeight: 52,
           buttonName: "Book now",
-          buttonColor:AppColors().buttonColor,
+          buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),),
           backCallback:(){
             Navigator.push(
               context,
@@ -224,8 +238,8 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           contextCurrentView: context,
           // scrollPadding: EdgeInsets.only(bottom: 110),
           isSingleChildScrollViewNeed: true,
-          bottomBarSafeAreaColor: AppColors().appBgColor2,
-          appBackgroundColor:AppColors().appBgColor2,
+          // bottomBarSafeAreaColor: AppColors().appBgColor2,
+          appBackgroundColor:!isDarkMode? Colors.white:AppColors().appBgColor2,
           isOverLayAppBar: true,
           isOverLayStatusBar: true,
           isFixedDeviceHeight: true,
@@ -250,7 +264,10 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                         },
                         icon:iconApps.iconImage(imageUrl: iconApps.backArrow2,
                             iconSize: Size(22, 22),
-                            imageColor: Colors.white),
+                            imageColor:isAppBarCollapsed ?
+                            !isDarkMode? Colors.black:Colors.white
+                           :!isDarkMode? Colors.white:Colors.white
+                        ),
                         iconSize: 50,
                       ),
                       titleSpacing: 0,
@@ -262,11 +279,15 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                             padding: EdgeInsets.zero,
                             alignment: Alignment.center,
                             onPressed: (){},
-                            icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,iconSize: Size(25, 25)),
+                            icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,
+                                imageColor: isAppBarCollapsed ?
+                                !isDarkMode? Colors.black:Colors.white
+                                    :!isDarkMode? Colors.white:Colors.white,
+                                iconSize: Size(25, 25)),
                           ) ,
                         ],
                       ),
-                      backgroundColor: Color(0xff212327),
+                      backgroundColor: !isDarkMode?Colors.white:Color(0xff212327),
                       pinned: true,
                       floating: true,
                       expandedHeight:expandedHeight,
@@ -290,8 +311,8 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                           children: [
                             heading,
                             starRow,
-                           ! isAppBarCollapsed?Container():Container(
-                              color: Color(0xff323446),
+                           !isAppBarCollapsed?Container():Container(
+                              color:!isDarkMode?Colors.white:Color(0xff323446),
                               child: TabBar(
                                 onTap: (index){
                                   setState(() {
@@ -327,7 +348,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                         children: [
                           isAppBarCollapsed?Container():topSection,
                           isAppBarCollapsed?Container():Container(
-                            color: Color(0xff323446),
+                            color: !isDarkMode?Colors.white:AppColors().appBgColor2,
                             child: TabBar(
                               onTap: (index){
                                 setState(() {
@@ -342,14 +363,14 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 Tab(text: "Gallery",),
                                 Tab(text: "Review",),
                               ],
-                              labelColor:Color(0xffE4B343),
+                              labelColor: !isDarkMode?Colors.black :Color(0xffE4B343),
                               isScrollable: false,
                               unselectedLabelColor: Color(0xff828588),
                               labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
                               unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
                               labelPadding: EdgeInsets.only(right: 2,bottom: 0,top: 2),
                               indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                              indicatorColor: Color(0xffE4B343),
+                              indicatorColor:!isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
                             ),
                           ),
                           DefaultTabController(
@@ -362,12 +383,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                   physics: NeverScrollableScrollPhysics(),
                                   controller: tabController,
                                   children: [
-                                    // DescriptionPage(),
-                                    // Container(),
-                                    // Container(),
-                                    // Container(),
-                                    // Container(),
-
                                     SalonDetailAboutScreen(
                                         isDataScroll: isAppBarCollapsed,
                                         collapsedheight:collapsedHeight,

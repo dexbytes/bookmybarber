@@ -1,9 +1,11 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
 import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/services_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class SalonDetailSevicesScreen extends StatefulWidget {
@@ -42,6 +44,8 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     Widget tabBar = Column(
      /* shrinkWrap: true,
@@ -54,7 +58,7 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
             decoration: BoxDecoration(
                 color:Colors.transparent,
                 borderRadius: BorderRadius.circular(5),
-                border: Border.all(width: 1,color:Color(0xffCCA76A))
+                border: Border.all(width: 1,color: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,)
             ),
             child: TabBar(
               onTap: (index){
@@ -67,15 +71,15 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
                 Tab(text: "Services",),
                 Tab(text: "Package & Offers",),
               ],
-              labelColor: Color(0xff323446),
+              labelColor: !isDarkMode? Colors.white:Color(0xff323446),
               isScrollable: false,
-              unselectedLabelColor:Color(0xffCCA76A),
+              unselectedLabelColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
               labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color:Colors.black),
               labelPadding: EdgeInsets.zero,
               padding: EdgeInsets.zero,
               unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
               indicator:BoxDecoration(
-                  color:Color(0xffCCA76A),
+                  color: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
                   borderRadius: BorderRadius.circular(3),
               ),
             ),
@@ -90,7 +94,11 @@ class _SalonDetailScreenState extends State< SalonDetailSevicesScreen>
                   controller: tabController,
                   children: [
                     ServicesListView(isDataScroll: widget.isDataScroll,),
-                    PackageCardWidget(onCardClickCallBack: (){
+                    PackageCardWidget(
+                      titleTextStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,
+                          color: !isDarkMode?  Colors.black :Colors.white,
+                          height: 0.5),
+                      onCardClickCallBack: (){
                       Navigator.push(
                         context,
                         SlideRightRoute(

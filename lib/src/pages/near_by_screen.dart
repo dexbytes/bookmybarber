@@ -270,7 +270,7 @@ class _NearByScreenState extends State<NearByScreen>
             padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height /10),
             child: FloatingActionButton(
                 heroTag: "Button 2",
-                backgroundColor: Color(0xffEE457C),
+                backgroundColor: !isDarkMode ?appColors.buttonColor2:Color(0xffEE457C),
                 child: Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(bottom: 5),
@@ -322,11 +322,12 @@ class _NearByScreenState extends State<NearByScreen>
                     ),
                     homeCard,
                     SizedBox(height: 15,),
-                    SeeAllTextRow(leftTitle: "Top categories",),
-                    categories,
                     SeeAllTextRow(leftTitle: "Special package & offers",),
                     SizedBox(height: 15,),
                     sliderView,
+                    SizedBox(height: 15,),
+                    SeeAllTextRow(leftTitle: "Top categories",),
+                    categories,
                     SizedBox(height: 80,),
                   ],
                 ),
