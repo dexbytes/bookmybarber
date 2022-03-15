@@ -69,9 +69,9 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                 autoFocus: false,
                 capitalization: CapitalizationText.sentences,
                 cursorColor: Colors.grey,
-                enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-                focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-                backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
+                focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
+                backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
                 borderStyle: BorderStyle.none,
                 inputKeyboardType: InputKeyboardTypeWithError.text,
                 textInputAction: TextInputAction.next,
@@ -202,11 +202,11 @@ class _MapIntregationScreenState extends State<MapIntregationScreen>
                   Row(
                     children: [
                     Icon(Icons.location_on,
-                      color: !isDarkMode? AppColors().black: Colors.white,
+                      color: !isDarkMode? AppColors().black: Colors.blueAccent,
                       size: 20,),
                       SizedBox(width: 8,),
                     Text("San Francisco City",style: TextStyle(fontSize: 15,
-                        color:!isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                        color:!isDarkMode? AppColors().black: AppColors().white,
                         fontWeight: FontWeight.w600),),
                       SizedBox(width: 8,),
                     Icon(CupertinoIcons.location_fill,color:  Color(0xffCCA76A),size: 18,)

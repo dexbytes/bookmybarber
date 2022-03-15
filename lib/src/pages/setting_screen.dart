@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -36,6 +37,8 @@ class _SettingScreenState extends State<SettingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     Widget popUpNotification = Container(
       decoration: BoxDecoration(
@@ -50,7 +53,8 @@ class _SettingScreenState extends State<SettingScreen> {
         mainAxisAlignment:MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text( "Popup Notification",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white ),
+          Text( "Popup Notification",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,
+              color:!isDarkMode? Colors.black.withOpacity(0.8):Colors.white ),
           ),
           GestureDetector(
               onTap: () {
@@ -74,7 +78,10 @@ class _SettingScreenState extends State<SettingScreen> {
                             ?Alignment.centerRight
                             :Alignment.centerLeft,
                         child: iconApps.iconImage(
-                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),imageColor: sales ?  Color(0xffE4B343) : Colors.white ),
+                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),
+                            imageColor: !isDarkMode?
+                            sales ? Colors.green: Colors.grey
+                            :sales ?  Color(0xffE4B343) : Colors.white ),
                       ),
                     ),
                   ],
@@ -97,7 +104,9 @@ class _SettingScreenState extends State<SettingScreen> {
         mainAxisAlignment:MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text( "Volume",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white ),
+          Text( "Volume",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,
+              color:!isDarkMode? Colors.black.withOpacity(0.8):Colors.white
+          ),
           ),
           GestureDetector(
               onTap: () {
@@ -121,7 +130,10 @@ class _SettingScreenState extends State<SettingScreen> {
                             ?Alignment.centerRight
                             :Alignment.centerLeft,
                         child: iconApps.iconImage(
-                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),imageColor: newArrival ?  Color(0xffE4B343) : Colors.white ),
+                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),
+                            imageColor: !isDarkMode?
+                            newArrival ? Colors.green: Colors.grey
+                            :newArrival ?  Color(0xffE4B343) : Colors.white ),
                       ),
                     ),
                   ],
@@ -144,7 +156,9 @@ class _SettingScreenState extends State<SettingScreen> {
         mainAxisAlignment:MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text( "Appointment Reminder",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white ),
+          Text( "Appointment Reminder",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,
+              color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white
+          ),
             // _appString.trans(context, _appString.groupActivityNotification),
             // style: _appStyle.settingTextStyle(fontSize: _isTablet ? 25 :16),
           ),
@@ -160,7 +174,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 child: Stack(
                   children: [
                     iconApps.iconImage(
-                        imageUrl: iconApps.activeToggleBackground,imageColor: Color(0xff9B9B9B).withOpacity(0.5)),
+                        imageUrl: iconApps.activeToggleBackground,imageColor: Color(0xff9B9B9B).withOpacity(0.45)),
                     Padding(
                       padding: deliveryStatus ?
                       EdgeInsets.only(bottom:0.5,)
@@ -170,7 +184,12 @@ class _SettingScreenState extends State<SettingScreen> {
                             ?Alignment.centerRight
                             :Alignment.centerLeft,
                         child: iconApps.iconImage(
-                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),imageColor: deliveryStatus ? Color(0xffE4B343) : Colors.white ),
+                            imageUrl: iconApps.toggleIcon,iconSize: Size(26, 26),
+                            imageColor:!isDarkMode?
+                                deliveryStatus ? Colors.green: Colors.grey
+                                :deliveryStatus ? Color(0xffE4B343) : Colors.white
+
+                        ),
                       ),
                     ),
                   ],
@@ -208,8 +227,8 @@ class _SettingScreenState extends State<SettingScreen> {
                      child: Html(data: settings[index].title,
                        style: {'html' : Style.fromTextStyle(
                            TextStyle(
-                               fontSize: 16.5,
-                               color: Colors.white,
+                               fontSize: 17,
+                               color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
                                fontWeight: FontWeight.w500
                            )
                        )},
@@ -238,9 +257,9 @@ class _SettingScreenState extends State<SettingScreen> {
              mainAxisAlignment: MainAxisAlignment.center,
              children: [
                Text("Version: ",
-                 style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+                 style: TextStyle(color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
                ),Text(snapshot.data!.version,
-                 style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
+                 style: TextStyle(color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
                ),
              ],
            );
@@ -250,24 +269,25 @@ class _SettingScreenState extends State<SettingScreen> {
     );
 
     return ContainerFirst(
-        appBackgroundColor: AppColors().appBgColor2,
+        appBackgroundColor:!isDarkMode?Colors.white:AppColors().appBgColor2,
         contextCurrentView: context,
         isSingleChildScrollViewNeed: true,
         isFixedDeviceHeight: false,
         appBarHeight: 60,
-        statusBarColor: AppColors().appBgColor3,
         appBar: Container(
-          color:AppColors().appBgColor3,
+          color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
           child: appBarWithBackArrow(
+              backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
               isTitleVisible: true,
               isTrailingIconVisible: false,
               title: "Settings",
               textStyle: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
+                fontSize: 21,
+                fontWeight: FontWeight.w700,
+                color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
               ),
-              leadingIconColor:Color(0xFFCCA76A),
+              leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+              leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
               onPress: (){
                 Navigator.pop(context);
               }

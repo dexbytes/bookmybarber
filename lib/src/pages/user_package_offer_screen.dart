@@ -16,6 +16,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
 
@@ -39,6 +40,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
     return ContainerFirst(
       reverse: false,
       contextCurrentView: context,
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/

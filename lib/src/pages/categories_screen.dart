@@ -41,6 +41,7 @@ class _CategoriesViewAllScreenState extends State<CategoriesViewAllScreen> {
     return ContainerFirst(
       reverse: false,
       contextCurrentView: context,
+      appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
       // scrollPadding: EdgeInsets.only(bottom: 0),
       /* statusBarColor: Colors.amber,
           bottomBarSafeAreaColor: Colors.amber,*/

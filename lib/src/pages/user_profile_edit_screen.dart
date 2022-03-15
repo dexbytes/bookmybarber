@@ -10,6 +10,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class UserProfileEditScreen extends StatefulWidget {
@@ -75,7 +76,8 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
 
   @override
   Widget build(BuildContext context) {
-
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     //Check username field
     _checkName(value, fieldName, {onchange = false}) {
@@ -166,7 +168,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         print("click");
       },
     child: Container(
-      color: AppColors().appBgColor3,
+      color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
     child:
     Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -180,7 +182,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         // Defaults to 0.0 degrees
         child: Container(
           decoration: BoxDecoration(
-              color: Color(0xffE4B343),
+              color: !isDarkMode? appColors.buttonColor2: Color(0xffE4B343),
               border: Border.all(width: 2)
           ),
           child: FlutterClipPolygon(
@@ -189,7 +191,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
             rotate: 90.0,
             child: Container(
               decoration: BoxDecoration(
-                  color: Color(0xff384054),
+                  color:!isDarkMode? appColors.white:appColors.appBgColor3,
                   border: Border.all(width: 4)
               ),
               child: FlutterClipPolygon(
@@ -232,7 +234,8 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         margin: EdgeInsets.only(left: 22),
         child: Row(
           children: [
-            Text("Gender",style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w500,color: Colors.grey),),
+            Text("Gender",style: TextStyle(fontSize: 16.5,fontWeight: FontWeight.w500,
+                color: !isDarkMode ?Colors.black.withOpacity(0.85):Colors.grey),),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -241,24 +244,32 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                   child: Radio<int>(
                     value: 0,
                     groupValue: selectValue,
-                    activeColor: Color(0xffE4B343),
+                    activeColor:  !isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                     onChanged: (value) =>setState(()=>selectValue = value!),
                   ),
                 ),
-                Text("Male",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
+                Text("Male",style:!isDarkMode ?
+                    TextStyle(fontSize: 15,fontWeight: FontWeight.w500,
+                    color: selectValue == 0?appColors.buttonColor2:Colors.black.withOpacity(0.9))
+                    :TextStyle(fontSize: 15,fontWeight: FontWeight.w500,
+                    color: selectValue == 0?Color(0xffE4B343):Colors.white),),
                 SizedBox(width: 40,),
                 Transform.scale(
                   scale: 1.1,
                   child: Radio<int>(
                       value: 1,
-                      activeColor: Color(0xffE4B343),
+                      activeColor:  !isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                       focusColor: Colors.white,
 
                       groupValue: selectValue,
                       onChanged: (value) =>setState(()=>selectValue = value! )
                   ),
                 ),
-                Text("Female",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),)
+                Text("Female",style: !isDarkMode?
+                TextStyle(fontSize: 15,fontWeight: FontWeight.w500,
+                    color: selectValue == 1?appColors.buttonColor2:Colors.black.withOpacity(0.9))
+                :TextStyle(fontSize: 15,fontWeight: FontWeight.w500,
+                    color: selectValue == 1?Color(0xffE4B343):Colors.white),)
               ],
             ),
           ],
@@ -285,9 +296,9 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor:Color(0xff323446),
-          backgroundColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.next,
@@ -307,7 +318,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color:!isDarkMode? Colors.black :Colors.white,
           ),
           contentPadding: EdgeInsets.only(left: 25),
           onTextChange: (value) {
@@ -340,10 +351,10 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor:Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           textInputAction: TextInputAction.next,
-          backgroundColor: Color(0xff323446),
+          backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
           hintText: "Email address",
@@ -355,7 +366,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color:!isDarkMode? Colors.black :Colors.white,
           ),
           inputFieldSuffixIcon: Padding(
             padding: EdgeInsets.only(right: 10),
@@ -394,11 +405,11 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           autoFocus: false,
           errorMsgHeight: 20,
           errorLeftRightMargin: 0,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           cursorColor: Colors.grey,
           borderStyle: BorderStyle.none,
-          backgroundColor: Color(0xff323446),
+          backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           inputKeyboardType: InputKeyboardTypeWithError.phone,
           textInputAction: TextInputAction.done,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
@@ -412,7 +423,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
           textStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color:!isDarkMode? Colors.black :Colors.white,
           ),
           // inputFieldSuffixIcon:controllers['phone']!.text.isEmpty
           //     ?Container(height: 0,width: 0,)
@@ -489,7 +500,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
       );
     }
 
-    Widget locationFiled = DropDownDataPicker(
+    Widget dateOfBirth = DropDownDataPicker(
       hint:"Location" ,
       itemList: items.map(buildMenuItem).toList(),
     );
@@ -500,10 +511,10 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         child: CommonButton(
           buttonName: "Update Profile",
           buttonHeight: 48,
-          buttonColor:Color(0xFFCCA76A),
+          buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327),),
           isBottomMarginRequired: false,
           backCallback: (){
             // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
@@ -550,25 +561,27 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         onWillPop: null, //_onBackPressed,
         child: ContainerFirst(
           bottomSafeArea: true,
-          appBackgroundColor: AppColors().appBgColor2,
+          appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
           contextCurrentView: context,
           // scrollPadding: EdgeInsets.only(bottom: 110),
           isSingleChildScrollViewNeed: true,
           isFixedDeviceHeight: true,
-          statusBarColor: AppColors().appBgColor3,
-          appBarHeight: 65,
+          statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+          appBarHeight: 60,
           appBar: Container(
-            color: AppColors().appBgColor3,
+            color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
             child: appBarWithBackArrow(
+                backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
                 isTitleVisible: true,
                 isTrailingIconVisible: false,
-                leadingIconColor:Color(0xFFCCA76A),
                 title: "Edit Profile",
                 textStyle: TextStyle(
-                    fontSize: 21,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors().textNormalColor
+                  fontSize: 21,
+                  fontWeight: FontWeight.w700,
+                  color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
                 ),
+                leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+                leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
                 onPress: (){
                   Navigator.pop(context);
                 }
@@ -586,7 +599,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                   DatePickerWidget(isShowMonthName: true,errorHeight: 15,),
                   gender,
                   _phoneField(),
-                  locationFiled,
+                  dateOfBirth,
                   SizedBox(height: 20,)
                 ],
               ),
@@ -599,16 +612,20 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
         )
     );
   }
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+
+  DropdownMenuItem<String> buildMenuItem(String item)  {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+    return DropdownMenuItem(
       value:item,
       child: Text(
         item,
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: Colors.white,
+          color: !isDarkMode?  Colors.black:Colors.white,
         ),
       )
-  );
-}
+  );}
 
+}

@@ -69,9 +69,9 @@ class _NearByScreenState extends State<NearByScreen>
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
+          backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor3,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.done,
@@ -121,7 +121,7 @@ class _NearByScreenState extends State<NearByScreen>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Hello, John Doe",style: TextStyle(fontSize: 20,
-                    color: !isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                    color: !isDarkMode? AppColors().black: AppColors().white,
                     fontWeight: FontWeight.w700),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -182,11 +182,11 @@ class _NearByScreenState extends State<NearByScreen>
                       Row(
                         children: [
                           Icon(Icons.location_on,
-                            color:!isDarkMode? AppColors().buttonColor2: AppColors().textNormalColor6.withOpacity(0.6),
+                            color:!isDarkMode? AppColors().buttonColor2:Colors.blueAccent,
                             size: 18,),
                           SizedBox(width: 8,),
                           Text("San Francisco City",style: TextStyle(fontSize: 14,
-                              color: !isDarkMode? AppColors().black: AppColors().textNormalColor6.withOpacity(0.6),
+                              color: !isDarkMode? AppColors().black: AppColors().white,
                               fontWeight: FontWeight.w600),),
                         ],)
                     ],
@@ -293,7 +293,7 @@ class _NearByScreenState extends State<NearByScreen>
               isFixedDeviceHeight: true,
               appBarHeight: 200,
               appBar: Container(
-                color: !isDarkMode?Colors.white:Color(0xff323446),
+                color: !isDarkMode?Colors.white:appColors.appBgColor3,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

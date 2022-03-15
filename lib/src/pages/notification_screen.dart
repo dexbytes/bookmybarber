@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/notification_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_circular_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -15,6 +16,8 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
 
     Widget notificationCircle = Container(
@@ -26,7 +29,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     Widget notificationCard = Container(
       height: MediaQuery.of(context).size.height,
       child: NotificationCardWidget(
-        cardColors: AppColors().appBgColor3,
+        cardColors: !isDarkMode ?Colors.grey.withOpacity(0.25):AppColors().appBgColor3,
       ),
     );
 
@@ -36,8 +39,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return WillPopScope(
       onWillPop: null, //_onBackPressed,
       child:ContainerFirst(
-          appBackgroundColor: AppColors().appBgColor2,
-          statusBarColor: AppColors().appBgColor3,
+        appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
           contextCurrentView: context,
           // scrollPadding: EdgeInsets.only(bottom: 0),
           /* statusBarColor: Colors.amber,
@@ -46,13 +48,18 @@ class _NotificationScreenState extends State<NotificationScreen> {
           isFixedDeviceHeight: true,
           appBarHeight: 60,
           appBar: Container(
-            color: AppColors().appBgColor3,
+            // color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
             child: appBarWithBackArrow(
                 isTitleVisible: true,
                 isTrailingIconVisible: false,
-                leadingIconColor:Color(0xFFCCA76A),
                 title: "Notification",
-                textStyle: TextStyle(color: Color(0xFFCCA76A),fontSize: 20,fontWeight: FontWeight.w600),
+                textStyle: TextStyle(
+                  fontSize: 21,
+                  fontWeight: FontWeight.w700,
+                  color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+                ),
+                leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+                leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 15),
                 onPress: (){
                   Navigator.pop(context);
                 }

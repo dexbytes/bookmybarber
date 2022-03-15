@@ -10,7 +10,7 @@ PreferredSizeWidget appBarWithBackArrow(
       bool isTrailingIconVisible = true,
       bool isLeadingIconVisible = true,
       Color leadingIconColor = Colors.white,
-      Color backgroundColor = Colors.white,
+      Color? backgroundColor,
       Size  leadingIconSize = const Size(21, 21),
       EdgeInsetsGeometry?  leadingPadding,
       Widget? trailingIcon,
@@ -69,7 +69,7 @@ PreferredSizeWidget appBarWithBackArrow(
   return PreferredSize(
       preferredSize: Size.fromHeight(0),
       child: Card(
-        color: !isDarkMode ? appColors.appBgColor4 :appColors.appBgColor2 ,
+        color: backgroundColor ??(!isDarkMode ? appColors.appBgColor4 :appColors.appBgColor2 ),
         margin: EdgeInsets.only(bottom: 0.6),
         elevation: 0.6,
         child: Material(

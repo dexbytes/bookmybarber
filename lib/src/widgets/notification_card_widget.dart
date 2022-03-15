@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 
@@ -25,6 +26,8 @@ class NotificationCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
 
     List<NotificationCardList> list = [
@@ -115,7 +118,7 @@ class NotificationCardWidget extends StatelessWidget {
                             style: {'html' : Style(
                               fontSize: FontSize.large,
                               lineHeight: LineHeight(0.5),
-                              color: Color(0xFFCCA76A),
+                              color: !isDarkMode ?Colors.black: Color(0xFFCCA76A),
                               height: 20,
                               fontWeight: FontWeight.w600,
 

@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
 class NotificationCircularWidget extends StatelessWidget {
@@ -38,6 +39,9 @@ class NotificationCircularWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
     return GridView.builder(
       scrollDirection: Axis.horizontal,
       padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
@@ -79,7 +83,10 @@ class NotificationCircularWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 6),
-                Text(notification[index].title,style: TextStyle(fontSize: 13,fontWeight: FontWeight.w500,color: Color(0xFFCCA76A)))
+                Text(notification[index].title,style: TextStyle(fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color:!isDarkMode ?Colors.black: Color(0xFFCCA76A),
+                ))
               ],
             ),
           ),

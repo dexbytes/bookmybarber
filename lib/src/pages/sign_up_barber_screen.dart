@@ -680,7 +680,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
 
-  DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+  DropdownMenuItem<String> buildMenuItem(String item) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+    return DropdownMenuItem(
       value:item,
       child: Text(
         item,
@@ -690,5 +693,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
           color:!isDarkMode?  Colors.black:Colors.white,
         ),
       )
-  );
+  );}
 }

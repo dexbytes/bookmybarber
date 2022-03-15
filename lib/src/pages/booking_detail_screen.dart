@@ -184,6 +184,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           Container(
             color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
             child: appBarWithBackArrow(
+                backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
                 isTitleVisible: true,
                 leadingPadding: EdgeInsets.only(left: 10.0 ,
                     right: 10,bottom: 0,top: 0),

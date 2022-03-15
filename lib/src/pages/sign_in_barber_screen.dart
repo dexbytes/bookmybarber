@@ -125,7 +125,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ).createShader(bound),
             blendMode: BlendMode.darken,
             child:CachedNetworkImage(
-              height: MediaQuery.of(context).size.height/2.7,
+              height: MediaQuery.of(context).size.height/2.6,
               width: MediaQuery.of(context).size.width,
               imageUrl: "https://media1.popsugar-assets.com/files/thumbor/objfVkqK2u27teSwF05B732vpHg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2021/04/09/609/n/29590734/tmp_hzooXG_c3a3612a3e8fdf28_GettyImages-1235174298.jpg",
               fit:BoxFit.cover,
@@ -366,7 +366,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
   Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/3,
+      top: MediaQuery.of(context).size.height/3.5,
       child: Container(
         padding: EdgeInsets.only(top: 35),
         width: size.width,
@@ -431,7 +431,7 @@ class _SignInScreenState extends State<SignInScreen> {
               isFixedDeviceHeight: true,
               appBarHeight: -1,
               containChild:Container(
-                height: size.height/0.9,
+                height: size.height/0.85,
                 child: Stack(
                   children: [
                     bottomCardView,

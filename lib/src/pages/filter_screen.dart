@@ -4,6 +4,7 @@ import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 
 class FilterScreen extends StatefulWidget {
@@ -42,11 +43,15 @@ class _FilterScreenState extends State<FilterScreen>
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+
 
 
     Widget appbarView = Container(
+
       padding: EdgeInsets.only(left: 15,right: 15),
-      color: AppColors().appBgColor3,
+      color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
       child: Material(
         color: Colors.transparent,
         child: Row(
@@ -56,11 +61,13 @@ class _FilterScreenState extends State<FilterScreen>
                 onTap: (){
                   Navigator.pop(context);
                 },
-                child: Text('Cancel',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Color(0xffE4B343)),)),
-            Text('Filters',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white),),
+                child: Text('Cancel',style: TextStyle(fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: !isDarkMode ?Colors.black:Color(0xffE4B343)),)),
+            Text('Filters',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: !isDarkMode ?Colors.black:Colors.white),),
             InkWell(
                 onTap: (){},
-                child: Text('Reset',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:  Color(0xffE4B343)),)),
+                child: Text('Reset',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:!isDarkMode ?Colors.black:Color(0xffE4B343)),)),
           ],
         ),
       )
@@ -73,14 +80,14 @@ class _FilterScreenState extends State<FilterScreen>
           Padding(
             padding: EdgeInsets.only(bottom: 5.0,left: 12,top: 20),
             child: Text("Services",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
           ),
           Container(
               margin: EdgeInsets.symmetric(horizontal:12,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
-                selectedColor: Color(0xffCCA76A),
-
+                selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
+                backgroundColor: !isDarkMode ?appColors.greyUnselected:appColors.appBgColor3,
                 isSecondColorShow: false,
                 reportList: [
                  "Hairstyle", "Makeup", "Hair Coloring", "Spa", "Facial Makeup", "Trim & saving"
@@ -96,7 +103,7 @@ class _FilterScreenState extends State<FilterScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Rating",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
             SizedBox(height: 8,),
             Row(
               children: [
@@ -104,12 +111,13 @@ class _FilterScreenState extends State<FilterScreen>
                   unratedColor: Colors.grey,
                   iconCount: 5,
                   iconSize: 30,
+                  color:  !isDarkMode ?appColors.buttonColor2:appColors.buttonColor,
                   removeViewCount: true,
-                  itemRatingTextStyle: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),
+                  itemRatingTextStyle: TextStyle(color:  !isDarkMode ?Colors.black:Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),
                   spaceWithStar: 20,
                 ),
                 Text("Star",
-                    style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),),
+                    style: TextStyle(color: !isDarkMode ?Colors.black:Colors.white,fontSize: 14,fontWeight: FontWeight.w500,),),
               ],
             ),
           ],
@@ -126,7 +134,8 @@ class _FilterScreenState extends State<FilterScreen>
             Padding(
               padding: EdgeInsets.only(left: 12.0),
               child: Text("Gender",
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,
+                      color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
             ),
             SizedBox(height: 2,),
             Theme(
@@ -143,11 +152,15 @@ class _FilterScreenState extends State<FilterScreen>
                         child: Radio<int>(
                           value: 0,
                           groupValue: selectValue,
-                          activeColor: Color(0xffE4B343),
+                          activeColor:  !isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                           onChanged: (value) =>setState(()=>selectValue = value!),
                         ),
                       ),
-                      Text("Man",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
+                      Text("Man",style:!isDarkMode?
+                      TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: selectValue == 0?appColors.buttonColor2:Colors.black)
+                      :TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
                     ],
                   ),
                   // Text("Man",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: selectValue == 0?Color(0xffE4B343):Colors.white),),
@@ -157,14 +170,20 @@ class _FilterScreenState extends State<FilterScreen>
                         scale: 1.1,
                         child: Radio<int>(
                             value: 1,
-                            activeColor: Color(0xffE4B343),
+                            activeColor:  !isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                             focusColor: Colors.white,
 
                             groupValue: selectValue,
                             onChanged: (value) =>setState(()=>selectValue = value! )
                         ),
                       ),
-                      Text("Woman",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 1?Color(0xffE4B343):Colors.white),),
+                      Text("Woman",style: !isDarkMode?
+                      TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: selectValue == 1?appColors.buttonColor2:Colors.black)
+                          : TextStyle(fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: selectValue == 1?Color(0xffE4B343):Colors.white),),
                     ],
                   ),
                Row(
@@ -173,14 +192,18 @@ class _FilterScreenState extends State<FilterScreen>
                         scale: 1.1,
                         child: Radio<int>(
                             value: 2,
-                            activeColor: Color(0xffE4B343),
+                            activeColor:  !isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
                             focusColor: Colors.white,
 
                             groupValue: selectValue,
                             onChanged: (value) =>setState(()=>selectValue = value! )
                         ),
                       ),
-                   Text("Other",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 2?Color(0xffE4B343):Colors.white),)
+                   Text("Other",style:!isDarkMode?
+                   TextStyle(fontSize: 16,
+                       fontWeight: FontWeight.w500,
+                       color: selectValue == 2?appColors.buttonColor2:Colors.black)
+                  : TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: selectValue == 2?Color(0xffE4B343):Colors.white),)
                  ],
                ),
                 ],
@@ -199,7 +222,7 @@ class _FilterScreenState extends State<FilterScreen>
             Padding(
               padding: EdgeInsets.only(left: 6.0),
               child: Text("Distance",
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode?Colors.black:AppColors().textHeadingColor1)),
             ),
             SizedBox(height: 12,),
             Row(
@@ -217,10 +240,10 @@ class _FilterScreenState extends State<FilterScreen>
               margin: EdgeInsets.symmetric(horizontal:16),
               child: SliderTheme(
                 data: SliderThemeData(
-                  activeTickMarkColor:AppColors().textHeadingColor1,
-                  activeTrackColor: AppColors().textHeadingColor1,
+                  activeTickMarkColor:!isDarkMode?appColors.buttonColor2:AppColors().textHeadingColor1,
+                  activeTrackColor: !isDarkMode?appColors.buttonColor2:AppColors().textHeadingColor1,
                   inactiveTickMarkColor: Colors.transparent,
-                  thumbColor:AppColors().textHeadingColor1,
+                  thumbColor:!isDarkMode?appColors.buttonColor2:AppColors().textHeadingColor1,
                   overlayShape: SliderComponentShape.noOverlay,
                   trackHeight: 2,
                   rangeThumbShape: RoundRangeSliderThumbShape(enabledThumbRadius: 10),
@@ -252,13 +275,14 @@ class _FilterScreenState extends State<FilterScreen>
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,top: 10,left: 16),
             child: Text("Price",
-                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode?Colors.black:AppColors().textHeadingColor1)),
           ),
           Container(
               margin: EdgeInsets.only(left:30,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
-                selectedColor: Color(0xffCCA76A),
+                selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
+                backgroundColor: !isDarkMode ?appColors.greyUnselected:appColors.appBgColor3,
                 padding: EdgeInsets.only(left: 20,right: 20),
                 isSecondColorShow: false,
                 reportList: [
@@ -280,7 +304,7 @@ class _FilterScreenState extends State<FilterScreen>
               child: Container(
                 margin: EdgeInsets.zero,
                 child: Text("Sort by",
-                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: AppColors().textHeadingColor1)),
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
               ),
             ),
             ListView.builder(
@@ -307,11 +331,17 @@ class _FilterScreenState extends State<FilterScreen>
                         Text(sort[index].title,
                         style:TextStyle(fontSize: 15,
                             fontWeight: FontWeight.w500,
-                            color: selectedChoice == index? AppColors().textHeadingColor1:Colors.white) ,),
+                            color: !isDarkMode ?
+                            selectedChoice == index? appColors.buttonColor2:Colors.black
+                           :selectedChoice == index? AppColors().textHeadingColor1:Colors.white
+
+
+                        ) ,),
 
                         Container(
                           child: selectedChoice == index
-                          ? iconApps.iconImage(imageUrl: iconApps.rightIcon,imageColor: AppColors().textHeadingColor1,iconSize: Size(12, 12))
+                          ? iconApps.iconImage(imageUrl: iconApps.rightIcon,
+                              imageColor:!isDarkMode ? appColors.buttonColor2:AppColors().textHeadingColor1,iconSize: Size(12, 12))
                           : Container(),
                         )
                       ],
@@ -331,10 +361,10 @@ class _FilterScreenState extends State<FilterScreen>
         child:CommonButton(
           buttonHeight: 50,
           buttonName: "Apply Filter",
-          buttonColor: AppColors().buttonColor,
+          buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Color(0xff212327),),
+            color: !isDarkMode? Colors.white:Color(0xff212327)),
           backCallback:(){
             // Navigator.push(
             //   context,
@@ -360,8 +390,8 @@ class _FilterScreenState extends State<FilterScreen>
             child: Stack(
               children: [
                 ContainerFirst(
-                  appBackgroundColor: AppColors().appBgColor2,
-                  statusBarColor: AppColors().appBgColor3,
+                  appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+                  statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
                   contextCurrentView: context,
                   isSingleChildScrollViewNeed: true,
                   isFixedDeviceHeight: true,

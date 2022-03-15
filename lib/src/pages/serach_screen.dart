@@ -10,6 +10,7 @@ import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
 import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import 'Barber_listview_screen.dart';
 import 'categories_screen.dart';
@@ -44,6 +45,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = SchedulerBinding.instance!.window.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
 
     _searchField() {
       return Container(
@@ -62,9 +65,9 @@ class _SearchScreenState extends State<SearchScreen> {
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor: Color(0xff323446),
-          focusedBorderColor:Color(0xff323446),
-          backgroundColor: Color(0xff323446),
+          enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+          backgroundColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.done,
@@ -72,13 +75,16 @@ class _SearchScreenState extends State<SearchScreen> {
             splashRadius: 22,
             onPressed:(){},
             icon: iconApps.iconImage(
-                imageUrl: iconApps.micIcon,imageColor:Colors.white,
+                imageUrl: iconApps.micIcon,
+                imageColor: !isDarkMode?Colors.grey :Colors.white,
                 iconSize: Size(20, 20)),
           ),
           inputFieldPrefixIcon: IconButton(
             splashRadius: 22,
             onPressed:(){},
-            icon:Icon(CupertinoIcons.search,color: Colors.white,size: 20,),
+            icon:Icon(CupertinoIcons.search,
+              color: !isDarkMode?Colors.grey :Colors.white,
+              size: 20,),
           ),
           hintText: "Search salon,spa and barber",
           hintStyle: TextStyle(
@@ -110,9 +116,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: Color(0xff828588),
+                  color: !isDarkMode? Colors.white:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [
@@ -152,9 +159,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: Color(0xff828588),
+                  color: !isDarkMode?Colors.white:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [
@@ -196,9 +204,10 @@ class _SearchScreenState extends State<SearchScreen> {
         Container(
             margin: EdgeInsets.only(left: 15,right: 5,top: 5),
             child: BookAppointmentTimeList(
-              selectedColor: AppColors().appBgColor3,
+              selectedColor: !isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
+              backgroundColor:!isDarkMode? appColors.greyUnselected:AppColors().appBgColor3,
               labelTextStyle: TextStyle(
-                  color: Color(0xff828588),
+                  color: !isDarkMode?Colors.white:Color(0xff828588),
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               reportList: [
@@ -238,9 +247,9 @@ class _SearchScreenState extends State<SearchScreen> {
     return WillPopScope(
       onWillPop: null, //_onBackPressed,
       child:ContainerFirst(
-          appBackgroundColor: AppColors().appBgColor2,
+        appBackgroundColor:!isDarkMode?Colors.white:AppColors().appBgColor2,
           contextCurrentView: context,
-          statusBarColor: AppColors().appBgColor3,
+          statusBarColor: !isDarkMode?Colors.white:AppColors().appBgColor3,
           // scrollPadding: EdgeInsets.only(bottom: 35),
           // statusBarColor: Colors.amber,
           // bottomBarSafeAreaColor: Colors.amber,
@@ -248,14 +257,17 @@ class _SearchScreenState extends State<SearchScreen> {
           isFixedDeviceHeight: true,
           appBarHeight: 68,
           appBar: Container(
-            color:AppColors().appBgColor3,
+            color:!isDarkMode?Colors.white:AppColors().appBgColor3,
             child: Padding(
               padding: EdgeInsets.only(bottom: 5.0),
               child: appBarWithBackArrow(
+                  backgroundColor:!isDarkMode?Colors.white:AppColors().appBgColor3,
                   isTitleVisible: true,
-                  textStyle: TextStyle(fontSize: 22,color: AppColors().textHeadingColor1,fontWeight: FontWeight.w600),
+                  textStyle: TextStyle(fontSize: 22,
+                      color:!isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
+                      fontWeight: FontWeight.w600),
                   isTrailingIconVisible: false,
-                  leadingIconColor:Color(0xFFCCA76A),
+                  leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
                   title: "Search",
                   leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0),
                   onPress: (){

@@ -177,6 +177,7 @@ class AppColors {
 
   Color textFiledColor = const Color(0xff828588);
   Color textFiledColor2 = const Color(0xff323446);
+  Color textFiledColor3 = const Color(0xff212327);
 
 
   List<Color> gredientColor = const [
