@@ -86,7 +86,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     bool isDarkMode = brightness == Brightness.dark;
 
     double toolBarHeight = 60;
-    double expandedHeight = MediaQuery.of(context).size.height /1.9;
+    double expandedHeight = MediaQuery.of(context).size.height /1.635;
     collapsedHeight =  toolBarHeight + 50;
 
 
@@ -268,7 +268,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                               title:Container(
                                 padding: EdgeInsets.zero,
                                 margin: EdgeInsets.zero,
-                                color: !isDarkMode?Colors.white:Colors.transparent,
+                                color: !isDarkMode?Colors.transparent:Colors.transparent,
                                 child: TabBar(
                                   onTap: (index){
                                     setState(() {

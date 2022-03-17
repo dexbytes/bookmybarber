@@ -34,7 +34,7 @@ class ProfileListRowWidget extends StatelessWidget {
 
     return ListView.builder(
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.only(left: 10,right: 10,bottom: 90),
+        padding: EdgeInsets.only(left: 10,right: 10,bottom: 20),
         physics: NeverScrollableScrollPhysics(),
         itemCount: userProfile.length,
         shrinkWrap: true,

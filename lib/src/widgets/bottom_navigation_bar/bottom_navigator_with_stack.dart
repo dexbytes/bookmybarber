@@ -441,7 +441,7 @@ class BNBCustomPainter extends CustomPainter {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     Paint paint = new Paint()
-      ..color = !isDarkMode? appColors.white.withOpacity(1):appColors.appBgColor3//AppColors().appBgColor3
+      ..color = !isDarkMode? appColors.whiteCard.withOpacity(0.95):appColors.appBgColor3//AppColors().appBgColor3
       ..style = PaintingStyle.fill;
 
     Path path = Path();

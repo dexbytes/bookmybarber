@@ -83,7 +83,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
 
     Widget version = Container(
       // color: Colors.grey,
-      height: 50,
+      height: 30,
       child: FutureBuilder(
         future: PackageInfo.fromPlatform(),
         builder: (BuildContext context, AsyncSnapshot<PackageInfo> snapshot) {
@@ -106,8 +106,13 @@ class _UserProfileScreenState extends State<UserProfileScreen>
     Widget profileList = Container(
         margin: EdgeInsets.only(
             right: 0, left: 0),
-        height: MediaQuery.of(context).size.height /1.35,
-        child: ProfileListRowWidget()
+        height: MediaQuery.of(context).size.height /1.255,
+        child: Column(
+          children: [
+            ProfileListRowWidget(),
+            version
+          ],
+        )
     );
 
 
@@ -226,7 +231,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     profileList,
-                    version
+                    // version
                   ],
                 ),
               ],
