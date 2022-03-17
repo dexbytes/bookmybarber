@@ -182,6 +182,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       appBar: Column(
         children: [
           Container(
+            height: 60,
             color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
             child: appBarWithBackArrow(
                 backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,

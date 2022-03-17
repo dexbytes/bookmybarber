@@ -111,6 +111,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         rightText: "Resend a new code",
         isSubtitleTextVisible: true,
         isRightTextVisible: false,
+        subtitleTextCallBack: (){
+          print("Hello");
+          inputController.clear();
+        },
       ),
     );
 

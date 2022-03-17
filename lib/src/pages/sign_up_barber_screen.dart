@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
 import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
@@ -264,7 +265,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           errorLeftRightMargin: 0,
           errorMsgHeight: 20,
           autoFocus: false,
-          capitalization: CapitalizationText.sentences,
+          capitalization: CapitalizationText.none,
           cursorColor: Colors.grey,
           enabledBorderColor: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
@@ -319,7 +320,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           errorLeftRightMargin: 0,
           errorMsgHeight: 20,
           autoFocus: false,
-          capitalization: CapitalizationText.sentences,
+          capitalization: CapitalizationText.none,
           cursorColor: Colors.grey,
           enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           focusedBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
@@ -495,10 +496,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width/4.1,
+                      left: MediaQuery.of(context).size.width/4.2,
                       top: 10,
                       bottom: 10,
-                      right: 10
+                      right: 15
                   ),
                   child: VerticalDivider(
                     width: 10,
@@ -515,7 +516,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   initialSelection: 'In',
                   showCountryOnly: false,
                   showFlag: true,
-                  flagWidth: 21,
+                  flagWidth: 18,
                   showFlagDialog: true,
                   showDropDownButton: true,
                   showOnlyCountryWhenClosed: false,
@@ -562,9 +563,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
           isBottomMarginRequired: false,
           backCallback: (){
-            // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
-            //   return OtpVerificationScreen();
-            // }), (route) => false);
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
+              return DashBoardPage();
+            }), (route) => false);
             if(phoneNumber.toString().trim() != "" && Validation().validatePhoneNumber(phoneNumber)
                 && ( phoneNumber.length == 10 )
             ){

@@ -1,3 +1,5 @@
+import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
@@ -7,6 +9,7 @@ import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_top_row.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
+import 'package:base_flutter_app/src/widgets/full_photo_view_screen.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -101,31 +104,40 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
       child: BarberProfileTopRowWidget(),
     );
 
-    Widget profileImageWithName =Container(
+    Widget profileImageWithName = Container(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
       Stack(
       alignment: Alignment.bottomRight,
       children: [
-        Container(
-            padding: EdgeInsets.zero,
-            margin: EdgeInsets.only(top: appDimens.heightFullScreen()/6.2 /* MediaQuery.of(context).size.height /6.8*/),
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              border: Border.all(width: 2,color:!isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
-            ),
-              shape: BoxShape.circle,
-              color:Colors.transparent,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(60),
-              child: CachedNetworkImage(
-                imageUrl:widget.profileImgUrl,
-                fit: BoxFit.cover,
+        GestureDetector(
+          onTap:() {
+            Navigator.push(
+             context,
+              SlideRightRoute(
+                  widget: FullPhotoView(profileImgUrl: widget.profileImgUrl,)),
+            );
+          },
+          child: Container(
+              padding: EdgeInsets.zero,
+              margin: EdgeInsets.only(top: appDimens.heightFullScreen()/6.2 /* MediaQuery.of(context).size.height /6.8*/),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                border: Border.all(width: 2,color:!isDarkMode? appColors.buttonColor2:Color(0xffE4B343),
               ),
-            )
+                shape: BoxShape.circle,
+                color:Colors.transparent,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(60),
+                child: CachedNetworkImage(
+                  imageUrl:widget.profileImgUrl,
+                  fit: BoxFit.cover,
+                ),
+              )
+          ),
         ),
         Container(
           height: 25,
@@ -390,3 +402,5 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     );
   }
 }
+
+

@@ -2,6 +2,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/app_utility/validation.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/widgets/already_have_account_row.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -163,6 +164,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       );
     }
 
+    Widget resendCode = Container(
+      margin: EdgeInsets.only(bottom: 30,top: 22),
+      child: AlreadyHaveAccountRow(
+        leftText: "Did't you receive any code?",
+        leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
+        rightText: "Resend a new code",
+        isSubtitleTextVisible: true,
+        isRightTextVisible: false,
+      ),
+    );
+
 
     return ContainerFirst(
       appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
@@ -202,6 +214,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             _welcomeTextView(),
             SizedBox(height: 8,),
             _emailField(),
+            resendCode,
             bottomButton()
           ],
         ),
@@ -236,7 +249,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       imageUrl: iconApps.passwordIcon,
                     ),
                     SizedBox(height: 25,),
-                    Text("Code has been send to reset a new password",
+                    Text("Code has been sent to reset a new password",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,

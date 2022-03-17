@@ -44,6 +44,7 @@ import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
 import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
+import 'package:base_flutter_app/src/widgets/full_photo_view_screen.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_card_widget.dart';
