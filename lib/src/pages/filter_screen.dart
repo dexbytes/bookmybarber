@@ -86,8 +86,12 @@ class _FilterScreenState extends State<FilterScreen>
               margin: EdgeInsets.symmetric(horizontal:12,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
+                labelTextStyle: TextStyle(
+                    color: !isDarkMode? Colors.black:Color(0xff828588),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
-                backgroundColor: !isDarkMode ?appColors.greyUnselected:appColors.appBgColor3,
+                backgroundColor: !isDarkMode? appColors.grey.withOpacity(0.15):appColors.appBgColor3,
                 isSecondColorShow: false,
                 reportList: [
                  "Hairstyle", "Makeup", "Hair Coloring", "Spa", "Facial Makeup", "Trim & saving"
@@ -281,8 +285,12 @@ class _FilterScreenState extends State<FilterScreen>
               margin: EdgeInsets.only(left:30,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
+                labelTextStyle: TextStyle(
+                    color: !isDarkMode? Colors.black:Color(0xff828588),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
-                backgroundColor: !isDarkMode ?appColors.greyUnselected:appColors.appBgColor3,
+                backgroundColor: !isDarkMode? appColors.grey.withOpacity(0.15):appColors.appBgColor3,
                 padding: EdgeInsets.only(left: 20,right: 20),
                 isSecondColorShow: false,
                 reportList: [

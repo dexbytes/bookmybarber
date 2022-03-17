@@ -5,6 +5,7 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/setting_screen.dart';
 import 'package:base_flutter_app/src/pages/user_profile_edit_screen.dart';
+import 'package:base_flutter_app/src/widgets/full_photo_view_screen.dart';
 import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
 import 'package:base_flutter_app/src/widgets/like_follow_row_widget.dart';
 import 'package:base_flutter_app/src/widgets/notification_bell.dart';
@@ -42,7 +43,15 @@ class _UserProfileScreenState extends State<UserProfileScreen>
     bool isDarkMode = brightness == Brightness.dark;
 
 
-    Widget profileImage = Container(
+    Widget profileImage = GestureDetector(
+        onTap:() {
+          Navigator.push(
+            context,
+            SlideRightRoute(
+                widget: FullPhotoView(profileImgUrl:widget.image,)),
+          );
+        },
+    child: Container(
       margin: EdgeInsets.only(left: 10),
       height: 140,width: 140,
       child: FlutterClipPolygon(
@@ -79,7 +88,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
           ),
         ),
       ),
-    );
+    ));
 
     Widget version = Container(
       // color: Colors.grey,

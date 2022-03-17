@@ -52,13 +52,51 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   };
 
   bool _visible = true;
+  late ScrollController _scrollController;
+  bool isAppBarCollapsed = false;
+  late double collapsedHeight;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+
+
+    _scrollController = ScrollController()
+      ..addListener(
+              (){
+            print(_scrollController.position.pixels);
+
+            isAppBarCollapsed =  _scrollController.position.pixels >= collapsedHeight;
+            setState(() {
+
+            });
+          }
+      );
+
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
 
+    // double toolBarHeight = 60;
+
     double toolBarHeight = 60;
+    double expandedHeight = MediaQuery.of(context).size.height / 3.4;
+    collapsedHeight =  toolBarHeight;
+
+
 
     _searchField() {
       return Container(
@@ -217,6 +255,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   onNotification: (notification) {
                     final ScrollDirection direction = notification.direction;
                     setState(() {
+
+                      isAppBarCollapsed = isAppBarCollapsed;
+
                       if (direction == ScrollDirection.reverse) {
                         _visible = false;
                       } else if (direction == ScrollDirection.forward) {
@@ -226,6 +267,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     return true;
                   },
                   child: CustomScrollView(
+                    controller: _scrollController,
                       physics: ClampingScrollPhysics(),
                       shrinkWrap: true,
                       slivers: <Widget>[
@@ -243,7 +285,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   child: Text(
                                     "Book My Barber",
                                     style: TextStyle(
-                                       //   color: Colors.white,
+                                         color: !isDarkMode?
+                                         isAppBarCollapsed ? Colors.black:Colors.white
+                                        :isAppBarCollapsed ? Colors.white:Colors.white,
                                         fontSize: 24,
                                         fontWeight: FontWeight.w800),
                                   ),
@@ -252,6 +296,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     NotificationBal(
+                                      iconDataColor: !isDarkMode?
+                                          isAppBarCollapsed ? Colors.black:Colors.white
+                                          :isAppBarCollapsed ? Colors.white:Colors.white,
                                       onTap: () {
                                         FocusScope.of(context)
                                             .requestFocus(FocusNode());
@@ -274,6 +321,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       },
                                       icon: iconApps.iconImage(
                                           imageUrl: iconApps.filterIcon,
+                                          imageColor: !isDarkMode?
+                                          isAppBarCollapsed ? Colors.black:Colors.white
+                                              :isAppBarCollapsed ? Colors.white:Colors.white,
                                           iconSize: Size(20, 20)),
                                     ),
                                   ],
@@ -287,8 +337,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           expandedHeight:
                               MediaQuery.of(context).size.height / 3.4,
                           collapsedHeight: _visible?
-                          toolBarHeight+60
-                              :toolBarHeight+10,
+                          collapsedHeight+60
+                              :collapsedHeight+10,
                           flexibleSpace: FlexibleSpaceBarWidget(
                             expandedTitleScale: 1,
                             title: _visible?_searchField():Container(),
