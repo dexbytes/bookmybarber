@@ -8,10 +8,13 @@ import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import 'dashboard_screen.dart';
+
 class BookingScreen extends StatefulWidget {
   final String title;
   final bool isShowBackArrow;
-  const BookingScreen({Key? key, this.title = "Salon", this.isShowBackArrow = false}) : super(key: key);
+  final bool isBackArrowNavigation;
+  const BookingScreen({Key? key, this.title = "Salon", this.isShowBackArrow = false, this.isBackArrowNavigation = false}) : super(key: key);
   @override
   _BookingScreenState createState() => _BookingScreenState();
 }
@@ -73,7 +76,10 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                   color: Colors.transparent,
                   child: IconButton(
                     onPressed: (){
-                    Navigator.pop(context);
+                     widget.isBackArrowNavigation ?
+                     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
+                        return DashBoardPage();
+                      }), (route) => false):Navigator.pop(context);
                        },
                    icon: iconApps.iconImage(imageUrl: iconApps.backArrow2,
                        imageColor:!isDarkMode?AppColors().black:AppColors().buttonColor,
@@ -93,7 +99,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
               height: 40,
               decoration: BoxDecoration(
                   color:Colors.transparent,
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(width: 1,color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,)
               ),
               child: TabBar(
@@ -116,7 +122,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                 unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
                 indicator:BoxDecoration(
                   color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(7),
                 ),
               ),
             ),

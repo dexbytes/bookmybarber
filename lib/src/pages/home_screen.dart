@@ -121,20 +121,23 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           autoFocus: false,
           capitalization: CapitalizationText.sentences,
           cursorColor: Colors.grey,
-          enabledBorderColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
-          focusedBorderColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
-          backgroundColor:!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
+          enabledBorderColor:isAppBarCollapsed? !isDarkMode? AppColors().grey.withOpacity(0.4): AppColors().textFiledColor2
+              :!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
+          focusedBorderColor:isAppBarCollapsed? !isDarkMode? AppColors().grey.withOpacity(0.4): AppColors().textFiledColor2
+              :!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
+          backgroundColor:isAppBarCollapsed? !isDarkMode? AppColors().grey.withOpacity(0.4): AppColors().textFiledColor2
+              :!isDarkMode? AppColors().cardBgColor: AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.text,
           textInputAction: TextInputAction.done,
-          inputFieldSuffixIcon: IconButton(
-            splashRadius: 22,
-            onPressed: () {},
-            icon: iconApps.iconImage(
-                imageUrl: iconApps.micIcon,
-                imageColor: Colors.white,
-                iconSize: Size(20, 20)),
-          ),
+          // inputFieldSuffixIcon: IconButton(
+          //   splashRadius: 22,
+          //   onPressed: () {},
+          //   icon: iconApps.iconImage(
+          //       imageUrl: iconApps.micIcon,
+          //       imageColor: isAppBarCollapsed?Colors.grey:Colors.white,
+          //       iconSize: Size(20, 20)),
+          // ),
           inputFieldPrefixIcon: IconButton(
             splashRadius: 22,
             onPressed: () {},

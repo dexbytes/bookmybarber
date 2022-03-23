@@ -177,8 +177,8 @@ class _FaqScreenState extends State<FaqScreen> {
                           style: TextStyle(color:!isDarkMode? Colors.black:appColors.white,fontSize: 16.5,fontWeight: FontWeight.w500),
                         ),
                         trailing: menu.menuSubList.isEmpty?
-                        Icon(selected?Icons.keyboard_arrow_down:Icons.keyboard_arrow_down,color: Colors.transparent,):
-                        Icon(selected?Icons.keyboard_arrow_down:Icons.keyboard_arrow_up, color: Colors.grey,
+                        Icon(selected?Icons.keyboard_arrow_up:Icons.keyboard_arrow_up,color: Colors.transparent,):
+                        Icon(selected?Icons.keyboard_arrow_up:Icons.keyboard_arrow_down, color: Colors.grey,
                         ),
                         children:[
                           Container(

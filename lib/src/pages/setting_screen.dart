@@ -28,9 +28,7 @@ class _SettingScreenState extends State<SettingScreen> {
   List<SettingDataModel> settings = [
   SettingDataModel(title: "Help & Support",),
   SettingDataModel(title: "Terms & Condition",),
-  SettingDataModel(title: "Share with Friends & Family",),
   SettingDataModel(title: "Rate this App",),
-  SettingDataModel(title: "About App",),
 
   ];
 
@@ -202,7 +200,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
 
     Widget settingList = Container(
-      height: 330,
+      height: 200,
      child:  ListView.builder(
        scrollDirection: Axis.vertical,
        padding: EdgeInsets.only(left: 10,right: 10,),
@@ -277,7 +275,7 @@ class _SettingScreenState extends State<SettingScreen> {
         appBar: Container(
           color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
           child: appBarWithBackArrow(
-              backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
+              backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
               isTitleVisible: true,
               isTrailingIconVisible: false,
               title: "Settings",

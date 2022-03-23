@@ -14,15 +14,14 @@ class InviteFriendScreen extends StatefulWidget {
 
 class _InviteFriendScreenState extends State<InviteFriendScreen> {
 
-
   List<ShareList> categories = [
     ShareList(
       title: 'Friends',
-      icon: 'assets/images/facebook_icon2.png',
+      icon: 'assets/images/message_icon_green.png',
     ),
     ShareList(
       title: 'Message',
-      icon: 'assets/images/google_plus_icon.png',
+      icon: 'assets/images/gmail.png',
     ),
     ShareList(
       title: 'Facebook',
@@ -31,15 +30,15 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
 
     ShareList(
       title: 'Email',
-      icon: 'assets/images/messenger_icon2.png',
+      icon: 'assets/images/facebook_icon2.png',
     ),
     ShareList(
       title: 'Messenger',
-      icon: 'assets/images/whatsapp_icon.png',
+      icon: 'assets/images/messenger_icon2.png',
     ),
     ShareList(
       title: 'Pinterest',
-      icon: 'assets/images/paypal_icon.svg',
+      icon: 'assets/images/whatsapp_icon.png',
     ),
 
   ];
@@ -127,7 +126,7 @@ class _InviteFriendScreenState extends State<InviteFriendScreen> {
                               alignment: Alignment.center,
                               child:iconApps.iconImage(
                                   imageUrl:categories[index].icon,
-                                  // imageColor: categories[index].colors,
+                                  // imageColor:Color(0xff25D366),
                                   iconSize: Size(40, 40)
                               ),
                             )

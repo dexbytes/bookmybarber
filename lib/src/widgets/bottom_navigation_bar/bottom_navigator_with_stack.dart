@@ -334,7 +334,7 @@ class _BottomNavigatorWithStackState extends State<BottomNavigatorWithStack> {
               padding: EdgeInsets.all(0),
               height: 30,
               //color: Color.fromARGB(255, 18, 124, 157),
-              child: iconApps.iconImage(imageUrl: values["deActiveIcon"],imageColor:!isDarkMode? Colors.black.withOpacity(0.6):Colors.grey)),
+              child: iconApps.iconImage(imageUrl: values["deActiveIcon"],imageColor:!isDarkMode? Colors.black.withOpacity(0.7):Colors.white)),
 
 
           // Icon(

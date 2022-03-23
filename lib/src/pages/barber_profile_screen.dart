@@ -99,7 +99,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     Widget topSection = Container(
       height: 105,
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.only(top:15/*MediaQuery.of(context).size.height /2.6*/),
+      margin: EdgeInsets.only(top:10),
       color:!isDarkMode? appColors.white:appColors.appBgColor3,
       child: BarberProfileTopRowWidget(),
     );

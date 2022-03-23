@@ -23,9 +23,16 @@
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/filter_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_payment_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/faq_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/faq_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/user_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/user_profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/invite_friend_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/invite_friend_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/setting_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/setting_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/booking_detail_payment_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/booking_detail_payment_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +61,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/app_theme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -62,16 +69,16 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/lib/src/app_theme" />
+      <recent name="$PROJECT_DIR$/google_map_custom/test_package/assets" />
+      <recent name="$PROJECT_DIR$/google_map_custom/assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/src/app_theme" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/src/app_theme" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/google_map_custom/test_package/assets" />
-      <recent name="$PROJECT_DIR$/google_map_custom/assets" />
     </key>
   </component>
   <component name="RunManager">
@@ -123,42 +130,46 @@
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
     <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1647344443335" />
+    <state x="623" y="117" key="AndroidProcessChooserDialog" timestamp="1648026920579">
+      <screen x="0" y="25" width="1366" height="683" />
+    </state>
+    <state x="623" y="117" key="AndroidProcessChooserDialog/0.25.1366.683@0.25.1366.683" timestamp="1648026920579" />
     <state width="632" height="438" key="DebuggerActiveHint" timestamp="1647329233503">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1647329233503" />
-    <state width="1036" height="292" key="GridCell.Tab.0.bottom" timestamp="1647514893336">
+    <state width="1034" height="125" key="GridCell.Tab.0.bottom" timestamp="1648025527715">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
     <state width="1013" height="444" key="GridCell.Tab.0.bottom/0.25.1366.676@0.25.1366.676" timestamp="1646818233260" />
     <state width="1013" height="74" key="GridCell.Tab.0.bottom/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1036" height="292" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1647514893336" />
-    <state width="1036" height="292" key="GridCell.Tab.0.center" timestamp="1647514893335">
+    <state width="1034" height="125" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1648025527715" />
+    <state width="1034" height="125" key="GridCell.Tab.0.center" timestamp="1648025527714">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.center/0.25.1366.676@0.25.1366.676" timestamp="1646818233254" />
     <state width="1013" height="74" key="GridCell.Tab.0.center/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1036" height="292" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1647514893335" />
-    <state width="1036" height="292" key="GridCell.Tab.0.left" timestamp="1647514893335">
+    <state width="1034" height="125" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1648025527714" />
+    <state width="1034" height="125" key="GridCell.Tab.0.left" timestamp="1648025527714">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
     <state width="1013" height="444" key="GridCell.Tab.0.left/0.25.1366.676@0.25.1366.676" timestamp="1646818233252" />
     <state width="1013" height="74" key="GridCell.Tab.0.left/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1036" height="292" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1647514893335" />
-    <state width="1036" height="292" key="GridCell.Tab.0.right" timestamp="1647514893336">
+    <state width="1034" height="125" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1648025527714" />
+    <state width="1034" height="125" key="GridCell.Tab.0.right" timestamp="1648025527715">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.right/0.25.1366.676@0.25.1366.676" timestamp="1646818233258" />
     <state width="1013" height="74" key="GridCell.Tab.0.right/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1036" height="292" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1647514893336" />
+    <state width="1034" height="125" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1648025527715" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -194,11 +205,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/widgets/notification_circular_widget.dart</url>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart</url>
-          <line>257</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -11,6 +11,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
+import 'dashboard_screen.dart';
+
 class BookingDetailPaymentScreen extends StatefulWidget {
   const BookingDetailPaymentScreen({Key? key,}) : super(key: key);
   @override
@@ -123,6 +125,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: appBarWithBackArrow(
+                    backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
                       isTitleVisible: true,
                       leadingPadding: EdgeInsets.only(left: 10.0,
                           right: 10,bottom: 5,top: 0),
@@ -243,7 +246,9 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                       color: !isDarkMode? Colors.white:Color(0xff212327),
                     ),
                     backCallback:(){
-                      Navigator.pop(context);
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context){
+                        return DashBoardPage();
+                      }), (route) => false);
                     },
                     isBottomMarginRequired: false,
                   ),
@@ -256,7 +261,10 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                        Navigator.push(
                          context,
                          SlideRightRoute(
-                             widget: BookingScreen(isShowBackArrow: true,)),
+                             widget: BookingScreen(
+                               isShowBackArrow: true,
+                               isBackArrowNavigation: true,
+                               )),
                        );
                      },
                      child: Text("Go to appointment",

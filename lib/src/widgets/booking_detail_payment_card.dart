@@ -63,7 +63,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                             StarRatingBar(
                               padding: EdgeInsets.only(right:0),
                               removeViewCount: true,
-                              itemRatingTextStyle: TextStyle(color: Colors.black),
+                              itemRatingTextStyle: TextStyle(color:!isDarkMode ?Colors.black:Colors.white,),
                               initialRating:4
                             ),
                             // Text("1.2Km"),
@@ -115,7 +115,7 @@ class BookingDetailPaymentCard extends StatelessWidget {
                         Row(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left: 5.0),
+                              padding: EdgeInsets.only(left: 5.0,),
                               child: Text("Services:",
                                 style: TextStyle(
                                   fontSize: 14,
@@ -126,19 +126,26 @@ class BookingDetailPaymentCard extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              child: Html(data:"Haircut, Facial & MakeUp",
-                                style: {'html': Style(
-                                  fontSize: FontSize.medium,
-                                  lineHeight: LineHeight(0.6),
-                                  color:!isDarkMode ?Colors.grey:AppColors().textHeadingColor1,
-                                  height: 20,
-                                  width: MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width,
-                                  fontWeight: FontWeight.w500,
-                                  padding: EdgeInsets.all(0),
-                                  margin: EdgeInsets.all(0),
+                              child: Html(data:"Haircut,Facial & MakeUp",
+                                style: {'html': Style.fromTextStyle(
+
+                                  TextStyle(
+                                    fontSize: 14,
+                                    color:!isDarkMode ?Colors.grey:AppColors().textHeadingColor1,
+                                    height: 0.6,
+                                    fontWeight: FontWeight.w400,
+                                  )
+                                  // fontSize: FontSize.medium,
+                                  // lineHeight: LineHeight(0.6),
+                                  // color:!isDarkMode ?Colors.grey:AppColors().textHeadingColor1,
+                                  // height: 20,
+                                  // width: MediaQuery
+                                  //     .of(context)
+                                  //     .size
+                                  //     .width,
+                                  // fontWeight: FontWeight.w500,
+                                  // padding: EdgeInsets.all(0),
+                                  // margin: EdgeInsets.all(0),
 
                                 )},
                               ),

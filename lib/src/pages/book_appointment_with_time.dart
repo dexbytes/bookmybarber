@@ -150,7 +150,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
     }
 
     Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/6.4,
+      top: MediaQuery.of(context).size.height/6.6,
       child: Container(
         padding: EdgeInsets.only(top: 0),
         width: size.width,
@@ -175,7 +175,6 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                barberRow(),
                SizedBox(height: 20),
                time(),
-               SizedBox(height: 60*5),
 
              ],
            ),)
@@ -235,7 +234,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                 ],
               ),
               containChild:Container(
-                height: size.height/1.05,
+                height: size.height/0.88,
                 child: Stack(
                   children: [
                     bottomCardView,
