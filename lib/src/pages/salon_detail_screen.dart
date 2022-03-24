@@ -348,7 +348,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                         children: [
                           isAppBarCollapsed?Container():topSection,
                           isAppBarCollapsed?Container():Container(
-                            color: !isDarkMode?Colors.white:AppColors().appBgColor2,
+                            color: !isDarkMode?Colors.white:AppColors().appBgColor3,
                             child: TabBar(
                               onTap: (index){
                                 setState(() {

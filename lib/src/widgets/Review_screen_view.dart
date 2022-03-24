@@ -85,7 +85,7 @@ class ReviewListView extends StatelessWidget {
                             style: {'html' : Style.fromTextStyle(
                               TextStyle(fontSize: 18,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.black,
+                                  color:!isDarkMode?Colors.black:Colors.white,
                                   height: 0.85),
                               // fontSize: FontSize.xLarge,
                               // lineHeight: LineHeight(1),

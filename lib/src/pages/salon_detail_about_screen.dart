@@ -1,6 +1,8 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_company_info_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
 import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
@@ -128,8 +130,15 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       padding: EdgeInsets.zero,
       shrinkWrap: true,
       controller: _scrollController,
-      physics: widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),//widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       children: [
+
+        SeeAllTextRow(
+            margin: EdgeInsets.only(left: 20,bottom: 0,top: 25,right: 20),
+            leftTitle: "Basic Info",
+            leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
+            isRightTextVisible: false,
+        ),
         SizedBox(height:  widget.isDataScroll?widget.collapsedheight:0,),
       widget.isBarberInfoShow?
       BarberCompanyInfoRow(
@@ -156,16 +165,37 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       openHours,
       address,
 
+        Padding(
+          padding: EdgeInsets.only(top: 20.0,left: 13,right: 13),
+          child: Divider(height: 1,thickness: 0.3,color: Colors.grey,),
+        ),
+
       SeeAllTextRow(
-          margin: EdgeInsets.only(left: 20,bottom: 10,top: 25,right: 20),
-          leftTitle: "Photos",
-          leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white),
+          margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
+          leftTitle: "Portfolio",
+          leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
           rightTextCallBack:() {
             this.widget.onPhotoClickCallBack.call();
           }
       ),
       image,
-        SizedBox(height:  60,),
+        SizedBox(height:  0,),
+        Padding(
+          padding: EdgeInsets.only(top: 20.0,left: 13,right: 13),
+          child: Divider(height: 1,thickness: 0.3,color: Colors.grey,),
+        ),
+        SeeAllTextRow(
+            margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
+            leftTitle: "Reviews",
+            leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
+            rightTextCallBack:() {
+              Navigator.push(
+                context,
+                SlideRightRoute(
+                    widget: SalonDetailReviewScreen()),
+              );
+            }
+        ),
     ],)
       //physics: NeverScrollableScrollPhysics(),
       // mainAxisAlignment: MainAxisAlignment.start,
