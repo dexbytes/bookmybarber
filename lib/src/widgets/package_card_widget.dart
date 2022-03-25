@@ -16,6 +16,8 @@ class PackageCardWidget extends StatelessWidget {
   final bool isSecondDataVisible;
   final bool isBookRowVisible;
   final ScrollPhysics physics;
+  final int? itemCount;
+  final EdgeInsetsGeometry? padding;
 
   PackageCardWidget({
     this.color = Colors.deepOrangeAccent,
@@ -25,6 +27,8 @@ class PackageCardWidget extends StatelessWidget {
     this.isSecondDataVisible = false,
     this.isBookRowVisible = false,
     this.physics = const ClampingScrollPhysics(),
+    this.itemCount,
+    this.padding,
   });
 
 
@@ -36,9 +40,9 @@ class PackageCardWidget extends StatelessWidget {
 
     return ListView.builder(
       scrollDirection: Axis.vertical,
-      padding: EdgeInsets.only(right: 10,left: 10,bottom: 110),
+      padding: padding ??EdgeInsets.only(right: 10,left: 10,bottom: 60),
       physics: physics,
-      itemCount:package.length ,
+      itemCount: itemCount ?? package.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return Container(

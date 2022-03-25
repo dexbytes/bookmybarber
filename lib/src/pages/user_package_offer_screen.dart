@@ -21,9 +21,9 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
     bool isDarkMode = brightness == Brightness.dark;
 
     Widget package = Container(
-      margin: EdgeInsets.only(top: 20),
-      height: MediaQuery.of(context).size.height,
+      margin: EdgeInsets.only(top: 20,),
       child: PackageCardWidget(
+        physics: ClampingScrollPhysics(),
         titleTextStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,
             color: !isDarkMode?  Colors.black :Colors.white,
             height: 0.5),
@@ -66,13 +66,8 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
         ),
       ),
       containChild: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            package,
-          ],
-        ),
+        height: 1,
+        child: package,
       ),
     );
 

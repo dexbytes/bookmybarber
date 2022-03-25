@@ -3,6 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
+import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
 import 'package:base_flutter_app/src/widgets/barber_profile_company_info_row.dart';
 import 'package:base_flutter_app/src/widgets/detail_address_view.dart';
 import 'package:base_flutter_app/src/widgets/detail_hour_text.dart';
@@ -123,7 +124,21 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
        height: 80,
        child: DetailPhotoView());
 
+    Widget review = Container(
+      height: 180,
+        padding: EdgeInsets.only(left: 10,),
+        // height: MediaQuery.of(context).size.height +250,
+        child: ReviewListView(
+          // onTap: (){
+          //   setState(() {
+          //     isMore = !isMore;
+          //   });
+          // },
+          // isLess: isMore,
+        )
 
+
+    );
 
 
     return ListView(
@@ -133,12 +148,12 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       physics: NeverScrollableScrollPhysics(),//widget.isDataScroll && isScrollable?ClampingScrollPhysics():NeverScrollableScrollPhysics(),
       children: [
 
-        SeeAllTextRow(
-            margin: EdgeInsets.only(left: 20,bottom: 0,top: 25,right: 20),
-            leftTitle: "Basic Info",
-            leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
-            isRightTextVisible: false,
-        ),
+        // SeeAllTextRow(
+        //     margin: EdgeInsets.only(left: 20,bottom: 0,top: 25,right: 20),
+        //     leftTitle: "Basic Info",
+        //     leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
+        //     isRightTextVisible: false,
+        // ),
         SizedBox(height:  widget.isDataScroll?widget.collapsedheight:0,),
       widget.isBarberInfoShow?
       BarberCompanyInfoRow(
@@ -173,7 +188,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
       SeeAllTextRow(
           margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
           leftTitle: "Portfolio",
-          leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
+          leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
           rightTextCallBack:() {
             this.widget.onPhotoClickCallBack.call();
           }
@@ -187,7 +202,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
         SeeAllTextRow(
             margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
             leftTitle: "Reviews",
-            leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.textHeadingColor1),
+            leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
             rightTextCallBack:() {
               Navigator.push(
                 context,
@@ -196,6 +211,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
               );
             }
         ),
+        review,
     ],)
       //physics: NeverScrollableScrollPhysics(),
       // mainAxisAlignment: MainAxisAlignment.start,

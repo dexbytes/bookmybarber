@@ -22,15 +22,19 @@
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/user_package_offer_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/user_package_offer_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/welcome_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets/Review_screen_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/Review_screen_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/categories_circular_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/categories_circular_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_photo_row_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_photo_row_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_screen_star_row.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/widgets/package_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/package_card_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,11 +136,11 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="294" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.683@0.25.1366.683" timestamp="1645682993206" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1647344443335">
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1648188409634">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1647344443335" />
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1648188409634" />
     <state x="623" y="117" key="AndroidProcessChooserDialog" timestamp="1648026920579">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -145,38 +149,38 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1647329233503" />
-    <state width="1015" height="285" key="GridCell.Tab.0.bottom" timestamp="1648123755337">
+    <state width="1026" height="393" key="GridCell.Tab.0.bottom" timestamp="1648206156515">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
     <state width="1013" height="444" key="GridCell.Tab.0.bottom/0.25.1366.676@0.25.1366.676" timestamp="1646818233260" />
     <state width="1013" height="74" key="GridCell.Tab.0.bottom/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1015" height="285" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1648123755337" />
-    <state width="1015" height="285" key="GridCell.Tab.0.center" timestamp="1648123755336">
+    <state width="1026" height="393" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1648206156515" />
+    <state width="1026" height="393" key="GridCell.Tab.0.center" timestamp="1648206156515">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.center/0.25.1366.676@0.25.1366.676" timestamp="1646818233254" />
     <state width="1013" height="74" key="GridCell.Tab.0.center/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1015" height="285" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1648123755336" />
-    <state width="1015" height="285" key="GridCell.Tab.0.left" timestamp="1648123755336">
+    <state width="1026" height="393" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1648206156515" />
+    <state width="1026" height="393" key="GridCell.Tab.0.left" timestamp="1648206156515">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
     <state width="1013" height="444" key="GridCell.Tab.0.left/0.25.1366.676@0.25.1366.676" timestamp="1646818233252" />
     <state width="1013" height="74" key="GridCell.Tab.0.left/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1015" height="285" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1648123755336" />
-    <state width="1015" height="285" key="GridCell.Tab.0.right" timestamp="1648123755337">
+    <state width="1026" height="393" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1648206156515" />
+    <state width="1026" height="393" key="GridCell.Tab.0.right" timestamp="1648206156515">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.right/0.25.1366.676@0.25.1366.676" timestamp="1646818233258" />
     <state width="1013" height="74" key="GridCell.Tab.0.right/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1015" height="285" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1648123755337" />
+    <state width="1026" height="393" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1648206156515" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1646286237489">
       <screen x="0" y="25" width="1366" height="683" />
     </state>

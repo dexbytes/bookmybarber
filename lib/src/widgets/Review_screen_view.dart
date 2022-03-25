@@ -9,12 +9,14 @@ import 'package:flutter_html/flutter_html.dart';
 class ReviewListView extends StatelessWidget {
   final void Function()? onTap;
   final bool isLess;
+  final int? itemCount;
   final Function(dynamic)? commentTypeCallBack;
 
   const ReviewListView({Key? key,
     this.isLess = true,
     this.commentTypeCallBack,
-    this.onTap
+    this.onTap,
+    this.itemCount
 
   }) : super(key: key);
 
@@ -27,8 +29,8 @@ class ReviewListView extends StatelessWidget {
 
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 0,vertical: 0),
-      itemCount: review.length,
+      padding: EdgeInsets.only(left: 0,right: 0,top: 0,bottom: 50),
+      itemCount: itemCount ?? review.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Container(

@@ -9,6 +9,8 @@ class CategoriesCircularWidget extends StatelessWidget {
   final onClickCardCallBack;
   final bool isListTwoVisible;
 
+  int maxItemToShow = 5;
+
   CategoriesCircularWidget({Key? key,
     this.onClickCardCallBack,
     this.isListTwoVisible = false
@@ -47,7 +49,6 @@ class CategoriesCircularWidget extends StatelessWidget {
       icon: 'assets/images/categories_ustra_icon.png',
       colors: Color(0xffFE9654),
     ),
-
   ];
 
   List<CategoriesList> categories2 = [
@@ -81,16 +82,15 @@ class CategoriesCircularWidget extends StatelessWidget {
       icon: 'assets/images/beard-icon.png',
       colors: Color(0xffFE9654),
     ),
-
   ];
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return ListView.builder(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.only(left: 20,right: 15),
+      padding: EdgeInsets.only(left: 13,right: 15,),
       physics: ClampingScrollPhysics(),
-      itemCount: isListTwoVisible ? categories2.length : categories.length ,
+     itemCount: isListTwoVisible ? categories2.length : categories.length ,
       shrinkWrap: true,
       itemBuilder: (BuildContext context, int index) {
         return Material(
@@ -98,7 +98,7 @@ class CategoriesCircularWidget extends StatelessWidget {
           child: InkWell(
             onTap: (){
               print("$index",);
-              this.onClickCardCallBack?.call(0);
+              this.onClickCardCallBack?.call();
               Navigator.push(
                 MainAppBloc.getDashboardContext,
                 SlideRightRoute(
@@ -112,14 +112,14 @@ class CategoriesCircularWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Card(
-                  margin: EdgeInsets.zero,
-                  elevation: 3,
+                  margin: EdgeInsets.only(left: 6,right: 12),
+                  elevation: 1.5,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80)
                   ),
                   color: isListTwoVisible ? categories2[index].colors :categories[index].colors,
                   child: Container(
-                    padding: EdgeInsets.zero,
+                      padding: EdgeInsets.zero,
                       margin: EdgeInsets.zero,
                       height: 64,
                       width: 64,
@@ -131,8 +131,8 @@ class CategoriesCircularWidget extends StatelessWidget {
                         alignment: Alignment.center,
                         child:iconApps.iconImage(
                             imageUrl: isListTwoVisible ? categories2[index].icon : categories[index].icon,
-                          imageColor: Colors.white,
-                          iconSize: Size(38, 38)
+                            imageColor: Colors.white,
+                            iconSize: Size(38, 38)
 
                         ),
                       )
@@ -146,12 +146,100 @@ class CategoriesCircularWidget extends StatelessWidget {
             ),
           ),
         );
-      }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 1,         //for most popular item list count : 2  & for BrandCardView count :4
-        mainAxisSpacing: 15,       //for most popular item list mainSpacing : 5  & for BrandCardView mainSpacing : 10
-        mainAxisExtent: 65
-    ),
+      },
     );
+
+    // ListView.builder(
+    //   scrollDirection: Axis.horizontal,
+    //   padding: EdgeInsets.only(left: 20,right: 15,),
+    //   physics: ClampingScrollPhysics(),
+    // //  itemCount: isListTwoVisible ? categories2.length : categories.length ,
+    //   itemCount:   isListTwoVisible ? categories2.length : categories.length >
+    //       maxItemToShow?maxItemToShow+1
+    //       : isListTwoVisible ? categories2.length : categories.length,
+    //   shrinkWrap: true,
+    //   itemBuilder: (BuildContext context, int index) {
+    //     if(index < maxItemToShow){
+    //       return Material(
+    //         color: Colors.transparent,
+    //         child: InkWell(
+    //           onTap: (){
+    //             print("$index",);
+    //             this.onClickCardCallBack?.call();
+    //             Navigator.push(
+    //               MainAppBloc.getDashboardContext,
+    //               SlideRightRoute(
+    //                   widget: SalonListViewAllScreen(title: isListTwoVisible ? categories2[index].title : categories[index].title ,)),
+    //             );
+    //
+    //           },
+    //           child:Column(
+    //             mainAxisSize: MainAxisSize.min,
+    //             crossAxisAlignment: CrossAxisAlignment.center,
+    //             mainAxisAlignment: MainAxisAlignment.center,
+    //             children: [
+    //               Card(
+    //                 margin: EdgeInsets.only(left: 6,right: 12),
+    //                 elevation: 1.5,
+    //                 shape: RoundedRectangleBorder(
+    //                     borderRadius: BorderRadius.circular(80)
+    //                 ),
+    //                 color: isListTwoVisible ? categories2[index].colors :categories[index].colors,
+    //                 child: Container(
+    //                     padding: EdgeInsets.zero,
+    //                     margin: EdgeInsets.zero,
+    //                     height: 64,
+    //                     width: 64,
+    //                     decoration: BoxDecoration(
+    //                       shape: BoxShape.circle,
+    //                       color:Colors.transparent,
+    //                     ),
+    //                     child:Align(
+    //                       alignment: Alignment.center,
+    //                       child:iconApps.iconImage(
+    //                           imageUrl: isListTwoVisible ? categories2[index].icon : categories[index].icon,
+    //                           imageColor: Colors.white,
+    //                           iconSize: Size(38, 38)
+    //
+    //                       ),
+    //                     )
+    //                 ),
+    //               ),
+    //               SizedBox(height: 10),
+    //               Text( isListTwoVisible ? categories2[index].title : categories[index].title,style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500)),
+    //               SizedBox(height: 2),
+    //               Text(isListTwoVisible ? categories2[index].subtitle : categories[index].subtitle,style: TextStyle(fontSize: 11.5,fontWeight: FontWeight.w400,color: Color(0xff828588))),
+    //             ],
+    //           ),
+    //         ),
+    //       );
+    //     }else{
+    //       return  GestureDetector(
+    //         onTap: (){
+    //           Navigator.push(
+    //             MainAppBloc.getDashboardContext,
+    //             SlideRightRoute(
+    //                 widget: SalonListViewAllScreen(title: isListTwoVisible ? categories2[index].title : categories[index].title ,)),
+    //           );
+    //         },
+    //         child: Container(
+    //           height: 64,width: 64,
+    //             padding: EdgeInsets.zero,
+    //             margin: EdgeInsets.only(bottom: 65,top: 25),
+    //             decoration: BoxDecoration(
+    //                 shape: BoxShape.circle,
+    //               color:Colors.grey.withOpacity(0.2),
+    //             ),
+    //             child:Align(
+    //               alignment: Alignment.center,
+    //               child:Text('View all', style: TextStyle(color: Colors.white,fontSize: 12.5,fontWeight: FontWeight.w600),)
+    //             )
+    //         ),
+    //       );
+    //         // Text('View all', style: TextStyle(color: Colors.white),);
+    //     }
+    //   },
+    // );
 
   }
 }

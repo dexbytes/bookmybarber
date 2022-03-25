@@ -71,7 +71,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
 
     return ContainerFirst(
-      bottomBarSafeAreaColor: appColors.appBgColor2,
+      bottomBarSafeAreaColor:appColors.appBgColor2,
+
       contextCurrentView: context,
       isOverLayStatusBar: true,
       // appBackgroundColor: Colors.white,

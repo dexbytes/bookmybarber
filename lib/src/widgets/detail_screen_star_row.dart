@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class DetailScreenStarRow extends StatelessWidget {
   final Function(dynamic)? onButtonClickCallBack;
   final TextStyle buttonTextStyle;
+  final TextStyle? reviewTextStyle;
+  final Color? unratedStarColor;
   final String buttonText;
   final double buttonHeight;
   final double buttonWidth;
@@ -21,6 +23,8 @@ class DetailScreenStarRow extends StatelessWidget {
     this.buttonBorderWidth = 1,
     this.buttonColor = const Color(0xff00B2AE),
     this.buttonBorderRadius = 4,
+    this.reviewTextStyle,
+    this.unratedStarColor,
 
   });
   @override
@@ -34,6 +38,8 @@ class DetailScreenStarRow extends StatelessWidget {
           iconCount: 5,
           iconSize: 20,
           removeItemRating: true,
+          itemViewCountTextStyle: reviewTextStyle ??TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.w400,),
+          unratedColor: unratedStarColor ?? Colors.white,
           crossAxisAlignment: CrossAxisAlignment.end,
           itemReviewCount: 125,
           initialRating: 3,
