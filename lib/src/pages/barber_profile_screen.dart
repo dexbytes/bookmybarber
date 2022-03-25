@@ -640,7 +640,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
         padding: EdgeInsets.only(left: 10,),
         // height: MediaQuery.of(context).size.height +250,
         child: ReviewListView(
-          itemCount: 1,
+          itemCount: 3,
         )
 
 

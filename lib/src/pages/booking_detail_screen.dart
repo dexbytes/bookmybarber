@@ -92,9 +92,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
 
     Widget topText = Container(
-        height: 75,
+        height: 70,
         child: Container(
-          padding: EdgeInsets.only(left: 12 ,right: 18,top: 12,bottom: 5),
+          padding: EdgeInsets.only(left: 12 ,right: 18,top: 8,bottom: 0),
           color: !isDarkMode ?Colors.grey.shade100:AppColors().appBgColor3,
           child: Container(
             margin: EdgeInsets.only(bottom: 8),
@@ -165,58 +165,94 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         )
     );
 
+    bottomButton(){
+      return Container(
+        margin: EdgeInsets.only(left: 25,right: 25,bottom: 0),
+        child:CommonButton(
+          buttonHeight: 52,
+          buttonName: "Book Again",
+          buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
+          textStyle: TextStyle(fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: !isDarkMode? Colors.white:Color(0xff212327),),
+          backCallback:(){
+            // Navigator.push(
+            //   context,
+            //   SlideRightRoute(
+            //       widget: BookAppointmentScreen()),
+            // );
+          },
+          isBottomMarginRequired: false,
+        )
+      );
+    }
 
 
-    return ContainerFirst(
-      appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
-      reverse: false,
-      contextCurrentView: context,
-      bottomBarSafeAreaColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
-      statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
-      // scrollPadding: EdgeInsets.only(bottom: 0),
-      /* statusBarColor: Colors.amber,
-          bottomBarSafeAreaColor: Colors.amber,*/
-      isSingleChildScrollViewNeed: true,
-      isFixedDeviceHeight: true,
-      appBarHeight : 135,
-      appBar: Column(
-        children: [
-          Container(
-            height: 60,
-            color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
-            child: appBarWithBackArrow(
-                backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
-                isTitleVisible: true,
-                leadingPadding: EdgeInsets.only(left: 10.0 ,
-                    right: 10,bottom: 0,top: 0),
-                textStyle: TextStyle(fontSize: 22,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
-                isTrailingIconVisible: false,
-                leadingIconColor:!isDarkMode ?Colors.black:Color(0xFFCCA76A),
-                title: "Booking Details",
-                onPress: (){
-                  Navigator.pop(context);
-                }
-            ),
-          ),
-          topText,
-        ],
-      ),
-      containChild: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
+
+    return Scaffold(
+      backgroundColor:  !isDarkMode ?Colors.white:AppColors().appBgColor2,
+      body: SafeArea(
+        top: false,
+        bottom: true,
+        child: Stack(
           children: [
-            SizedBox(height: 15,),
-            salonList,
-            SizedBox(height: 10,),
-            services,
-            SizedBox(height: 10,),
-            cost,
-            SizedBox(height: 15,),
-            coupon,
-            SizedBox(height: 20,),
-            payment,
-            SizedBox(height: 20,),
+            ContainerFirst(
+              appBackgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+              reverse: false,
+              contextCurrentView: context,
+              bottomBarSafeAreaColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+              statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+              // scrollPadding: EdgeInsets.only(bottom: 0),
+              /* statusBarColor: Colors.amber,
+                  bottomBarSafeAreaColor: Colors.amber,*/
+              isSingleChildScrollViewNeed: true,
+              isFixedDeviceHeight: true,
+              appBarHeight : 135,
+              appBar: Column(
+                children: [
+                  Container(
+                    height: 60,
+                    color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+                    child: appBarWithBackArrow(
+                        backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
+                        isTitleVisible: true,
+                        leadingPadding: EdgeInsets.only(left: 10.0 ,
+                            right: 10,bottom: 0,top: 0),
+                        textStyle: TextStyle(fontSize: 22,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
+                        isTrailingIconVisible: false,
+                        leadingIconColor:!isDarkMode ?Colors.black:Color(0xFFCCA76A),
+                        title: "Booking Details",
+                        onPress: (){
+                          Navigator.pop(context);
+                        }
+                    ),
+                  ),
+                  topText,
+                ],
+              ),
+              containChild: Container(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 15,),
+                    salonList,
+                    SizedBox(height: 10,),
+                    services,
+                    SizedBox(height: 10,),
+                    cost,
+                    SizedBox(height: 15,),
+                    coupon,
+                    SizedBox(height: 20,),
+                    payment,
+                    SizedBox(height: 60,),
+                  ],
+                ),
+              ),
+            ),
+            Align(alignment: Alignment.bottomCenter,
+              child: bottomButton(),
+            )
           ],
         ),
       ),

@@ -16,9 +16,10 @@ class BookingDetailPaymentCard extends StatelessWidget {
 
     return Container(
         color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
-        height: 152,
+        // height: 130,
         padding: EdgeInsets.all(5),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -158,31 +159,32 @@ class BookingDetailPaymentCard extends StatelessWidget {
                 )
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 12.0,top: 2),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text( "Total:",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: !isDarkMode ?Colors.black:AppColors().white,
-                    ),
-
-                  ),
-                  SizedBox(width: 5,),
-                  Text("\$45.00",
-                  style: TextStyle(
-                    backgroundColor: Colors.transparent,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color:!isDarkMode ?AppColors().textHeadingColor2:Color(0xff14D9D4),
-                  ),
-                  ),
-                ],
-              ),
-            )
+            // Padding(
+            //   padding: EdgeInsets.only(left: 12.0,top: 15, bottom:15),
+            //   child: Row(
+            //     crossAxisAlignment: CrossAxisAlignment.end,
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       Text( "Total:",
+            //         style: TextStyle(
+            //           fontSize: 18,
+            //           fontWeight: FontWeight.w600,
+            //           color: !isDarkMode ?Colors.black:AppColors().white,
+            //         ),
+            //
+            //       ),
+            //       SizedBox(width: 5,),
+            //       Text("\$45.00",
+            //       style: TextStyle(
+            //         backgroundColor: Colors.transparent,
+            //         fontSize: 18,
+            //         fontWeight: FontWeight.w600,
+            //         color:!isDarkMode ?AppColors().red:Color(0xff14D9D4),
+            //       ),
+            //       ),
+            //     ],
+            //   ),
+            // )
 
           ],
         ),

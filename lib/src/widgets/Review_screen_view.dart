@@ -36,7 +36,7 @@ class ReviewListView extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
               color: Colors.transparent,
-              border: Border(bottom: BorderSide(color: Colors.grey,width: 0.4,))
+              border: Border(bottom: BorderSide(color: Colors.grey,width: 0.25,))
           ),
           padding: EdgeInsets.only(
             top: 10.0,

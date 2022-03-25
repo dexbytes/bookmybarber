@@ -96,56 +96,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     double starHeight = 30;
     double toolBarHeight = 60;
     double expandedHeight = MediaQuery.of(context).size.height /3.9;
-    collapsedHeight =  toolBarHeight + hedingHeight+starHeight + 5;
-
-    Widget tabBar = Column(
-        mainAxisSize: MainAxisSize.min,
-        children:[
-          Container(
-            color: Color(0xff323446),
-            child: TabBar(
-              onTap: (index){
-                setState(() {
-                  selectedTab = index;
-                });
-              },
-              controller: tabController,
-              tabs: [
-                Tab(text: "About",),
-                Tab(text: "Services",),
-                Tab(text: "Gallery",),
-                Tab(text: "Review",),
-              ],
-              labelColor:Color(0xffE4B343),
-              isScrollable: false,
-              unselectedLabelColor: Color(0xff828588),
-              labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-              unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-              labelPadding: EdgeInsets.only(right: 2,bottom: 0,),
-              indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-              indicatorColor: Color(0xffE4B343),
-            ),
-          ),
-          DefaultTabController(
-            length: 4,
-            initialIndex: selectedTab,
-            child: Container(
-              // height: MediaQuery.of(context).size.height + 333,
-              child: Center(
-                child: TabBarView(
-                  controller: tabController,
-                  children: [
-                    // DescriptionPage(),
-                    SalonDetailAboutScreen(),
-                    SalonDetailSevicesScreen(),
-                    SalonGalleryViewScreen(title: "Gallrey",),
-                    SalonDetailReviewScreen()
-                  ],
-                ),
-              ),
-            ),
-          )
-        ]);
+    collapsedHeight =  toolBarHeight +10;
 
     Widget topSection = Container(
         // height: 226,
@@ -300,13 +251,18 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
     Widget image = Container(
         margin: EdgeInsets.only(left: 14),
         height: 80,
-        child: DetailPhotoView());
+        child: DetailPhotoView(seeAllCallBack: (){
+          Navigator.push(
+          context,
+          SlideRightRoute(
+              widget: SalonGalleryViewScreen(title:"Gallery",)),
+        );},));
 
     Widget review = Container(
         padding: EdgeInsets.only(left: 10,),
         // height: MediaQuery.of(context).size.height +250,
         child: ReviewListView(
-          itemCount: 1,
+          itemCount: 3,
         )
 
 
@@ -324,11 +280,12 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           },
         ));
 
-
     Widget packageOffers = Container(
+      height: 220,
         child: PackageCardWidget(
-         padding :EdgeInsets.only(right: 10,left: 10,),
-          itemCount: 1,
+          padding:EdgeInsets.only(left:10,bottom: 0,right: 10),
+          isShowGridView: true,
+          itemCount: 3,
           titleTextStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,
               color: !isDarkMode?  Colors.black :Colors.white,
               height: 0.5),
@@ -339,7 +296,6 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                   widget: PackageDetailServicesScreen()),
             );
           },),
-
     );
 
 
@@ -371,7 +327,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                   controller: _scrollController,
                   slivers: [
                     SliverAppBar(
-                      elevation: 0,
+                      elevation: 0.5,
                       toolbarHeight: toolBarHeight,
                       leading: IconButton(
                         onPressed: (){
@@ -387,43 +343,26 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                       ),
                       titleSpacing: 0,
                       title:
-                      // Row(
-                      //   mainAxisSize: MainAxisSize.max,
-                      //   mainAxisAlignment: MainAxisAlignment.center,
-                      //   children: [
-                      //     Expanded(
-                      //       child: Row(
-                      //         mainAxisSize: MainAxisSize.max,
-                      //         mainAxisAlignment: MainAxisAlignment.center,
-                      //         children: [
-                      //           isAppBarCollapsed?Text("RedBox Barber Salon",
-                      //             maxLines: 1,
-                      //             style:TextStyle(
-                      //                 color:isAppBarCollapsed ?
-                      //                 !isDarkMode? Colors.black:Colors.white
-                      //                     :!isDarkMode? Colors.white:Colors.white,
-                      //                 fontSize: 21,fontWeight: FontWeight.w700),
-                      //           ): Container()
-                      //         ],
-                      //       ),
-                      //     ),
-                      //     IconButton(
-                      //       splashRadius: 25,
-                      //       padding: EdgeInsets.zero,
-                      //       alignment: Alignment.center,
-                      //       onPressed: (){},
-                      //       icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,
-                      //           imageColor: isAppBarCollapsed ?
-                      //           !isDarkMode? Colors.black:Colors.white
-                      //               :!isDarkMode? Colors.white:Colors.white,
-                      //           iconSize: Size(25, 25)),
-                      //     ) ,
-                      //   ],
-                      // ),
-
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Expanded(
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                isAppBarCollapsed?Text("RedBox Barber Salon",
+                                  maxLines: 1,
+                                  style:TextStyle(
+                                      color:isAppBarCollapsed ?
+                                      !isDarkMode? Colors.black:Colors.white
+                                          :!isDarkMode? Colors.white:Colors.white,
+                                      fontSize: 21,fontWeight: FontWeight.w700),
+                                ): Container()
+                              ],
+                            ),
+                          ),
                           IconButton(
                             splashRadius: 25,
                             padding: EdgeInsets.zero,
@@ -437,6 +376,23 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                           ) ,
                         ],
                       ),
+
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.end,
+                      //   children: [
+                      //     IconButton(
+                      //       splashRadius: 25,
+                      //       padding: EdgeInsets.zero,
+                      //       alignment: Alignment.center,
+                      //       onPressed: (){},
+                      //       icon:iconApps.iconImage(imageUrl: iconApps.detailAppbarIcon,
+                      //           imageColor: isAppBarCollapsed ?
+                      //           !isDarkMode? Colors.black:Colors.white
+                      //               :!isDarkMode? Colors.white:Colors.white,
+                      //           iconSize: Size(25, 25)),
+                      //     ) ,
+                      //   ],
+                      // ),
                       backgroundColor: !isDarkMode?Colors.white:Color(0xff212327),
                       pinned: true,
                       floating: true,
@@ -454,38 +410,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                             // heading
                           ],
                         ),
-                        title:Column(
+                        title:isAppBarCollapsed?Container():Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             heading,
                             starRow,
-                           // !isAppBarCollapsed?Container():Container(
-                           //    color:!isDarkMode?Colors.white:Color(0xff323446),
-                           //    child: TabBar(
-                           //      onTap: (index){
-                           //        setState(() {
-                           //          selectedTab = index;
-                           //        });
-                           //      },
-                           //      controller: tabController,
-                           //      tabs: [
-                           //        Tab(text: "About",),
-                           //        Tab(text: "Services",),
-                           //        Tab(text: "Gallery",),
-                           //        Tab(text: "Review",),
-                           //      ],
-                           //      labelColor:Color(0xffE4B343),
-                           //      isScrollable: false,
-                           //      unselectedLabelColor: Color(0xff828588),
-                           //      labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w600,color: Color(0xffE4B343)),
-                           //      unselectedLabelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.w500,),
-                           //      labelPadding: EdgeInsets.only(right: 2,bottom: 0,top: 2),
-                           //      indicatorPadding: EdgeInsets.symmetric(horizontal: 12,),
-                           //      indicatorColor: Color(0xffE4B343),
-                           //    ),
-                           //  ),
                           ],
                         ) ,
                         titlePadding: EdgeInsets.only(bottom: 2),

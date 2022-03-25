@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
+import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
 import 'package:base_flutter_app/src/widgets/photo_slider_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/scheduler.dart';
 class DetailPhotoView extends StatelessWidget {
   final String imageUrl;
   final cardCallBack;
+  final seeAllCallBack;
   final double imageHeight;
   final double imageWidth;
   final BoxFit boxFit;
@@ -17,9 +19,10 @@ class DetailPhotoView extends StatelessWidget {
   DetailPhotoView({
     this.imageUrl = "https://st2.depositphotos.com/1017228/11421/i/950/depositphotos_114213658-stock-photo-woman-getting-haircut-by-female.jpg",
     this.cardCallBack,
-    this.imageHeight= 75,
-    this.imageWidth = 80,
+    this.imageHeight= 70,
+    this.imageWidth = 75,
     this.boxFit = BoxFit.cover,
+    this.seeAllCallBack,
   });
 
   int maxItemToShow = 6;
@@ -60,7 +63,7 @@ class DetailPhotoView extends StatelessWidget {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6.0),
+          padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -76,17 +79,22 @@ class DetailPhotoView extends StatelessWidget {
         ),
       );
     }else{
-      return Container(
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-              color: Colors.grey.withOpacity(0.25)
-        ),
-          alignment: Alignment.center,
-          child: Text("See All",
-            style: TextStyle(
-                color: !isDarkMode ?appColors.black:Colors.white,
-                fontSize: 15,fontWeight: FontWeight.w600),));
+      return GestureDetector(
+        onTap: (){
+          this.seeAllCallBack?.call();
+        },
+        child: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+                color: Colors.grey.withOpacity(0.25)
+          ),
+            alignment: Alignment.center,
+            child: Text("See All",
+              style: TextStyle(
+                  color: !isDarkMode ?appColors.black:Colors.white,
+                  fontSize: 15,fontWeight: FontWeight.w600),)),
+      );
     }
       },
     );

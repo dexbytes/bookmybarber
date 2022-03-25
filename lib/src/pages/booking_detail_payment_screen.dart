@@ -53,13 +53,42 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
           color:!isDarkMode ?Colors.white:AppColors().appBgColor3,
           borderRadius: BorderRadius.only(bottomRight: Radius.circular(25),bottomLeft: Radius.circular(25),)
         ),
-        height: 245,
+        // height: 275,
+       margin: EdgeInsets.only(bottom: 15),
         child: Column(
           children: [
             SizedBox(height: 15,),
             BookingDetailPaymentCard(),
             Container(
               margin: EdgeInsets.only(left: 15,right: 15,top: 15),
+              height: 48,
+              decoration: BoxDecoration(
+                  color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.12):AppColors().appBgColor2,
+                  borderRadius: BorderRadius.circular(40)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text( "Total:",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: !isDarkMode ?Colors.black:AppColors().white,
+                    ),),
+                  SizedBox(width: 5,),
+                  Text("\$45.00",
+                    style: TextStyle(
+                      backgroundColor: Colors.transparent,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color:!isDarkMode ?AppColors().red:Color(0xff14D9D4),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 15,right: 15,top: 8),
               padding: EdgeInsets.only(left: 30,),
               height: 48,
               decoration: BoxDecoration(
@@ -71,7 +100,8 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                   Icon(CupertinoIcons.calendar_today,size: 26,color: !isDarkMode? AppColors().greyUnselected:AppColors().textHeadingColor1,),
                   SizedBox(width: 15,),
                   Text("Friday,",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: !isDarkMode?Colors.black:Colors.white),),
-                  Text("25 March 2022 @ ",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: !isDarkMode?Colors.black:Colors.white),),
+                  Text("25 March 2022",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: !isDarkMode?Colors.black:Colors.white),),
+                  Text(" @ ",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: !isDarkMode?Color(0xffFE9654):Color(0xFFCCA76A)),),
                   Text("8:30am",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: !isDarkMode?Colors.black:Colors.white),),
                 ],
               ),

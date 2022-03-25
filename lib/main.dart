@@ -6,6 +6,7 @@ import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/pages/booking_detail_payment_screen.dart';
+import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
 import 'package:base_flutter_app/src/pages/change_password_screen.dart';
 import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
