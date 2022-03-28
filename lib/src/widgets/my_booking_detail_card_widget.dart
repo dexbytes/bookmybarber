@@ -7,8 +7,25 @@ import 'package:flutter_html/flutter_html.dart';
 
 class BookingDetailCardView extends StatelessWidget {
   final onClickCardCallBack;
+  final bool isShowMessageIcon;
+  final double? imageHeight;
+  final TextStyle? salonTextStyle;
+  final TextStyle? addressTextStyle;
+  final TextStyle? stylistNameTextStyle;
+  final TextStyle? servicesTextStyle;
 
-  const BookingDetailCardView({Key? key, this.onClickCardCallBack}) : super(key: key);
+  const BookingDetailCardView({Key? key,
+    this.onClickCardCallBack,
+    this.isShowMessageIcon = false,
+    this.imageHeight,
+    this.salonTextStyle,
+    this.addressTextStyle,
+    this.stylistNameTextStyle,
+    this.servicesTextStyle,
+
+
+
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +56,7 @@ class BookingDetailCardView extends StatelessWidget {
                   children: [
                     Html(data: "Salon: RedBox Barber",
                       style: {'html': Style.fromTextStyle(
-                          TextStyle(
+                          salonTextStyle ??TextStyle(
                             backgroundColor: Colors.transparent,
                             fontSize: 17.5,
                             fontWeight: FontWeight.w600,
@@ -62,7 +79,7 @@ class BookingDetailCardView extends StatelessWidget {
                             padding: EdgeInsets.only(top: 4),
                             child: Html(data: "288 McClure Court,Arkansas",
                               style: {'html': Style.fromTextStyle(
-                                  TextStyle(
+                              addressTextStyle ??  TextStyle(
                                     backgroundColor: Colors.transparent,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
@@ -80,8 +97,8 @@ class BookingDetailCardView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          height: 55.0,
-                          width: 55.0,
+                          height: imageHeight ??55.0,
+                          width: imageHeight ??55.0,
                           margin: EdgeInsets.all(4),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(50),
@@ -105,7 +122,7 @@ class BookingDetailCardView extends StatelessWidget {
                               SizedBox(height: 8,),
                               Html(data:"Julia Chan",
                                 style: {'html': Style.fromTextStyle(
-                                    TextStyle(
+                                stylistNameTextStyle ?? TextStyle(
                                       backgroundColor: Colors.transparent,
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
@@ -116,10 +133,38 @@ class BookingDetailCardView extends StatelessWidget {
                               ),
                               // Text("Julia Chan",style:TextStyle(color: Colors.white,
                               //     fontSize: 12,fontWeight:FontWeight.w500 ),),
+                              isShowMessageIcon ?Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left:10.0,bottom: 2),
+                                    child: Text("Services\:",style: TextStyle(
+                                        color:!isDarkMode ?Colors.black.withOpacity(0.8):Colors.grey,
+                                        fontSize: 14.5,
+                                        fontWeight: FontWeight.w500),),
+                                  ),
+                                  SizedBox(height: 8,),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(top: 8.0),
+                                      child: Html(data:"Haircut,Facial & MakeUp",
+                                        style: {'html': Style.fromTextStyle(
+                                            servicesTextStyle ?? TextStyle(
+                                              backgroundColor: Colors.transparent,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w500,
+                                              height: 0,
+                                              color:!isDarkMode ?Colors.black:Colors.white,
+                                            )
+                                        )},
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ):Container()
                             ],
                           ),
                         ),
-                        Expanded(
+                        isShowMessageIcon?Container():Expanded(
                           child: Material(
                             elevation: 0,
                             color: Colors.transparent,
@@ -174,7 +219,7 @@ class BookingDetailCardView extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

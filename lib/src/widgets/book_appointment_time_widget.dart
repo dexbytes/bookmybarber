@@ -61,6 +61,7 @@ class _BookAppointmentTimeListState extends State<BookAppointmentTimeList> {
           // ),
           backgroundColor: widget.backgroundColor ??AppColors().appBgColor3,// Color(0xffB8BCBF).withOpacity(0.4),
           selectedColor: widget.selectedColor ?? Color(0xff00B2AE),
+          disabledColor: Colors.orangeAccent,
           selected: selectedChoice == item,
           onSelected: (selected) {
             setState(() {

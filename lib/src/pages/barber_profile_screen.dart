@@ -490,7 +490,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     appDimens.appDimensFind(context: context);
 
     double toolBarHeight = 60;
-    double expandedHeight = appDimens.heightFullScreen()>=700?appDimens.heightFullScreen()/2.85:appDimens.heightFullScreen()/2.35; //MediaQuery.of(context).size.height /2.35;
+    double expandedHeight = appDimens.heightFullScreen()>=700?appDimens.heightFullScreen()/2.72:appDimens.heightFullScreen()/2.35; //MediaQuery.of(context).size.height /2.35;
     collapsedHeight =  toolBarHeight +10;
 
 

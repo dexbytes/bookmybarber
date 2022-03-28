@@ -12,8 +12,9 @@ import 'package:flutter/scheduler.dart';
 
 class BookAppointmentScreen extends StatefulWidget {
   final double price;
+  final bool isBottomButtonText;
 
-  const BookAppointmentScreen({Key? key, this.price = 00.00}) : super(key: key);
+  const BookAppointmentScreen({Key? key, this.price = 00.00, this.isBottomButtonText = true}) : super(key: key);
 
   @override
   _BookAppointmentScreenState createState() => _BookAppointmentScreenState();
@@ -21,6 +22,7 @@ class BookAppointmentScreen extends StatefulWidget {
 
 class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   int selectValue = 0;
+  List selectedServices = [];
 
   @override
   Widget build(BuildContext context) {
@@ -144,10 +146,15 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
           SizedBox(height: 15),
           selectValue == 0
               ? BookAppointmentRowViewWidget(
-            isFemaleListVisible: false,
+              selectedServiceListCallback:(selectedServices){
+                this.selectedServices.addAll(selectedServices);
+              }
           )
               : BookAppointmentRowViewWidget(
             isFemaleListVisible: true,
+              selectedServiceListCallback:(selectedServices){
+                this.selectedServices.addAll(selectedServices);
+              }
           )
         ],
       );
@@ -158,17 +165,18 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
         margin: EdgeInsets.only(left: 28,right: 28,top: 10),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: "Book now",
+          buttonName: widget.isBottomButtonText ?"Book now":"Done",
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
             color: !isDarkMode?Colors.white:Color(0xff212327),),
           backCallback:(){
-            Navigator.push(
+            widget.isBottomButtonText ? Navigator.push(
               context,
               SlideRightRoute(
                   widget: BookAppointmentTimeScreen()),
-            );
+            ):
+            Navigator.pop(context,selectedServices);
           },
           isBottomMarginRequired: false,
         ),

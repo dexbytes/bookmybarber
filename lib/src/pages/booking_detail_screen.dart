@@ -1,6 +1,8 @@
+import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/pages/rebooking_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/my_booking_cost_card.dart';
 import 'package:base_flutter_app/src/widgets/my_booking_detail_card_widget.dart';
@@ -32,14 +34,14 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         height: 110,
         child: Column(
           children: [
-            SeeAllTextRow(
-              leftTitle: "Services",
-              leftTitleTextStyle: TextStyle(fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color:!isDarkMode ?Colors.black:Colors.white),
-              isRightTextVisible: false,
-            ),
-            SizedBox(height: 5,),
+            // SeeAllTextRow(
+            //   leftTitle: "Services",
+            //   leftTitleTextStyle: TextStyle(fontSize: 18,
+            //       fontWeight: FontWeight.w500,
+            //       color:!isDarkMode ?Colors.black:Colors.white),
+            //   isRightTextVisible: false,
+            // ),
+            // SizedBox(height: 5,),
             BookingDetailServicesCardView(),
           ],
         )
@@ -176,11 +178,11 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             fontWeight: FontWeight.w600,
             color: !isDarkMode? Colors.white:Color(0xff212327),),
           backCallback:(){
-            // Navigator.push(
-            //   context,
-            //   SlideRightRoute(
-            //       widget: BookAppointmentScreen()),
-            // );
+            Navigator.push(
+              context,
+              BottomUpTransition(
+                  widget: ReBookingScreen()),
+            );
           },
           isBottomMarginRequired: false,
         )
@@ -217,7 +219,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                         backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor3,
                         isTitleVisible: true,
                         leadingPadding: EdgeInsets.only(left: 10.0 ,
-                            right: 10,bottom: 0,top: 0),
+                            right: 10,bottom: 6,top: 0),
                         textStyle: TextStyle(fontSize: 22,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
                         isTrailingIconVisible: false,
                         leadingIconColor:!isDarkMode ?Colors.black:Color(0xFFCCA76A),

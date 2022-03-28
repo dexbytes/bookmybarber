@@ -155,6 +155,7 @@ class _SalonGalleryViewScreenState extends State<SalonGalleryViewScreen> {
         ),
         elevation: 0.5,
         backgroundColor:  !isDarkMode?appColors.white:appColors.appBgColor2,
+        centerTitle: true,
         title: Text(widget.title,
           style:TextStyle(
               color:  !isDarkMode? Colors.black:Colors.white,

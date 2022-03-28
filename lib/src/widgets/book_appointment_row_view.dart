@@ -4,33 +4,43 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
 // ignore: must_be_immutable
-class BookAppointmentRowViewWidget extends StatelessWidget {
+class BookAppointmentRowViewWidget extends StatefulWidget {
   final onClickCardCallBack;
   final bool isFemaleListVisible;
+  final  selectedServiceListCallback;
+
+
 
   BookAppointmentRowViewWidget({Key? key,
     this.onClickCardCallBack,
-    this.isFemaleListVisible = false
+    this.isFemaleListVisible = false, this.selectedServiceListCallback,
   }) : super(key: key);
 
+  @override
+  State<BookAppointmentRowViewWidget> createState() => _BookAppointmentRowViewWidgetState();
+}
+
+class _BookAppointmentRowViewWidgetState extends State<BookAppointmentRowViewWidget> {
+  List selectedServiceList = [];
 
   @override
   Widget build(BuildContext context) {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
 
+
     return ListView.builder(
         scrollDirection: Axis.vertical,
         padding: EdgeInsets.only(left: 18,right: 15),
         physics: NeverScrollableScrollPhysics(),
-        itemCount: isFemaleListVisible ? female.length :male.length,
+        itemCount: widget.isFemaleListVisible ? female.length :male.length,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           return Row(
             children: [
               Expanded(
                 flex: 6,
-                  child: Text( isFemaleListVisible ? female[index].title : male[index].title,
+                  child: Text( widget.isFemaleListVisible ? female[index].title : male[index].title,
                     style:  TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -43,9 +53,24 @@ class BookAppointmentRowViewWidget extends StatelessWidget {
                   child:Container(
                       margin: EdgeInsets.only(bottom: 10),
                       height: 40,
-                      child: isFemaleListVisible ?
-                      DropDownDataPicker2(itemList:female[index].subtitle.map(buildMenuItem2).toList(),)
-                     :DropDownDataPicker3(itemList:male[index].subtitle.map(buildMenuItem).toList(),)
+                      child: widget.isFemaleListVisible ?
+                      DropDownDataPicker2(itemList:female[index].subtitle.map(buildMenuItem2).toList(),
+                      selectedValue:(String selectedValue){
+                        if (!selectedServiceList.contains(female[index])) {
+                         selectedServiceList.add(female[index]);
+                        }
+                        widget.selectedServiceListCallback(selectedServiceList);
+                      }
+                      )
+                     :DropDownDataPicker3(itemList:male[index].subtitle.map(buildMenuItem).toList(),
+                          selectedValue:(String selectedValue){
+                            if (!selectedServiceList.contains(male[index])) {
+                              selectedServiceList.add(male[index]);
+                            }
+                            widget.selectedServiceListCallback(selectedServiceList);
+                          }
+
+                      )
                   )
               )
             ],

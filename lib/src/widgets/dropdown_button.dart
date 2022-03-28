@@ -96,10 +96,11 @@ DropdownMenuItem<String> buildMenuItem(String item) {
 class DropDownDataPicker2 extends StatefulWidget {
   final List<DropdownMenuItem<String>>? itemList;
   final String? hint;
+  final  selectedValue;
 
   const DropDownDataPicker2({Key? key,
     this.itemList,
-    this.hint
+    this.hint, this.selectedValue
   }) : super(key: key);
 
   @override
@@ -163,6 +164,9 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
                   items: widget.itemList,
                   onChanged: (value) => setState(() {
                     this.valueChoose2 = value;
+                    if (value!= null) {
+                      widget.selectedValue(value);
+                    }
                   })
               ),
             ),
@@ -180,10 +184,11 @@ class _DropDownDataPicker2State extends State<DropDownDataPicker2> {
 class DropDownDataPicker3 extends StatefulWidget {
   final List<DropdownMenuItem<String>>? itemList;
   final String? hint;
+  final  selectedValue;
 
   const DropDownDataPicker3({Key? key,
     this.itemList,
-    this.hint
+    this.hint, this.selectedValue
   }) : super(key: key);
 
   @override
@@ -247,6 +252,7 @@ class _DropDownDataPicker3State extends State<DropDownDataPicker3> {
                 items: widget.itemList,
                 onChanged: (value) => setState(() {
                   this.valueChoose2 = value;
+                  widget.selectedValue(value);
                 })
             ),
           ),
