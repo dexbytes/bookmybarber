@@ -9,12 +9,10 @@ import 'package:base_flutter_app/src/pages/invite_friend_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
-import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
 
-import 'common_button.dart';
 
 class ProfileListRowWidget extends StatelessWidget {
   final onClickListCallBack;

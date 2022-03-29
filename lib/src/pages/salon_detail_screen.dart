@@ -3,10 +3,8 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_services_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
 import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
@@ -25,8 +23,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:readmore/readmore.dart';
-
-import 'barber_profile_screen.dart';
 import 'book_appointment_screen.dart';
 import 'categories_screen.dart';
 import 'map_intregation.dart';

@@ -9,11 +9,12 @@ import 'package:flutter/scheduler.dart';
 // ignore: must_be_immutable
 class BookingDetailServicesCardView extends StatefulWidget {
   final Color? cardColor;
+  final bool isShowCrossIcon;
   final String? serviceName;
   final double? cost;
 
    BookingDetailServicesCardView({Key? key,
-    this.cardColor, this.serviceName, this.cost,
+    this.cardColor, this.serviceName, this.cost, this.isShowCrossIcon = false,
   }) : super(key: key);
 
   @override
@@ -53,7 +54,8 @@ class _BookingDetailServicesCardViewState extends State<BookingDetailServicesCar
           leftTitleTextStyle: TextStyle(fontSize: 18,
               fontWeight: FontWeight.w500,
               color:!isDarkMode ?Colors.black:Colors.white),
-          rightTitle:service.length == 0 ? "Select Service":"Change Service",
+          isRightTextVisible: widget.isShowCrossIcon ? true : false,
+          rightTitle: service.length == 0 ? "Select Service":"Change Service",
           rightTitleTextStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: Color(0xFFCCA76A)),
           rightTextCallBack: (){
             Navigator.push(
@@ -99,17 +101,16 @@ class _BookingDetailServicesCardViewState extends State<BookingDetailServicesCar
                       service.removeAt(index);
                     });
                   },
-                  child: Row(
+                  child:Row(
                     children: [
                       Text("\$${widget.cost ?? service[index].cost}", style: TextStyle(fontSize: 16,
                           fontWeight: FontWeight.w500,
                           color: !isDarkMode ?Colors.black:Colors.white),),
                       SizedBox(width: 5,),
-                      Icon(Icons.cancel_outlined,size: 19,color: Colors.grey.withOpacity(0.6),),
+                      widget.isShowCrossIcon ?Icon(Icons.cancel_outlined,size: 19,color: appColors.buttonColor2):Container(),
                     ],
                   ),
                 ),
-
               ],
             ),
           );

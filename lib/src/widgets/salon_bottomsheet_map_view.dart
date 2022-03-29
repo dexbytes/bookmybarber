@@ -1,12 +1,5 @@
-import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
-import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/model/salon_list_raw_data_model.dart';
-import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
-import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
-import 'package:base_flutter_app/src/pages/booking_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
-import 'package:base_flutter_app/src/widgets/bottomsheet_card_view.dart';
 import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -27,31 +20,11 @@ class SalonListBottomSheetScreen extends StatefulWidget {
 class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen> {
 
 
-
-
   @override
   Widget build(BuildContext context) {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
 
-
-
-
-    _welcomeTextView() {
-      return Container(
-          color: Color(0xff212327),
-          margin: EdgeInsets.only(left: 25),
-          child: Text("Share to",
-            // appString.trans(
-            // context, appString.yourPromoCodes,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-            ),
-            textAlign: TextAlign.start,
-          ));
-    }
 
     _dataView() {
       return ListView.builder(
@@ -204,16 +177,6 @@ class _SalonListBottomSheetScreenState extends State<SalonListBottomSheetScreen>
 
 
     return _dataView();
-
-
-      BottomSheetOnlyCardView(
-        sheetTitle: "Salons Nearby",
-        sheetTitleStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w600,color:AppColors().textHeadingColor1),
-        topLineShow: true,
-        cardBackgroundColor: Color(0xff212327),
-       // bottomSheetHeight: MediaQuery.of(context).size.height/2,
-        child:_dataView()
-    );
 
   }
 }

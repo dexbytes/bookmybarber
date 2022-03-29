@@ -1,7 +1,6 @@
 import 'package:base_flutter_app/src/model/signin_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:base_flutter_app/src/model/main_app_state_model.dart';
 
 abstract class MainAppEvent extends Equatable {
   const MainAppEvent();

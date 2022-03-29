@@ -1,12 +1,7 @@
-import 'dart:convert';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
-import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
-import 'package:base_flutter_app/src/api_calling/app_api_function.dart';
 import 'package:base_flutter_app/src/bloc/sign_up_bloc/sign_up_event.dart';
 import 'package:base_flutter_app/src/bloc/sign_up_bloc/sign_up_state.dart';
-import 'package:base_flutter_app/src/helper/local_constant.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   SignUpBloc() : super(SignUpInitStat());

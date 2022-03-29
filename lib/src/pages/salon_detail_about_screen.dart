@@ -1,6 +1,5 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
-import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/pages/map_intregation.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
@@ -41,6 +40,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailAboutScreen> {
 
 
   @override
+  // ignore: must_call_super
   void initState() {
     // TODO: implement initState
 

@@ -23,6 +23,7 @@ class NotificationStream {
   }
 
   void dispose() {
+    // ignore: unnecessary_null_comparison
     if (_notificationsStreamController != null) {
       _notificationsStreamController.close();
     }

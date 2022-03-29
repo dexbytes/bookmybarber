@@ -281,6 +281,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
 
 
   @override
+  // ignore: must_call_super
   void initState() {
     // TODO: implement initState
 

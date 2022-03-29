@@ -1,6 +1,5 @@
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class ContainerDashboard extends StatelessWidget {
   final Color appBackgroundColor;
@@ -35,9 +34,9 @@ class ContainerDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double remainingViewFullHeight = calculateHeight(context: context);
+    // double remainingViewFullHeight = calculateHeight(context: context);
     double bottomMenuHeight = calculateBottomMenuHeight();
-    bool isKeyBoardOpen = false;
+    // bool isKeyBoardOpen = false;
 
     //Set status bar and bottom sef area color
     Color? statusBarColor = this.statusBarColor;
@@ -167,7 +166,7 @@ class AppBarViewDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double appBarHeight = this.appBarHeight;
-    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    // MediaQueryData mediaQueryData = MediaQuery.of(context);
     return Container(
       height: appBarHeight,
       child: PreferredSize(
@@ -195,7 +194,7 @@ class BottomMenuViewDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double bottomMenuHeight = this.bottomMenuHeight;
-    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    // MediaQueryData mediaQueryData = MediaQuery.of(context);
     return Container(
       height: bottomMenuHeight,
       child: PreferredSize(

@@ -1,8 +1,6 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
 
-import 'already_have_account_row.dart';
-
 class ConnectCard extends StatelessWidget {
   final String text;
   final Widget? imageIcon;

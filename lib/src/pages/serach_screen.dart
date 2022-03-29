@@ -2,8 +2,6 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';

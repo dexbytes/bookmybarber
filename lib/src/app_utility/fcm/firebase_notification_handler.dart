@@ -8,7 +8,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/helper/local_constant.dart';
-import 'package:base_flutter_app/src/state/user_auth_state.dart';
 import 'package:provider/provider.dart';
 // import 'permissions.dart';
 

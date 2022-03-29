@@ -99,41 +99,41 @@ class _SignUpScreenState extends State<SignUpScreen> {
     bool isDarkMode = brightness == Brightness.dark;
     bool isChecked = false;
 
-    _welcomeTextView() {
-      return Container(
-        margin: EdgeInsets.only(
-            top: 5,
-            left: 25,
-            right: 25,
-            bottom: 15
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("Create an Account",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors().textHeadingColor1
-              ),
-              textAlign: TextAlign.start,
-            ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Text("We have sent you an SMS with a code to number ${controllers['phone']?.text.toString()}",
-            //   style: TextStyle(
-            //       fontSize: 16,
-            //       fontWeight: FontWeight.w500,
-            //       color: AppColors().textNormalColor6.withOpacity(0.8)
-            //   ),
-            //   textAlign: TextAlign.center,
-            // )
-          ],
-        ),
-      );
-    }
+    // _welcomeTextView() {
+    //   return Container(
+    //     margin: EdgeInsets.only(
+    //         top: 5,
+    //         left: 25,
+    //         right: 25,
+    //         bottom: 15
+    //     ),
+    //     child: Column(
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       crossAxisAlignment: CrossAxisAlignment.center,
+    //       children: [
+    //         Text("Create an Account",
+    //           style: TextStyle(
+    //               fontSize: 30,
+    //               fontWeight: FontWeight.w700,
+    //               color: AppColors().textHeadingColor1
+    //           ),
+    //           textAlign: TextAlign.start,
+    //         ),
+    //         // SizedBox(
+    //         //   height: 20,
+    //         // ),
+    //         // Text("We have sent you an SMS with a code to number ${controllers['phone']?.text.toString()}",
+    //         //   style: TextStyle(
+    //         //       fontSize: 16,
+    //         //       fontWeight: FontWeight.w500,
+    //         //       color: AppColors().textNormalColor6.withOpacity(0.8)
+    //         //   ),
+    //         //   textAlign: TextAlign.center,
+    //         // )
+    //       ],
+    //     ),
+    //   );
+    // }
 
     //Check username field
     _checkName(value, fieldName, {onchange = false}) {

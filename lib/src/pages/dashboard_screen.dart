@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
-import 'package:base_flutter_app/src/bloc/sign_in_bloc/sign_in_bloc.dart';
 
 class DashBoardPage extends StatefulWidget {
 
@@ -64,21 +63,18 @@ class _DashBoardPage extends State<DashBoardPage>
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     appDimens.appDimensFind(context: context);
-    SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
-    MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);
+
 
     MainAppBloc.dashboardContext = context;
-    //Appbar
-    Widget _appBar = Container();
 
-    Map<String, dynamic> setting =
-    MainAppBloc.configTheme.containsKey("setting")
-        ? MainAppBloc.configTheme["setting"]
-        : {};
-    /*statusBarColors = setting.containsKey("statusBarColors")
-        ? projectUtil.colorFromIntString(
-        stringColor: setting["statusBarColors"])
-        : Colors.grey;*/
+    // Map<String, dynamic> setting =
+    // MainAppBloc.configTheme.containsKey("setting")
+    //     ? MainAppBloc.configTheme["setting"]
+    //     : {};
+    // /*statusBarColors = setting.containsKey("statusBarColors")
+    //     ? projectUtil.colorFromIntString(
+    //     stringColor: setting["statusBarColors"])
+    //     : Colors.grey;*/
 
 
     //Selected bottom menu index

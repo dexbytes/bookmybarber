@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:photo_view/photo_view.dart';
 
-import 'appbar/appbar_with_backarrow.dart';
-
 
 class FullPhotoView extends StatelessWidget {
   final String? profileImgUrl;

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 const domainC = 'http://api.ch:3001/'; //domain for image
 const profileImageNotFoundC =

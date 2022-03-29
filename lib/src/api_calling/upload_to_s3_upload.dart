@@ -2,9 +2,8 @@ library upload_to_s3bucket;
 
 import 'dart:async';
 import 'package:amazon_cognito_identity_dart_2/sig_v4.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:convert';
 import 'package:path/path.dart' as path;
 import 'package:async/async.dart';
@@ -35,6 +34,7 @@ class UploadToS3 {
       onProgressUpdate}) async {
     final file = File(imagePathOfPhone);
     //final stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
+    // ignore: deprecated_member_use
     final stream = http.ByteStream(DelegatingStream.typed(file.openRead()));
     final length = await file.length();
 
@@ -156,6 +156,7 @@ class MultipartRequest extends http.MultipartRequest {
   @override
   http.ByteStream finalize() {
     final byteStream = super.finalize();
+    // ignore: unnecessary_null_comparison
     if (onProgress == null) return byteStream;
 
     final total = contentLength;

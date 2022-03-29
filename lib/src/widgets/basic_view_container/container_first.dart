@@ -237,7 +237,6 @@ class AppBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double appBarHeight = this.appBarHeight;
-    MediaQueryData mediaQueryData = MediaQuery.of(context);
     return Container(
       height: appBarHeight,
       child: PreferredSize(

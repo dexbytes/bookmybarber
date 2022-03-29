@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 

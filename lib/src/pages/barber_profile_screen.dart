@@ -1,9 +1,7 @@
-import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_about_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
 import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
@@ -20,7 +18,6 @@ import 'package:base_flutter_app/src/widgets/star_rating_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:readmore/readmore.dart';
 
 import 'map_intregation.dart';
 
@@ -572,29 +569,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
               // topSection,
             ]));
 
-
-
-    Widget readMoreText = Container(
-        padding: EdgeInsets.only(left: 20,right: 15,bottom: 20),
-        // height: 110,
-        child: ReadMoreText(
-          'RedBox Barber salon is one of the most powerful brands in the hair & beauty care sector in Northern India,'
-              ' that has given hairstyling a new horizon. Our barbers are professionally trained, one of them holds international certifications',
-          // 'international certifications. They’re always updated with the latest trend in men’s grooming by'
-          // ' participating in professional training and workshops conducted by International barbers ',
-          style:TextStyle(fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color:Color(0xff828588),
-              wordSpacing: 1
-
-          ),
-          trimLines: 4,
-          colorClickableText:  Color(0xffCCA76A),
-          trimMode: TrimMode.Line,
-          trimCollapsedText: 'Read more',
-          trimExpandedText:  'Less',
-
-        ));
 
     Widget openHours = Container(
         padding: EdgeInsets.only(left: 20,right: 15),

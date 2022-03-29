@@ -182,6 +182,9 @@ class CommonTextFieldWithError extends StatelessWidget {
       case CapitalizationText.none:
         capitalizationTemp = TextCapitalization.none;
         break;
+      case CapitalizationText.sentences:
+        // TODO: Handle this case.
+        break;
     }
 
     return Container(

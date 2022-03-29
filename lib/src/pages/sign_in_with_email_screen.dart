@@ -1,13 +1,8 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
-import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
-import 'package:base_flutter_app/src/bloc/sign_in_bloc/sign_in_bloc.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class SignInWithEmailPage extends StatefulWidget {
@@ -65,12 +60,7 @@ class _SignInWithEmailPageState extends State<SignInWithEmailPage>
   @override
   Widget build(BuildContext context) {
     appDimens.appDimensFind(context: context);
-    SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
-    MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);
-    //  AppStyle _appStyle = BlocProvider.of<AppStyle>(context);
-    //   AppColors _appColors =  BlocProvider.of<AppColors>(context);
-    //Appbar
-    Widget _appBar = Container();
+
 
     //Return main Ui view
     return Material(

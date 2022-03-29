@@ -3,9 +3,7 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/categories_screen.dart';
-import 'package:base_flutter_app/src/pages/dummy.dart';
 import 'package:base_flutter_app/src/pages/notification_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
 import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
@@ -13,7 +11,6 @@ import 'package:base_flutter_app/src/pages/serach_screen.dart';
 import 'package:base_flutter_app/src/widgets/appbar/custom_appbar.dart';
 import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
 import 'package:base_flutter_app/src/widgets/categories_circular_widget.dart';
-import 'package:base_flutter_app/src/widgets/categories_text_list_widget.dart';
 import 'package:base_flutter_app/src/widgets/custom_curve_maker_widget.dart';
 import 'package:base_flutter_app/src/widgets/flexible_spacebar_widget.dart';
 import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
@@ -57,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late double collapsedHeight;
 
   @override
+  // ignore: must_call_super
   void initState() {
     // TODO: implement initState
 
@@ -93,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     // double toolBarHeight = 60;
 
     double toolBarHeight = 60;
-    double expandedHeight = MediaQuery.of(context).size.height / 3.4;
+    // double expandedHeight = MediaQuery.of(context).size.height / 3.4;
     collapsedHeight =  toolBarHeight;
 
 
@@ -211,11 +209,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         child: CategoriesCircularWidget(
           isListTwoVisible: true,
         ));
-
-    Widget categoriesTextList = Container(
-        margin: EdgeInsets.only(right: 0, left: 0),
-        height: 30,
-        child: CategoriesTextWidget());
 
     Widget homeCard = Container(
         margin: EdgeInsets.only(top: 15,bottom: 5),

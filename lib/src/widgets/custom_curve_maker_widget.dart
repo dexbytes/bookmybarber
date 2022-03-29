@@ -1,4 +1,3 @@
-import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:flutter/material.dart';
 
 
@@ -8,11 +7,11 @@ class CustomAppBar extends CustomClipper<Path> {
   Path getClip(Size size) {
     Path path = new Path();
 
-    path.lineTo(0, size.height /1.15) ;
+    path.lineTo(0, size.height /1.12) ;
 
     path.quadraticBezierTo(size.width/5, size.height-1, size.width/2, size.height-2) ;
 
-    path.quadraticBezierTo(3/4 * size.width, size.height, size.width, size.height - 25) ;
+    path.quadraticBezierTo(3/4 * size.width, size.height, size.width, size.height - 26) ;
 
     path.lineTo(size.width, 0) ;
     return path ;

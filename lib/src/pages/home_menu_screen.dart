@@ -1,12 +1,8 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
-import 'package:base_flutter_app/src/bloc/sign_in_bloc/sign_in_bloc.dart';
 
 class HomeMenuScreen extends StatefulWidget {
   final String? userEmailId;
@@ -39,8 +35,6 @@ class _HomeMenuScreenState extends State<HomeMenuScreen>
     print(appDimens.heightFullScreen());
     print('hello');
     appDimens.appDimensFind(context: context);
-    SignInBloc signInBloc = BlocProvider.of<SignInBloc>(context);
-    MainAppBloc mainAppBloc = BlocProvider.of<MainAppBloc>(context);
 
     Widget emailTextField() {
       return Padding(
@@ -83,12 +77,7 @@ class _HomeMenuScreenState extends State<HomeMenuScreen>
       );
     }
 
-    //Appbar
-    Widget _appBar =
-        Container(); /*AppBarWithTitleAndBAckArrow(
-      commonAppBarOf: CommonBgOf.SIGN_IN_SCREEN,
-      canBackArrow: widget.canBackArrow,
-    );*/
+
 
     //Return main Ui view
     return WillPopScope(

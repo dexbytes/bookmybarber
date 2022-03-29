@@ -1,7 +1,5 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:flutter/material.dart';
-
-import 'basic_view_container/container_first.dart';
 import 'bottomsheet_card_view.dart';
 
 
@@ -59,22 +57,22 @@ class _ShareBottomSheetScreenState extends State<ShareBottomSheetScreen> {
 
 
 
-    _welcomeTextView() {
-      return Container(
-          margin: EdgeInsets.only(left: 25),
-          child: Text("Share to",
-
-            // appString.trans(
-            // context, appString.yourPromoCodes,
-
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-            ),
-            textAlign: TextAlign.start,
-          ));
-    }
+    // _welcomeTextView() {
+    //   return Container(
+    //       margin: EdgeInsets.only(left: 25),
+    //       child: Text("Share to",
+    //
+    //         // appString.trans(
+    //         // context, appString.yourPromoCodes,
+    //
+    //         style: TextStyle(
+    //           fontSize: 18,
+    //           fontWeight: FontWeight.w600,
+    //           color: Colors.black,
+    //         ),
+    //         textAlign: TextAlign.start,
+    //       ));
+    // }
 
     _dataView() {
       return Container(

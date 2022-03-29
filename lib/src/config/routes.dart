@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:base_flutter_app/src/all_file_import/app_screens_files_link.dart';
 import 'package:base_flutter_app/src/config/customRoute.dart';
-import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
 import 'package:base_flutter_app/src/pages/sign_in_screen.dart';
 
 const dashBoardScreen = 'dashBoardScreen';

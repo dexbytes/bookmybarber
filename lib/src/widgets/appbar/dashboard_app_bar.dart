@@ -12,10 +12,7 @@ PreferredSizeWidget dashboardAppBar(
       required Widget icon
 
     }) {
-  double avatarRadius = 20.0;
-  double defaultIconButtonPadding = 8.0;
-  double leftOffset = -25.0;
-  double titleLineHeight = 2.0;
+
 
   Widget _action = Row(children: [
     IconButton(onPressed: (){

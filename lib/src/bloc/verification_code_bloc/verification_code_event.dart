@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 abstract class VerificationCodeEvent extends Equatable {
   const VerificationCodeEvent();

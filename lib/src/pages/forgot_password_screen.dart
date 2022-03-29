@@ -33,7 +33,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     var brightness = SchedulerBinding.instance!.window.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
-    Size size = MediaQuery.of(context).size;
 
     //Check email field
     _checkEmail(value, fieldEmail, {onchange = false}) {

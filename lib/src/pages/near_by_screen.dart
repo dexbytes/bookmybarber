@@ -15,8 +15,6 @@ import 'package:base_flutter_app/src/widgets/slider_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-
-import 'barber_profile_screen.dart';
 import 'filter_screen.dart';
 import 'notification_screen.dart';
 

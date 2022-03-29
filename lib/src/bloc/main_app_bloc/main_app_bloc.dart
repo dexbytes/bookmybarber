@@ -41,7 +41,7 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
       yield UserLoggedInDetailState(
           loggedInUserDetails: event.loggedInUserDetails);
     } else if (event is ProfileSetUpStepUpdateEvent) {
-      /*Map storedProfileSetUpStep;
+    /*  Map storedProfileSetUpStep;
       String profileStepDa =
           await sharedPreferencesFile.readStr(profileSetUpStepLocal);
       if (profileStepDa != null && profileStepDa.trim() != "") {
@@ -51,8 +51,8 @@ class MainAppBloc extends Bloc<MainAppEvent, MainAppState> {
           profileSetUpScreens: event.profileSetUpScreens,
           screenData: event.screenData,
           context: event.context,
-          storedProfileSetUpStep: storedProfileSetUpStep)*/
-      ;
+          storedProfileSetUpStep: storedProfileSetUpStep)
+      ;*/
     } else if (event is GetProfileSetUpStepEvent) {
       /* var profileSetUpScreens = await getProfileSetUpStep(
           profileSetUpScreens: event.profileSetUpScreens);

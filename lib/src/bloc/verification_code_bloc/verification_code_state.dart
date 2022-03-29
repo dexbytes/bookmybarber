@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:base_flutter_app/src/model/main_app_state_model.dart';
-
-import 'package:base_flutter_app/src/widgets/alerts/error_alert.dart';
-
 abstract class VerificationCodeState {
   /*VerificationCodeModel verificationCodeModel;
   VerificationCodeState({this.verificationCodeModel});

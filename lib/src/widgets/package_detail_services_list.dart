@@ -1,5 +1,4 @@
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
-import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 

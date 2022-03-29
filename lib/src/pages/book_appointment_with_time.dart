@@ -8,7 +8,6 @@ import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
 
 import 'booking_detail_payment_screen.dart';
 

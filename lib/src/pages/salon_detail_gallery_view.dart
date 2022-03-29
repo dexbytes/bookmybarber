@@ -121,6 +121,7 @@ class _SalonGalleryViewScreenState extends State<SalonGalleryViewScreen> {
 
 
   @override
+  // ignore: must_call_super
   void initState() {
     // TODO: implement initState
 

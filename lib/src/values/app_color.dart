@@ -171,6 +171,7 @@ class AppColors {
 
   Color circleColor = const Color(0xFF003071);
   Color iconColor = const Color(0xFF726344);
+  // ignore: non_constant_identifier_names
   Color BoxBtextorderColor = const Color(0xFFE5E5E5);
 
   Color datetimeColor = const Color(0xFF4AA546);

@@ -3,19 +3,12 @@ import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart'
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
-import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
-import 'package:base_flutter_app/src/widgets/booking_detail_payment_card.dart';
 import 'package:base_flutter_app/src/widgets/date_picker.dart';
 import 'package:base_flutter_app/src/widgets/my_booking_detail_card_widget.dart';
 import 'package:base_flutter_app/src/widgets/my_booking_detail_service_card.dart';
-import 'package:base_flutter_app/src/widgets/payment_method_card_widget.dart';
-import 'package:base_flutter_app/src/widgets/see_all_text_row.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-
-import 'book_appointment_screen.dart';
 import 'dashboard_screen.dart';
 
 class ReBookingScreen extends StatefulWidget {
@@ -128,7 +121,7 @@ class _ReBookingScreenState extends State<ReBookingScreen> {
 
     Widget services = Container(
         //height: 110,
-        child: BookingDetailServicesCardView(),
+        child: BookingDetailServicesCardView(isShowCrossIcon: true,),
     );
 
 
@@ -249,73 +242,71 @@ class _ReBookingScreenState extends State<ReBookingScreen> {
     ),
       ),
       );
-
-    return Scaffold(
-      backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
-      body: SafeArea(
-        top: false,
-        bottom: true,
-        child: Stack(
-          children: [
-
-            ContainerFirst(
-              appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
-              reverse: false,
-              contextCurrentView: context,
-              bottomBarSafeAreaColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
-              statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
-              // scrollPadding: EdgeInsets.only(bottom: 0),
-              /* statusBarColor: Colors.amber,
-                  bottomBarSafeAreaColor: Colors.amber,*/
-              isSingleChildScrollViewNeed: true,
-              isFixedDeviceHeight: true,
-              appBarHeight : 60,
-              appBar: Container(
-                color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: appBarWithBackArrow(
-                      backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
-                      isTitleVisible: true,
-                      leadingPadding: EdgeInsets.only(left: 10.0,
-                          right: 20,bottom: 5,top: 0),
-                      textStyle: TextStyle(fontSize: 22,color:!isDarkMode?AppColors().black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
-                      isTrailingIconVisible: false,
-                      leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
-                      title: "ReBooking Details",
-                      onPress: (){
-                        Navigator.pop(context);
-                      }
-                  ),
-                ),
-              ),
-              containChild: Container(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    topView,
-                    SizedBox(height: 25,),
-                    services,
-                    SizedBox(height: 20,),
-                    dateView(),
-                    SizedBox(height: 20,),
-                    time(),
-                    SizedBox(height: 85,),
-
-                  ],
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: bottomButton(),
-            )
-          ],
-        ),
-      ),
-    );
-
+    // return Scaffold(
+    //   backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor2,
+    //   body: SafeArea(
+    //     top: false,
+    //     bottom: true,
+    //     child: Stack(
+    //       children: [
+    //
+    //         ContainerFirst(
+    //           appBackgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+    //           reverse: false,
+    //           contextCurrentView: context,
+    //           bottomBarSafeAreaColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+    //           statusBarColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+    //           // scrollPadding: EdgeInsets.only(bottom: 0),
+    //           /* statusBarColor: Colors.amber,
+    //               bottomBarSafeAreaColor: Colors.amber,*/
+    //           isSingleChildScrollViewNeed: true,
+    //           isFixedDeviceHeight: true,
+    //           appBarHeight : 60,
+    //           appBar: Container(
+    //             color: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+    //             child: Padding(
+    //               padding: EdgeInsets.only(bottom: 8.0),
+    //               child: appBarWithBackArrow(
+    //                   backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
+    //                   isTitleVisible: true,
+    //                   leadingPadding: EdgeInsets.only(left: 10.0,
+    //                       right: 20,bottom: 5,top: 0),
+    //                   textStyle: TextStyle(fontSize: 22,color:!isDarkMode?AppColors().black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
+    //                   isTrailingIconVisible: false,
+    //                   leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
+    //                   title: "ReBooking Details",
+    //                   onPress: (){
+    //                     Navigator.pop(context);
+    //                   }
+    //               ),
+    //             ),
+    //           ),
+    //           containChild: Container(
+    //             child: Column(
+    //               mainAxisSize: MainAxisSize.min,
+    //               mainAxisAlignment: MainAxisAlignment.start,
+    //               children: [
+    //                 topView,
+    //                 SizedBox(height: 25,),
+    //                 services,
+    //                 SizedBox(height: 20,),
+    //                 dateView(),
+    //                 SizedBox(height: 20,),
+    //                 time(),
+    //                 SizedBox(height: 85,),
+    //
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //         Align(
+    //           alignment: Alignment.bottomCenter,
+    //           child: bottomButton(),
+    //         )
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 
 

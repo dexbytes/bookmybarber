@@ -22,7 +22,8 @@ class StarRatingBar extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final double spaceWithStar;
 
-  StarRatingBar({
+  // ignore: prefer_const_constructors_in_immutables
+  StarRatingBar({Key? key,
     this.iconCount = 1,
     this.minRating = 1,
     this.initialRating = 4,
@@ -41,7 +42,7 @@ class StarRatingBar extends StatelessWidget {
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.padding = const EdgeInsets.all(0),
     this.spaceWithStar = 4,
-  });
+  }): super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -65,7 +66,9 @@ class StarRatingBar extends StatelessWidget {
             color:color,
           ),
           onRatingUpdate: (rating) {
+            // ignore: unnecessary_this
             this.onStarClickCallBack?.call(0);
+            // ignore: avoid_print
             print(rating);
           },
         ),
@@ -75,6 +78,7 @@ class StarRatingBar extends StatelessWidget {
           children: [
             removeItemRating ?Container():
             Text("$initialRating",style: itemRatingTextStyle,),
+            // ignore: prefer_const_constructors
             SizedBox(width: 3),
             removeViewCount ?Container():
             Text("($itemReviewCount Reviews)",style: itemViewCountTextStyle,),

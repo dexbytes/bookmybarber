@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
@@ -341,7 +343,7 @@ class ApiRequest implements ApiCall {
       if (loggedInUserId != null && imagePath.isNotEmpty) {
         await token(isFirstTime: false);
         //encode Map to JSON
-        ;
+        // ;
         try {
           //newImageFileList.add(imagePath);
           //Image upload on AWS serverv

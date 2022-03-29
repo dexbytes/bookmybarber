@@ -1,62 +1,9 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/app_theme/theme_provider.dart';
-import 'package:base_flutter_app/src/pages/Barber_listview_screen.dart';
-import 'package:base_flutter_app/src/pages/barber_profile_screen.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
-import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
-import 'package:base_flutter_app/src/pages/booking_detail_payment_screen.dart';
 import 'package:base_flutter_app/src/pages/booking_detail_screen.dart';
-import 'package:base_flutter_app/src/pages/booking_screen.dart';
-import 'package:base_flutter_app/src/pages/change_password_screen.dart';
-import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
-import 'package:base_flutter_app/src/pages/faq_screen.dart';
-import 'package:base_flutter_app/src/pages/favorite_salon_list.dart';
-import 'package:base_flutter_app/src/pages/filter_screen.dart';
-import 'package:base_flutter_app/src/pages/forgot_password_screen.dart';
-import 'package:base_flutter_app/src/pages/home_screen.dart';
-import 'package:base_flutter_app/src/pages/invite_friend_screen.dart';
-import 'package:base_flutter_app/src/pages/map_intregation.dart';
-import 'package:base_flutter_app/src/pages/mobile_number_screen.dart';
-import 'package:base_flutter_app/src/pages/near_by_screen.dart';
-import 'package:base_flutter_app/src/pages/notification_screen.dart';
-import 'package:base_flutter_app/src/pages/otp_verification_screen.dart';
-import 'package:base_flutter_app/src/pages/package_detail_sevices_screen.dart';
-import 'package:base_flutter_app/src/pages/rebooking_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_review_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_services_screen.dart';
-import 'package:base_flutter_app/src/pages/salon_listview_all.dart';
-import 'package:base_flutter_app/src/pages/serach_screen.dart';
-import 'package:base_flutter_app/src/pages/setting_screen.dart';
-import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
-import 'package:base_flutter_app/src/pages/sign_up_barber_screen.dart';
 import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
-import 'package:base_flutter_app/src/pages/user_package_offer_screen.dart';
-import 'package:base_flutter_app/src/pages/user_profile_edit_screen.dart';
-import 'package:base_flutter_app/src/pages/user_profile_screen.dart';
-import 'package:base_flutter_app/src/pages/welcome_screen.dart';
-import 'package:base_flutter_app/src/widgets/Review_screen_view.dart';
-import 'package:base_flutter_app/src/widgets/Salon_list_view.dart';
-import 'package:base_flutter_app/src/widgets/barber_specialist_circular_widget.dart';
-import 'package:base_flutter_app/src/widgets/book_appointment_time_widget.dart';
-import 'package:base_flutter_app/src/widgets/booking_card_view.dart';
-import 'package:base_flutter_app/src/widgets/booking_detail_payment_card.dart';
-import 'package:base_flutter_app/src/widgets/date_picker.dart';
-import 'package:base_flutter_app/src/widgets/detail_screen_star_row.dart';
-import 'package:base_flutter_app/src/widgets/detail_screen_top_row.dart';
-import 'package:base_flutter_app/src/widgets/dropdown_button.dart';
-import 'package:base_flutter_app/src/widgets/full_photo_view_screen.dart';
-import 'package:base_flutter_app/src/widgets/home_card_widget.dart';
-import 'package:base_flutter_app/src/widgets/image_shapes_widget.dart';
-import 'package:base_flutter_app/src/widgets/notification_card_widget.dart';
-import 'package:base_flutter_app/src/widgets/notification_circular_widget.dart';
-import 'package:base_flutter_app/src/widgets/package_card_widget.dart';
-import 'package:base_flutter_app/src/widgets/package_detail_services_list.dart';
-import 'package:base_flutter_app/src/widgets/payment_method_card_widget.dart';
-import 'package:base_flutter_app/src/widgets/profile_list_row_widget.dart';
-import 'package:base_flutter_app/src/widgets/services_list_view.dart';
-import 'package:base_flutter_app/src/widgets/slider_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -320,7 +267,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return BookAppointmentScreen();
   }
 
   //Redirect to another screen if already loggedIn

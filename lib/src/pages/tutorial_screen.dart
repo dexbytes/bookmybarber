@@ -41,11 +41,11 @@ class _TutorialScreenState extends State<TutorialScreen> {
     _pageController.dispose();
   }
 
-  _onPageChanged(int index) {
-    setState(() {
-      _currentPage = index;
-    });
-  }
+  // _onPageChanged(int index) {
+  //   setState(() {
+  //     _currentPage = index;
+  //   });
+  // }
 
 
 

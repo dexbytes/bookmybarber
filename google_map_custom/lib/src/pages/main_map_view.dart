@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, library_prefixes, prefer_typing_uninitialized_variables
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -22,14 +21,16 @@ class MainMapView extends StatefulWidget {
 }
 
 class _MainMapViewState extends State<MainMapView> {
+  // ignore: prefer_final_fields
   Set<Marker> _markers = {};
   late BitmapDescriptor mapMarker;
 
   final Permission _permission = Permission.location;
   PermissionStatus _permissionStatus = PermissionStatus.denied;
 
-  LatLng _initialCameraPosition = LatLng(20.5937, 78.9629);
+  // LatLng _initialCameraPosition = LatLng(20.5937, 78.9629);
   GoogleMapController? _controller;
+  // ignore: prefer_final_fields
   addressLocation.Location _location = addressLocation.Location();
 
   //Check permission
@@ -57,6 +58,7 @@ class _MainMapViewState extends State<MainMapView> {
 
     //If permission granted then get current location
       case PermissionStatus.granted:
+        // ignore: avoid_print
         print('debug: Permission Granted');
         break;
 
@@ -103,6 +105,7 @@ class _MainMapViewState extends State<MainMapView> {
     // TODO: implement initState
     super.initState();
     setCustomMarker();
+    // ignore: avoid_function_literals_in_foreach_calls
     mapData.forEach((element) {
       allMarkers.add(Marker(
           markerId: MarkerId(element.title),
@@ -246,6 +249,7 @@ class _MainMapViewState extends State<MainMapView> {
 
     return Stack(
       children: <Widget>[
+        // ignore: sized_box_for_whitespace
         Container(
           height: MediaQuery.of(context).size.height - 50.0,
           width: MediaQuery.of(context).size.width,
@@ -322,6 +326,7 @@ class _MainMapViewState extends State<MainMapView> {
             )
         );
 
+        // ignore: prefer_is_empty
         if (mapData.length == 0) {
           _controller!.animateCamera(
             CameraUpdate.newCameraPosition(

@@ -1,6 +1,5 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/model/photo_raw_data_model.dart';
-import 'package:base_flutter_app/src/pages/salon_detail_gallery_view.dart';
 import 'package:base_flutter_app/src/values/app_color.dart';
 import 'package:base_flutter_app/src/widgets/photo_slider_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
