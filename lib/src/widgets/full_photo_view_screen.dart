@@ -37,7 +37,7 @@ class FullPhotoView extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 45,
+              top: 53,
               left: 10,
               child: IconButton(
                 splashRadius: 30,

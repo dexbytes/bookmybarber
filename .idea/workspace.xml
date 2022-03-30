@@ -22,81 +22,10 @@
     <list default="true" id="03038edf-563a-4e67-b08b-dc766b38d0ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/src/pages/main_map_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/google_map_custom/lib/src/pages/main_map_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/src/pages/map_data_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/google_map_custom/lib/src/pages/map_data_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_map_custom/lib/src/widgets/star_rating_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/google_map_custom/lib/src/widgets/star_rating_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_map_custom/test_package/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/google_map_custom/test_package/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/api_calling/api_constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/api_calling/api_constant.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/api_calling/api_request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/api_calling/api_request.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/api_calling/app_api_function.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/api_calling/app_api_function.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/api_calling/upload_to_s3_upload.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/api_calling/upload_to_s3_upload.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/app_utility/animation/app_animation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/app_utility/animation/app_animation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/app_utility/fcm/firebase_notification_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/app_utility/fcm/firebase_notification_handler.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/main_app_bloc/main_app_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/sign_in_bloc/sign_in_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/sign_in_bloc/sign_in_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/sign_up_bloc/sign_up_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_event.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/bloc/verification_code_bloc/verification_code_state.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/config/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/config/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/model/select_contact_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/model/select_contact_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/barber_profile_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_with_time.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/booking_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/dashboard_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/forgot_password_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/forgot_password_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_menu_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_menu_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/map_intregation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/near_by_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/rebooking_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/rebooking_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_gallery_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_review_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/salon_detail_services_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/serach_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/serach_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_barber_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_in_with_email_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_in_with_email_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_up_barber_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_up_barber_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/sign_up_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/sign_up_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/pages/tutorial_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/tutorial_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/verification_code_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/verification_code_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/pages/welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/pages/welcome_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/state/notification_stream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/state/notification_stream.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/values/app_color.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/values/app_color.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/alerts/exit_conformation_alert.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/alerts/exit_conformation_alert.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/appbar/dashboard_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/appbar/dashboard_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_dashboard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_first.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_first.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_menu_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/basic_view_container/container_menu_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/booking_card_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/bottom_navigation_bar/bottom_navigator_with_stack.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/common_text_field_with_error.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/common_text_field_with_error.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/connet_to_social_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/connet_to_social_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/custom_curve_maker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/custom_curve_maker_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/detail_photo_row_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/detail_photo_row_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/flexible_spacebar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/flexible_spacebar_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/widgets/full_photo_view_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/full_photo_view_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/image_shapes_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/image_shapes_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/input_done_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/input_done_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/my_booking_detail_service_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/package_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/package_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/package_detail_services_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/package_detail_services_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/payment_method_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/pin_code_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/pin_code_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/profile_list_row_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/profile_list_row_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/progress_bar_custom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/progress_bar_custom.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/salon_bottomsheet_map_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/salon_bottomsheet_map_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/screen_title_widget_with_backarrow.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/screen_title_widget_with_backarrow.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/services_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/services_list_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/widgets/share_bottom_sheet_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/widgets/share_bottom_sheet_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,51 +127,51 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="294" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.683@0.25.1366.683" timestamp="1645682993206" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1648188409634">
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1648627145905">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="565" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.670@0.25.1366.670" timestamp="1644831152646" />
-    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1648188409634" />
+    <state x="565" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1366.683@0.25.1366.683" timestamp="1648627145905" />
     <state x="623" y="117" key="AndroidProcessChooserDialog" timestamp="1648026920579">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="623" y="117" key="AndroidProcessChooserDialog/0.25.1366.683@0.25.1366.683" timestamp="1648026920579" />
-    <state width="632" height="438" key="DebuggerActiveHint" timestamp="1648463010295">
+    <state width="632" height="438" key="DebuggerActiveHint" timestamp="1648645741790">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
-    <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1648463010295" />
-    <state width="1026" height="222" key="GridCell.Tab.0.bottom" timestamp="1648545639310">
+    <state width="632" height="438" key="DebuggerActiveHint/0.25.1366.683@0.25.1366.683" timestamp="1648645741790" />
+    <state width="1036" height="207" key="GridCell.Tab.0.bottom" timestamp="1648646226331">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.bottom/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.bottom/0.25.1366.670@0.25.1366.670" timestamp="1644989197096" />
     <state width="1013" height="444" key="GridCell.Tab.0.bottom/0.25.1366.676@0.25.1366.676" timestamp="1646818233260" />
     <state width="1013" height="74" key="GridCell.Tab.0.bottom/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="222" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1648545639310" />
-    <state width="1026" height="222" key="GridCell.Tab.0.center" timestamp="1648545639309">
+    <state width="1036" height="207" key="GridCell.Tab.0.bottom/0.25.1366.683@0.25.1366.683" timestamp="1648646226331" />
+    <state width="1036" height="207" key="GridCell.Tab.0.center" timestamp="1648646226331">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.center/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.center/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.center/0.25.1366.676@0.25.1366.676" timestamp="1646818233254" />
     <state width="1013" height="74" key="GridCell.Tab.0.center/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="222" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1648545639309" />
-    <state width="1026" height="222" key="GridCell.Tab.0.left" timestamp="1648545639309">
+    <state width="1036" height="207" key="GridCell.Tab.0.center/0.25.1366.683@0.25.1366.683" timestamp="1648646226331" />
+    <state width="1036" height="207" key="GridCell.Tab.0.left" timestamp="1648646226331">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.left/0.25.1366.667@0.25.1366.667" timestamp="1646833603715" />
     <state width="1040" height="275" key="GridCell.Tab.0.left/0.25.1366.670@0.25.1366.670" timestamp="1644989197094" />
     <state width="1013" height="444" key="GridCell.Tab.0.left/0.25.1366.676@0.25.1366.676" timestamp="1646818233252" />
     <state width="1013" height="74" key="GridCell.Tab.0.left/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="222" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1648545639309" />
-    <state width="1026" height="222" key="GridCell.Tab.0.right" timestamp="1648545639310">
+    <state width="1036" height="207" key="GridCell.Tab.0.left/0.25.1366.683@0.25.1366.683" timestamp="1648646226331" />
+    <state width="1036" height="207" key="GridCell.Tab.0.right" timestamp="1648646226331">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state width="1013" height="333" key="GridCell.Tab.0.right/0.25.1366.667@0.25.1366.667" timestamp="1646833603716" />
     <state width="1040" height="275" key="GridCell.Tab.0.right/0.25.1366.670@0.25.1366.670" timestamp="1644989197095" />
     <state width="1013" height="444" key="GridCell.Tab.0.right/0.25.1366.676@0.25.1366.676" timestamp="1646818233258" />
     <state width="1013" height="74" key="GridCell.Tab.0.right/0.25.1366.681@0.25.1366.681" timestamp="1646819025396" />
-    <state width="1026" height="222" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1648545639310" />
+    <state width="1036" height="207" key="GridCell.Tab.0.right/0.25.1366.683@0.25.1366.683" timestamp="1648646226331" />
     <state x="326" y="25" key="SettingsEditor" timestamp="1648537255376">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -252,11 +181,11 @@
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="396" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1366.683@0.25.1366.683" timestamp="1645524399230" />
-    <state x="344" y="25" width="1022" height="548" key="find.popup" timestamp="1648212301391">
+    <state x="344" y="25" width="1022" height="548" key="find.popup" timestamp="1648624848004">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
     <state x="521" y="114" width="615" height="490" key="find.popup/0.25.1366.670@0.25.1366.670" timestamp="1644310908719" />
-    <state x="344" y="25" width="1022" height="548" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1648212301391" />
+    <state x="344" y="25" width="1022" height="548" key="find.popup/0.25.1366.683@0.25.1366.683" timestamp="1648624848004" />
     <state x="561" y="207" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1646284262349">
       <screen x="0" y="25" width="1366" height="683" />
     </state>
@@ -278,26 +207,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/src/widgets/notification_circular_widget.dart</url>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/pages/book_appointment_screen.dart</url>
-          <line>178</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/widgets/book_appointment_row_view.dart</url>
-          <line>58</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/widgets/book_appointment_row_view.dart</url>
-          <line>59</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/widgets/book_appointment_row_view.dart</url>
-          <line>61</line>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -2,12 +2,18 @@ import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
+import 'package:base_flutter_app/src/model/book_appointment_model.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
+import 'package:base_flutter_app/src/widgets/book_appointment_bottom_sheet_data.dart';
 import 'package:base_flutter_app/src/widgets/book_appointment_row_view.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
+
+import 'book_services_with_circular_image.dart';
 
 
 class BookAppointmentScreen extends StatefulWidget {
@@ -22,7 +28,9 @@ class BookAppointmentScreen extends StatefulWidget {
 
 class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   int selectValue = 0;
-  List selectedServices = [];
+  List<SelectedServiceData> selectedServices = [];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -143,19 +151,145 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 color: Colors.white),
             leftTitle: "Choose your service",
           ),
-          SizedBox(height: 15),
-          selectValue == 0
-              ? BookAppointmentRowViewWidget(
-              selectedServiceListCallback:(selectedServices){
-                this.selectedServices.addAll(selectedServices);
+          SizedBox(height: 12,),
+          ListView.builder(
+              scrollDirection: Axis.vertical,
+              padding: EdgeInsets.only(left: 20,right: 16,top: 0,bottom: 0),
+              physics: ClampingScrollPhysics(),
+              itemCount: serviceList.length,
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+               String selectedService = "ADD";
+               selectedServices.forEach((element) {
+               if(  element.title == serviceList[index].name){
+                 selectedService = element.serviceData.toString();
+                 selectedService = selectedService +' (\$' +element.price!.ceil().toString() + ")";
+               }
+               });
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(serviceList[index].name, style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: !isDarkMode ? Colors.black:AppColors().white)
+                      ,
+                    ),
+                    InkWell(
+                      onTap: (){
+                        // showSlidingBottomSheet(
+                        //     context,
+                        //     builder: (context) {
+                        //       return SlidingSheetDialog(
+                        //         duration: Duration(milliseconds: 400),
+                        //         elevation: 8,
+                        //         color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //         cornerRadius: 16,
+                        //         snapSpec: SnapSpec(
+                        //           snap: true,
+                        //           snappings: [0.5, 0.8],
+                        //           positioning: SnapPositioning.relativeToAvailableSpace,
+                        //         ),
+                        //         builder: (context, state) {
+                        //           return Material(
+                        //             color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //             child: Column(
+                        //               children: [
+                        //                 GestureDetector(
+                        //                   onTap: () {
+                        //                     Navigator.pop(context);
+                        //                   },
+                        //                   child: Container(
+                        //                     color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //                     margin: const EdgeInsets.only(
+                        //                         top: 12, bottom: 10),
+                        //                     width: 50,
+                        //                     child: Divider(
+                        //                       color: Colors.grey,
+                        //                       thickness: 4,
+                        //                       indent: 1,
+                        //                       endIndent: 1,
+                        //                     ),
+                        //                   ),
+                        //                 ),
+                        //                 Padding(
+                        //                   padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        //                   child: Text(serviceList[index].name, style: TextStyle(
+                        //                       fontSize: 22,
+                        //                       fontWeight: FontWeight.w600,
+                        //                       color: !isDarkMode ? Colors.black:AppColors().textHeadingColor1)
+                        //                     ,
+                        //                   ),
+                        //                 ),
+                        //                 BookAppointmentBottomSheetScreen(itemCount:serviceList[index].subtitle.length,)
+                        //               ],
+                        //             ),
+                        //           );
+                        //         },
+                        //       );
+                        //     }
+                        // );
+                        Navigator.push(
+                          context,
+                          BottomUpTransition(
+                              widget:BookServicesWithImage(
+                                title: serviceList[index].name,
+                                serviceList:serviceList[index].subtitle,
+                                onAddClickCallBack:(service,price){
+                                  setState((){
+
+                                     if (selectedService != "ADD") {
+                                       selectedServices.removeWhere((product) => product.title == serviceList[index].name);
+                                     }
+
+                                     selectedServices.add(SelectedServiceData(title: serviceList[index].name,
+                                         serviceData: service,price: price));
+
+                                  });
+                                },
+
+                )),
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 15),
+                        decoration: BoxDecoration(
+                          color: appColors.appBgColor3,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(left: 18,right: 15,bottom: 9,top: 9),
+                        // height: 40,
+                        child:
+                        Text(
+                          selectedService,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: !isDarkMode? Colors.black.withOpacity(0.6):Colors.grey,
+                          ),
+                        ),
+                        )
+                      ),
+
+                  ],
+                );
               }
-          )
-              : BookAppointmentRowViewWidget(
-            isFemaleListVisible: true,
-              selectedServiceListCallback:(selectedServices){
-                this.selectedServices.addAll(selectedServices);
-              }
-          )
+          ),
+          // SizedBox(height: 15),
+          // selectValue == 0
+          //     ? BookAppointmentRowViewWidget(
+          //     selectedServiceListCallback:(selectedServices){
+          //       this.selectedServices.addAll(selectedServices);
+          //     }
+          // )
+          //     : BookAppointmentRowViewWidget(
+          //   isFemaleListVisible: true,
+          //     selectedServiceListCallback:(selectedServices){
+          //       this.selectedServices.addAll(selectedServices);
+          //     }
+          // )
+
         ],
       );
     }
@@ -186,8 +320,9 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
 
 
+
     Widget bottomCardView =  Positioned(
-      top: MediaQuery.of(context).size.height/6.4,
+      top: MediaQuery.of(context).size.height/8.4,
       child: Container(
           padding: EdgeInsets.only(top: 25),
           width: size.width,
@@ -209,7 +344,6 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               // bottomButton(),
             ],
           ),
-
           // ContainerMenuPage(
           //   contextCurrentView: context,
           //   scrollPadding: EdgeInsets.only(bottom: 0),
@@ -303,3 +437,14 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   }
 }
 
+class SelectedServiceData{
+  String? title;
+  String? serviceData;
+  double? price;
+
+  SelectedServiceData({title,serviceData,price}){
+    this.title = title;
+    this.serviceData = serviceData;
+    this.price = price;
+  }
+}

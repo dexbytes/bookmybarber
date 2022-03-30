@@ -211,6 +211,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                           height: MediaQuery.of(context).size.height/1.1,
                           child: PageView.builder(
                             scrollDirection: Axis.horizontal,
+                            physics: ClampingScrollPhysics(),
+                            allowImplicitScrolling: true,
                             controller: _pageController,
                             // onPageChanged: _onPageChanged,
                             onPageChanged: (index) =>
