@@ -65,7 +65,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xff00B2AE),
-                backgroundColor:!isDarkMode ?appColors.grey.withOpacity(0.3):appColors.appBgColor3,
+                backgroundColor:!isDarkMode ?appColors.grey.withOpacity(0.15):appColors.appBgColor3,
                 reportList: [
                   "9:30 AM","10:00 AM","10:30 AM","11:00 AM",
                   "11:30 AM","12:00 PM","1:30 PM","2:00 PM",

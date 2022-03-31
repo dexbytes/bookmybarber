@@ -47,7 +47,7 @@ class _BookAppointmentTimeListState extends State<BookAppointmentTimeList> {
           label: Text(item),
           labelStyle: widget.labelTextStyle ?? (widget.isSecondColorShow ? TextStyle(
               color: selectedChoice == item ?
-              Colors.white:Color(0xff828588),
+              Colors.white:appColors.greyUnselected,
               fontSize: 13.5,
               fontWeight: FontWeight.w500):TextStyle(
               color: selectedChoice == item ?

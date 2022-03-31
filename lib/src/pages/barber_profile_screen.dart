@@ -510,7 +510,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                       onTap:() {
                         Navigator.push(
                           context,
-                          SlideRightRoute(
+                          BottomUpTransition(
                               widget: FullPhotoView(profileImgUrl: widget.profileImgUrl,)),
                         );
                       },
