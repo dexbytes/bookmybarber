@@ -172,7 +172,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     Text(serviceList[index].name, style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
-                        color: !isDarkMode ? Colors.black:AppColors().white)
+                        color: !isDarkMode ? Colors.black:AppColors().grey)
                       ,
                     ),
                     InkWell(
@@ -266,8 +266,8 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
-                            color: !isDarkMode? Colors.black.withOpacity(0.6):Colors.grey,
-                          ),
+                            color: !isDarkMode? Colors.black.withOpacity(0.6):Colors.white,
+                          )
                         ),
                         )
                       ),

@@ -82,19 +82,6 @@ class _TutorialScreenState extends State<TutorialScreen> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        // Container(
-        //   height: MediaQuery.of(context).size.height/1.9,
-        //   decoration: BoxDecoration(
-        //     // shape: BoxShape.circle,
-        //     borderRadius: BorderRadius.vertical(bottom: Radius.circular(150)),
-        //     image: DecorationImage(
-        //       image:
-        //       NetworkImage(tutorialModelList[index].imageUrl),
-        //       // AssetImage(tutorialModelList[index].imageUrl),
-        //       fit: BoxFit.cover,
-        //     ),
-        //   ),
-        // ),
         Container(
           child: ClipPath(
               clipper:CustomTutorialAppBar(),
@@ -157,7 +144,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
         margin: EdgeInsets.only(left: 20,right: 20,bottom: 45),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: activeIndex == 2 ?"Get Started" :"Next",
+          buttonName: activeIndex == 2 ?appString.trans(context, appString.nextBtn):appString.trans(context, appString.nextBtn),
           buttonColor:  !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,

@@ -27,8 +27,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       color: Color(0xff3885FF),
       imageIcon: iconApps.iconImage(imageUrl: iconApps.facebookIcon,imageColor: Colors.white,iconSize: Size(25, 25)),
       text: "FaceBook",
-
     );
+
     Widget topIcon = Container(
       height: 75,
       width: 75,
@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     Widget titleText = Container(
       margin: EdgeInsets.symmetric(horizontal: 32),
       height: 80,
-      child: Text("Book an Appointment for Salon, Spa & Barber.",
+      child: Text(appString.trans(context, appString.welcomeHeading),
       style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700,color: Colors.white),
       ),
     );

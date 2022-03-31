@@ -116,6 +116,8 @@
   "step1Of3" : " 1 of 3",
    "importContact" : "Select where you want to import contacts from ",
   "skip" : "Skip",
-  "nextBtn" : "Next"
-
+  "nextBtn" : "Next",
+  "welcomeHeading" : "Book an Appointment for salon, Spa & Barber.",
+  "alreadyHaveAccount" : "Already have an account",
+  "signIn" : "Sign in"
 }

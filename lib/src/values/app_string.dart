@@ -208,6 +208,8 @@ class AppString {
   String importContact = "importContact";
   String skip = "skip";
   String nextBtn = "nextBtn";
+  String welcomeHeading = "welcomeHeading";
+  String alreadyHaveAccount = "alreadyHaveAccount";
 
 }
 

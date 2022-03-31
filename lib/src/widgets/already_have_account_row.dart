@@ -1,8 +1,9 @@
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:flutter/material.dart';
 
 class AlreadyHaveAccountRow extends StatelessWidget {
-  final String leftText;
-  final String rightText;
+  final String? leftText;
+  final String? rightText;
   final String subtitleText;
   final TextStyle leftTextStyle;
   final TextStyle rightTextStyle;
@@ -19,8 +20,8 @@ class AlreadyHaveAccountRow extends StatelessWidget {
 
   const AlreadyHaveAccountRow(
       {Key? key,
-        this.leftText ="Already have an account\? ",
-        this.rightText ="Sign in",
+        this.leftText,
+        this.rightText,
         this.leftTextStyle = const TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),
         this.rightTextStyle = const TextStyle(fontSize: 15.5,fontWeight: FontWeight.w600,color:Color(0xffFE9654)),
         this.borderRadius = 40,
@@ -48,7 +49,7 @@ class AlreadyHaveAccountRow extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(leftText,
+                Text(leftText ??"${appString.trans(context, appString.alreadyHaveAccount)}\?",
                 style: leftTextStyle
                 ),
                 SizedBox(height:isSubtitleTextVisible? 6: 0,),
@@ -78,7 +79,7 @@ class AlreadyHaveAccountRow extends StatelessWidget {
                     this.signInCallBack?.call();
                     print("click on sign in");
                   },
-                  child: Text(rightText,
+                  child: Text(rightText ?? appString.trans(context, appString.signIn),
                     style:rightTextStyle
                   ),
                 ),
