@@ -52,7 +52,7 @@ class _PackageOfferScreenState extends State<PackageOfferScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Packages & Offers",
+            title: appString.trans(context, appString.packageOffers),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,

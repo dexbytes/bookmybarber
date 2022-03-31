@@ -57,7 +57,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,left: 12,),
-            child: Text("Available slot",
+            child: Text(appString.trans(context, appString.availableSlot),
                 style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode? Colors.black :Colors.white)),
           ),
           Container(
@@ -83,7 +83,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,left: 12,),
-            child: Text("Select specialist",
+            child: Text(appString.trans(context, appString.selectSpecialist),
                 style: TextStyle(fontSize: 18,
                     fontWeight: FontWeight.w700,
                     color: !isDarkMode?Colors.black:Color(0xffCCA76A))),
@@ -109,7 +109,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 0.0,left:20,),
-            child: Text("Select your date",
+            child: Text(appString.trans(context, appString.selectDate),
                 style: TextStyle(fontSize: 18,
                     fontWeight: FontWeight.w700,
                     color: !isDarkMode?Colors.black:Color(0xffCCA76A))),
@@ -117,7 +117,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           Container(
             margin:EdgeInsets.only(top: 12) ,
             height: 66,
-            child: DatePickerWidget(isShowMonthName: true,hintText: "Select your date",),
+            child: DatePickerWidget(isShowMonthName: true,hintText:appString.trans(context, appString.selectDate)),
           ),
         ],
       );
@@ -131,7 +131,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
         margin: EdgeInsets.only(left: 28,right: 28,),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: "Continue",
+          buttonName:appString.trans(context, appString.continueBt),
           buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -220,7 +220,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Book Appointment",
+                        Text(appString.trans(context, appString.bookAppointment),
                           style:TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w800,

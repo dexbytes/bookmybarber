@@ -335,7 +335,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Write your Review",
+                Text(appString.trans(context, appString.writeReview),
                   style:TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color:Color(0xff828588)),),
                 StarRatingBar(
                   removeItemRating: true,
@@ -467,7 +467,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
         elevation: 0.5,
         backgroundColor: !isDarkMode?appColors.white:appColors.appBgColor2,
         centerTitle: true,
-        title: Text("Portfolio",
+        title: Text(appString.trans(context, appString.reviews),
           style:TextStyle(
               color:  !isDarkMode? Colors.black:Colors.white,
               fontSize: 22,fontWeight: FontWeight.w700),
@@ -482,7 +482,7 @@ class _SalonDetailAboutScreenState extends State<SalonDetailReviewScreen> {
           _reviewField(),
           SeeAllTextRow(
             margin: EdgeInsets.only(left: 20,top: 15,),
-            leftTitle: "All Reviews (128)",
+            leftTitle: "${appString.trans(context, appString.allReview)}(128)",
             isRightTextVisible: false,
             leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: !isDarkMode?Colors.grey:Color(0xFFCCA76A)) ,
           ),

@@ -4,14 +4,10 @@ import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart'
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/book_appointment_model.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
-import 'package:base_flutter_app/src/widgets/book_appointment_bottom_sheet_data.dart';
-import 'package:base_flutter_app/src/widgets/book_appointment_row_view.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
 
 import 'book_services_with_circular_image.dart';
 
@@ -152,7 +148,8 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
             leftTitle: "Choose your service",
           ),
           SizedBox(height: 12,),
-          ListView.builder(
+          selectValue == 0
+              ? ListView.builder(
               scrollDirection: Axis.vertical,
               padding: EdgeInsets.only(left: 20,right: 16,top: 0,bottom: 0),
               physics: ClampingScrollPhysics(),
@@ -252,13 +249,13 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                         );
                       },
                       child: Container(
-                        margin: EdgeInsets.only(bottom: 15),
+                        margin: EdgeInsets.only(bottom: 8,top: 8),
                         decoration: BoxDecoration(
-                          color: appColors.appBgColor3,
+                          color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
                           borderRadius: BorderRadius.circular(6),
                         ),
                         alignment: Alignment.center,
-                        padding: EdgeInsets.only(left: 18,right: 15,bottom: 9,top: 9),
+                        padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
                         // height: 40,
                         child:
                         Text(
@@ -266,7 +263,131 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
-                            color: !isDarkMode? Colors.black.withOpacity(0.6):Colors.white,
+                            color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
+                          )
+                        ),
+                        )
+                      ),
+
+                  ],
+                );
+              }
+          )
+              : ListView.builder(
+              scrollDirection: Axis.vertical,
+              padding: EdgeInsets.only(left: 20,right: 16,top: 0,bottom: 0),
+              physics: ClampingScrollPhysics(),
+              itemCount: serviceListFemale.length,
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+               String selectedService = "ADD";
+               selectedServices.forEach((element) {
+               if(  element.title == serviceListFemale[index].name){
+                 selectedService = element.serviceData.toString();
+                 selectedService = selectedService +' (\$' +element.price!.ceil().toString() + ")";
+               }
+               });
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(serviceListFemale[index].name, style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: !isDarkMode ? Colors.black:AppColors().grey)
+                      ,
+                    ),
+                    InkWell(
+                      onTap: (){
+                        // showSlidingBottomSheet(
+                        //     context,
+                        //     builder: (context) {
+                        //       return SlidingSheetDialog(
+                        //         duration: Duration(milliseconds: 400),
+                        //         elevation: 8,
+                        //         color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //         cornerRadius: 16,
+                        //         snapSpec: SnapSpec(
+                        //           snap: true,
+                        //           snappings: [0.5, 0.8],
+                        //           positioning: SnapPositioning.relativeToAvailableSpace,
+                        //         ),
+                        //         builder: (context, state) {
+                        //           return Material(
+                        //             color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //             child: Column(
+                        //               children: [
+                        //                 GestureDetector(
+                        //                   onTap: () {
+                        //                     Navigator.pop(context);
+                        //                   },
+                        //                   child: Container(
+                        //                     color:!isDarkMode ?Colors.white:AppColors().appBgColor2,
+                        //                     margin: const EdgeInsets.only(
+                        //                         top: 12, bottom: 10),
+                        //                     width: 50,
+                        //                     child: Divider(
+                        //                       color: Colors.grey,
+                        //                       thickness: 4,
+                        //                       indent: 1,
+                        //                       endIndent: 1,
+                        //                     ),
+                        //                   ),
+                        //                 ),
+                        //                 Padding(
+                        //                   padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        //                   child: Text(serviceList[index].name, style: TextStyle(
+                        //                       fontSize: 22,
+                        //                       fontWeight: FontWeight.w600,
+                        //                       color: !isDarkMode ? Colors.black:AppColors().textHeadingColor1)
+                        //                     ,
+                        //                   ),
+                        //                 ),
+                        //                 BookAppointmentBottomSheetScreen(itemCount:serviceList[index].subtitle.length,)
+                        //               ],
+                        //             ),
+                        //           );
+                        //         },
+                        //       );
+                        //     }
+                        // );
+                        Navigator.push(
+                          context,
+                          BottomUpTransition(
+                              widget:BookServicesWithImage(
+                                title: serviceListFemale[index].name,
+                                serviceList:serviceListFemale[index].subtitle,
+                                onAddClickCallBack:(service,price){
+                                  setState((){
+
+                                     if (selectedService != "ADD") {
+                                       selectedServices.removeWhere((product) => product.title == serviceListFemale[index].name);
+                                     }
+
+                                     selectedServices.add(SelectedServiceData(title: serviceListFemale[index].name,
+                                         serviceData: service,price: price));
+
+                                  });
+                                },
+
+                )),
+                        );
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 8,top: 8),
+                        decoration: BoxDecoration(
+                          color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
+                        // height: 40,
+                        child:
+                        Text(
+                          selectedService,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
                           )
                         ),
                         )
@@ -299,7 +420,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
         margin: EdgeInsets.only(left: 28,right: 28,top: 10),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: widget.isBottomButtonText ?"Book now":"Done",
+          buttonName: widget.isBottomButtonText ?appString.trans(context, appString.bookNow):appString.trans(context, appString.done),
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -405,7 +526,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Book Appointment",
+                        Text(appString.trans(context, appString.bookAppointment),
                           style:TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w800,

@@ -391,7 +391,7 @@ class _FilterScreenState extends State<FilterScreen>
     return WillPopScope(
         onWillPop: null, //_onBackPressed,
         child: Scaffold(
-          backgroundColor: AppColors().appBgColor2,
+          backgroundColor:!isDarkMode ?Colors.white:AppColors().appBgColor2,
           body: SafeArea(
             top: false,
             bottom: true,

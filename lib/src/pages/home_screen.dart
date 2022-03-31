@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               size: 20,
             ),
           ),
-          hintText: "Search salon,spa and barber",
+          hintText:appString.trans(context, appString.searchHint),
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 Padding(
                                   padding: EdgeInsets.only(left: 15.0),
                                   child: Text(
-                                    "Book My Barber",
+                                    appString.trans(context, appString.bookMyBarber),
                                     style: TextStyle(
                                          color: !isDarkMode?
                                          isAppBarCollapsed ? Colors.black:Colors.white
@@ -351,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                   bottom:
                                       MediaQuery.of(context).size.height / 9,
                                   child: Text(
-                                    "Find and book best services",
+                                    appString.trans(context, appString.homeSubtitle),
                                     style: TextStyle(
                                        color: Colors.white,
                                         fontSize: 22,
@@ -376,13 +376,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       height: 20,
                                     ),
                                     SeeAllTextRow(
-                                      leftTitle: "Top categories",
+                                      leftTitle: appString.trans(context, appString.topCategories),
                                       rightTextCallBack: (){
                                         Navigator.push(
                                           MainAppBloc.getDashboardContext,
                                           SlideRightRoute(
                                               widget: CategoriesViewAllScreen(
-                                                title: "Top categories",
+                                                title: appString.trans(context, appString.topCategories),
                                               )),
                                         );
                                       },
@@ -392,13 +392,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       height: 15,
                                     ),
                                     SeeAllTextRow(
-                                      leftTitle: "Best salon",
+                                      leftTitle: appString.trans(context, appString.bestSalon),
                                       rightTextCallBack: () {
                                         Navigator.push(
                                           MainAppBloc.getDashboardContext,
                                           SlideRightRoute(
                                               widget: SalonListViewAllScreen(
-                                            title: "Best salon",
+                                            title: appString.trans(context, appString.bestSalon),
                                           )),
                                         );
                                       },
@@ -408,13 +408,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       height: 30,
                                     ),
                                     SeeAllTextRow(
-                                      leftTitle: "Top services",
+                                      leftTitle:  appString.trans(context, appString.topServices),
                                       rightTextCallBack: (){
                                         Navigator.push(
                                           MainAppBloc.getDashboardContext,
                                           SlideRightRoute(
                                               widget: CategoriesViewAllScreen(
-                                                title: "Top services",
+                                                title: appString.trans(context, appString.topServices),
                                               )),
                                         );
                                       },
@@ -424,13 +424,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       height: 15,
                                     ),
                                     SeeAllTextRow(
-                                      leftTitle: "Popular salon nearby",
+                                      leftTitle: appString.trans(context, appString.popularSalon),
                                       rightTextCallBack: () {
                                         Navigator.push(
                                           MainAppBloc.getDashboardContext,
                                           SlideRightRoute(
                                               widget: SalonListViewAllScreen(
-                                            title: "Popular salon nearby",
+                                            title:  appString.trans(context, appString.popularSalon),
                                           )),
                                         );
                                       },
@@ -440,10 +440,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       height: 30,
                                     ),
                                     // categoriesTextList,
-                                    SeeAllTextRow(leftTitle: "Barber Specialist",),
+                                    SeeAllTextRow(leftTitle: appString.trans(context, appString.barberSpecialist),),
                                     barberSpecialist,
                                     SeeAllTextRow(
-                                      leftTitle: "Popular salon nearby",
+                                      leftTitle: appString.trans(context, appString.popularSalon),
                                     ),
                                     homeCard2,
                                   ],

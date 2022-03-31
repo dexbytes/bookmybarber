@@ -74,7 +74,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
             // SizedBox(
             //   height: 20,
             // ),
-            Text("We have sent you an SMS with a code to number ${controllers['phone']?.text.toString()}",
+            Text("${appString.trans(context, appString.mobileVerificationHeading)} ${controllers['phone']?.text.toString()}",
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -141,7 +141,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
           inputKeyboardType: InputKeyboardTypeWithError.phone,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
           // textStyle: _appStyle.labelTextStyle(),
-          hintText: "Mobile Number",
+          hintText:appString.trans(context, appString.mobileNumber),
           hintStyle: TextStyle(
             fontSize: 15.5,
             fontWeight: FontWeight.w500,
@@ -223,7 +223,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
       return Container(
         margin: EdgeInsets.only(left: 20,right: 20,bottom: 20),
         child: CommonButton(
-          buttonName: "Continue",
+          buttonName:appString.trans(context, appString.continueBt),
           buttonHeight: 50,
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
@@ -285,7 +285,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Verify Phone Number",
+            title:appString.trans(context, appString.verifyPhoneNumber),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,

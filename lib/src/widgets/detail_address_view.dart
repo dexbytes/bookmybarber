@@ -50,7 +50,7 @@ class DetailAddressView extends StatelessWidget {
               children: [
                 SeeAllTextRow(
                   margin: EdgeInsets.only(left: 10,bottom: 0),
-                  leftTitle: "Address",
+                  leftTitle: appString.trans(context, appString.address),
                   isRightTextVisible: false,
                   leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color:!isDarkMode? Colors.black:Colors.white) ,
                 ),

@@ -479,6 +479,7 @@ class FirebaseNotifications {
         }
       }
       try {
+        // ignore: unnecessary_null_comparison
         if (mContext != null && userId != null && userId != "") {
           SharedPreferencesFile().saveBool(anyNewNotificationC, false);
         }

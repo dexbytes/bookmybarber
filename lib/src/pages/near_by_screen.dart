@@ -78,7 +78,7 @@ class _NearByScreenState extends State<NearByScreen>
             onPressed:(){},
             icon:Icon(CupertinoIcons.search,color: Colors.grey,size: 18,),
           ),
-          hintText: "Search for salon, services..",
+          hintText:appString.trans(context, appString.searchHint),
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -307,24 +307,24 @@ class _NearByScreenState extends State<NearByScreen>
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(height: 12,),
-                    SeeAllTextRow(leftTitle: "Barber Specialists",),
+                    SeeAllTextRow(leftTitle:appString.trans(context, appString.barberSpecialist),),
                     barberSpecialist,
-                    SeeAllTextRow(leftTitle: "Popular salon nearby",
+                    SeeAllTextRow(leftTitle: appString.trans(context, appString.popularSalon),
                       rightTextCallBack: (){
                         FocusScope.of(context).requestFocus(FocusNode());
                         Navigator.push(
                           MainAppBloc.getDashboardContext,
                           SlideRightRoute(
-                              widget: SalonListViewAllScreen(title: "Popular salon nearby",)),
+                              widget: SalonListViewAllScreen(title: appString.trans(context, appString.popularSalon),)),
                         );},
                     ),
                     homeCard,
                     SizedBox(height: 15,),
-                    SeeAllTextRow(leftTitle: "Special package & offers",),
+                    SeeAllTextRow(leftTitle: appString.trans(context, appString.specialPackage)),
                     SizedBox(height: 15,),
                     sliderView,
                     SizedBox(height: 15,),
-                    SeeAllTextRow(leftTitle: "Top categories",),
+                    SeeAllTextRow(leftTitle:appString.trans(context, appString.topCategories),),
                     categories,
                     SizedBox(height: 80,),
                   ],

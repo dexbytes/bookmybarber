@@ -54,7 +54,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             // SizedBox(
             //   height: 20,
             // ),
-            Text("Enter your OTP code here",
+            Text(appString.trans(context, appString.otpScreenHeading),
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
@@ -73,7 +73,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         margin: EdgeInsets.only(left: 20,right: 20,top: 35),
         child: CommonButton(
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
-          buttonName: "CONTINUE",
+          buttonName:appString.trans(context, appString.continueBt),
           buttonHeight: 50,
           isBottomMarginRequired: false,
           textStyle: TextStyle(fontSize: 18,
@@ -108,7 +108,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       child: AlreadyHaveAccountRow(
         leftText: "Did't you receive any code?",
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
-        rightText: "Resend a new code",
+        rightText: appString.trans(context, appString.resendCode),
         isSubtitleTextVisible: true,
         isRightTextVisible: false,
         subtitleTextCallBack: (){

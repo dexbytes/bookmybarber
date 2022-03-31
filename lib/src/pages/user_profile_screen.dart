@@ -46,8 +46,8 @@ class _UserProfileScreenState extends State<UserProfileScreen>
     Widget profileImage = GestureDetector(
         onTap:() {
           Navigator.push(
-            context,
-            SlideRightRoute(
+            MainAppBloc.getDashboardContext,
+            BottomUpTransition(
                 widget: FullPhotoView(profileImgUrl:widget.image,)),
           );
         },

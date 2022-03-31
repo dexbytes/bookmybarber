@@ -32,10 +32,10 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
         child: Column(
           children: [
             SeeAllTextRow(
-              leftTitle: "Payment Method",
+              leftTitle:  appString.trans(context, appString.paymentMethod),
               leftTitleTextStyle:TextStyle(fontSize: 18,fontWeight: FontWeight.w600,
                   color: !isDarkMode ?Colors.black:Color(0xFFCCA76A)),
-              rightTitle: "+ Add a new card",
+              rightTitle: "+ ${appString.trans(context, appString.addNewCard)}",
               rightTitleTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w600,color: !isDarkMode ?Colors.black:Color(0xFFCCA76A))
             ),
             SizedBox(height: 5,),
@@ -116,7 +116,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
         margin: EdgeInsets.only(left: 25,right: 25,),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: "Continue",
+          buttonName:appString.trans(context, appString.continueBt),
           buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -162,7 +162,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                       textStyle: TextStyle(fontSize: 22,color:!isDarkMode?AppColors().black:AppColors().textHeadingColor1,fontWeight: FontWeight.w700),
                       isTrailingIconVisible: false,
                       leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
-                      title: "Booking Details",
+                      title: appString.trans(context, appString.bookingDetails),
                       onPress: (){
                         Navigator.pop(context);
                       }
@@ -208,7 +208,6 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
             ),
             child: Container(
               padding: EdgeInsets.all(20),
-             // height: MediaQuery.of(context).size.height/2.1,
               width: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
                   color: !isDarkMode? AppColors().white:AppColors().appBgColor3,
@@ -221,7 +220,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                     imageUrl: iconApps.rightWithBackgroundIcon,
                   ),
                   SizedBox(height: 25,),
-                  Text("Your appointment booking is successfully.",
+                  Text(appString.trans(context, appString.paymentPopUpHeading),
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
@@ -233,7 +232,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                   RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                    text: "You can view the appointment booking\n info in the",
+                    text: appString.trans(context, appString.paymentPopUpSubHeading),
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -249,7 +248,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                         ),
                       ),
                       TextSpan(
-                        text:"section",
+                        text:appString.trans(context, appString.section),
                         style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,

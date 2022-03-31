@@ -409,8 +409,6 @@ import 'map_intregation.dart';
 //   }
 // }
 
-
-
 class BarberProfileScreen extends StatefulWidget {
   final onImageCallBack;
   final String profileImgUrl;
@@ -606,9 +604,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
     Widget image = Container(
         margin: EdgeInsets.only(left: 14),
         height: 80,
-        child: DetailPhotoView(
-
-        ));
+        child: DetailPhotoView());
 
     Widget review = Container(
         padding: EdgeInsets.only(left: 10,),
@@ -743,21 +739,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                         rightTitleTextStyle:  TextStyle(fontSize: 17,fontWeight: FontWeight.w500,color:!isDarkMode? Colors.black:Colors.white),
                                         leftTitleTextStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode? Colors.black:Colors.white),),
 
-                                      // Column(
-                                      //   children: [
-                                      //     SeeAllTextRow(
-                                      //       margin: EdgeInsets.only(left: 20,top: 20,bottom: 10),
-                                      //       leftTitle: "About",
-                                      //       isRightTextVisible: false,
-                                      //       leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white) ,
-                                      //     ),
-                                      //     readMoreText,
-                                      //   ],
-                                      // ),
-
                                       SeeAllTextRow(
                                         margin: EdgeInsets.only(left: 20,bottom: 10),
-                                        leftTitle: "Opening Hour",
+                                        leftTitle:appString.trans(context, appString.openingHours),
                                         isRightTextVisible: false,
                                         leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white),
                                       ),
@@ -771,13 +755,13 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
 
                                       SeeAllTextRow(
                                           margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                          leftTitle: "Portfolio",
+                                          leftTitle: appString.trans(context, appString.portfolio),
                                           leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                           rightTextCallBack:() {
                                             Navigator.push(
                                               context,
                                               SlideRightRoute(
-                                                  widget: SalonGalleryViewScreen(title: "Portfolio",)),
+                                                  widget: SalonGalleryViewScreen(title:appString.trans(context, appString.portfolio),)),
                                             );
                                           }
                                       ),
@@ -789,7 +773,7 @@ class _BarberProfileScreenState extends State<BarberProfileScreen>
                                       ),
                                       SeeAllTextRow(
                                           margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                          leftTitle: "Reviews",
+                                          leftTitle: appString.trans(context, appString.reviews),
                                           leftTitleTextStyle:TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                           rightTextCallBack:() {
                                             Navigator.push(

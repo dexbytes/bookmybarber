@@ -138,7 +138,7 @@ class _SignInScreenState extends State<SignInScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Welcome back",
+        Text( appString.trans(context, appString.welcomeBack),
           style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.w800,
@@ -149,7 +149,7 @@ class _SignInScreenState extends State<SignInScreen> {
         SizedBox(
           height: 10,
         ),
-        Text("Login to your account",
+        Text( appString.trans(context, appString.logInAccount),
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,
@@ -303,7 +303,7 @@ class _SignInScreenState extends State<SignInScreen> {
       margin: EdgeInsets.only(left: 28,right: 28,top: 30),
       child:CommonButton(
         buttonHeight: 50,
-        buttonName: "Login",
+        buttonName: appString.trans(context, appString.loginT),
         buttonColor:  !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
         textStyle: TextStyle(fontSize: 18,
           fontWeight: FontWeight.w600,
@@ -334,7 +334,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   widget: ForgotPasswordScreen()),
             );
           },
-          child: Text("Forgot your password\?",
+          child: Text(appString.trans(context, appString.forgotPassword),  //"Forgot your password\?",
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w500,
@@ -349,9 +349,9 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget signUpText = Container(
     margin: EdgeInsets.only(bottom: 20),
       child: AlreadyHaveAccountRow(
-        leftText: "Don't have an account\?",
+        leftText:  appString.trans(context, appString.dontHaveAccount),
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
-        rightText: "Sign Up",
+        rightText: appString.trans(context, appString.signUpText),
         signInCallBack: (){
           Navigator.push(
             context,

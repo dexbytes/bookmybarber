@@ -280,7 +280,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 icon: iconApps.iconImage(imageUrl: iconApps.personIcon2,imageColor:Color(0xff828588),iconSize: Size(20, 20)),
             ),
           ),
-          hintText: "User name",
+          hintText:appString.trans(context, appString.userName),
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -328,7 +328,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           backgroundColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
           borderStyle: BorderStyle.none,
           inputKeyboardType: InputKeyboardTypeWithError.email,
-          hintText: "Email address",
+          hintText:appString.trans(context, appString.emailAddress),
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -463,7 +463,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           inputKeyboardType: InputKeyboardTypeWithError.phone,
           contentPadding: EdgeInsets.only(left: 0,right: 0),
           // textStyle: _appStyle.labelTextStyle(),
-          hintText: "Mobile Number",
+          hintText: appString.trans(context, appString.mobileNumber),
           hintStyle: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -554,7 +554,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       return Container(
         margin: EdgeInsets.only(left: 28,right: 28,bottom: 5),
         child: CommonButton(
-          buttonName: "Sign Up",
+          buttonName: appString.trans(context, appString.signUpText),
           buttonHeight: 48,
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
@@ -594,10 +594,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     Widget signInText = Container(
       margin: EdgeInsets.only(bottom: 20),
       child: AlreadyHaveAccountRow(
-        leftText: "Already have an account\?",
         leftTextStyle: !isDarkMode? TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Color(0xff828588))
         :TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white),
-        rightText: "Sign In",
+        rightText:appString.trans(context, appString.signIn),
         signInCallBack: (){
           Navigator.push(
             context,
@@ -645,7 +644,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Create an Account",
+            title: appString.trans(context, appString.createAccount),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,

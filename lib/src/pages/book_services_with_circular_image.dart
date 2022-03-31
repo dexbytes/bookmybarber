@@ -25,6 +25,8 @@ class _BookServicesWithImageState extends State<BookServicesWithImage> {
       margin: EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height,
       child:BookServicesGridViewWidget(
+        titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: !isDarkMode? Colors.black:Colors.white),
+
         onAddClickCallBack: (selectedService,price){
           widget.onAddClickCallBack.call(selectedService,price);
           Navigator.pop(context);

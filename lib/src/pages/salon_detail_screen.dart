@@ -104,7 +104,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                 height: 55,
                 child: DetailScreenTopRowWidget()),
             SeeAllTextRow(
-              leftTitle: "Salon specialists",
+              leftTitle: appString.trans(context, appString.salonSpecialist),
               isRightTextVisible: false,
               leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: !isDarkMode?Color(0xff323446):Colors.white,) ,
             ),
@@ -171,7 +171,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
         margin: EdgeInsets.only(left: 25,right: 25,bottom: 0),
         child:selectedTab <= 0 ?CommonButton(
           buttonHeight: 52,
-          buttonName: "Book now",
+          buttonName: appString.trans(context, appString.bookNow),
           buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -251,7 +251,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
           Navigator.push(
           context,
           SlideRightRoute(
-              widget: SalonGalleryViewScreen(title:"Gallery",)),
+              widget: SalonGalleryViewScreen(title:appString.trans(context, appString.gallery),)),
         );},));
 
     Widget review = Container(
@@ -438,7 +438,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                   children: [
                                     SeeAllTextRow(
                                       margin: EdgeInsets.only(left: 20,top: 20,bottom: 10),
-                                      leftTitle: "About",
+                                      leftTitle: appString.trans(context, appString.about),
                                       isRightTextVisible: false,
                                       leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white) ,
                                     ),
@@ -448,7 +448,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
                                 SeeAllTextRow(
                                   margin: EdgeInsets.only(left: 20,bottom: 10),
-                                  leftTitle: "Opening Hour",
+                                  leftTitle: appString.trans(context, appString.openingHours),
                                   isRightTextVisible: false,
                                   leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:Colors.white),
                                 ),
@@ -461,14 +461,14 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 ),
                                 SeeAllTextRow(
                                     margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                    leftTitle: "Services",
+                                    leftTitle: appString.trans(context, appString.services),
                                     leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                   rightTextCallBack: (){
                                     Navigator.push(
                                      context,
                                       SlideRightRoute(
                                           widget: CategoriesViewAllScreen(
-                                            title: "Services",
+                                            title:appString.trans(context, appString.services),
                                           )),
                                     );
                                   },
@@ -480,7 +480,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 ),
                                 SeeAllTextRow(
                                   margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                  leftTitle: "Package&Offers",
+                                  leftTitle: appString.trans(context, appString.packageOffers),
                                   leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                   rightTextCallBack: (){
                                     Navigator.push(
@@ -498,13 +498,13 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
 
                                 SeeAllTextRow(
                                     margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                    leftTitle: "Gallery",
+                                    leftTitle:appString.trans(context, appString.gallery),
                                     leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                     rightTextCallBack:() {
                                       Navigator.push(
                                         context,
                                         SlideRightRoute(
-                                            widget: SalonGalleryViewScreen(title:"Gallery",)),
+                                            widget: SalonGalleryViewScreen(title:appString.trans(context, appString.gallery),)),
                                       );
                                     }
                                 ),
@@ -516,7 +516,7 @@ class _SalonDetailScreenState extends State<SalonDetailScreen>
                                 ),
                                 SeeAllTextRow(
                                     margin: EdgeInsets.only(left: 20,bottom: 15,top: 25,right: 20),
-                                    leftTitle: "Reviews",
+                                    leftTitle: appString.trans(context, appString.reviews),
                                     leftTitleTextStyle:TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color:!isDarkMode? Colors.black:appColors.white),
                                     rightTextCallBack:() {
                                       Navigator.push(
