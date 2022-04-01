@@ -1,10 +1,12 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
+import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/book_appointment_model.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -24,6 +26,7 @@ class BookAppointmentScreen extends StatefulWidget {
 class _BookAppointmentScreenState extends State<BookAppointmentScreen>with TickerProviderStateMixin {
   int selectValue = 0;
   List<SelectedServiceData> selectedServices = [];
+  List<SelectedServiceData> selectedServices2 = [];
   TabController? tabController;
   int selectedTab = 0;
 
@@ -90,61 +93,81 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen>with Ticke
                       selectedService = selectedService +' (\$' +element.price!.ceil().toString() + ")";
                     }
                   });
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(serviceList[index].name, style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: !isDarkMode ? Colors.black:AppColors().grey)
-                        ,
-                      ),
-                      InkWell(
-                          onTap: (){
-                            Navigator.push(
-                              context,
-                              BottomUpTransition(
-                                  widget:BookServicesWithImage(
-                                    title: serviceList[index].name,
-                                    serviceList:serviceList[index].subtitle,
-                                    onAddClickCallBack:(service,price){
-                                      setState((){
+                  return Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(serviceList[index].name, style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: !isDarkMode ? Colors.black:AppColors().grey)
+                          ,
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  BottomUpTransition(
+                                      widget:BookServicesWithImage(
+                                        title: serviceList[index].name,
+                                        serviceList:serviceList[index].subtitle,
+                                        onAddClickCallBack:(service,price){
+                                          setState((){
 
-                                        if (selectedService != "ADD") {
-                                          selectedServices.removeWhere((product) => product.title == serviceList[index].name);
-                                        }
+                                            if (selectedService != "ADD") {
+                                              selectedServices.removeWhere((product) => product.title == serviceList[index].name);
+                                            }
 
-                                        selectedServices.add(SelectedServiceData(title: serviceList[index].name,
-                                            serviceData: service,price: price));
+                                            selectedServices.add(SelectedServiceData(title: serviceList[index].name,
+                                                serviceData: service,price: price));
 
-                                      });
-                                    },
+                                          });
+                                        },
 
-                                  )),
-                            );
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(bottom: 8,top: 8),
-                            decoration: BoxDecoration(
-                              color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
-                            // height: 40,
-                            child:
-                            Text(
-                                selectedService,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                  color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
-                                )
-                            ),
-                          )
-                      ),
+                                      )),
+                                );
+                              },
+                              child: selectedServices.isEmpty ?
+                              Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Icon(Icons.arrow_forward_ios_sharp,
+                                  color: !isDarkMode?appColors.buttonColor2:appColors.buttonColor,
+                                  size: 22
+                                ),
+                              ):
 
-                    ],
+                              // iconApps.iconImage(imageUrl: iconApps.serviceListIcon,
+                              //     imageColor: !isDarkMode?appColors.buttonColor2:appColors.buttonColor,
+                              //     iconSize: Size(25, 26)),
+
+
+                              Container(
+                                margin: EdgeInsets.only(bottom: 5,top: 5),
+                                decoration: BoxDecoration(
+                                  color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
+                                // height: 40,
+                                child:
+                                Text(
+                                    selectedService,
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
+                                    )
+                                ),
+                              )
+                          ),
+                        ),
+
+                      ],
+                    ),
                   );
                 }
             ),
@@ -183,67 +206,80 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen>with Ticke
               shrinkWrap: true,
               itemBuilder: (BuildContext context, int index) {
                   String selectedService = "ADD";
-                  selectedServices.forEach((element) {
+                  selectedServices2.forEach((element) {
                     if(  element.title == serviceListFemale[index].name){
                       selectedService = element.serviceData.toString();
                       selectedService = selectedService +' (\$' +element.price!.ceil().toString() + ")";
                     }
                   });
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(serviceListFemale[index].name, style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: !isDarkMode ? Colors.black:AppColors().grey)
-                        ,
-                      ),
-                      InkWell(
-                          onTap: (){
-                            Navigator.push(
-                              context,
-                              BottomUpTransition(
-                                  widget:BookServicesWithImage(
-                                    title: serviceListFemale[index].name,
-                                    serviceList:serviceListFemale[index].subtitle,
-                                    onAddClickCallBack:(service,price){
-                                      setState((){
+                  return Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(serviceListFemale[index].name, style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: !isDarkMode ? Colors.black:AppColors().grey)
+                          ,
+                        ),
+                        Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  BottomUpTransition(
+                                      widget:BookServicesWithImage(
+                                        title: serviceListFemale[index].name,
+                                        serviceList:serviceListFemale[index].subtitle,
+                                        onAddClickCallBack:(service,price){
+                                          setState((){
 
-                                        if (selectedService != "ADD") {
-                                          selectedServices.removeWhere((product) => product.title == serviceListFemale[index].name);
-                                        }
+                                            if (selectedService != "ADD") {
+                                              selectedServices2.removeWhere((product) => product.title == serviceListFemale[index].name);
+                                            }
 
-                                        selectedServices.add(SelectedServiceData(title: serviceListFemale[index].name,
-                                            serviceData: service,price: price));
+                                            selectedServices2.add(SelectedServiceData(title: serviceListFemale[index].name,
+                                                serviceData: service,price: price));
 
-                                      });
-                                    },
+                                          });
+                                        },
 
-                                  )),
-                            );
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(bottom: 8,top: 8),
-                            decoration: BoxDecoration(
-                              color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
-                            // height: 40,
-                            child:
-                            Text(
-                                selectedService,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                  color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
-                                )
-                            ),
-                          )
-                      ),
+                                      )),
+                                );
+                              },
+                              child: selectedServices2.isEmpty ?
+                              Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Icon(Icons.arrow_forward_ios_sharp,
+                                    color: !isDarkMode?appColors.buttonColor2:appColors.buttonColor,
+                                    size: 22
+                                ),
+                              ): Container(
+                                margin: EdgeInsets.only(bottom: 5,top: 5),
+                                decoration: BoxDecoration(
+                                  color: !isDarkMode? AppColors().textFiledColor.withOpacity(0.15): AppColors().textFiledColor2,
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.only(left: 17,right: 15,bottom:8,top: 8),
+                                // height: 40,
+                                child:
+                                Text(
+                                    selectedService,
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                      color: !isDarkMode? Colors.black.withOpacity(0.8):Colors.white,
+                                    )
+                                ),
+                              )
+                          ),
+                        ),
 
-                    ],
+                      ],
+                    ),
                   );
               }
           ),
