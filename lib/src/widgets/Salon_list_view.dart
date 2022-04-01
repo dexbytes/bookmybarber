@@ -18,7 +18,7 @@ class SalonDataListView extends StatelessWidget {
 
     return ListView.builder(
     scrollDirection: Axis.vertical,
-    padding: EdgeInsets.only(left: 1,right: 1,bottom: 70),
+    padding: EdgeInsets.only(left: 1,right: 1,),
     physics: ClampingScrollPhysics(),
     itemCount: salonList.length,
     shrinkWrap: true,

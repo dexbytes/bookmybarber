@@ -51,8 +51,8 @@ class _BookAppointmentTimeListState extends State<BookAppointmentTimeList> {
               fontSize: 13.5,
               fontWeight: FontWeight.w500):TextStyle(
               color: selectedChoice == item ?
-              Colors.black:Colors.white,
-              fontSize: 15,
+              Colors.white:Colors.white,
+              fontSize: 14,
               fontWeight: FontWeight.w400)),
           shape:StadiumBorder(side: BorderSide(width: 0.1,color:AppColors().appBgColor2)),
 

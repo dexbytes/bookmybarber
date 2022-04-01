@@ -92,7 +92,7 @@ class _FilterScreenState extends State<FilterScreen>
                 //     fontWeight: FontWeight.w500),
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
                 backgroundColor: !isDarkMode? appColors.grey.withOpacity(0.15):appColors.appBgColor3,
-                isSecondColorShow: true,
+                isSecondColorShow: !isDarkMode?true:false,
                 reportList: [
                  "Hairstyle", "Makeup", "Hair Coloring", "Spa", "Facial Makeup", "Trim & saving"
 
@@ -292,7 +292,7 @@ class _FilterScreenState extends State<FilterScreen>
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xffCCA76A),
                 backgroundColor: !isDarkMode? appColors.grey.withOpacity(0.15):appColors.appBgColor3,
                 padding: EdgeInsets.only(left: 20,right: 20),
-                isSecondColorShow: true,
+                isSecondColorShow: !isDarkMode?true:false,
                 reportList: [
                   "\$", "\$\$", "\$\$\$",
                 ],)),

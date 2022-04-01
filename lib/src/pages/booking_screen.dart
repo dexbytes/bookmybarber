@@ -99,7 +99,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
               height: 40,
               decoration: BoxDecoration(
                   color:Colors.transparent,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(18),
                   border: Border.all(width: 1,color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,)
               ),
               child: TabBar(
@@ -122,7 +122,7 @@ class _BookingScreenState extends State<BookingScreen>with TickerProviderStateMi
                 unselectedLabelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w600,),
                 indicator:BoxDecoration(
                   color:!isDarkMode? AppColors().textHeadingColor2 :AppColors().textHeadingColor1,
-                  borderRadius: BorderRadius.circular(7),
+                  borderRadius: BorderRadius.circular(15),
                 ),
               ),
             ),

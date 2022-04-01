@@ -20,7 +20,7 @@ class FavoriteSalonDataListView extends StatelessWidget {
 
     return ListView.builder(
         scrollDirection: Axis.vertical,
-        padding: EdgeInsets.only(left: 0,right: 0,bottom: 70),
+        padding: EdgeInsets.only(left: 0,right: 0,),
         physics: ClampingScrollPhysics(),
         itemCount: salonList.length,
         shrinkWrap: true,
