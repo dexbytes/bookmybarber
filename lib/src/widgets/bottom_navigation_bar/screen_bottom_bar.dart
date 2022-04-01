@@ -209,6 +209,7 @@ class _BottomNavigationBarState extends State<ScreenBottomBar> {
 
     /*=====================get bar items=================*/
     List<BottomNavigationBarItem>? getItems() {
+      // ignore: unnecessary_null_comparison
       if (navigationBarItems != null) {
         List<BottomNavigationBarItem> items = [];
         for (int i = 0; i < navigationBarItems.length; i++) {

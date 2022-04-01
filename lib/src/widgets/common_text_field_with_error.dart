@@ -236,6 +236,7 @@ class CommonTextFieldWithError extends StatelessWidget {
                       }
                     },
                     cursorColor: cursorColor ?? AppColors().editCursorColor,
+                    // ignore: unnecessary_null_comparison
                     onSubmitted: (maxCharLength != null)
                         ? (value) {
                       if (value.length <= maxCharLength) {

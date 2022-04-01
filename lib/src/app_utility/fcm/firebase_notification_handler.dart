@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
@@ -479,7 +481,6 @@ class FirebaseNotifications {
         }
       }
       try {
-        // ignore: unnecessary_null_comparison
         if (mContext != null && userId != null && userId != "") {
           SharedPreferencesFile().saveBool(anyNewNotificationC, false);
         }

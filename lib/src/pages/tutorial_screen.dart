@@ -15,7 +15,7 @@ class TutorialScreen extends StatefulWidget {
 
 class _TutorialScreenState extends State<TutorialScreen> {
   int activeIndex = 0;
-  int _currentPage = 0;
+  // int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
 
   @override

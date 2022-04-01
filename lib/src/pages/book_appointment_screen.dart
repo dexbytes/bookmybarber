@@ -1,12 +1,10 @@
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_widget_files_link.dart';
-import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/book_appointment_model.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_with_time.dart';
 import 'package:base_flutter_app/src/widgets/appbar/appbar_with_backarrow.dart';
 import 'package:base_flutter_app/src/widgets/price_text_row.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -344,76 +342,76 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen>with Ticke
     ]);
 
 
-    _welcomeTextView() {
-      return Container(
-        margin: EdgeInsets.only(left: 8,right: 14),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 14),
-              child: Text("Gender",
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors().textHeadingColor1
-                ),
-                textAlign: TextAlign.start,
-              ),
-            ),
-            SizedBox(
-              height: 6,
-            ),
-            Theme(
-              data: Theme.of(context).copyWith(
-                unselectedWidgetColor: Colors.grey.withOpacity(0.6),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Transform.scale(
-                    scale: 1.3,
-                    child: Radio<int>(
-                        value: 0,
-                        groupValue: selectValue,
-                        activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
-                        onChanged: (value) =>setState(()=>selectValue = value!),
-                    ),
-                  ),
-                  Text("Male",style: !isDarkMode ?
-                  TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
-                      color: selectValue == 0?appColors.buttonColor2:Colors.black.withOpacity(0.5))
-                      :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
-                      color: selectValue == 0?Color(0xffE4B343):Colors.white)
-
-                  ),
-                  SizedBox(width: 70,),
-                  Transform.scale(
-                    scale: 1.3,
-                    child: Radio<int>(
-                        value: 1,
-                        activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
-                        focusColor: Colors.white,
-
-                        groupValue: selectValue,
-                        onChanged: (value) =>setState(()=>selectValue = value! )
-                    ),
-                  ),
-                  Text("Female",style:!isDarkMode ?
-                  TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
-                      color: selectValue == 1?appColors.buttonColor2:Colors.black.withOpacity(0.5))
-                      :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
-                      color: selectValue == 1?Color(0xffE4B343):Colors.white)
-
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      );
-    }
+    // _welcomeTextView() {
+    //   return Container(
+    //     margin: EdgeInsets.only(left: 8,right: 14),
+    //     child: Column(
+    //       mainAxisAlignment: MainAxisAlignment.start,
+    //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       children: [
+    //         Padding(
+    //           padding: EdgeInsets.only(left: 14),
+    //           child: Text("Gender",
+    //             style: TextStyle(
+    //                 fontSize: 18,
+    //                 fontWeight: FontWeight.w700,
+    //                 color: AppColors().textHeadingColor1
+    //             ),
+    //             textAlign: TextAlign.start,
+    //           ),
+    //         ),
+    //         SizedBox(
+    //           height: 6,
+    //         ),
+    //         Theme(
+    //           data: Theme.of(context).copyWith(
+    //             unselectedWidgetColor: Colors.grey.withOpacity(0.6),
+    //           ),
+    //           child: Row(
+    //             mainAxisAlignment: MainAxisAlignment.start,
+    //             children: [
+    //               Transform.scale(
+    //                 scale: 1.3,
+    //                 child: Radio<int>(
+    //                     value: 0,
+    //                     groupValue: selectValue,
+    //                     activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
+    //                     onChanged: (value) =>setState(()=>selectValue = value!),
+    //                 ),
+    //               ),
+    //               Text("Male",style: !isDarkMode ?
+    //               TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+    //                   color: selectValue == 0?appColors.buttonColor2:Colors.black.withOpacity(0.5))
+    //                   :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+    //                   color: selectValue == 0?Color(0xffE4B343):Colors.white)
+    //
+    //               ),
+    //               SizedBox(width: 70,),
+    //               Transform.scale(
+    //                 scale: 1.3,
+    //                 child: Radio<int>(
+    //                     value: 1,
+    //                     activeColor:!isDarkMode ?appColors.buttonColor2:Color(0xffE4B343),
+    //                     focusColor: Colors.white,
+    //
+    //                     groupValue: selectValue,
+    //                     onChanged: (value) =>setState(()=>selectValue = value! )
+    //                 ),
+    //               ),
+    //               Text("Female",style:!isDarkMode ?
+    //               TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+    //                   color: selectValue == 1?appColors.buttonColor2:Colors.black.withOpacity(0.5))
+    //                   :TextStyle(fontSize: 17.5,fontWeight: FontWeight.w500,
+    //                   color: selectValue == 1?Color(0xffE4B343):Colors.white)
+    //
+    //               )
+    //             ],
+    //           ),
+    //         )
+    //       ],
+    //     ),
+    //   );
+    // }
 
 
     bottomButton(){

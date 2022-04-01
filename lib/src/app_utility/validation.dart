@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 class Validation {
   /*===============check valid mobile or not=================*/
   bool validMobile(String value) {
