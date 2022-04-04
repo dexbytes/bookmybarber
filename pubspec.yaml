@@ -72,6 +72,7 @@ dependencies:
   google_map_custom:
     path: google_map_custom
   package_info_plus: ^1.4.0
+  platform: ^3.1.0
 
 
 
