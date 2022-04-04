@@ -12,17 +12,17 @@ import 'package:flutter/scheduler.dart';
 import 'book_services_with_circular_image.dart';
 
 
-class BookAppointmentScreen extends StatefulWidget {
+class BookAppointmentScreencpy extends StatefulWidget {
   final double price;
   final bool isBottomButtonText;
 
-  const BookAppointmentScreen({Key? key, this.price = 00.00, this.isBottomButtonText = true}) : super(key: key);
+  const BookAppointmentScreencpy({Key? key, this.price = 00.00, this.isBottomButtonText = true}) : super(key: key);
 
   @override
-  _BookAppointmentScreenState createState() => _BookAppointmentScreenState();
+  _BookAppointmentScreencpyState createState() => _BookAppointmentScreencpyState();
 }
 
-class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
+class _BookAppointmentScreencpyState extends State<BookAppointmentScreencpy> {
   int selectValue = 0;
   List<SelectedServiceData> selectedServices = [];
 

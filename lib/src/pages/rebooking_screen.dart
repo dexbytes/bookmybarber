@@ -158,7 +158,7 @@ class _ReBookingScreenState extends State<ReBookingScreen> {
               margin: EdgeInsets.symmetric(horizontal:12,),
               padding: EdgeInsets.zero,
               child: BookAppointmentTimeList(
-
+                isSecondColorShow: !isDarkMode?true:false,
                 selectedColor: !isDarkMode ?appColors.buttonColor2:Color(0xff00B2AE),
                 backgroundColor:!isDarkMode ?appColors.grey.withOpacity(0.3):appColors.appBgColor3,
                 reportList: [

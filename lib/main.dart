@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/app_theme/theme_provider.dart';
-import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
+import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -265,7 +265,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return TutorialScreen();
+    return BookAppointmentScreen();
   }
 
   //Redirect to another screen if already loggedIn
