@@ -7,13 +7,9 @@ import 'package:flutter/scheduler.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class FaqScreen extends StatefulWidget {
-  final String userName;
-  final String profileImgUrl;
   final Function(dynamic)? onImageCallBack;
 
   const FaqScreen({ Key ?key,
-    this.userName = "Mohit Panchal",
-    this.profileImgUrl = "https://static.toiimg.com/thumb/msid-86203836,imgsize-29194,width-800,height-600,resizemode-75/86203836.jpg",
     this.onImageCallBack
   }) : super(key: key);
 
@@ -103,7 +99,7 @@ class _FaqScreenState extends State<FaqScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Help & Support",
+            title: appString.trans(context, appString.helpNSupport),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,

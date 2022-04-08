@@ -292,7 +292,7 @@ class _MobileNumberScreenState extends State<MobileNumberScreen> {
               color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
             ),
             leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
-            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 13),
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 25),
             onPress: (){
               Navigator.pop(context);
             }

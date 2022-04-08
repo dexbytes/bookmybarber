@@ -103,8 +103,8 @@ class AppString {
   String tryAgain = 'Something went wrong please try again';
   //Button text
   String buttonSave = "Save";
-  String buttonCancel = "Cancel";
-  String buttonApply = "Apply";
+  String buttonCancel = "buttonCancel";
+  String buttonApply = "buttonApply";
   String buttonConfirm = "Confirm";
   String buttonGallery = "Media";
   String buttonCamera = "Photo";
@@ -116,8 +116,8 @@ class AppString {
   String leftGroupMessage = "Are you sure to left this group?";
   String noInternetConnection =
       "No internet connection available. Please check your network!";
-  String noText = "No";
-  String yesText = "Yes";
+  String noText = "noText";
+  String yesText = "yesText";
 
   String notificationHeading = 'notificationHeading';
 
@@ -253,6 +253,32 @@ class AppString {
   String paymentPopUpHeading = "paymentPopUpHeading";
   String paymentPopUpSubHeading = "paymentPopUpSubHeading";
   String section = "section";
+  String helpNSupport = "helpNSupport";
+  String filter = "filter";
+  String reset = "reset";
+  String rating = "rating";
+  String gender = "gender";
+  String distance = "distance";
+  String price = "price";
+  String sortBy = "sortBy";
+  String updateProfile = "updateProfile";
+  String version = "version";
+  String myBooking = "myBooking";
+  String buttonCtBooking = "buttonCtBooking";
+  String goToAppointment = "goToAppointment";
+  String upComing = "upComing";
+  String past = "past";
+  String male = "male";
+  String female = "female";
+  String chooseService = "chooseService";
+  String sureToLogOut = "sureToLogOut";
+  String forgotAlertBoxTitle = "forgotAlertBoxTitle";
+  String forgotAlertBoxSubtitle = "forgotAlertBoxSubtitle";
+  String resetPassword = "resetPassword";
+  String didntReceiveCode = "didntReceiveCode";
+  String forgotHeadingText = "forgotHeadingText";
+  String forgotPasswordTitle = "forgotPasswordTitle";
+  String phoneVerification = "phoneVerification";
 
 }
 

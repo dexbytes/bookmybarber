@@ -1,5 +1,6 @@
 import 'package:base_flutter_app/src/all_file_import/app_providers_files_link.dart';
 import 'package:base_flutter_app/src/all_file_import/app_utils_files_link.dart';
+import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/image_res/iconApp.dart';
 import 'package:base_flutter_app/src/model/user_profile_raw_data_model.dart';
 import 'package:base_flutter_app/src/pages/booking_screen.dart';
@@ -141,7 +142,7 @@ class ProfileListRowWidget extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Are you sure to logout?",
+                  Text(appString.trans(context, appString.sureToLogOut), //"Are you sure to logout?",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
@@ -158,7 +159,8 @@ class ProfileListRowWidget extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: Text(
-                            "No",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color:!isDarkMode? AppColors().buttonColor2: Colors.white),
+                            appString.trans(context, appString.noText),
+                          style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color:!isDarkMode? AppColors().buttonColor2: Colors.white),
                         ),
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(

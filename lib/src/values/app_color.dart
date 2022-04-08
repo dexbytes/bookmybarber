@@ -108,7 +108,7 @@ class AppColors {
   Color buttonColor = const Color(0xFFCCA76A);
   Color buttonColor2 = const Color(0xffFE9654);
   Color buttonColor3 = const Color(0xFF000000);
-  Color buttonTextColor5 = const Color(0xffFE9654);
+  Color buttonTextColor5 = const Color(0xfffe9654);
   Color buttonTextColor6 = const Color(0xFF000000);
 
 

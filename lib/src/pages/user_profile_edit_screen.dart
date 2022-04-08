@@ -509,7 +509,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
       return Container(
         margin: EdgeInsets.only(left: 20,right: 20,bottom: 2),
         child: CommonButton(
-          buttonName: "Update Profile",
+          buttonName: appString.trans(context, appString.updateProfile),
           buttonHeight: 48,
           buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
@@ -574,7 +574,7 @@ class _UserProfileEditScreenState extends State<UserProfileEditScreen>
                 backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
                 isTitleVisible: true,
                 isTrailingIconVisible: false,
-                title: "Edit Profile",
+                title: appString.trans(context, appString.editProfile),
                 textStyle: TextStyle(
                   fontSize: 21,
                   fontWeight: FontWeight.w700,

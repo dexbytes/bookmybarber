@@ -243,7 +243,7 @@ class _BookAppointmentScreencpyState extends State<BookAppointmentScreencpy> {
                                           serviceData: service,price: price));
 
                                     });
-                                  },
+                                  }, isMultipleValueSelect: true,
 
                                 )),
                           );
@@ -354,6 +354,7 @@ class _BookAppointmentScreencpyState extends State<BookAppointmentScreencpy> {
                             context,
                             BottomUpTransition(
                                 widget:BookServicesWithImage(
+                                  isMultipleValueSelect: true,
                                   title: serviceListFemale[index].name,
                                   serviceList:serviceListFemale[index].subtitle,
                                   onAddClickCallBack:(service,price){

@@ -106,7 +106,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     Widget resendCode = Container(
       margin: EdgeInsets.only(bottom: 30,top: 22),
       child: AlreadyHaveAccountRow(
-        leftText: "Did't you receive any code?",
+        leftText: appString.trans(context, appString.didntReceiveCode),
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
         rightText: appString.trans(context, appString.resendCode),
         isSubtitleTextVisible: true,
@@ -219,14 +219,14 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Phone Verification",
+            title:appString.trans(context, appString.phoneVerification),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,
               color: !isDarkMode?  AppColors().black:AppColors().textHeadingColor1,
             ),
             leadingIconColor:!isDarkMode?AppColors().buttonColor3:AppColors().buttonColor,
-            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 13),
+            leadingPadding: EdgeInsets.only(left: 10.0,bottom: 8,top: 0,right: 20),
             onPress: (){
               Navigator.pop(context);
             }

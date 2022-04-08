@@ -61,13 +61,13 @@ class _FilterScreenState extends State<FilterScreen>
                 onTap: (){
                   Navigator.pop(context);
                 },
-                child: Text('Cancel',style: TextStyle(fontSize: 16,
+                child: Text(appString.trans(context, appString.buttonCancel),style: TextStyle(fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: !isDarkMode ?Colors.black:Color(0xffE4B343)),)),
-            Text('Filters',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: !isDarkMode ?Colors.black:Colors.white),),
+            Text(appString.trans(context, appString.filter),style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,color: !isDarkMode ?Colors.black:Colors.white),),
             InkWell(
                 onTap: (){},
-                child: Text('Reset',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:!isDarkMode ?Colors.black:Color(0xffE4B343)),)),
+                child: Text(appString.trans(context, appString.reset),style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color:!isDarkMode ?Colors.black:Color(0xffE4B343)),)),
           ],
         ),
       )
@@ -79,7 +79,7 @@ class _FilterScreenState extends State<FilterScreen>
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 5.0,left: 12,top: 20),
-            child: Text("Services",
+            child: Text(appString.trans(context, appString.services),
                 style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
           ),
           Container(
@@ -106,7 +106,7 @@ class _FilterScreenState extends State<FilterScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Rating",
+            Text(appString.trans(context, appString.rating),
                 style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
             SizedBox(height: 8,),
             Row(
@@ -137,7 +137,7 @@ class _FilterScreenState extends State<FilterScreen>
           children: [
             Padding(
               padding: EdgeInsets.only(left: 12.0),
-              child: Text("Gender",
+              child: Text(appString.trans(context, appString.gender),
                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,
                       color: !isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
             ),
@@ -225,7 +225,7 @@ class _FilterScreenState extends State<FilterScreen>
           children: [
             Padding(
               padding: EdgeInsets.only(left: 6.0),
-              child: Text("Distance",
+              child: Text(appString.trans(context, appString.distance),
                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode?Colors.black:AppColors().textHeadingColor1)),
             ),
             SizedBox(height: 12,),
@@ -278,7 +278,7 @@ class _FilterScreenState extends State<FilterScreen>
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 10.0,top: 10,left: 16),
-            child: Text("Price",
+            child: Text(appString.trans(context, appString.price),
                 style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode?Colors.black:AppColors().textHeadingColor1)),
           ),
           Container(
@@ -311,7 +311,7 @@ class _FilterScreenState extends State<FilterScreen>
               padding: EdgeInsets.only(left: 12.0),
               child: Container(
                 margin: EdgeInsets.zero,
-                child: Text("Sort by",
+                child: Text(appString.trans(context, appString.sortBy),
                     style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600,color:!isDarkMode ?Colors.black:AppColors().textHeadingColor1)),
               ),
             ),
@@ -368,7 +368,7 @@ class _FilterScreenState extends State<FilterScreen>
         margin: EdgeInsets.only(left: 20,right: 20,),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: "Apply Filter",
+          buttonName: appString.trans(context, appString.buttonApply),
           buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,

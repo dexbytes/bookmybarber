@@ -74,7 +74,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Please enter your registered email address. You will receive a code to create a new password via email.",
+            Text(appString.trans(context, appString.forgotHeadingText),
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
@@ -149,7 +149,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         margin: EdgeInsets.only(left: 28,right: 28,top: 12),
         child:CommonButton(
           buttonHeight: 50,
-          buttonName: "Reset password",
+          buttonName: appString.trans(context, appString.resetPassword),
           buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
           textStyle: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -166,9 +166,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     Widget resendCode = Container(
       margin: EdgeInsets.only(bottom: 30,top: 22),
       child: AlreadyHaveAccountRow(
-        leftText: "Did't you receive any code?",
+        leftText:  appString.trans(context, appString.didntReceiveCode),
         leftTextStyle:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Color(0xff828588),),
-        rightText: "Resend a new code",
+        rightText: appString.trans(context, appString.resendCode),
         isSubtitleTextVisible: true,
         isRightTextVisible: false,
       ),
@@ -192,7 +192,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: appBarWithBackArrow(
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Forgot Password",
+            title: appString.trans(context, appString.forgotPasswordTitle),
             textStyle: TextStyle(
                 fontSize: 21,
                 fontWeight: FontWeight.w700,
@@ -248,7 +248,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       imageUrl: iconApps.passwordIcon,
                     ),
                     SizedBox(height: 25,),
-                    Text("Code has been sent to reset a new password",
+                    Text(appString.trans(context, appString.forgotAlertBoxTitle),
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -257,7 +257,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 20,),
-                    Text("You'll shortly receive an email with a code\n to setup a new password",
+                    Text(appString.trans(context, appString.forgotAlertBoxSubtitle),
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
@@ -268,7 +268,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     SizedBox(height: 45,),
                     CommonButton(
                       buttonHeight: 50,
-                      buttonName: "Done",
+                      buttonName:appString.trans(context, appString.done),
                       buttonColor:!isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
                       textStyle: TextStyle(fontSize: 18,
                         fontWeight: FontWeight.w600,

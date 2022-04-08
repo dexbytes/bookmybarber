@@ -8,8 +8,12 @@ import 'package:flutter/scheduler.dart';
 class BookServicesWithImage extends StatefulWidget {
   final String title;
   final serviceList;
+  final bool isMultipleValueSelect;
   final  onAddClickCallBack;
-  const BookServicesWithImage({Key? key, this.title = "Salon", this.serviceList, this.onAddClickCallBack}) : super(key: key);
+  const BookServicesWithImage({Key? key, this.title = "Salon",
+    this.serviceList,
+    this.onAddClickCallBack,
+    required this.isMultipleValueSelect}) : super(key: key);
   @override
   _BookServicesWithImageState createState() => _BookServicesWithImageState();
 }
@@ -26,14 +30,25 @@ class _BookServicesWithImageState extends State<BookServicesWithImage> {
       height: MediaQuery.of(context).size.height,
       child:BookServicesGridViewWidget(
         titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: !isDarkMode? Colors.black:Colors.white),
-
-        onAddClickCallBack: (selectedService,price){
+        isMultipleValueSelect: widget.isMultipleValueSelect,
+        onAddClickCallBack: widget.isMultipleValueSelect?
+            (selectedStyles){
+          widget.onAddClickCallBack(selectedStyles);
+          Navigator.pop(context);
+        }
+        :(selectedService,price){
           widget.onAddClickCallBack.call(selectedService,price);
           Navigator.pop(context);
         },
+
+        /*onAddClickCallBack: (selectedService,price){
+          widget.onAddClickCallBack.call(selectedService,price);
+          Navigator.pop(context);
+        },*/
         serviceList: widget.serviceList,
         isSubtitleVisible: true,),
     );
+
 
 
     return ContainerFirst(

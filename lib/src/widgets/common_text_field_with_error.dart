@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 
+
 enum InputKeyboardTypeWithError {
   email,
   phone,
@@ -220,10 +221,10 @@ class CommonTextFieldWithError extends StatelessWidget {
                         ],
                     textInputAction: maxLines > 1 ? TextInputAction.newline
                         :( textInputAction == null ||  textInputAction == TextInputAction.done) ? TextInputAction.done : TextInputAction.next,
-                    textAlign: textAlignment ?? TextAlign.left,
-                    textAlignVertical: textAlignmentVertical == null
-                        ? TextAlignVertical.center
-                        : textAlignmentVertical,
+                    // textAlign: textAlignment ?? TextAlign.left,
+                    // textAlignVertical: textAlignmentVertical == null
+                    //     ? TextAlignVertical.center
+                    //     : textAlignmentVertical,
                     controller: controllerT,
                     focusNode: focusNode,
                     enabled: isTextFieldEnabled,
@@ -410,3 +411,7 @@ class CommonTextFieldWithError extends StatelessWidget {
     );
   }
 }
+
+
+
+

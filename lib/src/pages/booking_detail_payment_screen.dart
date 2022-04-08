@@ -268,7 +268,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                   SizedBox(height: 45,),
                   CommonButton(
                     buttonHeight: 50,
-                    buttonName: "Continue Booking",
+                    buttonName: appString.trans(context, appString.buttonCtBooking),
                     buttonColor: !isDarkMode?AppColors().buttonColor2:AppColors().buttonColor,
                     textStyle: TextStyle(fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -296,7 +296,7 @@ class _BookingDetailPaymentScreenState extends State<BookingDetailPaymentScreen>
                                )),
                        );
                      },
-                     child: Text("Go to appointment",
+                     child: Text( appString.trans(context, appString.goToAppointment),
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,

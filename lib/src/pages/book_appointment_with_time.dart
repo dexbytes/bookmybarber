@@ -198,7 +198,7 @@ class _BookAppointmentTimeScreenState extends State<BookAppointmentTimeScreen> {
           // backgroundColor: !isDarkMode ?Colors.white:AppColors().appBgColor3,
             isTitleVisible: true,
             isTrailingIconVisible: false,
-            title: "Book Appointment",
+            title: appString.trans(context, appString.bookAppointment),
             textStyle: TextStyle(
               fontSize: 21,
               fontWeight: FontWeight.w700,

@@ -100,7 +100,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Version: ",
+                Text( "${appString.trans(context, appString.version)}\: ",
                   style: TextStyle(color:!isDarkMode? appColors.black:Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
                 ),Text(snapshot.data!.version,
                   style: TextStyle(color: !isDarkMode? appColors.black:Colors.white,fontSize: 15,fontWeight: FontWeight.w500),
@@ -188,7 +188,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                         );
                       },
                       child: Text(
-                          "Edit profile"
+                        appString.trans(context, appString.editProfile),
                       ),
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(

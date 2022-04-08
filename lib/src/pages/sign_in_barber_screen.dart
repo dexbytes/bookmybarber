@@ -179,6 +179,7 @@ class _SignInScreenState extends State<SignInScreen> {
         errorLeftRightMargin: 0,
         errorMsgHeight: 24,
         autoFocus: false,
+        // textAlignment: TextAlign.justify,
         capitalization: CapitalizationText.sentences,
         cursorColor: Colors.grey,
         enabledBorderColor:!isDarkMode? AppColors().textFiledColor.withOpacity(0.2): AppColors().textFiledColor2,
@@ -206,7 +207,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
           ),
         ),
-        contentPadding: EdgeInsets.only(left: 25),
+        contentPadding: EdgeInsets.only(right: 20,left: 20),
         onTextChange: (value) {
           _checkEmail(value, 'email', onchange: true);
         },
@@ -219,6 +220,7 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   //Visibility icons
+
   Widget visibilityOffIcon = Icon(
     Icons.visibility_off,
     color: Color(0xff828588),
@@ -248,7 +250,8 @@ class _SignInScreenState extends State<SignInScreen> {
             controllerT: controllers['password'],
             borderRadius: 50,
             inputHeight: 50,
-            errorMsgHeight: 24,
+            // errorMsgHeight: 24,
+            // textAlignment: TextAlign.justify,
             autoFocus: false,
             errorLeftRightMargin: 0,
             capitalization: CapitalizationText.sentences,
@@ -271,9 +274,9 @@ class _SignInScreenState extends State<SignInScreen> {
               fontWeight: FontWeight.w500,
               color: !isDarkMode?Colors.black :Colors.white,
             ),
-            contentPadding: EdgeInsets.only(left: 25),
+            contentPadding: EdgeInsets.only(right: 20,left: 20),
             inputFieldSuffixIcon: Padding(
-              padding: EdgeInsets.only(right: 12),
+              padding: EdgeInsets.only(right: 12,),
               child: IconButton(
                 icon:
                 hideNewPassword ? visibilityOffIcon : visibilityOnIcon,
@@ -364,6 +367,24 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
 
+  Widget signUp2 = Container(
+    margin: EdgeInsets.only(bottom: 20),
+      child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: TextField(
+            textAlign: TextAlign.right,
+            controller:inputController,
+            style: TextStyle(color: Colors.white),
+            autofocus: true,
+            decoration: new InputDecoration(
+                labelText: "افزودن کتاب",
+                hintText: "نام کتاب را وارد کنید"
+            ),
+          )
+    ));
+
+
+
   Widget bottomCardView =  Positioned(
       top: MediaQuery.of(context).size.height/3.5,
       child: Container(
@@ -404,6 +425,8 @@ class _SignInScreenState extends State<SignInScreen> {
         )
       ),
     );
+
+
 
 
 

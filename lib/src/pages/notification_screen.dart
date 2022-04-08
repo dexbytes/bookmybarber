@@ -52,7 +52,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             child: appBarWithBackArrow(
                 isTitleVisible: true,
                 isTrailingIconVisible: false,
-                title: "Notification",
+                title: appString.trans(context, appString.notificationHeading),
                 textStyle: TextStyle(
                   fontSize: 21,
                   fontWeight: FontWeight.w700,

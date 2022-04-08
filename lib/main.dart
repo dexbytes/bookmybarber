@@ -2,6 +2,9 @@ import 'dart:convert';
 import 'package:base_flutter_app/src/all_file_import/app_values_files_link.dart';
 import 'package:base_flutter_app/src/app_theme/theme_provider.dart';
 import 'package:base_flutter_app/src/pages/book_appointment_screen.dart';
+import 'package:base_flutter_app/src/pages/dashboard_screen.dart';
+import 'package:base_flutter_app/src/pages/sign_in_barber_screen.dart';
+import 'package:base_flutter_app/src/pages/tutorial_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -36,13 +39,13 @@ void main() async {
   bool isLoggedIn = await sharedPreferencesFile.readBool(isUserLoggedInC);
 
   String jsonString =
-      await rootBundle.loadString('assets/app_theme/config_theme.json');
+  await rootBundle.loadString('assets/app_theme/config_theme.json');
   MainAppBloc.configTheme = json.decode(jsonString);
 
   String? loggedInUserDetails;
   if (isLoggedIn) {
     loggedInUserDetails =
-        await sharedPreferencesFile.readStr(loggedInUserApiResponse);
+    await sharedPreferencesFile.readStr(loggedInUserApiResponse);
     if (loggedInUserDetails.trim().isNotEmpty) {
       try {
         /*SignInModel signInModel;
@@ -58,9 +61,9 @@ void main() async {
     }
   }
   bool isTutorialSeen =
-      await SharedPreferencesFile().readBool(isIsTutorialSeenC);
+  await SharedPreferencesFile().readBool(isIsTutorialSeenC);
   bool isOneTimeProfileSetUpDone =
-      await SharedPreferencesFile().readBool(isOneTimeProfileSetUpDoneC);
+  await SharedPreferencesFile().readBool(isOneTimeProfileSetUpDoneC);
   Locale? mLocale = isLoggedIn ? await lang() : null;
 
   Provider.debugCheckInvalidValueType = null;
@@ -107,11 +110,11 @@ class MyAppFlutterMain extends StatefulWidget {
 
   const MyAppFlutterMain(
       {Key? key,
-      this.isLoggedIn = false,
-      this.isTutorialSeen = false,
-      this.isOneTimeProfileSetUpDone = false,
-      this.loggedInUserDetails,
-      this.locale})
+        this.isLoggedIn = false,
+        this.isTutorialSeen = false,
+        this.isOneTimeProfileSetUpDone = false,
+        this.loggedInUserDetails,
+        this.locale})
       : super(key: key);
 
   static void setLocale(BuildContext? context, Locale newLocale) async {
@@ -253,7 +256,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
             return supportedLocales.first;
           },
           home:
-              !widget.isLoggedIn ? loginOptionScreen() : anotherLandingScreen(),
+          !widget.isLoggedIn ? loginOptionScreen() : anotherLandingScreen(),
           //Routes File
           routes: Routes.route(),
           onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
@@ -265,7 +268,7 @@ class _MyAppState extends State<MyAppFlutterMain> {
 
   //Redirect to login screen in case user not loggedIn
   loginOptionScreen() {
-    return BookAppointmentScreen();
+    return TutorialScreen();
   }
 
   //Redirect to another screen if already loggedIn
@@ -284,9 +287,6 @@ class _MyAppState extends State<MyAppFlutterMain> {
         widget.loggedInUserDetails!.trim().isNotEmpty) {}*/
   }
 }
-
-
-
 
 
 

@@ -3,11 +3,11 @@ class ServicesRawDataList {
   final double price;
   final String imageUrl;
 
+
   ServicesRawDataList({
     required this.title,
     required this.price,
     required this.imageUrl,
-
 
   });
 }
@@ -16,11 +16,13 @@ class ServicesRawDataList {
 class BookServicesRawDataList2 {
   final String name;
   final List<ServicesRawDataList> subtitle;
+  final bool isMultipleValueSelect;
 
 
   BookServicesRawDataList2( {
     required this.name,
     required this.subtitle,
+    required this.isMultipleValueSelect,
 
   });
 }
@@ -28,6 +30,7 @@ class BookServicesRawDataList2 {
 final List<BookServicesRawDataList2> serviceList = [
 
  BookServicesRawDataList2(
+  isMultipleValueSelect: false,
   name: "Hair Style",
   subtitle:[
     ServicesRawDataList(
@@ -76,7 +79,8 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
-  name: "Shaving",
+     isMultipleValueSelect: false,
+     name: "Shaving",
      subtitle:[
        ServicesRawDataList(
          title: 'Van Duke Beard',
@@ -125,7 +129,8 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
-  name: "Styling",
+    isMultipleValueSelect: false,
+     name: "Styling",
      subtitle:[
        ServicesRawDataList(
          title: 'Cool Messy',
@@ -173,6 +178,7 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
+  isMultipleValueSelect: true,
   name: "Facial",
      subtitle:[
        ServicesRawDataList(
@@ -221,6 +227,7 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
+  isMultipleValueSelect: false,
   name: "Hair Color",
      subtitle:[
        ServicesRawDataList(
@@ -269,6 +276,7 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
+  isMultipleValueSelect: false,
   name: "Trimming",
      subtitle:[
        ServicesRawDataList(
@@ -317,6 +325,7 @@ final List<BookServicesRawDataList2> serviceList = [
 ),
 
  BookServicesRawDataList2(
+  isMultipleValueSelect: false,
   name: "Hair cut",
      subtitle:[
        ServicesRawDataList(
@@ -371,6 +380,7 @@ final List<BookServicesRawDataList2> serviceList = [
 final List<BookServicesRawDataList2> serviceListFemale = [
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: false,
       name: "Hair Cut",
       subtitle:[
         ServicesRawDataList(
@@ -419,6 +429,7 @@ final List<BookServicesRawDataList2> serviceListFemale = [
   ),
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: false,
       name: "Make up",
       subtitle:[
         ServicesRawDataList(
@@ -455,6 +466,7 @@ final List<BookServicesRawDataList2> serviceListFemale = [
   ),
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: true,
       name: "Spa",
       subtitle:[
         ServicesRawDataList(
@@ -504,54 +516,56 @@ final List<BookServicesRawDataList2> serviceListFemale = [
   ),
 
   BookServicesRawDataList2(
-      name: "Facial",
+      isMultipleValueSelect: true,
+      name: "Facials",
       subtitle:[
         ServicesRawDataList(
-          title: 'Cool Messy',
+          title: 'Relaxed Bob',
           price:  20,
-          imageUrl: "https://menhairstylesworld.com/wp-content/uploads/2017/07/Messy-Wild-Quiff.jpg",
+          imageUrl: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gh-050721-assymetrical-bob-haircuts-1623076533.png?crop=0.500xw:1.00xh;0.500xw,0&resize=640:*",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'Mid Bald Fade',
+          title: 'Blunt Bob',
           price:  25,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2015/12/Cool-Mens-Hairstyles-Hi-Lo-Fade-with-Modern-Quiff-Hairstyle.jpg",
+          imageUrl: "https://i2.wp.com/www.hadviser.com/wp-content/uploads/2020/03/3-side-parted-bob-for-thin-hair-B8ewA1Fnb60.jpg?resize=1080%2C1080&ssl=1",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'High Undercut Fade',
+          title: 'Modern Mullet',
           price:  15,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2015/12/Cool-Hairstyles-For-Men.jpg",
+          imageUrl: "https://lovehairstyles.com/wp-content/uploads/2021/04/female-mullet-classy-haircut-683x1024.jpg",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'Burst Fade Mohawk',
+          title: 'Long Pixel',
           price:  30,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2015/12/Cool-Textured-Slicked-Back-Hair-with-Disconnected-Undercut.jpg",
+          imageUrl: "https://content.latest-hairstyles.com/wp-content/uploads/long-pixie-cuts.jpg",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'Mid BaldFade Quiff',
+          title: 'Tapered Layers',
           price:  22,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2015/12/Cool-Guy-Haircuts-Low-Fade-and-Long-Top-with-Beard.jpg",
+          imageUrl: "https://i2.wp.com/www.hadviser.com/wp-content/uploads/2021/01/5-piece-y-haircut-for-women-CGk9Oh_gYBA.jpg?resize=1080%2C1350&ssl=1",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'High SkinFade Spiky Hair',
+          title: 'Modern Diana ',
           price:  28,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2015/12/Cool-Trendy-Haircuts-Bald-Fade-with-Shape-Up-and-Spiky-Hair.jpg",
+          imageUrl: "https://media.glamour.com/photos/60006f6594257b37bbadd3e8/master/w_1280%2Cc_limit/136948668_218368419785606_1547125232883172252_n.jpg",
           // imageUrl: 'assets/images/barber_image.png',
         ),
         ServicesRawDataList(
-          title: 'Short Side Swept Fade',
+          title: 'Deep Side Part',
           price:  18,
-          imageUrl: "https://www.menshairstylestoday.com/wp-content/uploads/2019/06/Short-Side-Swept-Fade.jpg",
+          imageUrl: "https://www.thetrendspotter.net/wp-content/uploads/2018/11/deep-side-part-lob.jpg",
           // imageUrl: 'assets/images/barber_image.png',
         ),
       ]
   ),
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: false,
       name: "Hair Color",
       subtitle:[
         ServicesRawDataList(
@@ -600,6 +614,7 @@ final List<BookServicesRawDataList2> serviceListFemale = [
   ),
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: false,
       name: "Bridal",
       subtitle:[
         ServicesRawDataList(
@@ -648,6 +663,7 @@ final List<BookServicesRawDataList2> serviceListFemale = [
   ),
 
   BookServicesRawDataList2(
+      isMultipleValueSelect: false,
       name: "Nail",
       subtitle:[
         ServicesRawDataList(
